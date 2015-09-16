@@ -1,0 +1,197 @@
+<div class="col-md-12 col-lg-10 col-lg-offset-1">
+    <div id="agregarPedido" class="panel panel-default" ng-controller="AgregarPedidoController as agrPedCtrl">
+        <div class="panel-heading">
+            <h4 class="panel-title">
+                <a href="javascript:;" data-toggle="collapse" data-target="#agregarPedidBody">
+                    Agregar Pedido
+                </a>
+            </h4>
+        </div>
+
+        <div id="agregarPedidBody" class="panel-body collapse">
+            <form class="form-horizontal">
+                <div class="form-group">
+                    <label for="inputPlantilla" class="col-sm-1 control-label">Plantilla</label>
+                    <div class="col-sm-4">
+                        <select class="form-control input-sm" id="inputPlantilla">
+                            <option>Plantilla 1</option>
+                            <option>Plantilla 2</option>
+                            <option>Plantilla 3</option>
+                            <option>Plantilla 4</option>
+                            <option>Plantilla 5</option>
+                        </select>
+                    </div>
+                    <label for="inputCopias" class="control-label col-sm-1">Copias</label>
+                    <div class="col-sm-1">
+                        <input type="text" class="form-control input-sm" id="inputCopias" value="1">
+                    </div>
+                    <div class="col-sm-1">
+                        <button class="btn btn-primary" type="submit">Agregar</button>
+                    </div>
+                    <div class="col-sm-2">
+                        <button class="btn btn-info" type="button">Guarda como Plantilla</button>
+                    </div>
+                    <div class="col-sm-2">
+                        <button class="btn btn-warning" type="button">Limpiar formulario</button>
+                    </div>
+                </div>
+                <hr>
+                <div class="form-group">
+                    <label class="col-sm-2" control-label">Origen y Destino</label>
+                    <label for="inputCiudadOrigen" class="col-sm-2" control-label">Origen - Ciudad</label>
+                    <div class="col-sm-3">
+                        <select class="form-control input-sm" id="inputCiudadOrigen">
+                            <option>Cuenca</option>
+                            <option>Guayaquil</option>
+                            <option>Quito</option>
+                            <option>Ambato</option>
+                            <option>Loja</option>
+                        </select>
+                    </div>
+                    <label for="inputDireccionOrigen" class="col-sm-1" control-label">Direccion</label>
+                    <div class="col-sm-4">
+                        <input type="text" class="form-control input-sm" id="inputDireccionOrigen">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="inputCiudadDestino" class="col-sm-2 col-sm-offset-2" control-label">Destino - Ciudad</label>
+                    <div class="col-sm-3">
+                        <select class="form-control input-sm" id="inputCiudadDestino">
+                            <option>Cuenca</option>
+                            <option>Guayaquil</option>
+                            <option>Quito</option>
+                            <option>Ambato</option>
+                            <option>Loja</option>
+                        </select>
+                    </div>
+                    <label for="inputDireccionDestino" class="col-sm-1" control-label">Direccion</label>
+                    <div class="col-sm-4">
+                        <input type="text" class="form-control input-sm" id="inputDireccionDestino">
+                    </div>
+                </div>
+                <div class="form-group center-content">
+                    <label for="inputHoraCarga" class="col-sm-1 col-sm-offset-2" control-label">Hora Max. Carga</label>
+                    <div class="col-sm-2">
+                        <p class="input-group">
+                            <input id="inputHoraCarga" type="text" class="form-control input-sm" datepicker-popup="{{format}}" ng-model="dtc" is-open="horaMaxCargaStatus.opened"/>
+                            <span class="input-group-btn">
+                                <button type="button" class="btn btn-default input-sm" ng-click="horaMaxCargaOpen($event)"><i class="glyphicon glyphicon-calendar"></i></button>
+                            </span>
+                        </p>
+                    </div>
+                    <div class="col-sm-2">
+                        <timepicker ng-model="dtct" hour-step="1" minute-step="15" class="input-sm"></timepicker>
+                    </div>
+                    <label for="inputHoraDescarga" class="col-sm-1" control-label">Hora Max. Descarga</label>
+                    <div class="col-sm-2">
+                        <p class="input-group">
+                            <input id="inputHoraDescarga" type="text" class="form-control input-sm" datepicker-popup="{{format}}" ng-model="dtd" is-open="horaMaxDescargaStatus.opened"/>
+                            <span class="input-group-btn">
+                                <button type="button" class="btn btn-default input-sm" ng-click="horaMaxDescargaOpen($event)"><i class="glyphicon glyphicon-calendar"></i></button>
+                            </span>
+                        </p>
+                    </div>
+                    <div class="col-sm-2">
+                        <timepicker ng-model="dtdt" hour-step="1" minute-step="15" class="input-sm"></timepicker>
+                    </div>
+                </div>
+                <hr>
+                <div class="form-group">
+                    <label class="col-sm-2" control-label">Producto y Precio</label>
+                    <label for="inputProducto" class="col-sm-1" control-label">Producto</label>
+                    <div class="col-sm-3">
+                        <input type="text" class="form-control input-sm" id="inputProducto">
+                    </div>
+                    <label for="inputValor" class="col-sm-1" control-label">Valor</label>
+                    <div class="col-sm-1">
+                        <input type="text" class="form-control input-sm" id="inputValor">
+                    </div>
+                    <label for="inputPeso" class="col-sm-1" control-label">Peso</label>
+                    <div class="col-sm-1">
+                        <input type="text" class="form-control input-sm" id="inputPeso">
+                    </div>
+                    <label for="inputValorAprox" class="col-sm-1" control-label">Valor aprox:</label>
+                    <div class="col-sm-1">
+                        <input type="text" class="form-control input-sm" id="inputValorAprox">
+                    </div>
+                </div>
+                <hr>
+                <div class="form-group">
+                    <label class="col-sm-2" control-label">Transporte</label>
+                    <div class="col-sm-10">
+                        <div class="checkbox col-sm-2">
+                            <label>
+                                <input type="checkbox" value="">
+                                Carpa
+                            </label>
+                        </div>
+                        <div class="checkbox col-sm-2">
+                            <label>
+                                <input type="checkbox" value="">
+                                Carpa
+                            </label>
+                        </div>
+                        <div class="checkbox col-sm-2">
+                            <label>
+                                <input type="checkbox" value="">
+                                Carpa
+                            </label>
+                        </div>
+                        <div class="checkbox col-sm-2">
+                            <label>
+                                <input type="checkbox" value="">
+                                Carpa
+                            </label>
+                        </div>
+                        <div class="checkbox col-sm-2">
+                            <label>
+                                <input type="checkbox" value="">
+                                Carpa
+                            </label>
+                        </div>
+                        <div class="checkbox col-sm-2">
+                            <label>
+                                <input type="checkbox" value="">
+                                Carpa
+                            </label>
+                        </div>
+                        <div class="checkbox col-sm-2">
+                            <label>
+                                <input type="checkbox" value="">
+                                Carpa
+                            </label>
+                        </div>
+                        <div class="checkbox col-sm-2">
+                            <label>
+                                <input type="checkbox" value="">
+                                Carpa
+                            </label>
+                        </div>
+                        <div class="checkbox col-sm-2">
+                            <label>
+                                <input type="checkbox" value="">
+                                Carpa
+                            </label>
+                        </div>
+                        <div class="checkbox col-sm-2">
+                            <label>
+                                <input type="checkbox" value="">
+                                Carpa
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div id="pedidosPendientes" class="panel panel-default">
+        <div class="panel-heading">Pendidos Pendientes</div>
+        <div class="panel-body"></div>
+    </div>
+
+    <div id="pedidosActivos" class="panel panel-default">
+        <div class="panel-heading">Pedidos Activos</div>
+        <div class="panel-body"></div>
+    </div>
+</div>
