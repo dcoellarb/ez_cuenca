@@ -4,8 +4,14 @@
     border-color: #FA787E;
 }
 
+/*
 .ng-valid.ng-dirty{
     border-color: #78FA89;
+}
+*/
+
+.invalid-label{
+    color: #FA787E;
 }
 
 .center-content{

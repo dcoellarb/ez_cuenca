@@ -90,6 +90,8 @@
             }
         });
 
+        ctlr.minDate = new Date();
+
         LimpiarForm(ctlr);
     }
 
@@ -152,17 +154,19 @@
             ctlr.especificacionesTransportista[i].value = false
         }
 
+        ctlr.copias = 1;
+
         ctlr.data = {
-            CiudadOrigen : "(origen)",
+            CiudadOrigen : "",
             DireccionOrigen : "",
-            CiudadDestino : "(destino)",
+            CiudadDestino : "",
             DireccionDestino : "",
             HoraCarga : new Date(),
             HoraEntrega : new Date(),
             Producto : "",
-            ValorUnitario : "0.00",
-            PesoDesde : "0",
-            PesoHasta : "0",
+            ValorUnitario : 0,
+            PesoDesde : 0,
+            PesoHasta : 0,
             Caracteristicas : new Array(),
             TipoTransporte : ""
         };

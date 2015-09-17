@@ -1,0 +1,21 @@
+<div id="agregarPedido" class="panel panel-default" ng-controller="AgregarPedidoController as agrPedCtrl">
+    <div class="panel-heading">
+        <h4 class="panel-title">
+            <a href="javascript:;" data-toggle="collapse" data-target="#agregarPedidBody">
+                Agregar Pedido
+            </a>
+        </h4>
+    </div>
+
+    <div id="agregarPedidBody" class="panel-body collapse">
+        <form class="form-horizontal" name="agrPedForm" novalidate>
+            <div ng-include="'templates/pages/inicioClientes/AgregarPedidoHeader.html'"></div>
+            <hr>
+            <div ng-include="'templates/pages/inicioClientes/AgregarPedidoViaje.html'"></div>
+            <hr>
+            <div ng-include="'templates/pages/inicioClientes/AgregarPedidoProducto.html'"></div>
+            <hr>
+            <div ng-include="'templates/pages/inicioClientes/AgregarPedidoTransporte.html'"></div>
+        </form>
+    </div>
+</div>

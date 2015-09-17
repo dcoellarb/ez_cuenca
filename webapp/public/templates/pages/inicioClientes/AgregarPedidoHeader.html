@@ -1,0 +1,58 @@
+<div class="form-group">
+    <label for="inputPlantilla" class="col-sm-1 control-label">Plantilla</label>
+    <div class="col-sm-4">
+        <select class="form-control input-sm" id="inputPlantilla">
+            <option value="">(ninguna)</option>
+            <option ng-repeat="plantilla in agrPedCtrl.plantillas" value="plantilla">{{plantilla}}</option>
+        </select>
+    </div>
+    <label for="inputCopias" class="control-label col-sm-1">Copias</label>
+    <div class="col-sm-1">
+        <input type="number" class="form-control input-sm" id="inputCopias" name="inputCopias" ng-model="agrPedCtrl.copias">
+        <span class="invalid-label" ng-show="agrPedForm.inputCopias.$dirty && (agrPedForm.inputCopias.$invalid || agrPedCtrl.copias <= 0)">
+            <span ng-show="agrPedForm.inputCopias.$error.required">Copias es requerido.</span>
+            <span ng-show="agrPedForm.inputCopias.$dirty && agrPedCtrl.copias <= 0">Numero de copias debe ser mayor a 0.</span>
+        </span>
+    </div>
+    <div class="col-sm-1">
+        <button class="btn btn-primary" type="submit" ng-click="agrPedCtrl.Agregar(agrPedForm)"
+                ng-disabled="
+                    agrPedForm.inputCiudadOrigen.$invalid
+                    || agrPedForm.inputDireccionOrigen.$invalid
+                    || agrPedForm.inputCiudadDestino.$invalid
+                    || agrPedForm.inputDireccionDestino.$invalid
+                    || agrPedForm.inputHoraCarga.$invalid
+                    || agrPedForm.inputHoraDescarga.$invalid
+                    || agrPedForm.inputProducto.$invalid
+                    || agrPedForm.inputValor.$invalid
+                    || agrPedCtrl.data.ValorUnitario <= 0
+                    || agrPedForm.inputPesoDesde.$invalid
+                    || agrPedCtrl.data.PesoDesde <= 0
+                    || agrPedForm.inputPesoHasta.$invalid
+                    || agrPedCtrl.data.PesoHasta <= 0
+                    || agrPedForm.inputCopias.$invalid
+                    || agrPedCtrl.copias <= 0
+                ">Agregar</button>
+    </div>
+    <div class="col-sm-2">
+        <button class="btn btn-info" type="button" ng-click="agrPedCtrl.GuardarComoPlantilla(agrPedForm)"
+                ng-disabled="
+                    agrPedForm.inputCiudadOrigen.$invalid
+                    || agrPedForm.inputDireccionOrigen.$invalid
+                    || agrPedForm.inputCiudadDestino.$invalid
+                    || agrPedForm.inputDireccionDestino.$invalid
+                    || agrPedForm.inputHoraCarga.$invalid
+                    || agrPedForm.inputHoraDescarga.$invalid
+                    || agrPedForm.inputProducto.$invalid
+                    || agrPedForm.inputValor.$invalid
+                    || agrPedCtrl.data.ValorUnitario <= 0
+                    || agrPedForm.inputPesoDesde.$invalid
+                    || agrPedCtrl.data.PesoDesde <= 0
+                    || agrPedForm.inputPesoHasta.$invalid
+                    || agrPedCtrl.data.PesoHasta <= 0
+                ">Guarda como Plantilla</button>
+    </div>
+    <div class="col-sm-2">
+        <button class="btn btn-warning" type="button" ng-click="agrPedCtrl.Limpiar(agrPedForm)">Limpiar formulario</button>
+    </div>
+</div>

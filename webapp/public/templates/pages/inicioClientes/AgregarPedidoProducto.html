@@ -1,0 +1,43 @@
+<div class="form-group">
+    <label class="col-sm-2 control-label">Producto y Precio</label>
+    <label for="inputProducto" class="col-sm-1 control-label">Producto</label>
+    <div class="col-sm-6">
+        <input type="text" class="form-control input-sm" id="inputProducto"name="inputProducto" ng-model="agrPedCtrl.data.Producto" required>
+        <span class="invalid-label" ng-show="agrPedForm.inputProducto.$dirty && agrPedForm.inputProducto.$invalid">
+            <span ng-show="agrPedForm.inputProducto.$error.required">Producto es requerido.</span>
+        </span>
+    </div>
+    <div class="col-sm-3">
+        <div class="input-group">
+            <span class="input-group-addon"><label for="inputValor" class="control-label">Valor:</label></span>
+            <input type="number" class="form-control input-sm" id="inputValor" name="inputValor" ng-model="agrPedCtrl.data.ValorUnitario" required>
+            <span class="input-group-addon">USD$/Tn</span>
+        </div>
+        <span class="invalid-label" ng-show="agrPedForm.inputValor.$dirty && (agrPedForm.inputValor.$invalid) || agrPedCtrl.data.ValorUnitario <= 0)">
+            <span ng-show="agrPedForm.inputValor.$error.required">Valor es requerido.</span>
+            <span ng-show="agrPedForm.inputValor.$dirty && agrPedCtrl.data.ValorUnitario <= 0">Valor debe ser mayor a 0.</span>
+        </span>
+    </div>
+    <div class="col-sm-4 col-sm-offset-3">
+        <div class="input-group">
+            <span class="input-group-addon"><label for="inputPesoDesde" class="control-label">Peso:</label></span>
+            <span class="input-group-addon">Entre</span>
+            <input type="number" class="form-control input-sm" id="inputPesoDesde" name="inputPesoDesde" ng-model="agrPedCtrl.data.PesoDesde" required>
+            <span class="input-group-addon">Tn</span>
+            <span class="input-group-addon">y</span>
+            <input type="number" class="form-control input-sm" id="inputPesoHasta" name="inputPesoHasta" ng-model="agrPedCtrl.data.PesoHasta" required>
+            <span class="input-group-addon">Tn</span>
+        </div>
+        <span class="invalid-label" ng-show="(agrPedForm.inputPesoDesde.$dirty && (agrPedForm.inputPesoDesde.$invalid || agrPedCtrl.data.PesoDesde <= 0)) || (agrPedForm.inputPesoHasta.$dirty && (agrPedForm.inputPesoHasta.$invalid || agrPedCtrl.data.PesoHasta <= 0))">
+            <span ng-show="agrPedForm.inputPesoDesde.$error.required || agrPedForm.inputPesoHasta.$error.required">Peso es requerido.</span>
+            <span ng-show="(agrPedForm.inputPesoDesde.$dirty && agrPedCtrl.data.PesoDesde <= 0) || (agrPedForm.inputPesoHasta.$dirty && agrPedCtrl.data.PesoHasta <= 0)">Valor debe ser mayor a 0.</span>
+        </span>
+    </div>
+    <div class="col-sm-5">
+        <div class="input-group">
+            <span class="input-group-addon"><label for="inputValorAprox" class="control-label">Valor aprox:</label></span>
+            <input type="text" class="form-control input-sm" id="inputValorAprox">
+            <span class="input-group-addon">USD</span>
+        </div>
+    </div>
+</div>
