@@ -3,7 +3,7 @@
     <div class="col-sm-4">
         <select class="form-control input-sm" id="inputPlantilla">
             <option value="">(ninguna)</option>
-            <option ng-repeat="plantilla in agrPedCtrl.plantillas" value="plantilla">{{plantilla}}</option>
+            <option ng-repeat="plantilla in agrPedCtrl.plantillas" value="{{plantilla.id}}">{{plantilla.plantilla}}</option>
         </select>
     </div>
     <label for="inputCopias" class="control-label col-sm-1">Copias</label>
@@ -35,7 +35,7 @@
                 ">Agregar</button>
     </div>
     <div class="col-sm-2">
-        <button class="btn btn-info" type="button" ng-click="agrPedCtrl.GuardarComoPlantilla(agrPedForm)"
+        <button class="btn btn-info" type="button" data-toggle="modal" data-target="#PlantillaModal"
                 ng-disabled="
                     agrPedForm.inputCiudadOrigen.$invalid
                     || agrPedForm.inputDireccionOrigen.$invalid

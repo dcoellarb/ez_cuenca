@@ -43,7 +43,7 @@
             success: function(results) {
                 ctlr.plantillas = new Array();
                 for (var i = 0; i < results.length; i++) {
-                    ctlr.plantillas.push( results[i].get('Plantilla'));
+                    ctlr.plantillas.push({id:results[i].id,plantilla:results[i].get('Plantilla')});
                 }
                 $scope.$apply();
             },
@@ -59,7 +59,7 @@
             success: function(results) {
                 ctlr.ciudades = new Array();
                 for (var i = 0; i < results.length; i++) {
-                    ctlr.ciudades.push( results[i].get('Nombre'));
+                    ctlr.ciudades.push({id : results[i].id, nombre : results[i].get('Nombre')});
                 }
                 $scope.$apply();
             },
@@ -107,6 +107,43 @@
         ctlr.GuardarComoPlantilla = function(form){
             if (form.$valid){
                 console.dir(ctlr.data.Caracteristicas);
+
+                var Pedido = Parse.Object.extend("Pedido");
+                var pedido = new Pedido();
+
+                var CiudadOrigen = Parse.Object.extend("Ciudad");
+                var ciudadOrigen = new CiudadOrigen();
+                ciudadOrigen.id = ctlr.data.CiudadOrigen
+                pedido.set("CiudadOrigen", ciudadOrigen);
+
+                pedido.set("DireccionOrigen", ctlr.data.DireccionOrigen);
+
+                var CiudadDestino = Parse.Object.extend("Ciudad");
+                var ciudadDestino = new CiudadDestino();
+                ciudadDestino.id = ctlr.data.CiudadDestino
+                pedido.set("CiudadDestino", ciudadDestino);
+
+                pedido.set("Plantilla", ctlr.data.Plantilla);
+                pedido.set("DireccionDestino", ctlr.data.DireccionDestino);
+                pedido.set("HoraCarga", ctlr.data.HoraCarga);
+                pedido.set("HoraEntrega", ctlr.data.HoraEntrega);
+                pedido.set("Producto", ctlr.data.Producto);
+                pedido.set("ValorUnitario", ctlr.data.ValorUnitario);
+                pedido.set("PesoDesde", ctlr.data.PesoDesde);
+                pedido.set("PesoHasta", ctlr.data.PesoHasta);
+                pedido.set("Caracteristicas", ctlr.data.Caracteristicas);
+                pedido.set("TipoTransporte", ctlr.data.TipoTransporte);
+                pedido.set("Estadp", "Plantilla");
+
+                pedido.save(null, {
+                    success: function(pedido) {
+                        alert('New object created with objectId: ' + pedido.id);
+                        ctlr.data["objectId"] = pedido.id;
+                    },
+                    error: function(pedido, error) {
+                        alert('Failed to create new object, with error code: ' + error.message);
+                    }
+                });
             }
         };
 
@@ -157,6 +194,7 @@
         ctlr.copias = 1;
 
         ctlr.data = {
+            Plantilla : "",
             CiudadOrigen : "",
             DireccionOrigen : "",
             CiudadDestino : "",

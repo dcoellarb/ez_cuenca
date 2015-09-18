@@ -1,0 +1,22 @@
+<div id="PlantillaModal" class="modal fade" role="dialog" xmlns="http://www.w3.org/1999/html">
+    <div class="modal-dialog">
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Ingrese el nombre de la plantilla</h4>
+            </div>
+            <div class="modal-body">
+                <input type="text" class="form-control input-sm" id="inputPlantilla" name="inputPlantilla" ng-model="agrPedCtrl.data.Plantilla" required>
+                <span class="invalid-label" ng-show="agrPedForm.inputPlantilla.$dirty && agrPedForm.inputPlantilla.$invalid">
+                    <span ng-show="agrPedForm.inputPlantilla.$error.required">Nombre de plantilla es requerido.</span>
+                </span>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" data-dismiss="modal" ng-click="agrPedCtrl.GuardarComoPlantilla(agrPedForm)" ng-disabled="agrPedForm.inputPlantilla.$invalid">Guardar</button>
+                <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+            </div>
+        </div>
+
+    </div>
+</div>

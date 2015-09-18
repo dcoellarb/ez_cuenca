@@ -4,7 +4,7 @@
     <div class="col-sm-3">
         <select class="form-control input-sm" id="inputCiudadOrigen" name="inputCiudadOrigen" ng-model="agrPedCtrl.data.CiudadOrigen" required>
             <option value="">(origen)</option>
-            <option ng-repeat="ciudad in agrPedCtrl.ciudades" value="{{ciudad}}" >{{ciudad}}</option>
+            <option ng-repeat="ciudad in agrPedCtrl.ciudades" value="{{ciudad.id}}" >{{ciudad.nombre}}</option>
         </select>
         <span class="invalid-label" ng-show="agrPedForm.inputCiudadOrigen.$dirty && agrPedForm.inputCiudadOrigen.$invalid">
             <span ng-show="agrPedForm.inputCiudadOrigen.$error.required">Ciudad es requerida.</span>
@@ -23,7 +23,7 @@
     <div class="col-sm-3">
         <select class="form-control input-sm" id="inputCiudadDestino" name="inputCiudadDestino" ng-model="agrPedCtrl.data.CiudadDestino" required>
             <option value="">(destino)</option>
-            <option ng-repeat="ciudad in agrPedCtrl.ciudades" value="{{ciudad}}" >{{ciudad}}</option>
+            <option ng-repeat="ciudad in agrPedCtrl.ciudades" value="{{ciudad.id}}" >{{ciudad.nombre}}</option>
         </select>
         <span class="invalid-label" ng-show="agrPedForm.inputCiudadDestino.$dirty && agrPedForm.inputCiudadDestino.$invalid">
             <span ng-show="agrPedForm.inputCiudadDestino.$error.required">Ciudad es requerida.</span>

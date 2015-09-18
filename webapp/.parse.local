@@ -1,0 +1,10 @@
+{
+  "applications": {
+    "_default": {
+      "link": "easyruta"
+    },
+    "easyruta": {
+      "applicationId": "LRW3NBrk3JYLeAkXrpTF2TV0bDPn5HQTndrao8my"
+    }
+  }
+}
