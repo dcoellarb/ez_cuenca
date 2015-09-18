@@ -35,7 +35,7 @@
                 ">Agregar</button>
     </div>
     <div class="col-sm-2">
-        <button class="btn btn-info" type="button" data-toggle="modal" data-target="#PlantillaModal"
+        <button class="btn btn-info" type="button" ng-click="agrPedCtrl.GuardarComoPlantilla(agrPedForm)"
                 ng-disabled="
                     agrPedForm.inputCiudadOrigen.$invalid
                     || agrPedForm.inputDireccionOrigen.$invalid
