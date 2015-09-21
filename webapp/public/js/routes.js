@@ -17,10 +17,13 @@
                     //controller : 'RegisterController',
                     //controllerAs : 'registerCtrl'
                 })
-                .otherwise({
+                .when('/login',{
                     templateUrl : '/templates/pages/login/index.html',
                     controller : 'LoginController',
                     controllerAs : 'loginCtrl'
+                })
+                .otherwise({
+                    templateUrl : '/templates/pages/construccion/index.html'
                 })
         });
 

@@ -1,4 +1,12 @@
-<div id="pedidosActivos" class="panel panel-default">
-    <div class="panel-heading">Pedidos Activos</div>
-    <div class="panel-body"></div>
+<div id="pedidosActivos" class="panel panel-default" ng-controller="PedidosActivosController as pedActCtlr">
+    <div class="panel-heading">Pendidos Activos</div>
+    <div class="panel-body">
+        <div ng-repeat="pedido in pedActCtlr.pedidos" class="col-sm-12">
+            <div class="col-sm-3"><span>{{pedido.json.id}}</span></div>
+            <div class="col-sm-6"><span>{{pedido.json.carga}}</span></div>
+            <div class="col-sm-3"><span>{{pedido.json.estado}}</span></div>
+            <div class="col-sm-3"><span>{{pedido.json.viaje}}</span></div>
+            <div class="col-sm-6"><span>{{pedido.json.entrega}}</span></div>
+        </div>
+    </div>
 </div>

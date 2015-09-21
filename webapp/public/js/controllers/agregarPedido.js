@@ -105,9 +105,9 @@
             if (form.$valid){
                 ctlr.data.Plantilla = "";
                 ctlr.data.Estado = "Pendiente";
-                Guardar(ctlr).then(function(){
+                Guardar(ctlr).then(function(pedido){
                     $('#agregarPedidBody').collapse("hide");
-                    $rootScope.$broadcast('nuevoPedido', ctlr.data);
+                    $rootScope.$broadcast('nuevoPedido', pedido);
                     getInitialData($scope,ctlr);
                     form.$setPristine();
                 });
@@ -231,7 +231,7 @@
             pedido.save(null, {
                 success: function(pedido) {
                     ctlr.data["objectId"] = pedido.id;
-                    fulfill();
+                    fulfill(pedido);
                 },
                 error: function(pedido, error) {
                     console.log(error.message);
