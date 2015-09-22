@@ -24,6 +24,13 @@
              * */
             setupDatePickers($scope);
 
+            console.dir($rootScope.pubnub);
+
+            // Subscribe to the demo_tutorial channel
+            $rootScope.pubnub.subscribe({
+                channel: 'demo_tutorial',
+                message: function(m){console.log(m)}
+            });
         })
         .controller('AgregarPedidoModalController',function($scope,$modalInstance){
             var ctlr = this;
@@ -107,7 +114,15 @@
                 ctlr.data.Estado = "Pendiente";
                 Guardar(ctlr).then(function(pedido){
                     $('#agregarPedidBody').collapse("hide");
+
                     $rootScope.$broadcast('nuevoPedido', pedido);
+
+                    // Publish a simple message to the demo_tutorial channel
+                    $rootScope.pubnub.publish({
+                        channel: 'new_pedido',
+                        message: {id:pedido.id}
+                    });
+
                     getInitialData($scope,ctlr);
                     form.$setPristine();
                 });
