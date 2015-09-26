@@ -32,13 +32,13 @@
 
             //Pubnub suscriptions
             $rootScope.pubnub.subscribe({
-                channel: 'pedido_iniciado',
+                channel: 'pedido_cancelado',
                 message: function(m){
                     inicializarPedidos($scope,ctlr);
                 }
             });
             $rootScope.pubnub.subscribe({
-                channel: 'pedido_cancelado',
+                channel: 'pedido_completado',
                 message: function(m){
                     inicializarPedidos($scope,ctlr);
                 }
@@ -48,7 +48,7 @@
     var inicializarPedidos = function($scope,ctlr){
         var pedido = Parse.Object.extend("Pedido");
         var query = new Parse.Query(pedido);
-        query.equalTo("Estado", "Activo");
+        query.equalTo("Estado", "EnCurso");
         query.find({
             success: function(results) {
                 ctlr.pedidos = new Array();
@@ -71,10 +71,8 @@
         var pedidoJson = {
             id : pedido.id,
             viaje : pedido.get("CiudadOrigen").get("Nombre") + " - " + pedido.get("CiudadDestino").get("Nombre"),
-            carga : utilities.formatDate(pedido.get("HoraCarga")),
-            entrega : utilities.formatDate(pedido.get("HoraEntrega")),
+            carga : utilities.formatDate(pedido.get("HoraInicio")),
             estado : pedido.get("Estado")
-
         };
 
         return pedidoJson;

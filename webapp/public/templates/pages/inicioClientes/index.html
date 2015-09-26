@@ -1,9 +1,13 @@
 <div class="col-md-12 col-lg-10 col-lg-offset-1" ng-controller="inicioClientesController">
 
-    <div ng-include="'templates/pages/inicioClientes/AgregarPedido.html'"></div>
+    <div class="col-sm-12" ng-include="'templates/pages/inicioClientes/AgregarPedido.html'"></div>
 
-    <div ng-include="'templates/pages/inicioClientes/PedidosPendientes.html'"></div>
+    <div class="col-sm-12 col-md-6 col-lg-3"  ng-include="'templates/pages/inicioClientes/PedidosPendientes.html'"></div>
 
-    <div ng-include="'templates/pages/inicioClientes/PedidosActivos.html'"></div>
+    <div  class="col-sm-12 col-md-6 col-lg-3" ng-include="'templates/pages/inicioClientes/PedidosActivos.html'"></div>
+
+    <div class="col-sm-12 col-md-6 col-lg-3"  ng-include="'templates/pages/inicioClientes/PedidosEnCurso.html'"></div>
+
+    <div class="col-sm-12 col-md-6 col-lg-3"  ng-include="'templates/pages/inicioClientes/PedidosCompletados.html'"></div>
 
 </div>

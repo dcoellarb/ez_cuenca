@@ -1,21 +1,16 @@
-<div class="form-group">
-    <label class="col-sm-2 control-label">Transporte</label>
-    <label class="col-sm-3 control-label">Trailer</label>
-    <div class="col-sm-1">
-        <div class="checkbox" ng-repeat="especificacion in agrPedCtrl.especificacionesTrailer">
-            <label>
-                <input type="checkbox" ng-model="especificacion.value" ng-change="agrPedCtrl.EspecificacionChanged(especificacion)">
-                {{especificacion.nombre}}
-            </label>
-        </div>
+<div class="col-sm-12">
+    <div class="col-sm-3 checkbox" ng-repeat="especificacion in agrPedCtrl.especificacionesTrailer">
+        <label>
+            <input type="checkbox" ng-model="especificacion.value" ng-change="agrPedCtrl.EspecificacionChanged(especificacion)">
+            {{especificacion.nombre}}
+        </label>
     </div>
-    <label class="col-sm-1 col-sm-offset-2 control-label">Transportista</label>
-    <div class="col-sm-3 ">
-        <div class="checkbox" ng-repeat="especificacion in agrPedCtrl.especificacionesTransportista track by $index">
-            <label>
-                <input type="checkbox" ng-model="especificacion.value" ng-change="agrPedCtrl.EspecificacionChanged(especificacion)">
-                {{especificacion.nombre}}
-            </label>
-        </div>
+</div>
+<div class="col-sm-12">
+    <div class="col-sm-3 checkbox" ng-repeat="especificacion in agrPedCtrl.especificacionesTransportista track by $index">
+        <label>
+            <input type="checkbox" ng-model="especificacion.value" ng-change="agrPedCtrl.EspecificacionChanged(especificacion)">
+            {{especificacion.nombre}}
+        </label>
     </div>
 </div>

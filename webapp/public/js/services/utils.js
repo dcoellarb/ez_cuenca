@@ -25,7 +25,7 @@
                     var hour = date.getHours();
                     var minute = date.getMinutes();
 
-                    return dayName + ' ' +  day + ' de ' + month + ' del ' + year + ' a las ' + hour + ':' + minute;
+                    return dayName + ' ' +  day + ' de ' + month.substr(0,3) + "." + ' del ' + year + ' a las ' + hour + ':' + minute;
                 }
             };
             return utilsService;

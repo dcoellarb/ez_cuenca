@@ -14,14 +14,7 @@
 
             inicializarPedidos($scope,ctlr);
 
-            $rootScope.$on('nuevoPedido', function(event, args) {
-                var pedido = {
-                    data : args,
-                    json : pedidoToJson(args)
-                };
-                ctlr.pedidos.unshift(pedido);
-            });
-
+            // Timers
             setInterval(function(){
                 if (ctlr.pedidos){
                     for(var i = 0;i < ctlr.pedidos.length;i++){
@@ -45,6 +38,7 @@
                 }
             },1000);
 
+            // Acciones
             ctlr.confirmar = function(pedido){
                 pedido.data.set('Estado','Activo');
                 pedido.data.save(null, {
@@ -52,6 +46,12 @@
                         ctlr.pedidos.splice(ctlr.pedidos.indexOf(pedido),1);
                         $rootScope.$broadcast('nuevoPedidoConfirmado', pedido.data);
                         $scope.$apply();
+
+                        // Publish nuevo pedido
+                        $rootScope.pubnub.publish({
+                            channel: 'pedido_confirmado',
+                            message: {id:pedido.json.id}
+                        });
                     }
                 });
             };
@@ -62,9 +62,41 @@
                         pedido.data = pedidoUpdated;
                         pedido.json = pedidoToJson(pedidoUpdated);
                         $scope.$apply();
+
+                        // Publish nuevo pedido
+                        $rootScope.pubnub.publish({
+                            channel: 'pedido_rechazado',
+                            message: {id:pedido.json.id}
+                        });
                     }
                 });
             };
+
+            // Suscriptions
+            // Internal suscriptions
+            $rootScope.$on('nuevoPedido', function(event, args) {
+                var pedido = {
+                    data : args,
+                    json : pedidoToJson(args)
+                };
+                ctlr.pedidos.unshift(pedido);
+            });
+
+            // Pubnub suscriptions
+            $rootScope.pubnub.subscribe({
+                channel: 'pedido_tomado',
+                message: function(m){
+                    inicializarPedidos($scope,ctlr);
+                }
+            });
+
+            // Pubnub suscriptions
+            $rootScope.pubnub.subscribe({
+                channel: 'pedido_cancelado',
+                message: function(m){
+                    inicializarPedidos($scope,ctlr);
+                }
+            });
         });
 
     var inicializarPedidos = function($scope,ctlr){
@@ -97,19 +129,12 @@
     };
 
     var pedidoToJson = function(pedido){
-        var estado = pedido.get("Estado");
-        if (pedido.get("Estado") == "Pendiente"){
-            estado = "Pendiente Asignacion";
-        }else if (pedido.get("Estado") == "PendienteConfirmacion"){
-            estado = "Pendiente Confirmacion";
-        }
-
         var pedidoJson = {
             id : pedido.id,
             viaje : pedido.get("CiudadOrigen").get("Nombre") + " - " + pedido.get("CiudadDestino").get("Nombre"),
-            carga : "Hora de Carga: " + utilities.formatDate(pedido.get("HoraCarga")),
-            entrega : "Hora de Entrega: " + utilities.formatDate(pedido.get("HoraEntrega")),
-            estado : "Estado: " + estado
+            carga : utilities.formatDate(pedido.get("HoraCarga")),
+            entrega : utilities.formatDate(pedido.get("HoraEntrega")),
+            estado :  pedido.get("Estado")
 
         };
 

@@ -9,6 +9,22 @@
 
             var ctlr = this;
 
+            ctlr.open = false;
+            jQuery('#agregarPedido a').click(function() {
+                if ($('#agregarPedido').hasClass("panel-primary")){
+                    $('#agregarPedido').removeClass('panel-primary');
+                    $('#agregarPedido').addClass('panel-default');
+                    $('#inputCiudadOrigen').focus();
+                    ctlr.open = true;
+                    $scope.$apply();
+                }else{
+                    $('#agregarPedido').removeClass('panel-default');
+                    $('#agregarPedido').addClass('panel-primary');
+                    ctlr.open = false;
+                    $scope.$apply();
+                }
+            });
+
             /*
              * Get initial data from parse
              * */
@@ -25,12 +41,6 @@
             setupDatePickers($scope);
 
             console.dir($rootScope.pubnub);
-
-            // Subscribe to the demo_tutorial channel
-            $rootScope.pubnub.subscribe({
-                channel: 'demo_tutorial',
-                message: function(m){console.log(m)}
-            });
         })
         .controller('AgregarPedidoModalController',function($scope,$modalInstance){
             var ctlr = this;
@@ -114,10 +124,13 @@
                 ctlr.data.Estado = "Pendiente";
                 Guardar(ctlr).then(function(pedido){
                     $('#agregarPedidBody').collapse("hide");
+                    $('#agregarPedido').removeClass('panel-default');
+                    $('#agregarPedido').addClass('panel-primary');
+                    ctlr.open = false;
 
                     $rootScope.$broadcast('nuevoPedido', pedido);
 
-                    // Publish a simple message to the demo_tutorial channel
+                    // Publish nuevo pedido
                     $rootScope.pubnub.publish({
                         channel: 'new_pedido',
                         message: {id:pedido.id}
