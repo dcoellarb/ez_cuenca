@@ -30,9 +30,16 @@
     <script src="js/controllers/pedidosPendientes.js"></script>
     <script src="js/controllers/pedidosActivos.js"></script>
 </head>
-<body>
+<body style="background-color: #f0f0f0;">
+    <div style="background-image: url('resources/images/logo_background.png');background-size: cover;opacity: 0.05;position: fixed; left: 0px; top: 0px;height: 100%;width: 100%;background-repeat: no-repeat"></div>
     <div ng-controller="MasterPageController as masterCtrl">
-        <div ng-switch on="masterCtrl.role">
+        <div class="col-sm-12" style="background-color: #505050;opacity: 0.95;height: 50px;margin-bottom: 10px;/* position: fixed; */height: 50px; width: 100%; position: fixed; left: 0px; top: 0px;z-index: 99;">
+            <div class="col-md-12 col-lg-10 col-lg-offset-1 center-content" style="height: 50px">
+                <img src="resources/images/logo.png" style="max-height: 40px;">
+                <img src="resources/images/logo_texto.png" style="max-height: 30px; margin-left: 10px">
+            </div>
+        </div>
+        <div ng-switch on="masterCtrl.role" style="margin-top: 70px;">
             <div ng-switch-when="clientes"><div ng-include="'templates/pages/masterPage/clientes.html'"></div></div>
             <div ng-switch-default></div>
         </div>

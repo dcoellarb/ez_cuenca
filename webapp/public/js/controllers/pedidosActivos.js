@@ -21,7 +21,6 @@
             //Suscriptions
             //Internal Suscriptions
             $rootScope.$on('nuevoPedidoConfirmado', function(event, args) {
-                console.log("nuevo pedido confirmado");
                 var pedido = {
                     data : args,
                     json : pedidoToJson(args)
@@ -32,7 +31,19 @@
 
             //Pubnub suscriptions
             $rootScope.pubnub.subscribe({
+                channel: 'pedido_tomado',
+                message: function(m){
+                    inicializarPedidos($scope,ctlr);
+                }
+            });
+            $rootScope.pubnub.subscribe({
                 channel: 'pedido_iniciado',
+                message: function(m){
+                    inicializarPedidos($scope,ctlr);
+                }
+            });
+            $rootScope.pubnub.subscribe({
+                channel: 'pedido_cancelado_transportista',
                 message: function(m){
                     inicializarPedidos($scope,ctlr);
                 }

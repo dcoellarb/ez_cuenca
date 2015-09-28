@@ -128,3 +128,31 @@ hr {
     -o-transition: all 0.5s ease;
     transition: all 0.5s ease;
 }
+
+
+
+
+.backgroud-photo{
+    display:flex;
+    align-items:flex-end;
+    background-size: cover;
+    height: 100px;
+}
+
+.backgroud-photo-quito{
+    background-image: url("../resources/images/quito.jpg");
+}
+
+.backgroud-photo-heading{
+    width: 100%;
+    background-color: #ffffff;
+    opacity: 0.8;
+}
+.panel-primary>.panel-heading {
+    background-color: #e6b100;
+    border-color: #e6b100;
+}
+.btn-primary {
+    background-color: #e6b100;
+    border-color: #e6b100;
+}

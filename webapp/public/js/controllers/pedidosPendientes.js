@@ -92,6 +92,24 @@
 
             // Pubnub suscriptions
             $rootScope.pubnub.subscribe({
+                channel: 'new_pedido',
+                message: function(m){
+                    inicializarPedidos($scope,ctlr);
+                }
+            });
+            $rootScope.pubnub.subscribe({
+                channel: 'pedido_cancelado_transportista',
+                message: function(m){
+                    inicializarPedidos($scope,ctlr);
+                }
+            });
+            $rootScope.pubnub.subscribe({
+                channel: 'pedido_tomado',
+                message: function(m){
+                    inicializarPedidos($scope,ctlr);
+                }
+            });
+            $rootScope.pubnub.subscribe({
                 channel: 'pedido_cancelado',
                 message: function(m){
                     inicializarPedidos($scope,ctlr);

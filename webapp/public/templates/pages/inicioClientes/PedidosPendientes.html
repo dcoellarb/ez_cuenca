@@ -2,7 +2,7 @@
     <div class="panel-heading">Pendidos Pendientes</div>
     <div class="panel-body col-nopadding">
         <div ng-repeat="pedido in pedPenCtlr.pedidos" class="col-sm-12">
-            <div class="col-sm-12 col-nopadding"><span class="list-heading">{{pedido.json.viaje}}</span></div>
+            <div class="col-sm-12 col-nopadding backgroud-photo backgroud-photo-quito"><div class="backgroud-photo-heading"><span class="list-heading">{{pedido.json.viaje}}</span></div></div>
             <div class="col-sm-12 col-nopadding"><span class="list-item-label">Carga:</span><span class="list-item">{{pedido.json.carga}}</span></div>
             <div class="col-sm-12 col-nopadding"><span class="list-item-label">Entrega:</span><span class="list-item">{{pedido.json.entrega}}</span></div>
             <div class="col-sm-12 col-nopadding highligthed-section" ng-show="pedido.json.estado == 'PendienteConfirmacion'">

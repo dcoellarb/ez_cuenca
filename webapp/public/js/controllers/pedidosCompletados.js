@@ -32,7 +32,13 @@
 
             //Pubnub suscriptions
             $rootScope.pubnub.subscribe({
-                channel: 'pedido_cancelado',
+                channel: 'pedido_completado',
+                message: function(m){
+                    inicializarPedidos($scope,ctlr);
+                }
+            });
+            $rootScope.pubnub.subscribe({
+                channel: 'pedido_cancelado_transportista',
                 message: function(m){
                     inicializarPedidos($scope,ctlr);
                 }
@@ -40,6 +46,8 @@
         });
 
     var inicializarPedidos = function($scope,ctlr){
+
+        //TODO - filter only current day
         var pedido = Parse.Object.extend("Pedido");
         var query = new Parse.Query(pedido);
         query.equalTo("Estado", "Completado");
