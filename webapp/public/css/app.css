@@ -71,7 +71,7 @@ hr {
     margin-bottom: 10px;
 }
 .list-heading{
-    font-weight: 100;
+    font-weight: 400;
     font-size: 14pt;
 }
 .list-item{
@@ -129,6 +129,64 @@ hr {
     transition: all 0.5s ease;
 }
 
+/*SVG Fonts*/
+@font-face {
+    font-family: 'icomoon';
+    src:url('../resources/fonts/icomoon.eot?5pi5zu');
+    src:url('../resources/fonts/icomoon.eot?5pi5zu#iefix') format('embedded-opentype'),
+    url('../resources/fonts/icomoon.ttf?5pi5zu') format('truetype'),
+    url('../resources/fonts/icomoon.woff?5pi5zu') format('woff'),
+    url('../resources/fonts/icomoon.svg?5pi5zu#icomoon') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+    font-family: 'icomoon';
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-furgon:before {
+    content: "\e800";
+}
+.icon-banera:before {
+    content: "\e801";
+}
+.icon-tanquero:before {
+    content: "\e802";
+}
+.icon-jaula:before {
+    content: "\e803";
+}
+.icon-plataforma:before {
+    content: "\e804";
+}
+
+/*switch customization*/
+.switch {
+    /* frame */
+}
+.switch small {
+    /* button */
+}
+.switch.checked {
+    background-color: #F78F1E;
+    border-color: #F78F1E;
+}
+.switch.checked small {
+    background-color: #F78F1E;
+    border-color: #F78F1E;
+}
+
 
 
 
@@ -140,7 +198,21 @@ hr {
 }
 
 .backgroud-photo-quito{
-    background-image: url("../resources/images/quito.jpg");
+    background-image: url("../resources/images/quito.png");
+    background-size: cover;
+}
+.backgroud-photo-guayaquil{
+    background-image: url("../resources/images/guayaquil.jpg");
+    background-size: cover;
+}
+.backgroud-photo-cuenca{
+    background-image: url("../resources/images/cuenca.jpg");
+}
+.backgroud-photo-ambato{
+    background-image: url("../resources/images/ambato.jpg");
+}
+.backgroud-photo-loja{
+    background-image: url("../resources/images/loja.jpg");
 }
 
 .backgroud-photo-heading{
@@ -148,11 +220,115 @@ hr {
     background-color: #ffffff;
     opacity: 0.8;
 }
+
+.panel-primary {
+    border-color: #F78F1E;
+}
 .panel-primary>.panel-heading {
-    background-color: #e6b100;
-    border-color: #e6b100;
+    background-color: #F78F1E;
+    border-color: #F78F1E;
 }
-.btn-primary {
-    background-color: #e6b100;
-    border-color: #e6b100;
+.panel-primary>.panel-heading a,
+.panel-default>.panel-heading a{
+    text-decoration: none;
 }
+.panel-primary>.panel-heading a:focus, .panel-primary>.panel-heading a:hover,
+.panel-default>.panel-heading a:focus, .panel-primary>.panel-heading a:hover {
+    text-decoration: none;
+}
+
+.btn-primary{
+    background-color: transparent;
+    border-color: #F78F1E;
+    border-style: solid;
+    border-width: thin;
+    color: #F78F1E;
+}
+.btn-primary:hover {
+    color: #fff;
+    background-color: #F78F1E;
+    border-color: #F78F1E;
+}
+.btn-primary.focus, .btn-primary:focus,
+.btn-primary.active.focus, .btn-primary:active:focus{
+    color: #fff;
+    background-color: #F78F1E;
+    border-color: #F78F1E;
+}
+.btn-primary.disabled, .btn-primary.disabled.active, .btn-primary.disabled.focus, .btn-primary.disabled:active, .btn-primary.disabled:focus, .btn-primary.disabled:hover, .btn-primary[disabled], .btn-primary[disabled].active, .btn-primary[disabled].focus, .btn-primary[disabled]:active, .btn-primary[disabled]:focus, .btn-primary[disabled]:hover, fieldset[disabled] .btn-primary, fieldset[disabled] .btn-primary.active, fieldset[disabled] .btn-primary.focus, fieldset[disabled] .btn-primary:active, fieldset[disabled] .btn-primary:focus, fieldset[disabled] .btn-primary:hover {
+    background-color: transparent;
+    border-color: #F78F1E;
+    border-style: solid;
+    border-width: thin;
+    color: #F78F1E;
+}
+.btn-warning{
+    background-color: transparent;
+    border-color: #FEC40D;
+    border-style: solid;
+    border-width: thin;
+    color: #FEC40D;
+}
+.btn-warning:hover {
+    color: #fff;
+    background-color: #FEC40D;
+    border-color: #FEC40D;
+}
+.btn-warning.focus, .btn-warning:focus,
+.btn-warning.active.focus, .btn-warning:active:focus{
+    color: #fff;
+    background-color: #FEC40D;
+    border-color: #F78F1E;
+}
+.btn-warning.disabled, .btn-warning.disabled.active, .btn-warning.disabled.focus, .btn-warning.disabled:active, .btn-warning.disabled:focus, .btn-warning.disabled:hover, .btn-warning[disabled], .btn-warning[disabled].active, .btn-warning[disabled].focus, .btn-warning[disabled]:active, .btn-warning[disabled]:focus, .btn-warning[disabled]:hover, fieldset[disabled] .btn-warning, fieldset[disabled] .btn-warning.active, fieldset[disabled] .btn-warning.focus, fieldset[disabled] .btn-warning:active, fieldset[disabled] .btn-warning:focus, fieldset[disabled] .btn-warning:hover {
+    background-color: transparent;
+    border-color: #FEC40D;
+    border-style: solid;
+    border-width: thin;
+    color: #FEC40D;
+}
+.btn-info{
+    background-color: transparent;
+    border-color: #000;
+    border-style: solid;
+    border-width: thin;
+    color: #000;
+}
+.btn-info:hover {
+    color: #fff;
+    background-color: #000;
+    border-color: #000;
+}
+.btn-info.focus, .btn-info:focus,
+.btn-info.active.focus, .btn-info:active:focus{
+    color: #fff;
+    background-color: #222;
+    border-color: #000;
+}
+.btn-info.disabled, .btn-info.disabled.active, .btn-info.disabled.focus, .btn-info.disabled:active, .btn-info.disabled:focus, .btn-info.disabled:hover, .btn-info[disabled], .btn-info[disabled].active, .btn-info[disabled].focus, .btn-info[disabled]:active, .btn-info[disabled]:focus, .btn-info[disabled]:hover, fieldset[disabled] .btn-info, fieldset[disabled] .btn-info.active, fieldset[disabled] .btn-info.focus, fieldset[disabled] .btn-info:active, fieldset[disabled] .btn-info:focus, fieldset[disabled] .btn-info:hover {
+    background-color: transparent;
+    border-color: #000;
+    border-style: solid;
+    border-width: thin;
+    color: #000;
+}
+
+.nav-pills>li>a{
+    color: #fff;
+    background-color: #F78F1E;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+.nav-pills>li.active>a, .nav-pills>li.active>a:focus, .nav-pills>li.active>a:hover {
+    color: #F78F1E;
+    background-color: transparent;
+    border-style: solid;
+    border-color: #F78F1E;
+    border-width: thin;
+}
+.nav>li>a:focus, .nav>li>a:hover {
+    text-decoration: none;
+    background-color: #FEC40D;
+}
+
+

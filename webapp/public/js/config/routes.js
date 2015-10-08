@@ -7,24 +7,22 @@
     angular.module("easyRuta")
         .config(function($routeProvider){
             $routeProvider
-                .when('/register',{
-                    templateUrl : '/templates/pages/register/index.html',
-                    controller : 'RegisterController',
-                    controllerAs : 'registerCtrl'
-                })
                 .when('/inicioClientes',{
-                    templateUrl : '/templates/pages/inicioClientes/index.html'//,
-                    //controller : 'RegisterController',
-                    //controllerAs : 'registerCtrl'
-                })
-                .when('/login',{
-                    templateUrl : '/templates/pages/login/index.html',
-                    controller : 'LoginController',
-                    controllerAs : 'loginCtrl'
+                    templateUrl : '/templates/pages/privado/clientes/inicioClientes/index.html'
                 })
                 .otherwise({
-                    templateUrl : '/templates/pages/construccion/index.html'
+                    templateUrl : '/templates/pages/publico/home/index.html'
                 })
+        }).
+        run(function($rootScope, $location) {
+            $rootScope.$on( "$routeChangeStart", function(event, next, current) {
+                if ($rootScope.loggedInUser == null) {
+                    if ( next.templateUrl === '/templates/pages/publico/home/index.html') {
+                    } else {
+                        $location.path("/login");
+                    }
+                }
+            });
         });
 
 })();

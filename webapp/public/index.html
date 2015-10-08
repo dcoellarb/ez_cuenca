@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.16/angular.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.0rc1/angular-route.min.js"></script>
@@ -16,34 +17,27 @@
 
     <link href='https://fonts.googleapis.com/css?family=Roboto:400,100,300,500,300italic,400italic,500italic' rel='stylesheet' type='text/css'>
 
+    <script src="resources/js/angular-ui-switch.min.js"></script>
+    <link href=resources/css/angular-ui-switch.min.css rel='stylesheet' type='text/css'>
+
     <link rel="stylesheet" href="css/app.css">
 
     <script src="js/app.js"></script>
     <script src="js/config/routes.js"></script>
     <script src="js/config/pubnub.js"></script>
     <script src="js/services/utils.js"></script>
-    <script src="js/controllers/masterPage.js"></script>
-    <script src="js/controllers/login.js"></script>
-    <script src="js/controllers/register.js"></script>
-    <script src="js/controllers/incioClientes.js"></script>
-    <script src="js/controllers/agregarPedido.js"></script>
-    <script src="js/controllers/pedidosPendientes.js"></script>
-    <script src="js/controllers/pedidosActivos.js"></script>
+    <script src="js/controllers/components/masterPage/masterPage.js"></script>
+    <script src="js/controllers/components/login/login.js"></script>
+    <script src="js/controllers/pages/privado/administracion/register/register.js"></script>
+    <script src="js/controllers/pages/privado/clientes/inicioClientes/incioClientes.js"></script>
+    <script src="js/controllers/components/agregarPedido/agregarPedido.js"></script>
+    <script src="js/controllers/components/pedidosLists/pedidosPendientes.js"></script>
+    <script src="js/controllers/components/pedidosLists/pedidosActivos.js"></script>
+    <script src="js/controllers/components/pedidosLists/pedidosEnCurso.js"></script>
+    <script src="js/controllers/components/pedidosLists/pedidosCompletados.js"></script>
 </head>
-<body style="background-color: #f0f0f0;">
+<body style="background-color: #505050;">
     <div style="background-image: url('resources/images/logo_background.png');background-size: cover;opacity: 0.05;position: fixed; left: 0px; top: 0px;height: 100%;width: 100%;background-repeat: no-repeat"></div>
-    <div ng-controller="MasterPageController as masterCtrl">
-        <div class="col-sm-12" style="background-color: #505050;opacity: 0.95;height: 50px;margin-bottom: 10px;/* position: fixed; */height: 50px; width: 100%; position: fixed; left: 0px; top: 0px;z-index: 99;">
-            <div class="col-md-12 col-lg-10 col-lg-offset-1 center-content" style="height: 50px">
-                <img src="resources/images/logo.png" style="max-height: 40px;">
-                <img src="resources/images/logo_texto.png" style="max-height: 30px; margin-left: 10px">
-            </div>
-        </div>
-        <div ng-switch on="masterCtrl.role" style="margin-top: 70px;">
-            <div ng-switch-when="clientes"><div ng-include="'templates/pages/masterPage/clientes.html'"></div></div>
-            <div ng-switch-default></div>
-        </div>
-        <div ng-view></div>
-    </div>
+    <div ng-view></div>
 </body>
 </html>

@@ -1,0 +1,11 @@
+<div class="center-content">
+    <div class="col-sm-4">
+        <label for="inputPlantilla" class="control-label control-label">Usar Plantilla</label>
+    </div>
+    <div class="col-sm-8">
+        <select class="form-control input" id="inputPlantilla" ng-model="agrPedCtrl.plantilla" ng-change="agrPedCtrl.PlantillaSelected()">
+            <option value="" >(ninguna)</option>
+            <option ng-repeat="plantilla in agrPedCtrl.plantillas" value="{{plantilla.id}}">{{plantilla.plantilla}}</option>
+        </select>
+    </div>
+</div>
