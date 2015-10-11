@@ -21,29 +21,19 @@
             //Suscriptions
             //Internal Suscriptions
             $rootScope.$on('nuevoPedidoIniciado', function(event, args) {
-                console.log("Nuevo pedido iniciado");
-                console.dir(args);
-                var pedido = {
-                    data : args,
-                    json : pedidoToJson(args)
-                };
-                pedido.background = "backgroud-photo-" + pedido.data.get("CiudadDestino").get("Nombre").toLowerCase();
-                ctlr.pedidos.unshift(pedido);
+                inicializarPedidos($scope,ctlr);
             });
-            //TODO - add insternal suscription for pedido cancelado transportista
+            $rootScope.$on('pedido_cancelado_transportista', function(event, args) {
+                //TODO - paste notification to user
+                inicializarPedidos($scope,ctlr);
+            });
             //TODO - add insternal suscription for pedido cancelado
 
             //Pubnub suscriptions
             $rootScope.pubnub.subscribe({
                 channel: 'pedido_finalizado',
                 message: function(m){
-                    var pedido;
-                    for(var i=0;i<ctlr.pedidos.length;i++){
-                        if (ctlr.pedidos[i].data.id == m){
-                            pedido = ctlr.pedidos[i].data
-                        }
-                    }
-                    $rootScope.$broadcast('nuevoPedidoCompletado', pedido);
+                    $rootScope.$broadcast('nuevoPedidoCompletado', m);
                     inicializarPedidos($scope,ctlr);
                 }
             });
@@ -53,6 +43,9 @@
         var pedido = Parse.Object.extend("Pedido");
         var query = new Parse.Query(pedido);
         query.equalTo("Estado", "EnCurso");
+        query.include("CiudadOrigen");
+        query.include("CiudadDestino");
+        query.include("Transportista");
         query.find({
             success: function(results) {
                 ctlr.pedidos = new Array();
@@ -78,7 +71,12 @@
             viaje : pedido.get("CiudadOrigen").get("Nombre") + " - " + pedido.get("CiudadDestino").get("Nombre"),
             carga : utilities.formatDate(pedido.get("HoraInicio")),
             entrega : utilities.formatDate(pedido.get("HoraEntrega")),
-            estado : pedido.get("Estado")
+            estado : pedido.get("Estado"),
+            transportista : {
+                nombre: pedido.get("Transportista").get("Nombre"),
+                telefono: pedido.get("Transportista").get("Telefono"),
+                imageUrl: pedido.get("Transportista").get("photo").url()
+            }
         };
 
         return pedidoJson;

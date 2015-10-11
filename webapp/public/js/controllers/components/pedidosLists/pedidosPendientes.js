@@ -56,6 +56,9 @@
                 });
             };
             ctlr.rechazar = function(pedido){
+                console.log("Transportista:" + pedido.data.get('Transportista').id);
+                pedido.data.add('TransportistasBloqueados',pedido.data.get('Transportista').id);
+                pedido.data.unset('Transportista');
                 pedido.data.set('Estado','Pendiente');
                 pedido.data.save(null, {
                     success: function(pedidoUpdated) {
@@ -103,7 +106,7 @@
             $rootScope.pubnub.subscribe({
                 channel: 'pedido_cancelado_transportista',
                 message: function(m){
-                    //TODO - send internal notificacion to other lists
+                    $rootScope.$broadcast('pedido_cancelado_transportista', m);
                     inicializarPedidos($scope,ctlr);
                 }
             });
@@ -124,6 +127,7 @@
         queryPendientesConfirmacion.equalTo("Estado", "PendienteConfirmacion");
 
         var mainQuery = Parse.Query.or(queryPendientes, queryPendientesConfirmacion);
+        mainQuery.addDescending("createdAt");
         mainQuery.find({
             success: function(results) {
                 console.log("success getting pending pedidos");
@@ -155,7 +159,6 @@
             carga : utilities.formatDate(pedido.get("HoraCarga")),
             entrega : utilities.formatDate(pedido.get("HoraEntrega")),
             estado :  pedido.get("Estado")
-
         };
 
         return pedidoJson;

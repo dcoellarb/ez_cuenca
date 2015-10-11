@@ -16,8 +16,8 @@
                             "Noviembre", "Diciembre"
                         ];
                         var dayNames = [
-                            "Lunes", "Martes", "Miercoles",
-                            "Jueves", "Viernes", "Sabado", "Domingo"
+                            "Domingo","Lunes", "Martes", "Miercoles",
+                            "Jueves", "Viernes", "Sabado"
                         ];
                         var dayName = dayNames[date.getDay()];
                         var day = date.getDate();

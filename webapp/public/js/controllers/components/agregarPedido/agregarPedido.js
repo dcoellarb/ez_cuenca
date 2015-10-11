@@ -277,9 +277,12 @@
                         var copias = ctlr.copias;
                         if (ctlr.data.Estado == "Plantilla"){
                             copias = 1;
+
                             var acl = new Parse.ACL(Parse.User.current());
                             pedido.setACL(acl);
                         } else {
+                            pedido.set("Comision", ctlr.data.Valor * 0.04);
+                            
                             var acl = new Parse.ACL(Parse.User.current());
                             acl.setRoleReadAccess("transportistaIndependiente", true);
                             acl.setRoleReadAccess("proveedor", true);

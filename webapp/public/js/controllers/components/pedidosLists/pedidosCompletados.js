@@ -21,12 +21,7 @@
             //Suscriptions
             //Internal Suscriptions
             $rootScope.$on('nuevoPedidoCompletado', function(event, args) {
-                var pedido = {
-                    data : args,
-                    json : pedidoToJson(args)
-                };
-                pedido.background = "backgroud-photo-" + pedido.data.get("CiudadDestino").get("Nombre").toLowerCase();
-                ctlr.pedidos.unshift(pedido);
+                inicializarPedidos($scope,ctlr)
             });
 
             //Pubnub suscriptions
@@ -37,7 +32,10 @@
         //TODO - filter only current day
         var pedido = Parse.Object.extend("Pedido");
         var query = new Parse.Query(pedido);
-        query.equalTo("Estado", "Completado");
+        query.equalTo("Estado", "Finalizado");
+        query.include("CiudadOrigen");
+        query.include("CiudadDestino");
+        query.include("Transportista");
         query.find({
             success: function(results) {
                 ctlr.pedidos = new Array();
@@ -62,8 +60,12 @@
             id : pedido.id,
             viaje : pedido.get("CiudadOrigen").get("Nombre") + " - " + pedido.get("CiudadDestino").get("Nombre"),
             carga : utilities.formatDate(pedido.get("HoraFinalizacion")),
-            estado : pedido.get("Estado")
-
+            estado : pedido.get("Estado"),
+            transportista : {
+                nombre: pedido.get("Transportista").get("Nombre"),
+                telefono: pedido.get("Transportista").get("Telefono"),
+                imageUrl: pedido.get("Transportista").get("photo").url()
+            }
         };
 
         return pedidoJson;
