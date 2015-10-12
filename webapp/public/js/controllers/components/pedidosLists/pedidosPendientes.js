@@ -7,7 +7,7 @@
     var utilities;
 
     angular.module("easyRuta")
-        .controller('PedidosPendientesController',function($rootScope,$scope,utils) {
+        .controller('PedidosPendientesController',function($rootScope,$scope,$location,utils) {
             utilities = utils;
 
             var ctlr = this;
@@ -73,6 +73,9 @@
                         });
                     }
                 });
+            };
+            ctlr.verDetalle = function(id) {
+                $location.path("/detallePedido/" + id);
             };
 
             // Suscriptions

@@ -131,6 +131,12 @@ hr {
     }
 }
 
+
+/*
+* Google Maps
+*/
+.angular-google-map-container { height: 80vh }
+
 /*
 * User controls and widgets
 */

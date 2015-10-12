@@ -10,6 +10,9 @@
                 .when('/inicioClientes',{
                     templateUrl : '/templates/pages/privado/clientes/inicioClientes/index.html'
                 })
+                .when('/detallePedido/:id',{
+                    templateUrl : '/templates/pages/privado/clientes/DetallePedido/index.html'
+                })
                 .otherwise({
                     templateUrl : '/templates/pages/publico/home/index.html'
                 })
