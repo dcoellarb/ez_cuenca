@@ -152,6 +152,17 @@
             ctlr.data.TipoTransporte = TipoTransporte;
         };
 
+        ctlr.ChangeUnidad = function(unidad) {
+            ctlr.data.TipoUnidad = unidad;
+            if (unidad == "peso"){
+                $('#unidades_container').hide();
+                $('#peso_container').show();
+            }else{
+                $('#unidades_container').show();
+                $('#peso_container').hide();
+            }
+        };
+
         ctlr.PlantillaSelected = function() {
             console.log("plantilla selected");
             if (ctlr.plantilla != ""){
@@ -173,8 +184,10 @@
                                 HoraEntrega : plantillaObject.get("HoraEntrega"),
                                 Producto : plantillaObject.get("Producto"),
                                 Valor : plantillaObject.get("Valor"),
+                                TipoUnidad : plantillaObject.get("TipoUnidad"),
                                 PesoDesde : plantillaObject.get("PesoDesde"),
                                 PesoHasta : plantillaObject.get("PesoHasta"),
+                                Unidades : plantillaObject.get("Unidades"),
                                 TipoTransporte : plantillaObject.get("TipoTransporte"),
                                 ExtensionMinima : plantillaObject.get("ExtensionMin"),
                                 CajaRefrigerada : plantillaObject.get("CajaRefrigerada"),
@@ -226,8 +239,10 @@
             HoraEntrega : new Date(),
             Producto : "",
             Valor : 0,
+            TipoUnidad : "peso",
             PesoDesde : 0,
             PesoHasta : 0,
+            Unidades : 0,
             TipoTransporte : "furgon",
             ExtensionMinima : 43,
             CajaRefrigerada : false,
@@ -264,8 +279,10 @@
                         pedido.set("HoraCarga", ctlr.data.HoraCarga);
                         pedido.set("HoraEntrega", ctlr.data.HoraEntrega);
                         pedido.set("Producto", ctlr.data.Producto);
+                        pedido.set("TipoUnidad", ctlr.data.TipoUnidad);
                         pedido.set("PesoDesde", ctlr.data.PesoDesde);
                         pedido.set("PesoHasta", ctlr.data.PesoHasta);
+                        pedido.set("Unidades", ctlr.data.Unidades);
                         pedido.set("Valor", ctlr.data.Valor);
                         pedido.set("TipoTransporte", ctlr.data.TipoTransporte);
                         pedido.set("CajaRefrigerada", ctlr.data.CajaRefrigerada);

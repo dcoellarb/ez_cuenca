@@ -3,7 +3,7 @@
  */
 (function(){
 
-    Parse.initialize("LRW3NBrk3JYLeAkXrpTF2TV0bDPn5HQTndrao8my", "e6v72X3KgdBeXe0JZ5cWrSBMmHZ1GIqtEIRICcp3");
+    Parse.initialize("LRW3NBrk3JYLeAkXrpTF2TV0bDPn5HQTndrao8my", "e6v72X3KgdBeXe0JZ5cWrSBMmHZ1GIqtEIRICcp3");//PROD
 
     angular.module("easyRuta",['ui.bootstrap','uiSwitch','ngRoute','uiGmapgoogle-maps'])
         .run(function($rootScope) {

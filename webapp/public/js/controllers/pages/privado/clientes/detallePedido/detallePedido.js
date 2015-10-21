@@ -41,12 +41,12 @@
                     if (object.get("TipoTransporte") == "furgon"){
                         ctlr.pedido.tipoImage = "icon-furgon";
                         ctlr.pedido.adicional = "Cubicaje Minimo";
-                        ctlr.pedido.adicionalValor = object.get("CubicajeMin");
+                        ctlr.pedido.adicionalValor = object.get("CubicajeMin") + "m3";
                     }
                     if (object.get("TipoTransporte") == "plataforma"){
                         ctlr.pedido.tipoImage = "icon-plataforma";
                         ctlr.pedido.adicional = "Extension Minima";
-                        ctlr.pedido.adicionalValor = object.get("ExtensionMin");
+                        ctlr.pedido.adicionalValor = object.get("ExtensionMin") + " pies";
                     }
                     if (object.get("TipoTransporte") == "cama baja") {
                         ctlr.pedido.tipoImage = "icon-plataforma";

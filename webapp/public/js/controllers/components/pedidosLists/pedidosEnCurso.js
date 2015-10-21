@@ -11,12 +11,16 @@
     var utilities;
 
     angular.module("easyRuta")
-        .controller('PedidosEnCursoController',function($rootScope,$scope,utils) {
+        .controller('PedidosEnCursoController',function($rootScope,$scope,$location,utils) {
             utilities = utils;
 
             var ctlr = this;
 
             inicializarPedidos($scope,ctlr);
+
+            ctlr.verDetalle = function(id) {
+                $location.path("/detallePedido/" + id);
+            };
 
             //Suscriptions
             //Internal Suscriptions

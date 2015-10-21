@@ -142,7 +142,15 @@
                         json : pedidoToJson(results[i])
                     };
                     if (results[i].get('Estado') == 'PendienteConfirmacion'){
-                        pedido.timer = {'minute' : 30, 'second' : 0};
+                        var horaEnd = results[i].get('HoraSeleccion');
+                        var horaCurrent = new Date();
+                        horaEnd.setMinutes(horaEnd.getMinutes() + 30);
+
+                        var diffMs = (horaEnd - horaCurrent);
+                        var diffMins = Math.round(diffMs / 60000); // minutes
+                        var diffSecs = Math.round((diffMs % 60000) / 1000); // seconds
+
+                        pedido.timer = {'minute' : diffMins, 'second' : diffSecs};
                     }
                     pedido.background = "backgroud-photo-" + pedido.data.get("CiudadDestino").get("Nombre").toLowerCase();
                     ctlr.pedidos.push(pedido);

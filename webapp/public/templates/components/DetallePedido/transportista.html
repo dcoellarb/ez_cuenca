@@ -1,9 +1,9 @@
 <div class="col-nopadding col-nopadding col-sm-12">
     <div class="col-sm-12" ng-show="ctlr.pedido.transportista">
-        <div class="col-sm-12 col-md-4">
-            <div class="list-item-image" ng-style="{'background-image': 'url(' + ctlr.pedido.transportista.photo + ')'}"/>
+        <div class="col-sm-12 col-md-2">
+            <div class="list-item-image-md" ng-style="{'background-image': 'url(' + ctlr.pedido.transportista.photo + ')'}"/>
         </div>
-        <div class="col-sm-12 col-md-8">
+        <div class="col-sm-12 col-md-10">
             <div class="col-sm-12">
                 <span class="form-control-readonly">{{ctlr.pedido.transportista.nombre}}</span>
             </div>
@@ -28,52 +28,56 @@
                 </div>
             </div>
             <div class="col-sm-12">
-                <div class="col-sm-4">
+                <div class="col-sm-3">
                     <label class="control-label">Placa</label>
                 </div>
-                <div class="col-sm-4">
-                    <label class="control-label">Modelo</label>
-                </div>
-                <div class="col-sm-4">
-                    <label class="control-label">Color</label>
-                </div>
-                <div class="col-sm-4">
-                    <span class="form-control-readonly">{{ctlr.pedido.transportista.placa}}</span>
-                </div>
-                <div class="col-sm-4">
-                    <span class="form-control-readonly">{{ctlr.pedido.transportista.modelo}}</span>
-                </div>
-                <div class="col-sm-4">
-                    <span class="form-control-readonly">{{ctlr.pedido.transportista.color}}</span>
-                </div>
-            </div>
-            <div class="col-sm-12">
-                <div class="col-sm-6">
+                <div class="col-sm-2">
                     <label class="control-label">Marca</label>
                 </div>
-                <div class="col-sm-6">
+                <div class="col-sm-2">
                     <label class="control-label">Año</label>
                 </div>
-                <div class="col-sm-6">
+                <div class="col-sm-2">
+                    <label class="control-label">Modelo</label>
+                </div>
+                <div class="col-sm-3">
+                    <label class="control-label">Color</label>
+                </div>
+                <div class="col-sm-3">
+                    <span class="form-control-readonly">{{ctlr.pedido.transportista.placa}}</span>
+                </div>
+                <div class="col-sm-2">
+                    <span class="form-control-readonly">{{ctlr.pedido.transportista.modelo}}</span>
+                </div>
+                <div class="col-sm-2">
+                    <span class="form-control-readonly">{{ctlr.pedido.transportista.color}}</span>
+                </div>
+                <div class="col-sm-2">
                     <span class="form-control-readonly">{{ctlr.pedido.transportista.marca}}</span>
                 </div>
-                <div class="col-sm-6">
+                <div class="col-sm-3">
                     <span class="form-control-readonly">{{ctlr.pedido.transportista.anio}}</span>
                 </div>
             </div>
         </div>
     </div>
-    <div class="col-sm-12 col-md-4">
-        <div>
-            <div style="display: flex;justify-content: center;">
-                <span ng-class="ctlr.pedido.tipoImage" style="font-size: xx-large;"></span>
-            </div>
+    <hr class="col-sm-11">
+    <div class="col-sm-12 col-md-3">
+        <div class="col-sm-12">
+            <label class="control-label">Tipo de Transporte</label>
+        </div>
+        <div class="col-sm-12">
             <div>
-                <span style="font-size: x-small;">{{ctlr.pedido.tipo}}</span>
+                <div style="display: flex;justify-content: center;">
+                    <span ng-class="ctlr.pedido.tipoImage" style="font-size: xx-large;"></span>
+                </div>
+                <div style="display: flex;justify-content: center;">
+                    <span style="font-size: x-small;">{{ctlr.pedido.tipo}}</span>
+                </div>
             </div>
         </div>
     </div>
-    <div class="col-sm-12 col-md-8" ng-show="ctlr.pedido.transportista.tipo == 'furgon' || ctlr.pedido.transportista.tipo == 'platforma'">
+    <div class="col-sm-12 col-md-9" ng-show="ctlr.pedido.tipo == 'furgon' || ctlr.pedido.tipo == 'plataforma'">
         <div class="col-sm-12">
             <label class="control-label">{{ctlr.pedido.adicional}}</label>
         </div>
