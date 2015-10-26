@@ -10,10 +10,11 @@
                     || agrPedForm.inputProducto.$invalid
                     || agrPedForm.inputValor.$invalid
                     || agrPedCtrl.data.ValorUnitario <= 0
-                    || agrPedForm.inputPesoDesde.$invalid
-                    || agrPedCtrl.data.PesoDesde <= 0
-                    || agrPedForm.inputPesoHasta.$invalid
-                    || agrPedCtrl.data.PesoHasta <= 0
+                    || (agrPedCtrl.data.TipoUnidad == 'peso'
+                        && ((agrPedForm.inputPesoDesde.$invalid || agrPedCtrl.data.PesoDesde <= 0)
+                        || (agrPedForm.inputPesoHasta.$invalid || agrPedCtrl.data.PesoHasta <= 0)))
+                    || (agrPedCtrl.data.TipoUnidad == 'unidades'
+                        && (agrPedForm.inputUnidades.$invalid || agrPedCtrl.data.Unidades <= 0))
                     || (agrPedCtrl.data.TipoTransporte == 'furgon' && (agrPedForm.inputCubicajeMinimo.$invalid || agrPedCtrl.data.CubicajeMinimo <= 0))
                     || (agrPedCtrl.data.TipoTransporte == 'plataforma' && (agrPedForm.inputExtensionMinima.$invalid || agrPedCtrl.data.ExtensionMinima <= 0))
                 ">Guarda como Plantilla</button>
@@ -41,13 +42,13 @@
                         || agrPedForm.inputProducto.$invalid
                         || agrPedForm.inputValor.$invalid
                         || agrPedCtrl.data.ValorUnitario <= 0
-                        || agrPedForm.inputPesoDesde.$invalid
-                        || agrPedCtrl.data.PesoDesde <= 0
-                        || agrPedForm.inputPesoHasta.$invalid
-                        || agrPedCtrl.data.PesoHasta <= 0
+                        || (agrPedCtrl.data.TipoUnidad == 'peso'
+                            && ((agrPedForm.inputPesoDesde.$invalid || agrPedCtrl.data.PesoDesde <= 0)
+                            || (agrPedForm.inputPesoHasta.$invalid || agrPedCtrl.data.PesoHasta <= 0)))
+                        || (agrPedCtrl.data.TipoUnidad == 'unidades'
+                            && (agrPedForm.inputUnidades.$invalid || agrPedCtrl.data.Unidades <= 0))
                         || (agrPedCtrl.data.TipoTransporte == 'furgon' && (agrPedForm.inputCubicajeMinimo.$invalid || agrPedCtrl.data.CubicajeMinimo <= 0))
                         || (agrPedCtrl.data.TipoTransporte == 'plataforma' && (agrPedForm.inputExtensionMinima.$invalid || agrPedCtrl.data.ExtensionMinima <= 0))
-                        || agrPedCtrl.data.PesoHasta <= 0
                         || agrPedForm.inputCopias.$invalid
                         || agrPedCtrl.copias <= 0
                     ">Agregar Pedido</button>

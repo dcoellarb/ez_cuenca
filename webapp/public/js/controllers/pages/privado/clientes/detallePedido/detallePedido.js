@@ -61,8 +61,12 @@
                         ctlr.pedido.tipoImage = "icon-jaula";
                     }
                     if (object.get("Transportista")){
+                        var imageUrl = "";
+                        if (object.get("Transportista").get("photo")){
+                            imageUrl = object.get("Transportista").get("photo").url();
+                        }
                         ctlr.pedido.transportista = {
-                            photo : object.get("Transportista").get("photo").url(),
+                            photo : imageUrl,
                             nombre : object.get("Transportista").get("Nombre"),
                             rating : object.get("Transportista").get("Rating"),
                             eficiencia : object.get("Transportista").get("Eficiencia"),

@@ -1,50 +1,40 @@
 /**
- * Created by dcoellar on 9/21/15.
+ * Created by dcoellar on 10/25/15.
  */
 
-/**
- * Created by dcoellar on 9/18/15.
- */
 
 (function(){
 
-    var utilities;
+    angular.module("easyRuta")
+        .controller('RateTransportistaController',function($scope,$uibModal){
+
+            var ctlr = this;
+
+        });
 
     angular.module("easyRuta")
-        .controller('PedidosCompletadosController',function($rootScope,$scope,$location,$uibModal,utils) {
+        .controller('RateTransportistaModalController',function($scope,$uibModalInstance,utils){
             utilities = utils;
 
             var ctlr = this;
 
-            inicializarPedidos($scope,ctlr);
+            inicializarPedidos(ctlr,$scope)
 
-            ctlr.verDetalle = function(id) {
-                $location.path("/detallePedido/" + id);
+            $scope.ok = function () {
+                saveAll(ctlr,$uibModalInstance);
             };
 
-            ctlr.calificar = function(){
-                $uibModal.open({
-                    animation: $scope.animationsEnabled,
-                    templateUrl: 'rateTransportistaModal.html',
-                    controller: 'RateTransportistaModalController as ctlr'
-                });
+            $scope.cancel = function () {
+                $uibModalInstance.dismiss('cancel');
             };
 
-            //Suscriptions
-            //Internal Suscriptions
-            $rootScope.$on('nuevoPedidoCompletado', function(event, args) {
-                inicializarPedidos($scope,ctlr)
-            });
-
-            //Pubnub suscriptions
         });
 
-    var inicializarPedidos = function($scope,ctlr){
-
-        //TODO - filter only current day
+    var inicializarPedidos = function(ctlr,$scope){
         var pedido = Parse.Object.extend("Pedido");
         var query = new Parse.Query(pedido);
         query.equalTo("Estado", "Finalizado");
+        query.equalTo("Rate",undefined);
         query.include("CiudadOrigen");
         query.include("CiudadDestino");
         query.include("Transportista");
@@ -65,7 +55,30 @@
                 console.log("Error: " + error.code + " " + error.message);
             }
         });
-    };
+    }
+
+    var saveAll = function(ctlr,$uibModalInstance){
+        var Pedido = Parse.Object.extend("Pedido");
+
+        var pedidosParse = [];
+        for (var i = 0; i < ctlr.pedidos.length; i++) {
+            var pedido = ctlr.pedidos[i].data;
+            pedido.set("Rate",ctlr.pedidos[i].json.rate);
+            pedidosParse.push(pedido);
+        }
+
+        // save all the newly created objects
+        Parse.Object.saveAll(pedidosParse, {
+            success: function(objs) {
+                $uibModalInstance.close();
+            },
+            error: function(error) {
+                console.log("Error saving ratings");
+                console.dir(error);
+                //TODO - let the user know
+            }
+        });
+    }
 
     var pedidoToJson = function(pedido){
         var imageUrl = "";
@@ -77,14 +90,14 @@
             viaje : pedido.get("CiudadOrigen").get("Nombre") + " - " + pedido.get("CiudadDestino").get("Nombre"),
             carga : utilities.formatDate(pedido.get("HoraFinalizacion")),
             estado : pedido.get("Estado"),
+            rate : pedido.get("Rate"),
             transportista : {
                 nombre: pedido.get("Transportista").get("Nombre"),
                 telefono: pedido.get("Transportista").get("Telefono"),
-                imageUrl: imageUrl,
-                rating: pedido.get("Rate")
+                imageUrl: imageUrl
             }
         };
+
         return pedidoJson;
     };
-
 })();

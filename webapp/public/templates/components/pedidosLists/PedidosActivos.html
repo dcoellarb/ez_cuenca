@@ -1,7 +1,7 @@
-<div id="pedidosActivos" class="panel panel-default col-nopadding">
+<div id="pedidosActivos" class="panel panel-default col-nopadding" ng-controller="PedidosActivosController as ctlr">
     <div class="panel-heading">Pendidos Activos</div>
     <div class="panel-body col-nopadding">
-        <div ng-repeat="pedido in ctlr.pedidos" class="col-sm-12" ng-controller="PedidosActivosController as ctlr" ng-click="ctlr.verDetalle(pedido.json.id)" style="cursor: pointer;">
+        <div ng-repeat="pedido in ctlr.pedidos" class="col-sm-12" ng-click="ctlr.verDetalle(pedido.json.id)" style="cursor: pointer;">
             <div class="col-sm-12 col-nopadding backgroud-photo" ng-class="pedido.background"><div class="backgroud-photo-heading"><span class="list-heading">{{pedido.json.viaje}}</span></div></div>
             <div class="col-sm-12 col-nopadding"><span class="list-item-label">Carga:</span><span class="list-item">{{pedido.json.carga}}</span></div>
             <div class="col-sm-12 col-nopadding"><span class="list-item-label">Entrega:</span><span class="list-item">{{pedido.json.entrega}}</span></div>

@@ -70,6 +70,10 @@
     };
 
     var pedidoToJson = function(pedido){
+        var imageUrl = "";
+        if (pedido.get("Transportista").get("photo")){
+            imageUrl = pedido.get("Transportista").get("photo").url();
+        }
         var pedidoJson = {
             id : pedido.id,
             viaje : pedido.get("CiudadOrigen").get("Nombre") + " - " + pedido.get("CiudadDestino").get("Nombre"),
@@ -79,7 +83,7 @@
             transportista : {
                 nombre: pedido.get("Transportista").get("Nombre"),
                 telefono: pedido.get("Transportista").get("Telefono"),
-                imageUrl: pedido.get("Transportista").get("photo").url()
+                imageUrl: imageUrl
             }
         };
 

@@ -6,5 +6,8 @@
 
     angular.module("easyRuta")
         .controller('inicioClientesController',function($scope){
+
+            console.log("inicio clientes controller");
+
         });
 })();

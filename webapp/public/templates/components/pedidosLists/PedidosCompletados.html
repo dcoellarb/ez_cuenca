@@ -1,8 +1,8 @@
-<div id="pedidosActivos" class="panel panel-default col-nopadding" ng-controller="PedidosCompletadosController as ctlr" ng-click="ctlr.verDetalle(pedido.json.id)" style="cursor: pointer;">
+<div id="pedidosActivos" class="panel panel-default col-nopadding" ng-controller="PedidosCompletadosController as ctlr">
     <div class="panel-heading">Pendidos Completados</div>
     <div class="panel-body col-nopadding">
-        <div ng-repeat="pedido in ctlr.pedidos" class="col-sm-12" ng-click="ctlr.verDetalle(pedido.json.id)" style="cursor: pointer;">
-            <div class="col-sm-12 col-nopadding backgroud-photo" ng-class="pedido.background"><div class="backgroud-photo-heading"><span class="list-heading">{{pedido.json.viaje}}</span></div></div>
+        <div ng-repeat="pedido in ctlr.pedidos" class="col-sm-12">
+            <div class="col-sm-12 col-nopadding backgroud-photo" ng-class="pedido.background" ng-click="ctlr.verDetalle(pedido.json.id)" style="cursor: pointer;">><div class="backgroud-photo-heading"><span class="list-heading">{{pedido.json.viaje}}</span></div></div>
             <div class="col-sm-12 col-nopadding"><span class="list-item-label">Entregado:</span><span class="list-item">{{pedido.json.carga}}</span></div>
             <div class="col-sm-12 col-nopadding">
                 <div class="col-sm-3 col-nopadding">
@@ -14,6 +14,16 @@
                     </div>
                     <div class="col-sm-12 col-nopadding">
                         <div class="col-sm-12 col-nopadding"><span class="list-item-label">Telefono:</span><span class="list-item">{{pedido.json.transportista.telefono}}</span></div>
+                    </div>
+                    <div class="col-sm-12 center-content-horizontal" ng-show="!pedido.json.transportista.rating">
+                        <input type="button" value="Calificar" class="btn-small btn-primary" ng-click="ctlr.calificar()"/>
+                    </div>
+                    <div class="col-sm-12 center-content-horizontal" ng-show="pedido.json.transportista.rating" style="margin-bottom: 10px;">
+                        <span class="glyphicon glyphicon-star" style="color:#BBD41C" ng-show="pedido.json.transportista.rating >= 1"></span><span class="glyphicon glyphicon-star" ng-show="pedido.json.transportista.rating < 1"></span>
+                        <span class="glyphicon glyphicon-star" style="color:#BBD41C" ng-show="pedido.json.transportista.rating >= 2"></span><span class="glyphicon glyphicon-star" ng-show="pedido.json.transportista.rating < 2"></span>
+                        <span class="glyphicon glyphicon-star" style="color:#BBD41C" ng-show="pedido.json.transportista.rating >= 3"></span><span class="glyphicon glyphicon-star" ng-show="pedido.json.transportista.rating < 3"></span>
+                        <span class="glyphicon glyphicon-star" style="color:#BBD41C" ng-show="pedido.json.transportista.rating >= 4"></span><span class="glyphicon glyphicon-star" ng-show="pedido.json.transportista.rating < 4"></span>
+                        <span class="glyphicon glyphicon-star" style="color:#BBD41C" ng-show="pedido.json.transportista.rating == 5"></span><span class="glyphicon glyphicon-star" ng-show="pedido.json.transportista.rating < 5"></span>
                     </div>
                 </div>
             </div>

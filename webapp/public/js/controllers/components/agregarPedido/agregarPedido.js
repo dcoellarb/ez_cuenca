@@ -5,7 +5,7 @@
 (function(){
 
     angular.module("easyRuta")
-        .controller('AgregarPedidoController',function($rootScope,$scope,$modal){
+        .controller('AgregarPedidoController',function($rootScope,$scope,$uibModal){
 
             var ctlr = this;
 
@@ -35,7 +35,7 @@
             /*
              * Setup Actions
              * */
-            setupActions($rootScope,$scope,$modal,ctlr);
+            setupActions($rootScope,$scope,$uibModal,ctlr);
 
             /*
              * Setup date pickers options
@@ -44,16 +44,16 @@
 
             console.dir($rootScope.pubnub);
         })
-        .controller('AgregarPedidoModalController',function($scope,$modalInstance){
+        .controller('AgregarPedidoModalController',function($scope,$uibModalInstance){
             var ctlr = this;
             ctlr.plantilla = "";
 
             ctlr.guardar = function () {
-                $modalInstance.close(ctlr.plantilla);
+                $uibModalInstance.close(ctlr.plantilla);
             };
 
             ctlr.cancelar = function () {
-                $modalInstance.dismiss('cancel');
+                $uibModalInstance.dismiss('cancel');
             };
         });
 
@@ -96,7 +96,7 @@
         LimpiarForm(ctlr);
     };
 
-    var setupActions = function($rootScope,$scope,$modal,ctlr){
+    var setupActions = function($rootScope,$scope,$uibModal,ctlr){
 
         ctlr.Agregar = function(form){
             if (form.$valid){
@@ -124,7 +124,7 @@
 
         ctlr.GuardarComoPlantilla = function(form){
             if (form.$valid) {
-                var modalInstance = $modal.open({
+                var modalInstance = $uibModal.open({
                     animation: $scope.animationsEnabled,
                     templateUrl: 'PlantillaModal.html',
                     controller: 'AgregarPedidoModalController as agrPedModalCtlr'

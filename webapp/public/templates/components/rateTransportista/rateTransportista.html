@@ -1,0 +1,37 @@
+<!-- Modal -->
+<script type="text/ng-template" id="rateTransportistaModal.html">
+    <div class="modal-header">
+        <button type="button" class="close" ng-click="cancel()" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Califique sus viajes</h4>
+    </div>
+    <div class="modal-body" style="width: 600px;max-height: 400px;min-height: 100px;overflow-y: scroll;">
+        <div ng-repeat="pedido in ctlr.pedidos">
+            <div class="col-sm-12 col-md-6 col-nopadding">
+                <div class="col-sm-2 col-nopadding">
+                    <div class="backgroud-photo" ng-class="pedido.background" style="height: 40px;width: 40px;border-radius: 20px;background-size: cover;"/>
+                </div>
+                <div class="col-sm-10">
+                    <div><span>{{pedido.json.viaje}}</span></div>
+                    <div><span style="font-size: 0.8em;color: #888888;">{{pedido.json.carga}}</span></div>
+                </div>
+            </div>
+            <div class="col-sm-12 col-md-4 col-nopadding">
+                <div class="col-sm-2 col-nopadding">
+                    <div ng-style="{'background-image': 'url(' + pedido.json.transportista.imageUrl + ')'}" style="height: 40px;width: 40px;border-radius: 20px;background-size: cover;"/>
+                </div>
+                <div class="col-sm-10">
+                    <div><span style="font-size: 0.7em;color: #888888;">Transportista:</span></div>
+                    <div><span>{{pedido.json.transportista.nombre}}</span></div>
+                </div>
+            </div>
+            <div class="col-sm-12 col-md-2 col-nopadding">
+                <uib-rating ng-model="pedido.json.rate" max="5" aria-labelledby="default-rating"></uib-rating>
+            </div>
+            <hr class="col-sm-12 col-md-12 col-nopadding"/>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" ng-click="cancel()">Cerrar</button>
+        <button type="button" class="btn btn-primary" ng-click="ok()">Confirmar</button>
+    </div>
+</script>

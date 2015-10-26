@@ -5,44 +5,6 @@ Parse.Cloud.define("hello", function(request, response) {
   response.success("Hello world!");
 });
 
-/*
-Parse.Cloud.beforeSave('Compras', function (request, respond) {
-    Parse.Cloud.useMasterKey();
-    if (!request.object.isNew()){
-        respond.error("Only inserts are suported");
-        console.log("Current:" + JSON.stringify(request.object));
-        var id = request.object.id;
-        var Compras = Parse.Object.extend("Compras");
-        var query = new Parse.Query(Compras);
-        query.get(id).then(
-            function (compra) {
-                console.log("Previous:" + JSON.stringify(compra));
-                var valor = compra.get('valor')
-                var transportista = compra.get('transportista');
-                var proveedor = compra.get('proveedor');
-                if (transportista != null){
-                    transportista.increment("Saldo",valor * -1);
-                    transportista.save();
-                    respond.success();
-                }else if(proveedor != null){
-                    proveedor.increment("Saldo",valor * -1);
-                    proveedor.save();
-                    respond.success();
-                }else{
-                    respond.success();
-                }
-            },
-            function(model,error) {
-                console.error("Got an error " + error.code + " : " + error.message);
-                respond.error();
-            }
-        );
-    }else{
-        respond.success();
-    }
-});
- */
-
 Parse.Cloud.beforeSave('Compras', function (request, respond) {
     Parse.Cloud.useMasterKey();
     if (request.object.isNew()) {
@@ -116,3 +78,68 @@ Parse.Cloud.afterSave('Pedido', function (request, respond) {
         }
     }
 });
+
+var countFinalizados = 0;
+var sumRatings = 0;
+var countCancelados = 0;
+var countRatings = 0;
+
+Parse.Cloud.define("transportistaStatistics", function(request, response) {
+    Parse.Cloud.useMasterKey();
+
+    var transportistaString = request.params.transportista;
+
+    countFinalizados = 0;
+    sumRatings = 0;
+    countCancelados = 0;
+    countRatings = 0;
+
+    getFinalizados(transportistaString,response);
+});
+
+var getFinalizados = function (transportistaString,response){
+    var pedido = Parse.Object.extend("Pedido");
+    var query = new Parse.Query(pedido);
+    query.equalTo("Transportista", {
+        __type: "Pointer",
+        className: "Transportista",
+        objectId: transportistaString
+    });
+    query.equalTo("Estado", "Finalizado");
+    query.find({
+        success: function(results) {
+            countFinalizados = results.length;
+            for(var i=0;i<results.length;i++){
+                if (results[i].get("Rate")){
+                    countRatings += 1
+                    sumRatings += results[i].get("Rate");
+                }
+            }
+            getCancelados(transportistaString,response);
+        },
+        error: function(error) {
+            console.log("Error getting pedidos finalizados: " + error.code + " " + error.message);
+        }
+    });
+};
+
+var getCancelados = function(transportistaString,response){
+    var pedido = Parse.Object.extend("Pedido");
+    var query = new Parse.Query(pedido);
+    query.equalTo("TransportistasCancelados", transportistaString);
+    query.find({
+        success: function(results) {
+            countCancelado = results.length;
+            finishTransportistaStatistics(response)
+        },
+        error: function(error) {
+            console.log("Error getting pedidos finalizados: " + error.code + " " + error.message);
+        }
+    });
+};
+
+var finishTransportistaStatistics = function(response){
+    var efectividad =  (countFinalizados / (countFinalizados + countCancelado)) * 100;
+    var rating = sumRatings / countRatings;
+    response.success({efectividad:efectividad,rating:rating});
+};

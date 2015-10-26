@@ -130,6 +130,9 @@
         queryPendientesConfirmacion.equalTo("Estado", "PendienteConfirmacion");
 
         var mainQuery = Parse.Query.or(queryPendientes, queryPendientesConfirmacion);
+        mainQuery.include("CiudadOrigen");
+        mainQuery.include("CiudadDestino");
+        mainQuery.include("Transportista");
         mainQuery.addDescending("createdAt");
         mainQuery.find({
             success: function(results) {
@@ -137,25 +140,30 @@
                 ctlr.pedidos = new Array();
                 for (var i = 0; i < results.length; i++) {
                     console.log("estado:" + results[i].get("Estado"))
-                    var pedido = {
-                        data : results[i],
-                        json : pedidoToJson(results[i])
-                    };
-                    if (results[i].get('Estado') == 'PendienteConfirmacion'){
-                        var horaEnd = results[i].get('HoraSeleccion');
-                        var horaCurrent = new Date();
-                        horaEnd.setMinutes(horaEnd.getMinutes() + 30);
+                    var pedidoData = results[i];
+                    pedidoToJson(pedidoData,function(pedidoJson){
+                        var pedido = {
+                            data : pedidoData,
+                            json : pedidoJson
+                        };
+                        if (pedidoData.get('Estado') == 'PendienteConfirmacion'){
+                            var horaEnd = pedidoData.get('HoraSeleccion');
+                            var horaCurrent = new Date();
+                            horaEnd.setMinutes(horaEnd.getMinutes() + 30);
 
-                        var diffMs = (horaEnd - horaCurrent);
-                        var diffMins = Math.round(diffMs / 60000); // minutes
-                        var diffSecs = Math.round((diffMs % 60000) / 1000); // seconds
+                            var diffMs = (horaEnd - horaCurrent);
+                            var diffMins = Math.round(diffMs / 60000); // minutes
+                            var diffSecs = Math.round((diffMs % 60000) / 1000); // seconds
 
-                        pedido.timer = {'minute' : diffMins, 'second' : diffSecs};
-                    }
-                    pedido.background = "backgroud-photo-" + pedido.data.get("CiudadDestino").get("Nombre").toLowerCase();
-                    ctlr.pedidos.push(pedido);
+                            pedido.timer = {'minute' : diffMins, 'second' : diffSecs};
+                        }
+                        pedido.background = "backgroud-photo-" + pedido.data.get("CiudadDestino").get("Nombre").toLowerCase();
+                        ctlr.pedidos.push(pedido);
+                        if (results.length == ctlr.pedidos.length){
+                            $scope.$apply();
+                        }
+                    });
                 }
-                $scope.$apply();
             },
             error: function(error) {
                 console.log("Error: " + error.code + " " + error.message);
@@ -163,7 +171,7 @@
         });
     };
 
-    var pedidoToJson = function(pedido){
+    var pedidoToJson = function(pedido,callback){
         var pedidoJson = {
             id : pedido.id,
             viaje : pedido.get("CiudadOrigen").get("Nombre") + " - " + pedido.get("CiudadDestino").get("Nombre"),
@@ -171,8 +179,30 @@
             entrega : utilities.formatDate(pedido.get("HoraEntrega")),
             estado :  pedido.get("Estado")
         };
+        if (pedido.get("Transportista")){
+            var transportistaId = pedido.get("Transportista").id;
+            if (transportistaId){
+                Parse.Cloud.run('transportistaStatistics', { transportista: transportistaId}, {
+                    success: function(statistics) {
+                        console.dir(statistics);
 
-        return pedidoJson;
+                        pedidoJson["Transportista"] = statistics;
+
+                        callback(pedidoJson);
+                    },
+                    error: function(error) {
+                        console.log("error getting transportista statistics");
+                        console.dir(error);
+
+                        callback(pedidoJson);
+                    }
+                });
+            }else{
+                callback(pedidoJson);
+            }
+        }else{
+            callback(pedidoJson);
+        }
     };
 
 })();
