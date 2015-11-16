@@ -1,0 +1,29 @@
+<div ng-include="'templates/components/masterPage/clientes.html'"></div>
+
+<div class="col-md-12 col-lg-10 col-lg-offset-1" ng-controller="historicoController as ctlr" style="margin-top: 70px;">
+    <div id="pedidosActivos" class="panel panel-default col-nopadding">
+        <div class="panel-heading">Historico de pedidos</div>
+        <div class="panel-body col-nopadding">
+            <div ng-repeat="pedido in ctlr.pedidos" ng-click="ctlr.verDetalle(pedido.json.id)" style="cursor: pointer;">
+                <div class="col-sm-12 list-highligh">
+                    <div class="col-sm-1 list-item-image" ng-class="pedido.background"/>
+                    <div class="col-sm-3">
+                        <span class="list-heading" style="display: block">{{pedido.json.viaje}}</span>
+                        <span class="list-item">{{pedido.json.entrega}}</span>
+                    </div>
+                    <div class="col-sm-3">
+                        <span class="list-item" style="display: block;padding:5px 0px 5px 0px;">{{pedido.json.producto}}</span>
+                        <span class="list-item">{{pedido.json.carga}}</span>
+                    </div>
+                    <div class="col-sm-1"><div class="list-item-image" ng-style="{'background-image': 'url(' + pedido.json.transportista.imageUrl + ')'}"/></div>
+                    <div class="col-sm-4">
+                        <span class="list-heading" style="display: block">{{pedido.json.transportista.nombre}}</span>
+                        <span class="list-item-label">Telefono:</span><span class="list-item">{{pedido.json.transportista.telefono}}</span>
+                    </div>
+                </div>
+
+                <hr class="col-sm-11">
+            </div>
+        </div>
+    </div>
+</div>

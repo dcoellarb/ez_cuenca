@@ -411,3 +411,25 @@ hr {
 }
 
 
+.menu {
+    display: inline;
+    float: right;
+    margin-right: 50px;
+}
+
+.menu a{
+    color: #ffffff;
+    text-decoration: none;
+    margin-left: 30px;
+    cursor: pointer;
+}
+
+.list-highligh:hover {
+    border-color: #F78F1E;
+    border-radius: 5px;
+    border-style: solid;
+    border-width: thin;
+    padding: 25px;
+    background-color: whitesmoke;
+}
+

@@ -13,6 +13,12 @@
                 .when('/detallePedido/:id',{
                     templateUrl : '/templates/pages/privado/clientes/DetallePedido/index.html'
                 })
+                .when('/historico',{
+                    templateUrl : '/templates/pages/privado/clientes/Historico/index.html'
+                })
+                .when('/perfil',{
+                    templateUrl : '/templates/pages/privado/clientes/Perfil/index.html'
+                })
                 .otherwise({
                     templateUrl : '/templates/pages/publico/home/index.html'
                 })
