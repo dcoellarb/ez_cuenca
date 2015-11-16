@@ -23,10 +23,17 @@
             };
 
             ctlr.calificar = function(){
-                $uibModal.open({
+                var modalInstance = $uibModal.open({
                     animation: $scope.animationsEnabled,
                     templateUrl: 'rateTransportistaModal.html',
                     controller: 'RateTransportistaModalController as ctlr'
+                });
+
+                modalInstance.result.then(function () {
+                    console.log("return from modal");
+                    inicializarPedidos($scope,ctlr);
+                }, function () {
+                    console.log("modal canceled");
                 });
             };
 
@@ -48,6 +55,7 @@
         query.include("CiudadOrigen");
         query.include("CiudadDestino");
         query.include("Transportista");
+        query.addDescending("createdAt");
         query.find({
             success: function(results) {
                 ctlr.pedidos = new Array();
@@ -68,21 +76,27 @@
     };
 
     var pedidoToJson = function(pedido){
-        var imageUrl = "";
-        if (pedido.get("Transportista").get("photo")){
-            imageUrl = pedido.get("Transportista").get("photo").url();
+        var transportista = {};
+        if (pedido.get("Transportista")) {
+
+            var imageUrl = "";
+            if (pedido.get("Transportista").get("photo")) {
+                imageUrl = pedido.get("Transportista").get("photo").url();
+            }
+
+            transportista = {
+                nombre: pedido.get("Transportista").get("Nombre"),
+                telefono: pedido.get("Transportista").get("Telefono"),
+                imageUrl: imageUrl,
+                rating: pedido.get("Rate")
+            }
         }
         var pedidoJson = {
             id : pedido.id,
             viaje : pedido.get("CiudadOrigen").get("Nombre") + " - " + pedido.get("CiudadDestino").get("Nombre"),
             carga : utilities.formatDate(pedido.get("HoraFinalizacion")),
             estado : pedido.get("Estado"),
-            transportista : {
-                nombre: pedido.get("Transportista").get("Nombre"),
-                telefono: pedido.get("Transportista").get("Telefono"),
-                imageUrl: imageUrl,
-                rating: pedido.get("Rate")
-            }
+            transportista : transportista
         };
         return pedidoJson;
     };

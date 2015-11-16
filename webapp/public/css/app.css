@@ -78,6 +78,24 @@ hr {
     font-weight: 300;
     font-size: 8pt;
 }
+.list-item-lg{
+    font-weight: 300;
+    font-size: 12pt;
+    margin: 5px 15px 5px 15px;
+    cursor: pointer;
+}
+.list-item-action{
+    float: right;
+    cursor: pointer;
+    background-color: red;
+    border-radius: 50%;
+    color: #ffffff;
+    padding: 5px;
+    font-size: 8px;
+    margin-right: 15px;
+    margin-left: 50px;
+}
+
 .list-item-label{
     font-weight: 100;
     font-size: 8pt;

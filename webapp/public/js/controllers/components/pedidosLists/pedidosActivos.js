@@ -70,9 +70,19 @@
     };
 
     var pedidoToJson = function(pedido){
-        var imageUrl = "";
-        if (pedido.get("Transportista").get("photo")){
-            imageUrl = pedido.get("Transportista").get("photo").url();
+        var transportista = {};
+        if (pedido.get("Transportista")) {
+
+            var imageUrl = "";
+            if (pedido.get("Transportista").get("photo")) {
+                imageUrl = pedido.get("Transportista").get("photo").url();
+            }
+
+            transportista = {
+                nombre: pedido.get("Transportista").get("Nombre"),
+                    telefono: pedido.get("Transportista").get("Telefono"),
+                    imageUrl: imageUrl
+            }
         }
         var pedidoJson = {
             id : pedido.id,
@@ -80,11 +90,7 @@
             carga : utilities.formatDate(pedido.get("HoraCarga")),
             entrega : utilities.formatDate(pedido.get("HoraEntrega")),
             estado : pedido.get("Estado"),
-            transportista : {
-                nombre: pedido.get("Transportista").get("Nombre"),
-                telefono: pedido.get("Transportista").get("Telefono"),
-                imageUrl: imageUrl
-            }
+            transportista : transportista
         }
         return pedidoJson;
     };

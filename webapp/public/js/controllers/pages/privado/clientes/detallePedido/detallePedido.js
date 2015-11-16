@@ -68,15 +68,28 @@
                         ctlr.pedido.transportista = {
                             photo : imageUrl,
                             nombre : object.get("Transportista").get("Nombre"),
-                            rating : object.get("Transportista").get("Rating"),
-                            eficiencia : object.get("Transportista").get("Eficiencia"),
                             telefono : object.get("Transportista").get("Telefono"),
                             placa : object.get("Transportista").get("Placa"),
                             color : object.get("Transportista").get("Color"),
                             marca : object.get("Transportista").get("Marca"),
                             modelo : object.get("Transportista").get("Modelo"),
-                            anio : object.get("Transportista").get("Anio"),
+                            anio : object.get("Transportista").get("Anio")
                         };
+
+                        Parse.Cloud.run('transportistaStatistics', { transportista: object.get("Transportista").id}, {
+                            success: function(statistics) {
+                                console.dir(statistics);
+
+                                ctlr.pedido.transportista.rating = statistics.rating;
+                                ctlr.pedido.transportista.efectividad = statistics.efectividad;
+
+                                $scope.$apply();
+                            },
+                            error: function(error) {
+                                console.log("error getting transportista statistics");
+                                console.dir(error);
+                            }
+                        });
                     }
                 },
                 error: function(error) {

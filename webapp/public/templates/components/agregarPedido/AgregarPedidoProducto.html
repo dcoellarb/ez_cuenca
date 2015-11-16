@@ -33,7 +33,7 @@
     <div class="col-sm-2">
         <label for="inputValor" class="control-label">Valor (USD)</label>
         <input type="number" class="form-control input" id="inputValor" name="inputValor" ng-model="agrPedCtrl.data.Valor" required>
-        <span class="invalid-label" ng-show="agrPedForm.inputValor.$dirty && (agrPedForm.inputValor.$invalid) || agrPedCtrl.data.Valor <= 0)">
+        <span class="invalid-label" ng-show="agrPedForm.inputValor.$dirty && (agrPedForm.inputValor.$invalid || agrPedCtrl.data.Valor <= 0)">
             <span ng-show="agrPedForm.inputValor.$error.required">Valor es requerido.</span>
             <span ng-show="agrPedForm.inputValor.$dirty && agrPedCtrl.data.Valor <= 0">Valor debe ser mayor a 0.</span>
         </span>

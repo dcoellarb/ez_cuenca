@@ -30,6 +30,7 @@
             /*
              * Get initial data from parse
              * */
+            ctlr.availableTransportistas = 0;
             getInitialData($scope,ctlr);
 
             /*
@@ -42,7 +43,9 @@
              * */
             setupDatePickers($scope);
 
-            console.dir($rootScope.pubnub);
+            $rootScope.$on('new_pedido_new_suscriber', function(event, args) {
+                getActiveTransportistas($rootScope,ctlr);
+            });
         })
         .controller('AgregarPedidoModalController',function($scope,$uibModalInstance){
             var ctlr = this;
@@ -96,13 +99,13 @@
         LimpiarForm(ctlr);
     };
 
-    var setupActions = function($rootScope,$scope,$uibModal,ctlr){
+    var setupActions = function($rootScope,$scope,$uibModal,ctlr) {
 
-        ctlr.Agregar = function(form){
-            if (form.$valid){
+        ctlr.Agregar = function (form) {
+            if (form.$valid) {
                 ctlr.data.Plantilla = "";
                 ctlr.data.Estado = "Pendiente";
-                Guardar(ctlr).then(function(pedidos){
+                Guardar(ctlr).then(function (pedidos) {
                     $('#agregarPedidBody').collapse("hide");
                     $('#agregarPedido').removeClass('panel-default');
                     $('#agregarPedido').addClass('panel-primary');
@@ -116,13 +119,13 @@
                         message: {}
                     });
 
-                    getInitialData($scope,ctlr);
+                    getInitialData($scope, ctlr);
                     form.$setPristine();
                 });
             }
         };
 
-        ctlr.GuardarComoPlantilla = function(form){
+        ctlr.GuardarComoPlantilla = function (form) {
             if (form.$valid) {
                 var modalInstance = $uibModal.open({
                     animation: $scope.animationsEnabled,
@@ -133,8 +136,8 @@
                 modalInstance.result.then(function (plantilla) {
                     ctlr.data.Plantilla = plantilla;
                     ctlr.data.Estado = "Plantilla";
-                    Guardar(ctlr).then(function(pedido){
-                        ctlr.plantillas.push({id:pedido.id,plantilla:pedido.get('Plantilla')});
+                    Guardar(ctlr).then(function (pedido) {
+                        ctlr.plantillas.push({id: pedido[0].id, plantilla: pedido[0].get('Plantilla')});
                         $scope.$apply();
                     });
                 }, function () {
@@ -143,66 +146,92 @@
             }
         };
 
-        ctlr.Limpiar = function(form){
+        ctlr.Limpiar = function (form) {
             LimpiarForm(ctlr);
             form.$setPristine();
         };
 
-        ctlr.TipoTransporteSeleccionado = function(TipoTransporte) {
+        ctlr.TipoTransporteSeleccionado = function (TipoTransporte) {
             ctlr.data.TipoTransporte = TipoTransporte;
         };
 
-        ctlr.ChangeUnidad = function(unidad) {
+        ctlr.ChangeUnidad = function (unidad) {
             ctlr.data.TipoUnidad = unidad;
-            if (unidad == "peso"){
+            if (unidad == "peso") {
                 $('#unidades_container').hide();
                 $('#peso_container').show();
-            }else{
+            } else {
                 $('#unidades_container').show();
                 $('#peso_container').hide();
             }
         };
 
-        ctlr.PlantillaSelected = function() {
-            console.log("plantilla selected");
-            if (ctlr.plantilla != ""){
-                console.log("plantilla:" + ctlr.plantilla);
-                var pedido = Parse.Object.extend("Pedido");
-                var query = new Parse.Query(pedido);
-                query.get(ctlr.plantilla, {
-                    success: function(plantillaObject) {
-                        console.dir(plantillaObject);
-                        if (plantillaObject){
-                            console.log("setting plantilla");
-                            ctlr.data = {
-                                Plantilla : ctlr.plantilla,
-                                CiudadOrigen : plantillaObject.get("CiudadOrigen").id,
-                                DireccionOrigen : plantillaObject.get("DireccionOrigen"),
-                                CiudadDestino : plantillaObject.get("CiudadOrigen").id,
-                                DireccionDestino : plantillaObject.get("DireccionDestino"),
-                                HoraCarga : plantillaObject.get("HoraCarga"),
-                                HoraEntrega : plantillaObject.get("HoraEntrega"),
-                                Producto : plantillaObject.get("Producto"),
-                                Valor : plantillaObject.get("Valor"),
-                                TipoUnidad : plantillaObject.get("TipoUnidad"),
-                                PesoDesde : plantillaObject.get("PesoDesde"),
-                                PesoHasta : plantillaObject.get("PesoHasta"),
-                                Unidades : plantillaObject.get("Unidades"),
-                                TipoTransporte : plantillaObject.get("TipoTransporte"),
-                                ExtensionMinima : plantillaObject.get("ExtensionMin"),
-                                CajaRefrigerada : plantillaObject.get("CajaRefrigerada"),
-                                CubicajeMinimo : plantillaObject.get("CubicajeMin")
-                            };
-                            $scope.$apply();
-                        }
-                    },
-                    error: function(error) {
-                        console.log("Error: " + error.code + " " + error.message);
+        ctlr.PlantillaSelected = function (id) {
+            var pedido = Parse.Object.extend("Pedido");
+            var query = new Parse.Query(pedido);
+            query.get(id, {
+                success: function (plantillaObject) {
+                    console.dir(plantillaObject);
+                    if (plantillaObject) {
+                        console.log("setting plantilla");
+                        ctlr.data = {
+                            Plantilla: ctlr.plantilla,
+                            CiudadOrigen: plantillaObject.get("CiudadOrigen").id,
+                            DireccionOrigen: plantillaObject.get("DireccionOrigen"),
+                            CiudadDestino: plantillaObject.get("CiudadDestino").id,
+                            DireccionDestino: plantillaObject.get("DireccionDestino"),
+                            HoraCarga: plantillaObject.get("HoraCarga"),
+                            HoraEntrega: plantillaObject.get("HoraEntrega"),
+                            Producto: plantillaObject.get("Producto"),
+                            Valor: plantillaObject.get("Valor"),
+                            TipoUnidad: plantillaObject.get("TipoUnidad"),
+                            PesoDesde: plantillaObject.get("PesoDesde"),
+                            PesoHasta: plantillaObject.get("PesoHasta"),
+                            Unidades: plantillaObject.get("Unidades"),
+                            TipoTransporte: plantillaObject.get("TipoTransporte"),
+                            ExtensionMinima: plantillaObject.get("ExtensionMin"),
+                            CajaRefrigerada: plantillaObject.get("CajaRefrigerada"),
+                            CubicajeMinimo: plantillaObject.get("CubicajeMin")
+                        };
+                        $scope.$apply();
                     }
-                });
-            }
+                },
+                error: function (error) {
+                    console.log("Error: " + error.code + " " + error.message);
+                }
+            });
         };
-    };
+
+        ctlr.DeletePlantilla = function (id) {
+            var pedido = Parse.Object.extend("Pedido");
+            var query = new Parse.Query(pedido);
+            query.get(id, {
+                success: function (plantillaObject) {
+                    plantillaObject.destroy({
+                        success: function (myObject) {
+                            var i;
+                            ctlr.plantillas.forEach(function(element,index,array){
+                                if (element.id = id){
+                                    i = index;
+                                }
+                            });
+                            if (i){
+                                ctlr.plantillas.splice(i, 1);
+                                $scope.$apply();
+                            }
+                        },
+                        error: function (myObject, error) {
+                            console.log("Error: " + error.code + " " + error.message);
+                        }
+                    });
+                },
+                error: function (error) {
+                    console.log("Error: " + error.code + " " + error.message);
+                }
+            });
+        };
+
+    }
 
     var setupDatePickers = function($scope){
         /*
@@ -334,4 +363,22 @@
             });
         });
     };
+
+    var getActiveTransportistas = function($rootScope,ctlr){
+        console.log("geting active transportistas");
+        $rootScope.pubnub.here_now({
+            channel : 'new_pedidos',
+            state : true,
+            callback : function(m){
+                console.dir(m)
+                ctlr.availableTransportistas = 0;
+                m.uuids.forEach(function(element,index,array){
+                    if (element.state && element.state.type && element.state.type == "transportista"){
+                        ctlr.availableTransportistas += 1;
+                    }
+                });
+            }
+        });
+    }
+
 })();

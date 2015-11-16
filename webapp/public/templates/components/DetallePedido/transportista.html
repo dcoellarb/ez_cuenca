@@ -18,10 +18,15 @@
                     <label class="control-label">Telefono</label>
                 </div>
                 <div class="col-sm-4">
-                    <span class="form-control-readonly">{{ctlr.pedido.transportista.rating}}</span>
-                </div>
+                    <div class="col-sm-12 col-nopadding">
+                        <span class="glyphicon glyphicon-star" style="color:#BBD41C" ng-show="ctlr.pedido.transportista.rating >= 1"></span><span class="glyphicon glyphicon-star" ng-show="ctlr.pedido.transportista.rating < 1"></span>
+                        <span class="glyphicon glyphicon-star" style="color:#BBD41C" ng-show="ctlr.pedido.transportista.rating >= 2"></span><span class="glyphicon glyphicon-star" ng-show="ctlr.pedido.transportista.rating < 2"></span>
+                        <span class="glyphicon glyphicon-star" style="color:#BBD41C" ng-show="ctlr.pedido.transportista.rating >= 3"></span><span class="glyphicon glyphicon-star" ng-show="ctlr.pedido.transportista.rating < 3"></span>
+                        <span class="glyphicon glyphicon-star" style="color:#BBD41C" ng-show="ctlr.pedido.transportista.rating >= 4"></span><span class="glyphicon glyphicon-star" ng-show="ctlr.pedido.transportista.rating < 4"></span>
+                        <span class="glyphicon glyphicon-star" style="color:#BBD41C" ng-show="ctlr.pedido.transportista.rating == 5"></span><span class="glyphicon glyphicon-star" ng-show="ctlr.pedido.transportista.rating < 5"></span>
+                    </div>                </div>
                 <div class="col-sm-4">
-                    <span class="form-control-readonly">{{ctlr.pedido.transportista.eficiencia}}</span>
+                    <span class="form-control-readonly">{{ctlr.pedido.transportista.efectividad}}% efectividad</span>
                 </div>
                 <div class="col-sm-4">
                     <span class="form-control-readonly">{{ctlr.pedido.transportista.telefono}}</span>

@@ -14,30 +14,6 @@
 
             inicializarPedidos($scope,ctlr);
 
-            // Timers
-            setInterval(function(){
-                if (ctlr.pedidos){
-                    for(var i = 0;i < ctlr.pedidos.length;i++){
-                        var pedido = ctlr.pedidos[i];
-                        if (pedido.data.get('Estado') == 'PendienteConfirmacion'){
-                            if (pedido.timer.minute > 0 || pedido.time.second > 0){
-                                if (pedido.timer.second > 0){
-                                    pedido.timer.second -= 1;
-                                }else{
-                                    if (pedido.timer.minute > 0){
-                                        pedido.timer.minute -= 1;
-                                        pedido.timer.second = 59;
-                                    }else{
-                                        //TODO - cancel confirmation
-                                    }
-                                }
-                                $scope.$apply();
-                            }
-                        }
-                    }
-                }
-            },1000);
-
             // Acciones
             ctlr.confirmar = function(pedido){
                 pedido.data.set('Estado','Activo');
@@ -62,14 +38,18 @@
                 pedido.data.set('Estado','Pendiente');
                 pedido.data.save(null, {
                     success: function(pedidoUpdated) {
-                        pedido.data = pedidoUpdated;
-                        pedido.json = pedidoToJson(pedidoUpdated);
-                        $scope.$apply();
+                        pedidoToJson(pedidoUpdated,function(pedidoJson){
+                            pedido.data = pedidoUpdated;
+                            pedido.json = pedidoJson
 
-                        // Publish nuevo pedido
-                        $rootScope.pubnub.publish({
-                            channel: 'pedido_rechazado',
-                            message: {id:pedido.json.id}
+                            $scope.$apply();
+
+                            // Publish nuevo pedido
+                            $rootScope.pubnub.publish({
+                                channel: 'pedido_rechazado',
+                                message: {id:pedido.json.id}
+                            });
+
                         });
                     }
                 });
@@ -82,19 +62,24 @@
             // Internal suscriptions
             $rootScope.$on('nuevosPedidos', function(event, args) {
                 for(var i=0;i<args.length;i++){
-                    var pedido = {
-                        data : args[i],
-                        json : pedidoToJson(args[i])
-                    };
-                    pedido.background = "backgroud-photo-" + pedido.data.get("CiudadDestino").get("Nombre").toLowerCase();
-                    ctlr.pedidos.unshift(pedido);
+                    pedidoToJson(args[i],function(pedidoJson){
+                        var pedido = {
+                            data : args[i],
+                            json : pedidoJson
+                        };
+                        pedido.background = "backgroud-photo-" + pedido.data.get("CiudadDestino").get("Nombre").toLowerCase();
+                        ctlr.pedidos.unshift(pedido);
+                    });
                 }
             });
             //TODO - add insternal suscription for pedido cancelado
 
             // Pubnub suscriptions
             $rootScope.pubnub.subscribe({
-                channel: 'new_pedido',
+                channel: 'new_pedidos',
+                presence: function(m){
+                    $rootScope.$broadcast('new_pedido_new_suscriber', m);
+                },
                 message: function(m){
                     inicializarPedidos($scope,ctlr);
                 }
@@ -102,6 +87,7 @@
             $rootScope.pubnub.subscribe({
                 channel: 'pedido_tomado',
                 message: function(m){
+                    $rootScope.$broadcast('pedido_tomado', m);
                     inicializarPedidos($scope,ctlr);
                 }
             });
@@ -136,40 +122,44 @@
         mainQuery.addDescending("createdAt");
         mainQuery.find({
             success: function(results) {
-                console.log("success getting pending pedidos");
                 ctlr.pedidos = new Array();
-                for (var i = 0; i < results.length; i++) {
-                    console.log("estado:" + results[i].get("Estado"))
-                    var pedidoData = results[i];
-                    pedidoToJson(pedidoData,function(pedidoJson){
-                        var pedido = {
-                            data : pedidoData,
-                            json : pedidoJson
-                        };
-                        if (pedidoData.get('Estado') == 'PendienteConfirmacion'){
-                            var horaEnd = pedidoData.get('HoraSeleccion');
-                            var horaCurrent = new Date();
-                            horaEnd.setMinutes(horaEnd.getMinutes() + 30);
-
-                            var diffMs = (horaEnd - horaCurrent);
-                            var diffMins = Math.round(diffMs / 60000); // minutes
-                            var diffSecs = Math.round((diffMs % 60000) / 1000); // seconds
-
-                            pedido.timer = {'minute' : diffMins, 'second' : diffSecs};
-                        }
-                        pedido.background = "backgroud-photo-" + pedido.data.get("CiudadDestino").get("Nombre").toLowerCase();
-                        ctlr.pedidos.push(pedido);
-                        if (results.length == ctlr.pedidos.length){
-                            $scope.$apply();
-                        }
-                    });
-                }
+                processRecord($scope,ctlr,results,0);
             },
             error: function(error) {
                 console.log("Error: " + error.code + " " + error.message);
             }
         });
     };
+
+    var processRecord = function($scope,ctlr,results,i){
+        pedidoToJson(results[i],function(pedidoJson){
+            var pedido = {
+                data : results[i],
+                json : pedidoJson
+            };
+            if (results[i].get('Estado') == 'PendienteConfirmacion'){
+                var horaEnd = results[i].get('HoraSeleccion');
+                var horaCurrent = new Date();
+                horaEnd.setMinutes(horaEnd.getMinutes() + 30);
+
+                var diffMs = (horaEnd - horaCurrent);
+                var diffMins = Math.round(diffMs / 60000); // minutes
+                var diffSecs = Math.round((diffMs % 60000) / 1000); // seconds
+
+                pedido.timer = {'minute' : diffMins, 'second' : diffSecs};
+            }
+            pedido.background = "backgroud-photo-" + pedido.data.get("CiudadDestino").get("Nombre").toLowerCase();
+            ctlr.pedidos.push(pedido);
+
+            if (i == results.length - 1){
+                setTimers($scope,ctlr);
+                $scope.$apply();
+            }else{
+                i++;
+                processRecord($scope,ctlr,results,i);
+            }
+        });
+    }
 
     var pedidoToJson = function(pedido,callback){
         var pedidoJson = {
@@ -204,5 +194,31 @@
             callback(pedidoJson);
         }
     };
+
+    var setTimers = function($scope,ctlr){
+        // Timers
+        setInterval(function(){
+            if (ctlr.pedidos){
+                for(var i = 0;i < ctlr.pedidos.length;i++){
+                    var pedido = ctlr.pedidos[i];
+                    if (pedido.data.get('Estado') == 'PendienteConfirmacion'){
+                        if (pedido.timer.minute > 0 || pedido.time.second > 0){
+                            if (pedido.timer.second > 0){
+                                pedido.timer.second -= 1;
+                            }else{
+                                if (pedido.timer.minute > 0){
+                                    pedido.timer.minute -= 1;
+                                    pedido.timer.second = 59;
+                                }else{
+                                    //TODO - cancel confirmation
+                                }
+                            }
+                            $scope.$apply();
+                        }
+                    }
+                }
+            }
+        },1000);
+    }
 
 })();
