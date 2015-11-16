@@ -52,6 +52,10 @@
         var pedido = Parse.Object.extend("Pedido");
         var query = new Parse.Query(pedido);
         query.equalTo("Estado", "Finalizado");
+
+        var date = new Date();
+        date.setDate(date.getDate()-1);
+        query.greaterThan("HoraFinalizacion", date);
         query.include("CiudadOrigen");
         query.include("CiudadDestino");
         query.include("Transportista");
