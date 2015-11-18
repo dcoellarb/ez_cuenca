@@ -47,8 +47,6 @@
         });
 
     var inicializarPedidos = function($scope,ctlr){
-
-        //TODO - filter only current day
         var pedido = Parse.Object.extend("Pedido");
         var query = new Parse.Query(pedido);
         query.equalTo("Estado", "Finalizado");
