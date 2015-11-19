@@ -24,7 +24,7 @@
 
             //Suscriptions
             //Internal Suscriptions
-            $rootScope.$on('nuevoPedidoConfirmado', function(event, args) {
+            $rootScope.$on($rootScope.channels.pedido_confirmado, function(event, args) {
                 inicializarPedidos($scope,ctlr);
             });
             $rootScope.$on('pedido_cancelado_transportista', function(event, args) {
