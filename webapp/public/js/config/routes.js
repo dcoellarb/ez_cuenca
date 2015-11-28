@@ -10,6 +10,9 @@
                 .when('/inicioClientes',{
                     templateUrl : '/templates/pages/privado/clientes/inicioClientes/index.html'
                 })
+                .when('/inicioProveedores',{
+                    templateUrl : '/templates/pages/privado/proveedores/inicio/index.html'
+                })
                 .when('/detallePedido/:id',{
                     templateUrl : '/templates/pages/privado/clientes/DetallePedido/index.html'
                 })
@@ -25,7 +28,7 @@
         }).
         run(function($rootScope, $location) {
             $rootScope.$on( "$routeChangeStart", function(event, next, current) {
-                if ($rootScope.loggedInUser == null) {
+                if (!Parse.User.current()) {
                     if ( next.templateUrl === '/templates/pages/publico/home/index.html') {
                     } else {
                         $location.path("/login");

@@ -5,7 +5,7 @@
 (function(){
 
     angular.module("easyRuta")
-        .controller('inicioClientesController',function($scope){
+        .controller('inicioClientesController',function(){
 
             console.log("inicio clientes controller");
 

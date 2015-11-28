@@ -8,91 +8,151 @@
 
 (function(){
 
-    var utilities;
+    // Variables
+    var ctlr;
+    var local_rootScope;
+    var local_scope;
+    var local_location;
+    var local_uiModal;
+    var local_pedidos_activos_viewmodel;
+
+    // Constructor
+    var init;
+
+    // "Public" methods
+    var verDetalle;
+    var iniciar;
+    var cancelar;
+    var cancelarProveedor;
+
+    // Methods
+
+    //Data callbacks
+    var get_pedidos_activos_callback;
+    var cancelar_pedido_callback;
+    var cancelar_pedido_proveedor_callback;
+    var iniciar_pedido_callback;
+
+    //Notifications callbacks
+    var pedido_confirmado_callback;
+    var pedido_confirmado_proveedor_callback;
+    var pedido_cancelado_callback;
+    var pedido_cancelado_transportista_callback;
+    var pedido_iniciado_callback;
+    var pedido_cancelado_confirmado_proveedor_callback;
 
     angular.module("easyRuta")
-        .controller('PedidosActivosController',function($rootScope,$scope,$location,utils) {
-            utilities = utils;
+        .controller('PedidosActivosController',function($rootScope,$scope,$location,$uibModal,pedidos_activos_viewmodel) {
 
-            var ctlr = this;
+            ctlr = this;
+            local_rootScope = $rootScope;
+            local_scope = $scope;
+            local_location = $location;
+            local_uiModal = $uibModal;
+            local_pedidos_activos_viewmodel = pedidos_activos_viewmodel;
 
-            inicializarPedidos($scope,ctlr);
+            ctlr.verDetalle = verDetalle;
+            ctlr.iniciar = iniciar;
+            ctlr.cancelar = cancelar;
+            ctlr.cancelarProveedor = cancelarProveedor;
 
-            ctlr.verDetalle = function(id) {
-                $location.path("/detallePedido/" + id);
-            };
-
-            //Suscriptions
-            //Internal Suscriptions
-            $rootScope.$on($rootScope.channels.pedido_confirmado, function(event, args) {
-                inicializarPedidos($scope,ctlr);
-            });
-            $rootScope.$on('pedido_cancelado_transportista', function(event, args) {
-                //TODO - paste notification to user
-                inicializarPedidos($scope,ctlr);
-            });
-            //TODO - add insternal suscription for pedido cancelado
-
-            //Pubnub suscriptions
-            $rootScope.pubnub.subscribe({
-                channel: 'pedido_iniciado',
-                message: function(m){
-                    $rootScope.$broadcast('nuevoPedidoIniciado', m);
-                    inicializarPedidos($scope,ctlr);
-                }
-            });
+            init();
         });
 
-    var inicializarPedidos = function($scope,ctlr){
-        var pedido = Parse.Object.extend("Pedido");
-        var query = new Parse.Query(pedido);
-        query.equalTo("Estado", "Activo");
-        query.include("CiudadOrigen");
-        query.include("CiudadDestino");
-        query.include("Transportista");
-        query.find({
-            success: function(results) {
-                ctlr.pedidos = new Array();
-                for (var i = 0; i < results.length; i++) {
-                    var pedido = {
-                        data : results[i],
-                        json : pedidoToJson(results[i])
-                    };
-                    pedido.background = "backgroud-photo-" + pedido.data.get("CiudadDestino").get("Nombre").toLowerCase();
-                    ctlr.pedidos.push(pedido);
-                }
-                $scope.$apply();
-            },
-            error: function(error) {
-                console.log("Error: " + error.code + " " + error.message);
-            }
+    // Constructor
+    init = function() {
+        local_pedidos_activos_viewmodel.get_pedidos_activos(get_pedidos_activos_callback);
+
+        local_rootScope.$on(local_rootScope.channels.pedido_confirmado, pedido_confirmado_callback);
+        local_rootScope.$on(local_rootScope.channels.pedido_confirmado_proveedor, pedido_confirmado_proveedor_callback);
+        local_rootScope.$on(local_rootScope.channels.pedido_cancelado, pedido_cancelado_callback);
+        local_rootScope.$on(local_rootScope.channels.pedido_cancelado_transportista, pedido_cancelado_transportista_callback);
+        local_rootScope.$on(local_rootScope.channels.pedido_iniciado, pedido_iniciado_callback);
+        local_rootScope.$on(local_rootScope.channels.pedido_cancelado_confirmado_proveedor, pedido_cancelado_confirmado_proveedor_callback);
+    };
+
+    // "Public" methods
+    verDetalle = function(pedido) {
+        local_location.path("/detallePedido/" + pedido.id);
+    };
+    iniciar = function(pedido) {
+        local_pedidos_activos_viewmodel.iniciar_pedido(pedido,iniciar_pedido_callback)
+    };
+    cancelar = function(pedido){
+        local_scope.confirm_message = "Esta seguro de cancelar este pedido?"
+        var modalInstance = local_uiModal.open({
+            animation: local_scope.animationsEnabled,
+            templateUrl: 'confirm_dialog.html',
+            controller: 'ConfirmDialogController as ctlr',
+            scope: local_scope
+        });
+
+        modalInstance.result.then(function (result) {
+            local_pedidos_activos_viewmodel.cancelar_pedido(pedido,cancelar_pedido_callback);
+        }, function () {
+            console.log("Modal canceled.");
+        });
+    };
+    cancelarProveedor = function(pedido){
+        local_scope.confirm_message = "Esta seguro de cancelar este pedido?"
+        var modalInstance = local_uiModal.open({
+            animation: local_scope.animationsEnabled,
+            templateUrl: 'confirm_dialog.html',
+            controller: 'ConfirmDialogController as ctlr',
+            scope: local_scope
+        });
+
+        modalInstance.result.then(function (result) {
+            local_pedidos_activos_viewmodel.cancelar_pedido_proveedor(pedido,cancelar_pedido_proveedor_callback)
+        }, function () {
+            console.log("Modal canceled.");
         });
     };
 
-    var pedidoToJson = function(pedido){
-        var transportista = {};
-        if (pedido.get("Transportista")) {
+    // Methods
 
-            var imageUrl = "";
-            if (pedido.get("Transportista").get("photo")) {
-                imageUrl = pedido.get("Transportista").get("photo").url();
-            }
+    //Data callbacks
+    get_pedidos_activos_callback = function(error,results){
+        ctlr.isProveedor = false;
+        if (local_rootScope.proveedor){
+            ctlr.isProveedor = true;
+        }
 
-            transportista = {
-                nombre: pedido.get("Transportista").get("Nombre"),
-                    telefono: pedido.get("Transportista").get("Telefono"),
-                    imageUrl: imageUrl
-            }
+        ctlr.pedidos = results;
+        local_scope.$apply();
+    };
+    iniciar_pedido_callback = function(m) {
+        local_pedidos_activos_viewmodel.get_pedidos_activos(get_pedidos_activos_callback);
+    };
+    cancelar_pedido_callback = function(error,result){
+        if (!error){
+            local_pedidos_activos_viewmodel.get_pedidos_activos(get_pedidos_activos_callback);
         }
-        var pedidoJson = {
-            id : pedido.id,
-            viaje : pedido.get("CiudadOrigen").get("Nombre") + " - " + pedido.get("CiudadDestino").get("Nombre"),
-            carga : utilities.formatDate(pedido.get("HoraCarga")),
-            entrega : utilities.formatDate(pedido.get("HoraEntrega")),
-            estado : pedido.get("Estado"),
-            transportista : transportista
+    };
+    cancelar_pedido_proveedor_callback = function(error,result){
+        if (!error){
+            local_pedidos_activos_viewmodel.get_pedidos_activos(get_pedidos_activos_callback);
         }
-        return pedidoJson;
+    };
+
+    //Notifications callbacks
+    pedido_confirmado_callback = function(m) {
+        local_pedidos_activos_viewmodel.get_pedidos_activos(get_pedidos_activos_callback);
+    };
+    pedido_confirmado_proveedor_callback = function(m) {
+        local_pedidos_activos_viewmodel.get_pedidos_activos(get_pedidos_activos_callback);
+    };
+    pedido_cancelado_callback = function(m) {
+        local_pedidos_activos_viewmodel.get_pedidos_activos(get_pedidos_activos_callback);
+    };
+    pedido_cancelado_transportista_callback = function(m) {
+        local_pedidos_activos_viewmodel.get_pedidos_activos(get_pedidos_activos_callback);
+    };
+    pedido_iniciado_callback = function(m) {
+        local_pedidos_activos_viewmodel.get_pedidos_activos(get_pedidos_activos_callback);
+    };
+    pedido_cancelado_confirmado_proveedor_callback = function(m){
+        local_pedidos_activos_viewmodel.get_pedidos_activos(get_pedidos_activos_callback);
     };
 
 })();

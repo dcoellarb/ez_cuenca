@@ -9,13 +9,13 @@
             </div>
             <div class="col-sm-12 col-nopadding highligthed-section" ng-show="pedido.estado == 'PendienteConfirmacion'">
                 <div class="col-sm-12 center-content-horizontal"><span class="list-heading">Ya tienes conductor:</span></div>
-                <div class="col-sm-12 center-content-horizontal"><span class="list-item">{{pedido.Transportista.efectividad}}% efectividad</span></div>
+                <div class="col-sm-12 center-content-horizontal"><span class="list-item">{{pedido.transportista.statistics.efectividad}}% efectividad</span></div>
                 <div class="col-sm-12 center-content-horizontal" style="margin-bottom: 10px;">
-                    <span class="glyphicon glyphicon-star" style="color:#BBD41C" ng-show="pedido.Transportista.rating >= 1"></span><span class="glyphicon glyphicon-star" ng-show="pedido.Transportista.rating < 1"></span>
-                    <span class="glyphicon glyphicon-star" style="color:#BBD41C" ng-show="pedido.Transportista.rating >= 2"></span><span class="glyphicon glyphicon-star" ng-show="pedido.Transportista.rating < 2"></span>
-                    <span class="glyphicon glyphicon-star" style="color:#BBD41C" ng-show="pedido.Transportista.rating >= 3"></span><span class="glyphicon glyphicon-star" ng-show="pedido.Transportista.rating < 3"></span>
-                    <span class="glyphicon glyphicon-star" style="color:#BBD41C" ng-show="pedido.Transportista.rating >= 4"></span><span class="glyphicon glyphicon-star" ng-show="pedido.Transportista.rating < 4"></span>
-                    <span class="glyphicon glyphicon-star" style="color:#BBD41C" ng-show="pedido.Transportista.rating == 5"></span><span class="glyphicon glyphicon-star" ng-show="pedido.Transportista.rating < 5"></span>
+                    <span class="glyphicon glyphicon-star" style="color:#BBD41C" ng-show="pedido.transportista.statistics.rating >= 1"></span><span class="glyphicon glyphicon-star" ng-show="pedido.transportista.statistics.rating < 1"></span>
+                    <span class="glyphicon glyphicon-star" style="color:#BBD41C" ng-show="pedido.transportista.statistics.rating >= 2"></span><span class="glyphicon glyphicon-star" ng-show="pedido.transportista.statistics.rating < 2"></span>
+                    <span class="glyphicon glyphicon-star" style="color:#BBD41C" ng-show="pedido.transportista.statistics.rating >= 3"></span><span class="glyphicon glyphicon-star" ng-show="pedido.transportista.statistics.rating < 3"></span>
+                    <span class="glyphicon glyphicon-star" style="color:#BBD41C" ng-show="pedido.transportista.statistics.rating >= 4"></span><span class="glyphicon glyphicon-star" ng-show="pedido.transportista.statistics.rating < 4"></span>
+                    <span class="glyphicon glyphicon-star" style="color:#BBD41C" ng-show="pedido.transportista.statistics.rating == 5"></span><span class="glyphicon glyphicon-star" ng-show="pedido.transportista.statistics.rating < 5"></span>
                 </div>
                 <div class="col-sm-12">
                     <input type="button" value="Confirmar" class="btn btn-primary" ng-click="ctlr.confirmar(pedido)"/>
@@ -26,7 +26,20 @@
                     <div><span class="list-item">{{pedido.timer.value}}</span></div>
                 </div>
             </div>
+            <div class="col-sm-12 col-nopadding highligthed-section" ng-show="pedido.estado == 'PendienteConfirmacionProveedor'">
+                <div class="col-sm-12 col-nopadding center-content-horizontal">
+                    <span class="list-item-label">Esperando confirmacion de:{{pedido.proveedor.nombre}}</span>
+                </div>
+                <div class="col-sm-12 center-content-horizontal">
+                    <div><span class="list-item-label">Expira en:</span></div>
+                    <div><span class="list-item">{{pedido.timer.value}}</span></div>
+                </div>
+                <div class="col-sm-12 center-content-horizontal">
+                    <input type="button" value="Cancelar" class="btn btn-small btn-danger" ng-click="ctlr.cancelar(pedido)"/>
+                </div>
+            </div>
             <hr class="col-sm-11">
         </div>
     </div>
+    <div ng-include="'templates/components/confirm_dialog.html'"></div>
 </div>

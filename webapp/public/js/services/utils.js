@@ -30,6 +30,9 @@
                     }else{
                         return ""
                     }
+                },
+                formatCurrency : function(value){
+                    return '$' + value.toFixed(2).replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1,");
                 }
             };
             return utilsService;

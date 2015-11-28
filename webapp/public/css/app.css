@@ -59,6 +59,10 @@ body{
     align-items: center;
     justify-content: center;
     display: flex;
+    text-align: center;
+}
+.center-text{
+    text-align: center;
 }
 .highligthed-section{
     background-color: #F0F0F0;
@@ -74,9 +78,27 @@ hr {
     font-weight: 400;
     font-size: 14pt;
 }
+.list-item-block{
+    display: block;
+    margin: auto;
+}
+.list-item-inline{
+    display: inline-block;
+    margin-right: 5px;
+}
 .list-item{
     font-weight: 300;
     font-size: 8pt;
+    margin: auto;
+}
+.list-item-highlight{
+    font-size: 10pt;
+    color: #F78F1E;
+    font-weight: bold;
+}
+.list-item-sm{
+    font-weight: 300;
+    font-size: 6pt;
 }
 .list-item-lg{
     font-weight: 300;
@@ -109,6 +131,14 @@ hr {
     border-radius: 25px;
     background-size: cover;
 }
+.list-item-image-sm {
+    min-width: 40px;
+    min-height: 40px;
+    max-width: 40px;
+    max-height: 40px;
+    border-radius: 20px;
+    background-size: cover;
+}
 .list-item-image-md {
     min-width: 100px;
     min-height: 100px;
@@ -117,7 +147,9 @@ hr {
     border-radius: 50px;
     background-size: cover;
 }
-
+.list-item-image-block {
+    display: block;
+}
 .fullscreen-bg {
     position: fixed;
     top: 0;
@@ -432,5 +464,16 @@ hr {
     padding: 15px;
     margin: 15px;
     background-color: whitesmoke;
+}
+
+.link-danger {
+    color: red;
+    text-decoration: none;
+    cursor: pointer;
+}
+.link-danger:hover{
+    color : red;
+    text-decoration: underline;
+    cursor: pointer;
 }
 

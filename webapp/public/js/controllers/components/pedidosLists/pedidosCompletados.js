@@ -8,99 +8,88 @@
 
 (function(){
 
-    var utilities;
+    // Variables
+    var ctlr;
+    var local_rootScope;
+    var local_scope;
+    var local_location;
+    var local_uiModal;
+    var local_pedidos_completados_viewmodel;
+
+    // Constructor
+    var init;
+
+    // "Public" methods
+    var verDetalle;
+    var calificar;
+
+    // Methods
+
+    //Data callbacks
+    var get_pedidos_completados_callback;
+
+    //Notifications callbacks
+    var pedido_completado_callback;
 
     angular.module("easyRuta")
-        .controller('PedidosCompletadosController',function($rootScope,$scope,$location,$uibModal,utils) {
-            utilities = utils;
+        .controller('PedidosCompletadosController',function($rootScope,$scope,$location,$uibModal,pedidos_completados_viewmodel) {
 
-            var ctlr = this;
+            ctlr = this;
+            local_rootScope = $rootScope;
+            local_scope = $scope;
+            local_location = $location;
+            local_uiModal = $uibModal;
+            local_pedidos_completados_viewmodel = pedidos_completados_viewmodel;
 
-            inicializarPedidos($scope,ctlr);
+            ctlr.verDetalle = verDetalle;
+            ctlr.calificar = calificar;
 
-            ctlr.verDetalle = function(id) {
-                $location.path("/detallePedido/" + id);
-            };
+            init();
 
-            ctlr.calificar = function(){
-                var modalInstance = $uibModal.open({
-                    animation: $scope.animationsEnabled,
-                    templateUrl: 'rateTransportistaModal.html',
-                    controller: 'RateTransportistaModalController as ctlr'
-                });
-
-                modalInstance.result.then(function () {
-                    console.log("return from modal");
-                    inicializarPedidos($scope,ctlr);
-                }, function () {
-                    console.log("modal canceled");
-                });
-            };
-
-            //Suscriptions
-            //Internal Suscriptions
-            $rootScope.$on('nuevoPedidoCompletado', function(event, args) {
-                inicializarPedidos($scope,ctlr)
-            });
-
-            //Pubnub suscriptions
         });
 
-    var inicializarPedidos = function($scope,ctlr){
-        var pedido = Parse.Object.extend("Pedido");
-        var query = new Parse.Query(pedido);
-        query.equalTo("Estado", "Finalizado");
+    // Constructor
+    init = function() {
+        local_pedidos_completados_viewmodel.get_pedidos_completados(get_pedidos_completados_callback);
 
-        var date = new Date();
-        date.setDate(date.getDate()-1);
-        query.greaterThan("HoraFinalizacion", date);
-        query.include("CiudadOrigen");
-        query.include("CiudadDestino");
-        query.include("Transportista");
-        query.addDescending("createdAt");
-        query.find({
-            success: function(results) {
-                ctlr.pedidos = new Array();
-                for (var i = 0; i < results.length; i++) {
-                    var pedido = {
-                        data : results[i],
-                        json : pedidoToJson(results[i])
-                    };
-                    pedido.background = "backgroud-photo-" + pedido.data.get("CiudadDestino").get("Nombre").toLowerCase();
-                    ctlr.pedidos.push(pedido);
-                }
-                $scope.$apply();
-            },
-            error: function(error) {
-                console.log("Error: " + error.code + " " + error.message);
-            }
+        local_rootScope.$on(local_rootScope.channels.pedido_completado, pedido_completado_callback);
+    };
+
+    // "Public" methods
+    verDetalle = function(pedido) {
+        local_location.path("/detallePedido/" + pedido.id);
+    };
+    calificar = function(){
+        var modalInstance = local_uiModal.open({
+            animation: local_scope.animationsEnabled,
+            templateUrl: 'rateTransportistaModal.html',
+            controller: 'RateTransportistaModalController as ctlr'
+        });
+
+        modalInstance.result.then(function () {
+            console.log("return from modal");
+            local_pedidos_completados_viewmodel.get_pedidos_completados(get_pedidos_completados_callback);
+        }, function () {
+            console.log("modal canceled");
         });
     };
 
-    var pedidoToJson = function(pedido){
-        var transportista = {};
-        if (pedido.get("Transportista")) {
+    // Methods
 
-            var imageUrl = "";
-            if (pedido.get("Transportista").get("photo")) {
-                imageUrl = pedido.get("Transportista").get("photo").url();
-            }
-
-            transportista = {
-                nombre: pedido.get("Transportista").get("Nombre"),
-                telefono: pedido.get("Transportista").get("Telefono"),
-                imageUrl: imageUrl,
-                rating: pedido.get("Rate")
-            }
+    //Data callbacks
+    get_pedidos_completados_callback = function(error,results){
+        ctlr.isProveedor = false;
+        if (local_rootScope.proveedor){
+            ctlr.isProveedor = true;
         }
-        var pedidoJson = {
-            id : pedido.id,
-            viaje : pedido.get("CiudadOrigen").get("Nombre") + " - " + pedido.get("CiudadDestino").get("Nombre"),
-            carga : utilities.formatDate(pedido.get("HoraFinalizacion")),
-            estado : pedido.get("Estado"),
-            transportista : transportista
-        };
-        return pedidoJson;
+
+        ctlr.pedidos = results;
+        local_scope.$apply();
+    };
+
+    //Notifications callbacks
+    pedido_completado_callback = function(m) {
+        local_pedidos_completados_viewmodel.get_pedidos_completados(get_pedidos_completados_callback);
     };
 
 })();

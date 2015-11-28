@@ -4,260 +4,183 @@
 
 (function(){
 
+    // Variables
+    var ctlr;
+    var local_rootScope;
+    var local_scope;
+    var local_uibModal;
+    var local_agregar_pedido_viewmodel;
+    var local_form;
+
+    var modal_ctlr;
+    var modal_local_scope;
+    var modal_local_uibModalInstance;
+
+    // Constructor
+    var init;
+    var modal_init;
+
+    // "Public" methods
+    var agregar;
+    var guardar_como_plantilla;
+    var limpiar;
+    var tipo_transportista_seleccionado;
+    var change_unidad;
+    var plantilla_selected;
+    var delete_plantilla;
+    var toggle_form;
+
+    var modal_guardar_plantilla;
+    var modal_cancelar;
+
+    // Methods
+    var limpiar_form;
+    var setup_date_pickers;
+    var get_active_transportistas;
+    var guardar_pedido;
+
+    //View Controller callbacks references
+    var guardar_pedido_callback;
+
+    //Data callbacks
+    var local_get_cliente_proveedores_callback;
+    var local_get_plantillas_callback;
+    var local_get_ciudades_callback;
+    var local_get_active_transportistas_callback;
+    var local_guardar_pedido_callback;
+    var local_agregar_guardar_pedido_callback;
+    var local_plantilla_guardar_pedido_callback;
+    var local_get_plantilla_callback;
+    var local_delete_plantilla_callback;
+
+    //Notifications callbacks
+    var presense_new_pedidos_callback;
+
     angular.module("easyRuta")
-        .controller('AgregarPedidoController',function($rootScope,$scope,$uibModal){
+        .controller('AgregarPedidoController',function($rootScope,$scope,$uibModal,agregar_pedido_viewmodel){
 
-            var ctlr = this;
+            ctlr = this;
+            local_rootScope = $rootScope;
+            local_scope = $scope;
+            local_uibModal = $uibModal;
+            local_agregar_pedido_viewmodel = agregar_pedido_viewmodel;
 
-            ctlr.open = false;
+            ctlr.Agregar = agregar;
+            ctlr.GuardarComoPlantilla = guardar_como_plantilla;
+            ctlr.Limpiar = limpiar;
+            ctlr.TipoTransporteSeleccionado = tipo_transportista_seleccionado;
+            ctlr.ChangeUnidad = change_unidad;
+            ctlr.PlantillaSelected = plantilla_selected;
+            ctlr.DeletePlantilla  = delete_plantilla
+            ctlr.ToggleForm = toggle_form;
 
-            $('#agregarPedido a').click(function() {
-                console.log("panel clicked.");
-                if ($('#agregarPedido').hasClass("panel-primary")){
-                    $('#agregarPedido').removeClass('panel-primary');
-                    $('#agregarPedido').addClass('panel-default');
-                    $('#inputCiudadOrigen').focus();
-                    ctlr.open = true;
-                    $scope.$apply();
-                }else{
-                    $('#agregarPedido').removeClass('panel-default');
-                    $('#agregarPedido').addClass('panel-primary');
-                    ctlr.open = false;
-                    $scope.$apply();
-                }
-            });
+            init();
 
-            /*
-             * Get initial data from parse
-             * */
-            ctlr.availableTransportistas = 0;
-            getInitialData($scope,ctlr);
-
-            /*
-             * Setup Actions
-             * */
-            setupActions($rootScope,$scope,$uibModal,ctlr);
-
-            /*
-             * Setup date pickers options
-             * */
-            setupDatePickers($scope);
-
-            $rootScope.$on('new_pedido_new_suscriber', function(event, args) {
-                getActiveTransportistas($rootScope,ctlr);
-            });
         })
         .controller('AgregarPedidoModalController',function($scope,$uibModalInstance){
-            var ctlr = this;
-            ctlr.plantilla = "";
 
-            ctlr.guardar = function () {
-                $uibModalInstance.close(ctlr.plantilla);
-            };
+            modal_ctlr = this;
+            modal_local_scope = $scope;
+            modal_local_uibModalInstance = $uibModalInstance;
 
-            ctlr.cancelar = function () {
-                $uibModalInstance.dismiss('cancel');
-            };
+            modal_ctlr.guardar = modal_guardar_plantilla;
+            modal_ctlr.cancelar = modal_cancelar;
+
+            modal_init();
         });
 
-    var getInitialData = function ($scope,ctlr){
-        ctlr.plantillas = new Array();
-        var pedido = Parse.Object.extend("Pedido");
-        var query = new Parse.Query(pedido);
-        query.greaterThan("Plantilla", "");
-        query.find({
-            success: function(results) {
-                ctlr.plantillas = new Array();
-                for (var i = 0; i < results.length; i++) {
-                    ctlr.plantillas.push({id:results[i].id,plantilla:results[i].get('Plantilla')});
-                }
-                $scope.$apply();
-            },
-            error: function(error) {
-                console.log("Error: " + error.code + " " + error.message);
-            }
-        });
+    // Constructor
+    init = function() {
+        local_agregar_pedido_viewmodel.get_cliente_proveedores(local_rootScope.cliente,local_get_cliente_proveedores_callback);
+        local_agregar_pedido_viewmodel.get_plantillas(local_get_plantillas_callback);
+        local_agregar_pedido_viewmodel.get_ciudades(local_get_ciudades_callback);
 
-        ctlr.ciudades = new Array();
-        var ciudad = Parse.Object.extend("Ciudad");
-        var query = new Parse.Query(ciudad);
-        query.find({
-            success: function(results) {
-                ctlr.ciudades = new Array();
-                for (var i = 0; i < results.length; i++) {
-                    ctlr.ciudades.push({id : results[i].id, nombre : results[i].get('Nombre')});
-                }
-                $scope.$apply();
-            },
-            error: function(error) {
-                console.log("Error: " + error.code + " " + error.message);
-            }
-        });
+        local_rootScope.$on('presense_' + local_rootScope.channels.new_pedidos, presense_new_pedidos_callback);
 
+        ctlr.availableTransportistas = 0;
+        ctlr.open = false;
         ctlr.minDate = new Date();
 
-        LimpiarForm(ctlr);
+        setup_date_pickers();
+        limpiar_form();
+    };
+    modal_init = function(){
+        modal_ctlr.plantilla = "";
     };
 
-    var setupActions = function($rootScope,$scope,$uibModal,ctlr) {
-
-        ctlr.Agregar = function (form) {
-            if (form.$valid) {
-                ctlr.data.Plantilla = "";
-                ctlr.data.Estado = "Pendiente";
-                Guardar(ctlr).then(function (pedidos) {
-                    $('#agregarPedidBody').collapse("hide");
-                    $('#agregarPedido').removeClass('panel-default');
-                    $('#agregarPedido').addClass('panel-primary');
-                    ctlr.open = false;
-
-                    $rootScope.$broadcast('nuevosPedidos', pedidos);
-
-                    // Publish nuevo pedido
-                    $rootScope.pubnub.publish({
-                        channel: 'new_pedidos',
-                        message: {}
-                    });
-
-                    getInitialData($scope, ctlr);
-                    form.$setPristine();
-                });
-            }
-        };
-
-        ctlr.GuardarComoPlantilla = function (form) {
-            if (form.$valid) {
-                var modalInstance = $uibModal.open({
-                    animation: $scope.animationsEnabled,
-                    templateUrl: 'PlantillaModal.html',
-                    controller: 'AgregarPedidoModalController as agrPedModalCtlr'
-                });
-
-                modalInstance.result.then(function (plantilla) {
-                    ctlr.data.Plantilla = plantilla;
-                    ctlr.data.Estado = "Plantilla";
-                    Guardar(ctlr).then(function (pedido) {
-                        ctlr.plantillas.push({id: pedido[0].id, plantilla: pedido[0].get('Plantilla')});
-                        $scope.$apply();
-                    });
-                }, function () {
-                    console.log("Modal canceled.");
-                });
-            }
-        };
-
-        ctlr.Limpiar = function (form) {
-            LimpiarForm(ctlr);
-            form.$setPristine();
-        };
-
-        ctlr.TipoTransporteSeleccionado = function (TipoTransporte) {
-            ctlr.data.TipoTransporte = TipoTransporte;
-        };
-
-        ctlr.ChangeUnidad = function (unidad) {
-            ctlr.data.TipoUnidad = unidad;
-            if (unidad == "peso") {
-                $('#unidades_container').hide();
-                $('#peso_container').show();
-            } else {
-                $('#unidades_container').show();
-                $('#peso_container').hide();
-            }
-        };
-
-        ctlr.PlantillaSelected = function (id) {
-            var pedido = Parse.Object.extend("Pedido");
-            var query = new Parse.Query(pedido);
-            query.get(id, {
-                success: function (plantillaObject) {
-                    console.dir(plantillaObject);
-                    if (plantillaObject) {
-                        console.log("setting plantilla");
-                        ctlr.data = {
-                            Plantilla: ctlr.plantilla,
-                            CiudadOrigen: plantillaObject.get("CiudadOrigen").id,
-                            DireccionOrigen: plantillaObject.get("DireccionOrigen"),
-                            CiudadDestino: plantillaObject.get("CiudadDestino").id,
-                            DireccionDestino: plantillaObject.get("DireccionDestino"),
-                            HoraCarga: plantillaObject.get("HoraCarga"),
-                            HoraEntrega: plantillaObject.get("HoraEntrega"),
-                            Producto: plantillaObject.get("Producto"),
-                            Valor: plantillaObject.get("Valor"),
-                            TipoUnidad: plantillaObject.get("TipoUnidad"),
-                            PesoDesde: plantillaObject.get("PesoDesde"),
-                            PesoHasta: plantillaObject.get("PesoHasta"),
-                            Unidades: plantillaObject.get("Unidades"),
-                            TipoTransporte: plantillaObject.get("TipoTransporte"),
-                            ExtensionMinima: plantillaObject.get("ExtensionMin"),
-                            CajaRefrigerada: plantillaObject.get("CajaRefrigerada"),
-                            CubicajeMinimo: plantillaObject.get("CubicajeMin")
-                        };
-                        $scope.$apply();
-                    }
-                },
-                error: function (error) {
-                    console.log("Error: " + error.code + " " + error.message);
-                }
+    // "Public" methods
+    agregar = function (form) {
+        local_form = form;
+        if (local_form.$valid) {
+            ctlr.data.Plantilla = "";
+            ctlr.data.Estado = "Pendiente";
+            guardar_pedido(local_agregar_guardar_pedido_callback);
+        }
+    };
+    guardar_como_plantilla = function (form) {
+        local_form = form;
+        if (local_form.$valid) {
+            var modalInstance = $uibModal.open({
+                animation: $scope.animationsEnabled,
+                templateUrl: 'PlantillaModal.html',
+                controller: 'AgregarPedidoModalController as agrPedModalCtlr'
             });
-        };
 
-        ctlr.DeletePlantilla = function (id) {
-            var pedido = Parse.Object.extend("Pedido");
-            var query = new Parse.Query(pedido);
-            query.get(id, {
-                success: function (plantillaObject) {
-                    plantillaObject.destroy({
-                        success: function (myObject) {
-                            var i;
-                            ctlr.plantillas.forEach(function(element,index,array){
-                                if (element.id = id){
-                                    i = index;
-                                }
-                            });
-                            if (i){
-                                ctlr.plantillas.splice(i, 1);
-                                $scope.$apply();
-                            }
-                        },
-                        error: function (myObject, error) {
-                            console.log("Error: " + error.code + " " + error.message);
-                        }
-                    });
-                },
-                error: function (error) {
-                    console.log("Error: " + error.code + " " + error.message);
-                }
+            modalInstance.result.then(function (plantilla) {
+                ctlr.data.Plantilla = plantilla;
+                ctlr.data.Estado = "Plantilla";
+                guardar_pedido(local_plantilla_guardar_pedido_callback)
+            }, function () {
+                console.log("Modal canceled.");
             });
-        };
-
+        }
+    };
+    limpiar = function (form) {
+        local_form = form;
+        limpiar_form();
+    };
+    tipo_transportista_seleccionado = function (TipoTransporte) {
+        ctlr.data.TipoTransporte = TipoTransporte;
+    };
+    change_unidad = function (unidad) {
+        ctlr.data.TipoUnidad = unidad;
+        if (unidad == "peso") {
+            $('#unidades_container').hide();
+            $('#peso_container').show();
+        } else {
+            $('#unidades_container').show();
+            $('#peso_container').hide();
+        }
+    };
+    plantilla_selected = function (id) {
+        local_agregar_pedido_viewmodel.get_plantilla(id,local_get_plantilla_callback);
+    };
+    delete_plantilla = function (id) {
+        local_agregar_pedido_viewmodel.delete_plantilla(id,local_delete_plantilla_callback);
+    };
+    toggle_form = function() {
+        if ($('#agregarPedido').hasClass("panel-primary")){
+            $('#agregarPedido').removeClass('panel-primary');
+            $('#agregarPedido').addClass('panel-default');
+            $('#inputCiudadOrigen').focus();
+            ctlr.open = true;
+        }else{
+            $('#agregarPedido').removeClass('panel-default');
+            $('#agregarPedido').addClass('panel-primary');
+            ctlr.open = false;
+        }
     }
 
-    var setupDatePickers = function($scope){
-        /*
-         * Setup hora max carga date picker
-         * */
-        $scope.horaMaxCargaOpen = function($event) {
-            $scope.horaMaxCargaStatus.opened = true;
-        };
-        $scope.horaMaxCargaStatus = {
-            opened: false
-        };
+    modal_guardar_plantilla = function(){
+        modal_local_uibModalInstance.close(modal_ctlr.plantilla);
+    };
+    modal_cancelar = function(){
+        modal_local_uibModalInstance.dismiss('cancel');
+    };
 
-        /*
-         * Setup hora max carga date picker
-         * */
-        $scope.horaMaxDescargaOpen = function($event) {
-            $scope.horaMaxDescargaStatus.opened = true;
-        };
-        $scope.horaMaxDescargaStatus = {
-            opened: false
-        };
-    }
-
-    var LimpiarForm = function (ctlr){
+    // Methods
+    limpiar_form = function (){
         ctlr.copias = 1;
-
         ctlr.data = {
             Plantilla : "",
             CiudadOrigen : "",
@@ -277,108 +200,131 @@
             CajaRefrigerada : false,
             CubicajeMinimo : 0
         };
+        if (local_form){
+            local_form.$setPristine();
+        }
     }
+    setup_date_pickers = function(){
+        /*
+         * Setup hora max carga date picker
+         * */
+        local_scope.horaMaxCargaOpen = function($event) {
+            local_scope.horaMaxCargaStatus.opened = true;
+        };
+        local_scope.horaMaxCargaStatus = {
+            opened: false
+        };
 
-    var Guardar = function(ctlr){
-        return new Promise(function (fulfill, reject) {
-
-            var empresa = Parse.Object.extend("Empresa");
-            var query = new Parse.Query(empresa);
-            query.first({
-                success: function(empresaObject) {
-                    if (empresaObject){
-                        console.log("empresa object id:" + empresaObject.id);
-
-                        var Pedido = Parse.Object.extend("Pedido");
-                        var pedido = new Pedido();
-
-                        var CiudadOrigen = Parse.Object.extend("Ciudad");
-                        var ciudadOrigen = new CiudadOrigen();
-                        ciudadOrigen.id = ctlr.data.CiudadOrigen
-                        pedido.set("CiudadOrigen", ciudadOrigen);
-                        pedido.set("DireccionOrigen", ctlr.data.DireccionOrigen);
-
-                        var CiudadDestino = Parse.Object.extend("Ciudad");
-                        var ciudadDestino = new CiudadDestino();
-                        ciudadDestino.id = ctlr.data.CiudadDestino
-                        pedido.set("CiudadDestino", ciudadDestino);
-                        pedido.set("DireccionDestino", ctlr.data.DireccionDestino);
-
-                        pedido.set("Plantilla", ctlr.data.Plantilla);
-                        pedido.set("HoraCarga", ctlr.data.HoraCarga);
-                        pedido.set("HoraEntrega", ctlr.data.HoraEntrega);
-                        pedido.set("Producto", ctlr.data.Producto);
-                        pedido.set("TipoUnidad", ctlr.data.TipoUnidad);
-                        pedido.set("PesoDesde", ctlr.data.PesoDesde);
-                        pedido.set("PesoHasta", ctlr.data.PesoHasta);
-                        pedido.set("Unidades", ctlr.data.Unidades);
-                        pedido.set("Valor", ctlr.data.Valor);
-                        pedido.set("TipoTransporte", ctlr.data.TipoTransporte);
-                        pedido.set("CajaRefrigerada", ctlr.data.CajaRefrigerada);
-                        pedido.set("CubicajeMin", ctlr.data.CubicajeMinimo);
-                        pedido.set("ExtensionMin", ctlr.data.ExtensionMinima);
-                        pedido.set("Estado", ctlr.data.Estado);
-                        pedido.set("empresa", empresaObject);
-
-                        var copias = ctlr.copias;
-                        if (ctlr.data.Estado == "Plantilla"){
-                            copias = 1;
-
-                            var acl = new Parse.ACL(Parse.User.current());
-                            pedido.setACL(acl);
-                        } else {
-                            pedido.set("Comision", ctlr.data.Valor * 0.04);
-                            
-                            var acl = new Parse.ACL(Parse.User.current());
-                            acl.setRoleReadAccess("transportistaIndependiente", true);
-                            acl.setRoleReadAccess("proveedor", true);
-                            acl.setRoleReadAccess("transportista", true);
-                            acl.setRoleWriteAccess("transportistaIndependiente", true);
-                            acl.setRoleWriteAccess("proveedor", true);
-                            acl.setRoleWriteAccess("transportista", true);
-                            pedido.setACL(acl);
-                        }
-
-                        var pedidoArray = [];
-                        for(var i=1;i<=copias;i++){
-                            var newPedido = pedido.clone();
-                            pedidoArray.push(newPedido);
-                        }
-
-                        Parse.Object.saveAll(pedidoArray, {
-                            success: function(pedidos) {
-                                fulfill(pedidos);
-                            },
-                            error: function(pedidos, error) {
-                                console.log(error.message);
-                                reject(error);
-                            }
-                        });
-
-                    }
-                },
-                error: function(error) {
-                    console.log("Error: " + error.code + " " + error.message);
+        /*
+         * Setup hora max carga date picker
+         * */
+        local_scope.horaMaxDescargaOpen = function($event) {
+            local_scope.horaMaxDescargaStatus.opened = true;
+        };
+        local_scope.horaMaxDescargaStatus = {
+            opened: false
+        };
+    }
+    get_active_transportistas = function(){
+        local_agregar_pedido_viewmodel.get_active_transportistas(local_get_active_transportistas_callback);
+    }
+    guardar_pedido = function(callback){
+        guardar_pedido_callback = callback
+        var proveedor = null;
+        if (ctlr.data.Proveedor && ctlr.data.Proveedor != "") {
+            ctlr.proveedores.forEach(function (element, index, array) {
+                if (element.id = ctlr.data.Proveedor) {
+                    proveedor = element.data;
                 }
             });
-        });
+        }
+        local_agregar_pedido_viewmodel.guardar_pedidos(ctlr.data,proveedor,ctlr.copias,local_guardar_pedido_callback);
     };
 
-    var getActiveTransportistas = function($rootScope,ctlr){
-        console.log("geting active transportistas");
-        $rootScope.pubnub.here_now({
-            channel : 'new_pedidos',
-            state : true,
-            callback : function(m){
-                console.dir(m)
-                ctlr.availableTransportistas = 0;
-                m.uuids.forEach(function(element,index,array){
-                    if (element.state && element.state.type && element.state.type == "transportista"){
-                        ctlr.availableTransportistas += 1;
-                    }
-                });
+    //Data callbacks
+    local_get_cliente_proveedores_callback = function(error,results){
+        if (!error){
+            ctlr.proveedores = results;
+            local_scope.$apply();
+        }
+    };
+    local_get_plantillas_callback = function(error,results){
+        if (!error){
+            ctlr.plantillas = results;
+            local_scope.$apply();
+        }
+    };
+    local_get_ciudades_callback = function(error,results){
+        if (!error){
+            ctlr.ciudades = results;
+            local_scope.$apply();
+        }
+    };
+    local_get_active_transportistas_callback = function(results){
+        ctlr.availableTransportistas = results;
+        local_scope.$apply();
+    };
+    local_guardar_pedido_callback = function(error,results){
+        guardar_pedido_callback(error,results);
+    };
+    local_agregar_guardar_pedido_callback  = function(error,results){
+        if (!error){
+            $('#agregarPedidBody').collapse("hide");
+            $('#agregarPedido').removeClass('panel-default');
+            $('#agregarPedido').addClass('panel-primary');
+            ctlr.open = false;
+            limpiar_form();
+        }
+    };
+    local_plantilla_guardar_pedido_callback = function(error,results){
+        if (!error){
+            ctlr.plantillas.push({id: results[0].id, plantilla: results[0].get('Plantilla')});
+            local_scope.$apply();
+        }
+    };
+    local_get_plantilla_callback = function(error,results){
+        if (results) {
+            ctlr.data = {
+                Plantilla: ctlr.plantilla,
+                CiudadOrigen: results.get("CiudadOrigen").id,
+                DireccionOrigen: results.get("DireccionOrigen"),
+                CiudadDestino: results.get("CiudadDestino").id,
+                DireccionDestino: results.get("DireccionDestino"),
+                HoraCarga: results.get("HoraCarga"),
+                HoraEntrega: results.get("HoraEntrega"),
+                Producto: results.get("Producto"),
+                Valor: results.get("Valor"),
+                TipoUnidad: results.get("TipoUnidad"),
+                PesoDesde: results.get("PesoDesde"),
+                PesoHasta: results.get("PesoHasta"),
+                Unidades: results.get("Unidades"),
+                TipoTransporte: results.get("TipoTransporte"),
+                ExtensionMinima: results.get("ExtensionMin"),
+                CajaRefrigerada: results.get("CajaRefrigerada"),
+                CubicajeMinimo: results.get("CubicajeMin"),
+                Proveedor : results.get("Proveedor").id
+            };
+            local_scope.$apply();
+        }
+    };
+    local_delete_plantilla_callback = function(error,results){
+        if (!error){
+            var i;
+            ctlr.plantillas.forEach(function(element,index,array){
+                if (element.id = id){
+                    i = index;
+                }
+            });
+            if (i) {
+                ctlr.plantillas.splice(i, 1);
+                local_scope.$apply();
             }
-        });
-    }
+        }
+    };
+
+    //Notifications callbacks
+    presense_new_pedidos_callback  = function(event, args) {
+        get_active_transportistas();
+    };
 
 })();

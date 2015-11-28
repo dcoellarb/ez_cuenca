@@ -43,13 +43,13 @@ Parse.Cloud.beforeDelete('Compras', function (request, respond) {
     if (transportista != null && proveedor != null){
         respond.error();
     }else{
-        if (transportista != null){
-            transportista.increment("Saldo",valor * -1);
-            transportista.save();
-            respond.success();
-        }else if(proveedor != null){
+        if(proveedor != null){
             proveedor.increment("Saldo",valor * -1);
             proveedor.save();
+            respond.success();
+        }else if (transportista != null){
+            transportista.increment("Saldo",valor * -1);
+            transportista.save();
             respond.success();
         }
     }
@@ -61,20 +61,20 @@ Parse.Cloud.afterSave('Pedido', function (request, respond) {
     var transportista = request.object.get("Transportista");
     var proveedor = request.object.get("Proveedor");
     if (request.object.get("Estado") == "Activo") {
-        if (transportista != null){
-            transportista.increment("Saldo", comision * -1);
-            transportista.save();
-        }else if (proveedor != null){
+        if (proveedor != null){
             proveedor.increment("Saldo", comision * -1);
             proveedor.save();
+        }else if (transportista != null){
+            transportista.increment("Saldo", comision * -1);
+            transportista.save();
         }
     }else if (request.object.get("Estado") == "CanceladoCliente"){
-        if (transportista != null){
-            transportista.increment("Saldo", comision);
-            transportista.save();
-        }else if (proveedor != null){
+        if (proveedor != null){
             proveedor.increment("Saldo", comision);
             proveedor.save();
+        }else if (transportista != null){
+            transportista.increment("Saldo", comision);
+            transportista.save();
         }
     }
 });

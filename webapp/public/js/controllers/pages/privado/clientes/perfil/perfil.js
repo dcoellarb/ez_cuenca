@@ -5,38 +5,24 @@
 (function(){
 
     angular.module("easyRuta")
-        .controller('perfilController',function($scope,$location){
+        .controller('perfilController',function($rootScope,$scope,$location){
 
             console.log("perfil controller");
 
             var ctlr = this;
 
-            var Empresa = Parse.Object.extend("Empresa");
-            var query = new Parse.Query(Empresa);
-            query.equalTo("user", Parse.User.current());
-            query.find({
-                success: function(results) {
-                    if (results.length == 1){
-                        ctlr.object = results[0];
-                        ctlr.empresa = {
-                            id : results[0].id,
-                            nombre : results[0].get("Nombre"),
-                            direccion : results[0].get("Direccion"),
-                            telefono : results[0].get("Telefono"),
-                            contacto : results[0].get("PersonaContacto")
-                        }
-                        if (results[0].get("Imagen")){
-                            ctlr.empresa["image_url"] = results[0].get("Imagen").url();
-                        }
-                        $scope.$apply();
-                    }else{
-                        //TODO let the user know data could not be retrive
-                    }
-                },
-                error: function(error) {
-                    //TODO let the user know data could not be retrive
-                }
-            });
+            ctlr.object = $rootScope.cliente;
+            ctlr.empresa = {
+                id : $rootScope.cliente.id,
+                nombre : $rootScope.cliente.get("Nombre"),
+                direccion : $rootScope.cliente.get("Direccion"),
+                telefono : $rootScope.cliente.get("Telefono"),
+                contacto : $rootScope.cliente.get("PersonaContacto")
+            }
+            if ($rootScope.cliente.get("Imagen")){
+                ctlr.empresa["image_url"] = $rootScope.cliente.get("Imagen").url();
+            }
+            $scope.$apply();
 
             $('#image').bind("change", function(e) {
                 var files = e.target.files || e.dataTransfer.files;
@@ -80,6 +66,8 @@
                     success: function(empresa) {
                         $("#btnSave").html('Guardar');
                         $('#btnSave').prop('disabled', false);
+
+                        $rootScope.cliente =  ctlr.object;
 
                         $location.path("/inicioClientes");
                         $scope.$apply();

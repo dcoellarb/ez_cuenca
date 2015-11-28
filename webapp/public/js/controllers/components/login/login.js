@@ -4,7 +4,7 @@
 (function(){
 
     angular.module("easyRuta")
-        .controller('LoginController',function($rootScope,$window){
+        .controller('LoginController',function($rootScope,$window,data_services){
             var ctlr = this;
 
             ctlr.user = {username : "", password :""};
@@ -12,23 +12,11 @@
             ctlr.Login = function(){
                 Parse.User.logIn(ctlr.user.username, ctlr.user.password, {
                     success: function(user) {
-                        $rootScope.loggedInUser = user.id;
-                        (new Parse.Query(Parse.Role)).equalTo("users", user).find({
-                            success: function(results) {
-                                if (results.length > 0){
-                                    var role = results[0];
-                                    $rootScope.loggedInRole = role.getName();
-                                    switch (role.getName()){
-                                        case "cliente":
-                                            $window.location.href = '/#/inicioClientes';
-                                            break;
-                                    }
-                                }else{
-                                    console.log("no roles founds");
-                                }
-                            },
-                            error: function(error) {
-                                console.log("Error: " + error.code + " " + error.message);
+                        data_services.initializar_user_context([],function(params,error,results){
+                            if ($rootScope.loggedInRole.getName() == "cliente"){
+                                $window.location.href = '/#/inicioClientes';
+                            }else if ($rootScope.loggedInRole.getName() == "proveedor") {
+                                $window.location.href = '/#/inicioProveedores';
                             }
                         });
                     },

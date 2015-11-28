@@ -1,24 +1,31 @@
 <div id="pedidosActivos" class="panel panel-default col-nopadding" ng-controller="PedidosEnCursoController as ctlr">
     <div class="panel-heading">Pedidos en Curso</div>
     <div class="panel-body col-nopadding">
-        <div ng-repeat="pedido in ctlr.pedidos" class="col-sm-12" ng-click="ctlr.verDetalle(pedido.json.id)" style="cursor: pointer;">
-            <div class="col-sm-12 col-nopadding backgroud-photo" ng-class="pedido.background"><div class="backgroud-photo-heading"><span class="list-heading">{{pedido.json.viaje}}</span></div></div>
-            <div class="col-sm-12 col-nopadding"><span class="list-item-label">Inciado:</span><span class="list-item">{{pedido.json.carga}}</span></div>
-            <div class="col-sm-12 col-nopadding"><span class="list-item-label">Entrega:</span><span class="list-item">{{pedido.json.entrega}}</span></div>
-            <div class="col-sm-12 col-nopadding">
-                <div class="col-sm-3 col-nopadding">
-                    <div class="list-item-image" ng-style="{'background-image': 'url(' + pedido.json.transportista.imageUrl + ')'}"/>
-                </div>
-                <div class="col-sm-9 col-nopadding">
-                    <div class="col-sm-12 col-nopadding">
-                        <span class="list-heading">{{pedido.json.transportista.nombre}}</span>
+        <div ng-repeat="pedido in ctlr.pedidos" class="col-sm-12">
+            <div ng-click="ctlr.verDetalle(pedido.json.id)" style="cursor: pointer;">
+                <div class="col-sm-12 col-nopadding backgroud-photo" ng-class="pedido.background"><div class="backgroud-photo-heading"><span class="list-heading">{{pedido.viaje}}</span></div></div>
+                <div class="col-sm-12 col-nopadding"><span class="list-item-label">Inciado:</span><span class="list-item">{{pedido.carga}}</span></div>
+                <div class="col-sm-12 col-nopadding"><span class="list-item-label">Entrega:</span><span class="list-item">{{pedido.entrega}}</span></div>
+                <div class="col-sm-12 col-nopadding">
+                    <div class="col-sm-3 col-nopadding">
+                        <div class="list-item-image" ng-style="{'background-image': 'url(' + pedido.transportista.photo + ')'}"/>
                     </div>
-                    <div class="col-sm-12 col-nopadding">
-                        <div class="col-sm-12 col-nopadding"><span class="list-item-label">Telefono:</span><span class="list-item">{{pedido.json.transportista.telefono}}</span></div>
+                    <div class="col-sm-9 col-nopadding">
+                        <div class="col-sm-12 col-nopadding">
+                            <span class="list-heading">{{pedido.transportista.nombre}}</span>
+                        </div>
+                        <div class="col-sm-12 col-nopadding">
+                            <div class="col-sm-12 col-nopadding"><span class="list-item-label">Telefono:</span><span class="list-item">{{pedido.transportista.telefono}}</span></div>
+                        </div>
                     </div>
                 </div>
+            </div>
+            <div class="col-sm-12 center-content-horizontal">
+                <input type="button" value="Finalizar" class="btn btn-small btn-primary" ng-click="ctlr.finalizar(pedido)"  ng-show="ctlr.isProveedor" style="margin-right: 20px;"/>
+                <input type="button" value="Cancelar" class="btn btn-small btn-danger" ng-click="ctlr.cancelarProveedor(pedido)"  ng-show="ctlr.isProveedor"/>
             </div>
             <hr class="col-sm-11">
         </div>
     </div>
+    <div ng-include="'templates/confirm_dialog.html'"></div>
 </div>
