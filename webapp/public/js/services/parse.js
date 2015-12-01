@@ -55,9 +55,15 @@
     var timeout_pedido_proveedor_callback;
     var cancelar_pedido_proveedor_callback;
     var rechazar_pedido_callback;
+    var proveedor_confirmar_pedido_get_empresa_callback;
+    var proveedor_confirmar_pedido_callback
     var proveedor_rechazar_pedido_callback;
     var proveedor_tomar_pedido_get_empresa_callback
     var proveedor_tomar_pedido_callback;
+
+    //Helpers
+    var increment_transportista_pedidos_completados;
+    var increment_transportista_pedidos_cancelados;
 
     angular.module("easyRuta")
         .run(function($rootScope){
@@ -521,21 +527,12 @@
         get_pedido_empresa(params,proveedor_tomar_pedido_get_empresa_callback)
     };
     local_proveedor_confirmar_pedido = function(params,callback){
-        params[0].set('Estado','Activo');
-        params[0].set('Transportista',params[1]);
-        params[0].save(null, {
-            success: function(pedidoUpdated) {
-                callback(params,null,pedidoUpdated);
-            },
-            error: function(error){
-                console.log(error);
-                callback(params,error,null);
-            }
-        });
+        get_pedido_empresa_callback = callback;
+        get_pedido_empresa(params,proveedor_confirmar_pedido_get_empresa_callback);
     };
     local_proveedor_rechazar_pedido = function(params,callback){
         get_pedido_empresa_callback = callback;
-        get_pedido_empresa(params,proveedor_rechazar_pedido_callback)
+        get_pedido_empresa(params,proveedor_rechazar_pedido_callback);
     };
     local_iniciar_pedido = function(params,callback){
         params[0].set('Estado','EnCurso');
@@ -554,6 +551,7 @@
         params[0].set("HoraFinalizacion", new Date());
         params[0].save(null, {
             success: function(pedidoUpdated) {
+                increment_transportista_pedidos_completados(params[0]);
                 callback(params,null,pedidoUpdated);
             },
             error: function(error){
@@ -596,6 +594,7 @@
             params[0].set('Estado',local_root_scope.pedidos_estados.Cancelado);
             params[0].save(null, {
                 success: function(pedidoUpdated) {
+                    increment_transportista_pedidos_cancelados(params[0]);
                     callback(params,null,pedidoUpdated);
                 },
                 error: function(error){
@@ -781,6 +780,42 @@
             get_pedido_empresa_callback(params,null,null);
         }
     };
+    proveedor_confirmar_pedido_get_empresa_callback = function(params,error,result) {
+        if (!error) {
+            params.push(result);
+            get_pedido_transportista_callback = get_pedido_empresa_callback;
+            get_pedido_transportista(params, proveedor_confirmar_pedido_callback)
+        } else {
+            get_pedido_empresa_callback(params, null, null);
+        }
+    }
+    proveedor_confirmar_pedido_callback = function(params,error,result) {
+        if (!error) {
+            params[0].set('Estado','Activo');
+            params[0].set('Transportista',params[1]);
+
+            var acl = new Parse.ACL(params[2].get("user"));
+            acl.setReadAccess(Parse.User.current().id, true);
+            acl.setWriteAccess(Parse.User.current().id, true);
+            if (result.get("user")){ //Sometimes transportistas don't have users
+                acl.setReadAccess(result.get("user").id, true);
+                acl.setWriteAccess(result.get("user").id, true);
+            }
+            params[0].setACL(acl);
+
+            params[0].save(null, {
+                success: function(pedidoUpdated) {
+                    get_pedido_transportista_callback(params,null,pedidoUpdated);
+                },
+                error: function(error){
+                    console.log(error);
+                    get_pedido_transportista_callback(params,error,null);
+                }
+            });
+        } else {
+            get_pedido_empresa_callback(params, null, null);
+        }
+    };
     proveedor_rechazar_pedido_callback = function(params,error,result) {
         if (!error) {
             params[0].set('Estado','Pendiente');
@@ -848,5 +883,61 @@
             get_pedido_transportista_callback(params, null, null);
         }
     }
+
+    //Helpers
+    increment_transportista_pedidos_completados = function(pedido){
+        var Transportista = Parse.Object.extend("Transportista");
+        var query = new Parse.Query(Transportista);
+        query.equalTo("objectId", pedido.get("Transportista").id);
+        query.find({
+            success: function(results) {
+                if (results && results.length > 0){
+                    results[0].increment("PedidosCompletados",1);
+                    results[0].save(null, {
+                        success: function (pedidoUpdated) {
+                            console.log("Transportista pedidos completados incremented.")
+                        },
+                        error: function (error) {
+                            console.log(error);
+                        }
+                    });
+                }else{
+                    console.log("Error: empresa not found.");
+                    callback(params,{error:"empresa not found."},null);
+                }
+            },
+            error: function(error) {
+                console.log("Error: " + error.code + " " + error.message);
+                callback(params,error,null);
+            }
+        });
+    };
+    increment_transportista_pedidos_cancelados = function(pedido){
+        var Transportista = Parse.Object.extend("Transportista");
+        var query = new Parse.Query(Transportista);
+        query.equalTo("objectId", pedido.get("Transportista").id);
+        query.find({
+            success: function(results) {
+                if (results && results.length > 0){
+                    results[0].increment("PedidosCancelados",1);
+                    results[0].save(null, {
+                        success: function (pedidoUpdated) {
+                            console.log("Transportista pedidos cancelados incremented.")
+                        },
+                        error: function (error) {
+                            console.log(error);
+                        }
+                    });
+                }else{
+                    console.log("Error: empresa not found.");
+                    callback(params,{error:"empresa not found."},null);
+                }
+            },
+            error: function(error) {
+                console.log("Error: " + error.code + " " + error.message);
+                callback(params,error,null);
+            }
+        });
+    };
 
 })();
