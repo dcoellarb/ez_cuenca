@@ -120,8 +120,8 @@
     guardar_como_plantilla = function (form) {
         local_form = form;
         if (local_form.$valid) {
-            var modalInstance = $uibModal.open({
-                animation: $scope.animationsEnabled,
+            var modalInstance = local_uibModal.open({
+                animation: local_scope.animationsEnabled,
                 templateUrl: 'PlantillaModal.html',
                 controller: 'AgregarPedidoModalController as agrPedModalCtlr'
             });
@@ -302,8 +302,12 @@
                 ExtensionMinima: results.get("ExtensionMin"),
                 CajaRefrigerada: results.get("CajaRefrigerada"),
                 CubicajeMinimo: results.get("CubicajeMin"),
-                Proveedor : results.get("Proveedor").id
             };
+
+            if (results.get("Proveedor")){
+                Proveedor : results.get("Proveedor").id
+            }
+
             local_scope.$apply();
         }
     };

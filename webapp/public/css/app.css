@@ -325,6 +325,15 @@ hr {
 .backgroud-photo-loja{
     background-image: url("../resources/images/loja.jpg");
 }
+.backgroud-photo-machala{
+    background-image: url("../resources/images/machala.jpg");
+}
+.backgroud-photo-duran{
+    background-image: url("../resources/images/duran.jpg");
+}
+.backgroud-photo-manta{
+    background-image: url("../resources/images/manta.jpg");
+}
 
 .backgroud-photo-heading{
     width: 100%;

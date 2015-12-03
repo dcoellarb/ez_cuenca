@@ -37,6 +37,7 @@
     var local_cancelar_pedido_proveedor;
     var local_iniciar_pedido;
     var local_finalizar_pedido;
+    var local_transportista_active_pedido;
 
     //Methods:
     var get_current_user_role;
@@ -46,10 +47,12 @@
     //Reference callbacks
     var get_pedido_empresa_callback;
     var get_pedido_transportista_callback;
+    var transportistas_proveedor_callback;
 
     //Adicional Queries
     var get_pedido_empresa;
     var get_pedido_transportista;
+    var is_transportista_active;
 
     //Data callbacks
     var timeout_pedido_proveedor_callback;
@@ -60,6 +63,7 @@
     var proveedor_rechazar_pedido_callback;
     var proveedor_tomar_pedido_get_empresa_callback
     var proveedor_tomar_pedido_callback;
+    var is_transportista_active_callback;
 
     //Helpers
     var increment_transportista_pedidos_completados;
@@ -198,6 +202,9 @@
         },
         finalizar_pedido  : function(params,callback) {
             local_finalizar_pedido(params,callback);
+        },
+        transportista_active_pedido  : function(params,callback) {
+            local_transportista_active_pedido(params,callback);
         }
     };
 
@@ -479,7 +486,7 @@
         get_pedido_empresa(params,rechazar_pedido_callback)
     };
     local_transportista_statistics = function(params,callback){
-        Parse.Cloud.run('transportistaStatistics', { transportista: params[0]}, {
+        Parse.Cloud.run('transportistaStatistics', { transportista: params[0].id}, {
             success: function(statistics) {
                 callback(params,null,statistics);
             },
@@ -489,14 +496,27 @@
         });
     };
     local_transportistas_proveedor = function(params,callback) {
+        var proveedor = params[0];
+        var pedido = params[1];
+        transportistas_proveedor_callback = callback;
+
         var Transportista = Parse.Object.extend("Transportista");
         var query = new Parse.Query(Transportista);
-        query.equalTo("proveedor",params[0]);
-        //TODO - agregar filtro por tipo de transporte y extra
+        query.equalTo("proveedor",proveedor);
+        query.equalTo("TipoTransporte",pedido.get("TipoTransporte"));
+        if (pedido.get("TipoTransporte") == "furgon"){
+            query.greaterThanOrEqualTo("CubicajeMinimo",pedido.get("CubicajeMin"));
+            if (pedido.get("CajaRefrigerada")){
+                query.equalTo("Refrigerado",true);
+            }
+        }
+        if (pedido.get("TipoTransporte") == "plataforma"){
+            query.greaterThanOrEqualTo("ExtensionMinima",pedido.get("ExtensionMin"));
+        }
         query.addAscending("Nombre");
         query.find({
             success: function(results) {
-                callback(params,null,results);
+                callback(params,null,results)
             },
             error: function(error) {
                 console.log("Error: " + error.code + " " + error.message);
@@ -603,6 +623,30 @@
                 }
             });
         }
+    };
+    local_transportista_active_pedido = function(params,callback){
+        var transportista = params[0];
+
+        var Pedido = Parse.Object.extend("Pedido");
+
+        var queryPendienteConfirmacion = new Parse.Query(Pedido);
+        queryPendienteConfirmacion.equalTo("Estado", local_root_scope.pedidos_estados.PendienteConfirmacion);
+        var queryActivo = new Parse.Query(Pedido);
+        queryActivo.equalTo("Estado", local_root_scope.pedidos_estados.Activo);
+        var queryEnCurso = new Parse.Query(Pedido);
+        queryEnCurso.equalTo("Estado", local_root_scope.pedidos_estados.EnCurso);
+
+        var mainQuery = Parse.Query.or(queryPendienteConfirmacion, queryActivo, queryEnCurso);
+        mainQuery.equalTo("Transportista",transportista);
+        mainQuery.find({
+            success: function(results) {
+                callback(params,null,results);
+            },
+            error: function(error) {
+                console.log("Error: " + error.code + " " + error.message);
+                callback(params,error,null);
+            }
+        });
     };
 
     //Methods
@@ -881,6 +925,25 @@
             });
         } else {
             get_pedido_transportista_callback(params, null, null);
+        }
+    }
+    is_transportista_active_callback = function(params,error,result){
+        //params[0] = pedidos to be returned
+        //params[1] = pedidos procesados count
+        //params[2] = pedido Parse Object
+        //params[3] = pedido Json
+        //params[4] = pedidos read length
+        //params[5] = proveedor Parse Object
+        //params[6] = transportista Parse Object
+        //params[7] = transportistas read
+        //params[8] = transportistas to be returned
+        //params[9] = transportistas procesados
+        //params[10] = transportista ParseObject
+        //params[11] = Index of transportista ParseObject
+
+        params[9]++;
+        if (params[9] == params[7].length){
+            transportistas_proveedor_callback(params,null,params[8]);
         }
     }
 

@@ -48,6 +48,7 @@
     var pedido_confirmado_proveedor_callback;
     var pedido_rechazado_proveedor_callback;
     var pedido_cancelado_confirmado_proveedor_callback
+    var pedido_completado_callback;
 
     //Helpers
     var set_timers;
@@ -87,6 +88,7 @@
         local_rootScope.$on(local_rootScope.channels.pedido_cancelado, pedido_cancelado_callback);
         local_rootScope.$on(local_rootScope.channels.pedido_cancelado_transportista, pedido_cancelado_transportista_callback);
         local_rootScope.$on(local_rootScope.channels.pedido_cancelado_proveedor, pedido_cancelado_proveedor_callback);
+        local_rootScope.$on(local_rootScope.channels.pedido_completado, pedido_completado_callback);
 
         local_scope.$on('$destroy',function(){
             if (ctlr.timerInterval) {
@@ -136,7 +138,7 @@
     get_pedidos_pendientes_callback = function(error,results){
         if (!error){
             ctlr.pedidos = results;
-            set_timers();
+            set_timers()
             local_scope.$apply();
         }
     };
@@ -208,6 +210,9 @@
         local_pedidos_pendientes_viewmodel.get_pedidos_pendientes(get_pedidos_pendientes_callback);
     };
     pedido_cancelado_confirmado_proveedor_callback = function(m){
+        local_pedidos_pendientes_viewmodel.get_pedidos_pendientes(get_pedidos_pendientes_callback);
+    };
+    pedido_completado_callback = function(m){
         local_pedidos_pendientes_viewmodel.get_pedidos_pendientes(get_pedidos_pendientes_callback);
     };
 

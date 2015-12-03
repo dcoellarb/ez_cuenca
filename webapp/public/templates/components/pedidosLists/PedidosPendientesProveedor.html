@@ -40,12 +40,12 @@
                     </div>
                 </div>
             </div>
-            <div class="col-sm-6 col-nopadding center-text" ng-show="pedido.estado == 'PendienteConfirmacionProveedor'">
+            <div class="col-sm-6 col-nopadding" ng-show="pedido.estado == 'PendienteConfirmacionProveedor'">
                 <span class="list-item list-item-block" style="margin-bottom: 10px;">Seleccione un transportista para confirmar, o presione <a class="link-danger" ng-click="ctlr.proveedor_rechazar(pedido)">rechazar.</a></span>
-                <div class="col-sm-2">
+                <div class="col-sm-3">
                     <span class="list-item-highlight list-item-block" style="font-size: 25pt;">{{pedido.timer.value}}</span>
                 </div>
-                <div class="col-sm-10 col-nopadding">
+                <div class="col-sm-9 col-nopadding">
                     <div class="list-item-inline" ng-repeat="transportista in pedido.transportistas">
                         <img class="list-item-image-sm list-item-image-block" ng-src="{{transportista.photo}}" ng-click="ctlr.proveedor_confirmar(pedido,transportista)" style="cursor: pointer"/>
                         <span class="list-item-sm">{{transportista.nombre}}</span>

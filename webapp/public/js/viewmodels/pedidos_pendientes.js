@@ -10,6 +10,11 @@
     var local_data_services;
     var local_parser;
 
+    //Aux Variables
+    var pedidosAux;
+    var pedidosAux1;
+    var pedidos_procesadosAux;
+
     //Constructor
     var constructor;
 
@@ -46,6 +51,9 @@
     var local_proveedor_rechazar_pedido_callback;
     var local_transportista_statistics_callback;
     var local_transportistas_proveedor_callback;
+    var local_transportista_active_pedido_callback;
+    var local_get_pedidos_pendientes_transportistas_callback;
+    var local_get_pedidos_pendientes_merge_callback;
     var local_timeout_pedido_cliente_callback;
     var local_timeout_pedido_proveedor_callback;
     var local_cancelar_pedido_callback
@@ -79,7 +87,7 @@
     //"Public" Methods
     local_get_pedidos_pendientes = function(callback){
         get_pedidos_pendientes_callback = callback;
-        local_data_services.get_pedidos_pendientes([],local_get_pedidos_pendientes_callback)
+        local_data_services.get_pedidos_pendientes(new Array(),local_get_pedidos_pendientes_callback)
     };
     local_confirmar_pedido = function(pedido,callback){
         confirmar_pedido_callback = callback;
@@ -120,7 +128,9 @@
     local_get_pedidos_pendientes_callback = function(params,error,results){
 
         if (!error){
-            var pedidos = new Array;
+            pedidosAux1 = results;
+            pedidosAux = new Array();
+            pedidos_procesadosAux = 0;
             results.forEach(function(element,index,array){
                 var pedido = local_parser.getJson(element);
                 if (local_rootScope.loggedInRole.getName() == "cliente"){
@@ -128,56 +138,78 @@
                         pedido.proveedor = local_parser.getProveedorJson(element.get("Proveedor"));
                     }
                     if (element.get("Transportista")){
-                        pedido.transportista = local_parser.getTransportistaJson(element.get("Transportista"));
-                        local_data_services.transportista_statistics([element.get("Transportista").id,pedidos,pedido,results.length],local_transportista_statistics_callback);
+                        local_data_services.transportista_statistics([element.get("Transportista"),pedido],local_transportista_statistics_callback);
                     }else{
-                        pedidos.push(pedido);
+                        local_transportista_statistics_callback([null,pedido],null,null);
                     }
                 }else if (local_rootScope.loggedInRole.getName() == "proveedor"){
-                    if (element.get("Estado") == "Pendiente" || element.get("Estado") == "PendienteConfirmacionProveedor"){
-                        local_data_services.transportistas_proveedor([local_rootScope.proveedor,pedidos,pedido,results.length],local_transportistas_proveedor_callback);
-                    }else if (element.get("Estado") == "PendienteConfirmacion") {
-                        pedido.transportista = local_parser.getTransportistaJson(element.get("Transportista"));
-                        pedidos.push(pedido);
+                    if (element.get("Estado") == local_rootScope.pedidos_estados.Pendiente || element.get("Estado") == local_rootScope.pedidos_estados.PendienteConfirmacionProveedor){
+                        local_data_services.transportistas_proveedor([local_rootScope.proveedor,element,pedido],local_transportistas_proveedor_callback);
+                    }else if (element.get("Estado") == local_rootScope.pedidos_estados.PendienteConfirmacion) {
+                        if (element.get("Transportista")) {
+                            pedido.transportista = local_parser.getTransportistaJson(element.get("Transportista"))
+                        }
+                        pedidosAux.push(pedido);
+                        local_get_pedidos_pendientes_merge_callback(params,null,null);
                     }
                 }
             });
-            if (pedidos.length == results.length){
-                get_pedidos_pendientes_callback(null,pedidos);
-            }
         }else{
             get_pedidos_pendientes_callback(error,null);
         }
 
     };
     local_transportista_statistics_callback = function(params,error,results){
-        var pedidos = params[1];
-        var pedido = params[2];
-        var count = params[3];
+        var pedido = params[1];
         if(!error && results){
-            pedido.transportista.statistics = results;
+            pedido.transportista = {statistics : results};
         }
-        pedidos.push(pedido);
-
-        if (pedidos.length == count){
-            get_pedidos_pendientes_callback(null,pedidos);
-        }
+        pedidosAux.push(pedido);
+        local_get_pedidos_pendientes_merge_callback(params,null,null);
     };
     local_transportistas_proveedor_callback = function(params,error,results){
-        var pedidos = params[1];
         var pedido = params[2];
-        var count = params[3];
-
-        pedido.transportistas = new Array();
-        if(!error){
+        if (results.length > 0){
+            pedido.transportistas_procesadosAux1 = results;
+            pedido.transportistas_procesadosAux = 0;
+            pedido.transportistas = new Array();
             results.forEach(function(element,index,array){
-                pedido.transportistas.push(local_parser.getTransportistaJson(element));
+                local_data_services.transportista_active_pedido([element,pedido],local_transportista_active_pedido_callback)
             });
+        }else{
+            local_transportista_active_pedido_callback([element,pedido],null,null);
         }
-        pedidos.push(pedido);
+    };
+    local_transportista_active_pedido_callback = function(params,error,results){
+        var transportista = params[0];
+        var pedido = params[1];
+        if (!results || results.length == 0){
+            pedido.transportistas.push(local_parser.getTransportistaJson(transportista));
+        }
+        local_get_pedidos_pendientes_transportistas_callback(params,null,null);
+    };
+    local_get_pedidos_pendientes_transportistas_callback = function(params,error,results){
+        var pedido = params[1];
+        pedido.transportistas_procesadosAux++;
+        if (pedido.transportistas_procesadosAux == pedido.transportistas_procesadosAux1.length){
+            pedido.transportistas_procesadosAux = undefined;
+            pedido.transportistas_procesadosAux1 = undefined;
+            if ( pedido.transportistas.length>0){
+                pedidosAux.push(pedido);
+            }
+            local_get_pedidos_pendientes_merge_callback(params,null,null);
+        }
+    };
+    local_get_pedidos_pendientes_merge_callback = function(params,error,results){
+        pedidos_procesadosAux++;
+        if (pedidos_procesadosAux == pedidosAux1.length){
 
-        if (pedidos.length == count){
-            get_pedidos_pendientes_callback(null,pedidos);
+            function compare(a,b) {
+                return a.object.get("createdAt") - b.object.get("createdAt");
+            }
+
+            pedidosAux.sort(compare);
+            get_pedidos_pendientes_callback(null,pedidosAux);
         }
     };
     local_confirmar_pedido_callback = function(params,error,results){
