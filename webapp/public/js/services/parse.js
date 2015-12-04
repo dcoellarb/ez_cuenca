@@ -31,8 +31,7 @@
     var local_proveedor_tomar_pedido;
     var local_proveedor_confirmar_pedido;
     var local_proveedor_rechazar_pedido;
-    var local_timeout_pedido_cliente;
-    var local_timeout_pedido_proveedor;
+    var local_timeout_pedido;
     var local_cancelar_pedido;
     var local_cancelar_pedido_proveedor;
     var local_iniciar_pedido;
@@ -52,10 +51,9 @@
     //Adicional Queries
     var get_pedido_empresa;
     var get_pedido_transportista;
-    var is_transportista_active;
 
     //Data callbacks
-    var timeout_pedido_proveedor_callback;
+    var timeout_pedido_callback;
     var cancelar_pedido_proveedor_callback;
     var rechazar_pedido_callback;
     var proveedor_confirmar_pedido_get_empresa_callback;
@@ -63,7 +61,6 @@
     var proveedor_rechazar_pedido_callback;
     var proveedor_tomar_pedido_get_empresa_callback
     var proveedor_tomar_pedido_callback;
-    var is_transportista_active_callback;
 
     //Helpers
     var increment_transportista_pedidos_completados;
@@ -185,11 +182,8 @@
         proveedor_rechazar_pedido : function(params,callback) {
             local_proveedor_rechazar_pedido(params,callback);
         },
-        timeout_pedido_cliente : function(params,callback) {
-            local_timeout_pedido_cliente(params,callback);
-        },
-        timeout_pedido_proveedor : function(params,callback) {
-            local_timeout_pedido_proveedor(params,callback);
+        timeout_pedido : function(params,callback) {
+            local_timeout_pedido(params,callback);
         },
         cancelar_pedido : function(params,callback) {
             local_cancelar_pedido(params,callback);
@@ -580,9 +574,9 @@
             }
         });
     };
-    local_timeout_pedido_proveedor = function(params,callback){
+    local_timeout_pedido = function(params,callback){
         get_pedido_empresa_callback = callback;
-        get_pedido_empresa(params,timeout_pedido_proveedor_callback)
+        get_pedido_empresa(params,timeout_pedido_callback)
     };
     local_cancelar_pedido = function(params,callback){
         if (params[0].get('Estado') == local_root_scope.pedidos_estados.Pendiente
@@ -742,7 +736,7 @@
     };
 
     //Data callbacks
-    timeout_pedido_proveedor_callback = function(params,error,result){
+    timeout_pedido_callback = function(params,error,result){
         if (!error){
             params[0].set('Estado',local_root_scope.pedidos_estados.Pendiente);
             params[0].unset('Proveedor');
@@ -925,25 +919,6 @@
             });
         } else {
             get_pedido_transportista_callback(params, null, null);
-        }
-    }
-    is_transportista_active_callback = function(params,error,result){
-        //params[0] = pedidos to be returned
-        //params[1] = pedidos procesados count
-        //params[2] = pedido Parse Object
-        //params[3] = pedido Json
-        //params[4] = pedidos read length
-        //params[5] = proveedor Parse Object
-        //params[6] = transportista Parse Object
-        //params[7] = transportistas read
-        //params[8] = transportistas to be returned
-        //params[9] = transportistas procesados
-        //params[10] = transportista ParseObject
-        //params[11] = Index of transportista ParseObject
-
-        params[9]++;
-        if (params[9] == params[7].length){
-            transportistas_proveedor_callback(params,null,params[8]);
         }
     }
 

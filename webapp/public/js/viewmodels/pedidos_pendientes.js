@@ -25,8 +25,7 @@
     var local_proveedor_tomar_pedido;
     var local_proveedor_confirmar_pedido;
     var local_proveedor_rechazar_pedido;
-    var local_timeout_pedido_cliente;
-    var local_timeout_pedido_proveedor;
+    var local_timeout_pedido;
     var local_cancelar_pedido;
 
     //Methods
@@ -38,8 +37,7 @@
     var proveedor_tomar_pedido_callback;
     var proveedor_confirmar_pedido_callback;
     var proveedor_rechazar_pedido_callback;
-    var timeout_pedido_cliente_callback;
-    var timeout_pedido_proveedor_callback;
+    var timeout_pedido_callback;
     var cancelar_pedido_callback;
 
     //Data callbacks
@@ -54,8 +52,7 @@
     var local_transportista_active_pedido_callback;
     var local_get_pedidos_pendientes_transportistas_callback;
     var local_get_pedidos_pendientes_merge_callback;
-    var local_timeout_pedido_cliente_callback;
-    var local_timeout_pedido_proveedor_callback;
+    var local_timeout_pedido_callback;
     var local_cancelar_pedido_callback
 
     angular.module("easyRuta")
@@ -79,8 +76,7 @@
         proveedor_tomar_pedido : function(pedido,transportista,callback) { local_proveedor_tomar_pedido(pedido,transportista,callback); },
         proveedor_confirmar_pedido : function(pedido,transportista,callback) { local_proveedor_confirmar_pedido(pedido,transportista,callback); },
         proveedor_rechazar_pedido : function(pedido,callback) { local_proveedor_rechazar_pedido(pedido,callback); },
-        timeout_pedido_cliente : function(pedido,callback) { local_timeout_pedido_cliente(pedido,callback); },
-        timeout_pedido_proveedor : function(pedido,callback) { local_timeout_pedido_proveedor(pedido,callback); },
+        timeout_pedido : function(pedido,callback) { local_timeout_pedido(pedido,callback); },
         cancelar_pedido : function(pedido,callback) { local_cancelar_pedido(pedido,callback); }
     }
 
@@ -109,13 +105,9 @@
         proveedor_rechazar_pedido_callback = callback;
         local_data_services.proveedor_rechazar_pedido([pedido.object,local_rootScope.proveedor],local_proveedor_rechazar_pedido_callback);
     };
-    local_timeout_pedido_cliente = function(pedido,callback){
-        timeout_pedido_cliente_callback = callback;
-        local_data_services.timeout_pedido_cliente([pedido.object],local_timeout_pedido_cliente_callback);
-    };
-    local_timeout_pedido_proveedor = function(pedido,callback){
-        timeout_pedido_proveedor_callback = callback;
-        local_data_services.timeout_pedido_proveedor([pedido.object],local_timeout_pedido_proveedor_callback);
+    local_timeout_pedido = function(pedido,callback){
+        timeout_pedido_callback = callback;
+        local_data_services.timeout_pedido([pedido.object],local_timeout_pedido_callback);
     };
     local_cancelar_pedido = function(pedido,callback){
         cancelar_pedido_callback = callback;
@@ -236,11 +228,9 @@
         local_pubnub_services.publish(local_rootScope.channels.pedido_rechazado_proveedor,{id:params[0].id})
         proveedor_rechazar_pedido_callback(error,null);
     };
-    local_timeout_pedido_cliente_callback = function(params,error,results){
-        timeout_pedido_cliente_callback(error,null);
-    };
-    local_timeout_pedido_proveedor_callback = function(params,error,results){
-        timeout_pedido_proveedor_callback(error,null);
+    local_timeout_pedido_callback = function(params,error,results){
+        local_pubnub_services.publish(local_rootScope.channels.pedido_timeout,{id:params[0].id})
+        timeout_pedido_callback(error,null);
     };
     local_cancelar_pedido_callback = function(params,error,results){
         local_pubnub_services.publish(local_rootScope.channels.pedido_cancelado,{id:params[0].id})

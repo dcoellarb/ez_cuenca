@@ -34,8 +34,7 @@
     var proveedor_tomar_pedido_callback;
     var proveedor_confirmar_pedido_callback;
     var proveedor_rechazar_pedido_callback;
-    var timeout_pedido_cliente_callback;
-    var timeout_pedido_proveedor_callback;
+    var timeout_pedido_callback;
     var cancelar_pedido_callback;
 
     //Notifications callbacks
@@ -49,6 +48,7 @@
     var pedido_rechazado_proveedor_callback;
     var pedido_cancelado_confirmado_proveedor_callback
     var pedido_completado_callback;
+    var pedido_timeout_callback;
 
     //Helpers
     var set_timers;
@@ -89,6 +89,7 @@
         local_rootScope.$on(local_rootScope.channels.pedido_cancelado_transportista, pedido_cancelado_transportista_callback);
         local_rootScope.$on(local_rootScope.channels.pedido_cancelado_proveedor, pedido_cancelado_proveedor_callback);
         local_rootScope.$on(local_rootScope.channels.pedido_completado, pedido_completado_callback);
+        local_rootScope.$on(local_rootScope.channels.pedido_timeout, pedido_timeout_callback);
 
         local_scope.$on('$destroy',function(){
             if (ctlr.timerInterval) {
@@ -167,12 +168,7 @@
             local_pedidos_pendientes_viewmodel.get_pedidos_pendientes(get_pedidos_pendientes_callback);
         }
     };
-    timeout_pedido_cliente_callback = function(error,result){
-        if (!error){
-            local_pedidos_pendientes_viewmodel.get_pedidos_pendientes(get_pedidos_pendientes_callback);
-        }
-    };
-    timeout_pedido_proveedor_callback = function(error,result){
+    timeout_pedido_callback = function(error,result){
         if (!error){
             local_pedidos_pendientes_viewmodel.get_pedidos_pendientes(get_pedidos_pendientes_callback);
         }
@@ -215,41 +211,41 @@
     pedido_completado_callback = function(m){
         local_pedidos_pendientes_viewmodel.get_pedidos_pendientes(get_pedidos_pendientes_callback);
     };
+    pedido_timeout_callback = function(m){
+        local_pedidos_pendientes_viewmodel.get_pedidos_pendientes(get_pedidos_pendientes_callback);
+    };
 
     //Helpers
     set_timers = function(){
         if (ctlr.pedidos && !ctlr.timerInterval){
             ctlr.timerInterval = local_interval(function(){
                 ctlr.pedidos.forEach(function(element,index,array){
-                    if (element.estado == 'PendienteConfirmacion' || element.estado == 'PendienteConfirmacionProveedor'){
-                        if (element.timer.minute > 0 || element.timer.second > 0){
+                    if (element.estado == 'PendienteConfirmacion' || element.estado == 'PendienteConfirmacionProveedor') {
+                        if (element.timer.minute > 0 || element.timer.second > 1) {
 
-                            if (element.timer.second > 0){
+                            if (element.timer.second > 0) {
                                 element.timer.second -= 1;
-                            }else{
-                                if (element.timer.minute > 0){
+                            } else {
+                                if (element.timer.minute > 0) {
                                     element.timer.minute -= 1;
                                     element.timer.second = 59;
                                 }
                             }
 
-                            if (element.timer.minute >= 10){
+                            if (element.timer.minute >= 10) {
                                 element.timer.value = element.timer.minute;
-                            }else{
+                            } else {
                                 element.timer.value = "0" + element.timer.minute;
                             }
                             element.timer.value += ":"
-                            if (element.timer.second >= 10){
+                            if (element.timer.second >= 10) {
                                 element.timer.value += element.timer.second;
-                            }else{
+                            } else {
                                 element.timer.value += "0" + element.timer.second;
                             }
-                        }
-                    }else{
-                        if (element.estado == 'PendienteConfirmacion'){
-                            local_pedidos_pendientes_viewmodel.timeout_pedido_cliente(element,timeout_pedido_cliente_callback);
-                        }else if (element.estado == 'PendienteConfirmacionProveedor'){
-                            local_pedidos_pendientes_viewmodel.timeout_pedido_proveedor(element,timeout_pedido_proveedor_callback);
+
+                        } else {
+                            local_pedidos_pendientes_viewmodel.timeout_pedido(element, timeout_pedido_callback);
                         }
                     }
                 });

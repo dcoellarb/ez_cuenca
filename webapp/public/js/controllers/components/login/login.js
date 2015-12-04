@@ -4,10 +4,12 @@
 (function(){
 
     angular.module("easyRuta")
-        .controller('LoginController',function($rootScope,$window,data_services){
+        .controller('LoginController',function($rootScope,$scope,$window,data_services){
             var ctlr = this;
 
             ctlr.user = {username : "", password :""};
+            ctlr.showError = false;
+            ctlr.error = ""
 
             ctlr.Login = function(){
                 Parse.User.logIn(ctlr.user.username, ctlr.user.password, {
@@ -25,6 +27,9 @@
                         console.dir(user);
                         console.dir(error);
                         console.log("Fail");
+                        ctlr.showError = true;
+                        ctlr.error = "Usuario y/o clave incorrectos."
+                        $scope.$apply()
                     }
                 });
             }

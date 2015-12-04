@@ -39,7 +39,8 @@
                 pedido_cancelado_proveedor : "pedido_cancelado_proveedor",
                 pedido_cancelado_confirmado : "pedido_cancelado_confirmado",
                 pedido_cancelado_confirmado_transportista : "pedido_cancelado_confirmado_transportista",
-                pedido_cancelado_confirmado_proveedor : "pedido_cancelado_confirmado_proveedor"
+                pedido_cancelado_confirmado_proveedor : "pedido_cancelado_confirmado_proveedor",
+                pedido_timeout : "pedido_timeout"
             };
 
             for(subscribe_channel in $rootScope.channels){
