@@ -169,7 +169,7 @@
                 local_data_services.transportista_active_pedido([element,pedido],local_transportista_active_pedido_callback)
             });
         }else{
-            local_transportista_active_pedido_callback([element,pedido],null,null);
+            local_get_pedidos_pendientes_merge_callback(params,null,null);
         }
     };
     local_transportista_active_pedido_callback = function(params,error,results){

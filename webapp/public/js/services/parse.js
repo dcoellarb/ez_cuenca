@@ -257,7 +257,17 @@
                 pedido.setACL(acl);
             }else{
                 pedido.set("Estado", "Pendiente");
-                pedido.set("Comision", data.Valor * 0.04);
+
+                //Process comision
+                if (data.Valor <= 200){
+                    if (data.Valor * 0.05 > 5){
+                        pedido.set("Comision", data.Valor * 0.05);
+                    }else{
+                        pedido.set("Comision", 5);
+                    }
+                }else{
+                    pedido.set("Comision", 10);
+                }
 
                 acl.setRoleReadAccess("transportistaIndependiente", true);
                 acl.setRoleReadAccess("proveedor", true);
@@ -859,6 +869,17 @@
             params[0].set('Estado','Pendiente');
             params[0].unset('Proveedor');
             params[0].add('ProveedoresBloqueados',params[1].id);
+
+            //Process comision
+            if (params[0].get("Valor") <= 200){
+                if (params[0].get("Valor") * 0.05 > 5){
+                    params[0].set("Comision", params[0].get("Valor") * 0.05);
+                }else{
+                    params[0].set("Comision", 5);
+                }
+            }else{
+                params[0].set("Comision", 10);
+            }
 
             var acl = new Parse.ACL(result.get("user"));
             acl.setRoleReadAccess("transportistaIndependiente", true);
