@@ -24,7 +24,13 @@
                         var month = monthNames[date.getMonth()];
                         var year = date.getFullYear();
                         var hour = date.getHours();
+                        if (hour < 10){
+                            hour = "0" + hour;
+                        }
                         var minute = date.getMinutes();
+                        if (minute < 10){
+                            minute = "0" + minute;
+                        }
 
                         return dayName + ' ' +  day + ' de ' + month.substr(0,3) + "." + ' del ' + year + ' a las ' + hour + ':' + minute;
                     }else{

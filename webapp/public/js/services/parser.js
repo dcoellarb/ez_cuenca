@@ -35,6 +35,8 @@
             viaje : element.get("CiudadOrigen").get("Nombre") + " - " + element.get("CiudadDestino").get("Nombre"),
             carga : local_utils.formatDate(element.get("HoraCarga")),
             entrega : local_utils.formatDate(element.get("HoraEntrega")),
+            inicio : local_utils.formatDate(element.get("HoraInicio")),
+            finalizacion : local_utils.formatDate(element.get("HoraFinalizacion")),
             estado :  element.get("Estado"),
             background : "backgroud-photo-" + element.get("CiudadDestino").get("Nombre").toLowerCase(),
             image : "resources/images/" + element.get("CiudadDestino").get("Nombre").toLowerCase() + ".jpg",
