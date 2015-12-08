@@ -78,6 +78,10 @@ hr {
     font-weight: 400;
     font-size: 14pt;
 }
+.list-heading2{
+    font-weight: 400;
+    font-size: 12pt;
+}
 .list-item-block{
     display: block;
     margin: auto;
@@ -150,6 +154,30 @@ hr {
 .list-item-image-block {
     display: block;
 }
+
+.list-item-check {
+    width:20px;
+    height:20px;
+    border-radius: 50%;
+    position: absolute;
+    top:25px;
+    right: 0px;
+    margin-right:20px;
+}
+.list-item-check-red {
+    background-color: #FA787E;
+}
+.list-item-check-green {
+    background-color: #64bd63;
+}
+.list-item-check-blue {
+    background-color: #3366FF;
+}
+.list-item-check-orange {
+    background-color: #F78F1E;
+}
+
+
 .fullscreen-bg {
     position: fixed;
     top: 0;
@@ -309,7 +337,7 @@ hr {
 }
 
 .backgroud-photo-quito{
-    background-image: url("../resources/images/quito.png");
+    background-image: url("../resources/images/quito.jpg");
     background-size: cover;
 }
 .backgroud-photo-guayaquil{

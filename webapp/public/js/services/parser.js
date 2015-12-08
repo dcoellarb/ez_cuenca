@@ -89,7 +89,9 @@
             object : element,
             id : element.id,
             nombre : element.get("Nombre"),
-            photo : "resources/images/account_circle.png"
+            photo : "resources/images/account_circle.png",
+            estado : element.get("Estado"),
+            horaDisponible : element.get("HoraDisponible")
         }
 
         if (element.get("photo")){

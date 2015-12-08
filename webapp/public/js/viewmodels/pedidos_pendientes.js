@@ -49,8 +49,6 @@
     var local_proveedor_rechazar_pedido_callback;
     var local_transportista_statistics_callback;
     var local_transportistas_proveedor_callback;
-    var local_transportista_active_pedido_callback;
-    var local_get_pedidos_pendientes_transportistas_callback;
     var local_get_pedidos_pendientes_merge_callback;
     var local_timeout_pedido_callback;
     var local_cancelar_pedido_callback
@@ -136,7 +134,7 @@
                     }
                 }else if (local_rootScope.loggedInRole.getName() == "proveedor"){
                     if (element.get("Estado") == local_rootScope.pedidos_estados.Pendiente || element.get("Estado") == local_rootScope.pedidos_estados.PendienteConfirmacionProveedor){
-                        local_data_services.transportistas_proveedor([local_rootScope.proveedor,element,pedido],local_transportistas_proveedor_callback);
+                        local_data_services.transportistas_proveedor([element,pedido],local_transportistas_proveedor_callback);
                     }else if (element.get("Estado") == local_rootScope.pedidos_estados.PendienteConfirmacion) {
                         if (element.get("Transportista")) {
                             pedido.transportista = local_parser.getTransportistaJson(element.get("Transportista"))
@@ -160,47 +158,33 @@
         local_get_pedidos_pendientes_merge_callback(params,null,null);
     };
     local_transportistas_proveedor_callback = function(params,error,results){
-        var pedido = params[2];
-        if (results.length > 0){
-            pedido.transportistas_procesadosAux1 = results;
-            pedido.transportistas_procesadosAux = 0;
-            pedido.transportistas = new Array();
-            results.forEach(function(element,index,array){
-                local_data_services.transportista_active_pedido([element,pedido],local_transportista_active_pedido_callback)
-            });
-        }else{
-            local_get_pedidos_pendientes_merge_callback(params,null,null);
-        }
-    };
-    local_transportista_active_pedido_callback = function(params,error,results){
-        var transportista = params[0];
         var pedido = params[1];
-        if (!results || results.length == 0){
-            pedido.transportistas.push(local_parser.getTransportistaJson(transportista));
-        }
-        local_get_pedidos_pendientes_transportistas_callback(params,null,null);
-    };
-    local_get_pedidos_pendientes_transportistas_callback = function(params,error,results){
-        var pedido = params[1];
-        pedido.transportistas_procesadosAux++;
-        if (pedido.transportistas_procesadosAux == pedido.transportistas_procesadosAux1.length){
-            pedido.transportistas_procesadosAux = undefined;
-            pedido.transportistas_procesadosAux1 = undefined;
-            if ( pedido.transportistas.length>0){
-                pedidosAux.push(pedido);
+        pedido.transportistas = new Array();
+        results.forEach(function(element,index,array){
+            if (element.get("Estado") == local_rootScope.transportistas_estados.Disponible){
+                pedido.transportistas.push(local_parser.getTransportistaJson(element));
             }
-            local_get_pedidos_pendientes_merge_callback(params,null,null);
+        });
+        if (pedido.transportistas.length > 0){
+            pedido.transportistas.sort(function(a,b) {
+                return a.object.get("HoraDisponible") - b.object.get("HoraDisponible");
+            });
+            var count = 0;
+            pedido.transportistas.map(function(object){
+                count++;
+                object.priority = count;
+                return object;
+            });
+            pedidosAux.push(pedido);
         }
+        local_get_pedidos_pendientes_merge_callback(params,null,null);
     };
     local_get_pedidos_pendientes_merge_callback = function(params,error,results){
         pedidos_procesadosAux++;
         if (pedidos_procesadosAux == pedidosAux1.length){
-
-            function compare(a,b) {
+            pedidosAux.sort(function(a,b) {
                 return a.object.get("createdAt") - b.object.get("createdAt");
-            }
-
-            pedidosAux.sort(compare);
+            });
             get_pedidos_pendientes_callback(null,pedidosAux);
         }
     };
@@ -215,7 +199,7 @@
         rechazar_pedido_callback(error,null);
     };
     local_proveedor_tomar_pedido_callback = function(params,error,results){
-        //local_rootScope.$broadcast(local_rootScope.channels.pedido_rechazado, params[0]);
+        local_rootScope.$broadcast(local_rootScope.channels.pedido_tomado, params[0]);
         local_pubnub_services.publish(local_rootScope.channels.pedido_tomado,{id:params[0].id})
         proveedor_tomar_pedido_callback(error,null);
     };
