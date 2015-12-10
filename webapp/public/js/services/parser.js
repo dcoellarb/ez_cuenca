@@ -91,7 +91,7 @@
             nombre : element.get("Nombre"),
             photo : "resources/images/account_circle.png",
             estado : element.get("Estado"),
-            horaDisponible : element.get("HoraDisponible")
+            horaDisponible : local_utils.formatDate(element.get("HoraDisponible"))
         }
 
         if (element.get("photo")){

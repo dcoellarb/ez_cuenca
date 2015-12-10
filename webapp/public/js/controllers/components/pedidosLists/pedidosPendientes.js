@@ -41,6 +41,7 @@
     var new_pedidos_callback;
     var pedido_rechazado_callback;
     var pedido_tomado_callback;
+    var pedido_confirmado_callback;
     var pedido_cancelado_callback;
     var pedido_cancelado_transportista_callback;
     var pedido_cancelado_proveedor_callback
@@ -81,7 +82,7 @@
 
         local_rootScope.$on(local_rootScope.channels.new_pedidos, new_pedidos_callback);
         local_rootScope.$on(local_rootScope.channels.pedido_tomado, pedido_tomado_callback);
-        local_rootScope.$on(local_rootScope.channels.pedido_confirmado, pedido_tomado_callback);
+        local_rootScope.$on(local_rootScope.channels.pedido_confirmado, pedido_confirmado_callback);
         local_rootScope.$on(local_rootScope.channels.pedido_rechazado, pedido_rechazado_callback);
         local_rootScope.$on(local_rootScope.channels.pedido_confirmado_proveedor, pedido_confirmado_proveedor_callback);
         local_rootScope.$on(local_rootScope.channels.pedido_rechazado_proveedor, pedido_rechazado_proveedor_callback);
@@ -191,8 +192,10 @@
     pedido_tomado_callback = function(m){
         local_pedidos_pendientes_viewmodel.get_pedidos_pendientes(get_pedidos_pendientes_callback);
     };
+    pedido_confirmado_callback = function(m){
+        local_pedidos_pendientes_viewmodel.get_pedidos_pendientes(get_pedidos_pendientes_callback);
+    };
     pedido_cancelado_callback = function(m){
-        //TODO - send internal notificacion to other lists
         local_pedidos_pendientes_viewmodel.get_pedidos_pendientes(get_pedidos_pendientes_callback);
     };
     pedido_cancelado_transportista_callback = function(m){
@@ -223,36 +226,38 @@
     set_timers = function(){
         if (ctlr.pedidos && !ctlr.timerInterval){
             ctlr.timerInterval = local_interval(function(){
-                ctlr.pedidos.forEach(function(element,index,array){
-                    if (element.estado == 'PendienteConfirmacion' || element.estado == 'PendienteConfirmacionProveedor') {
-                        if (element.timer.minute > 0 || element.timer.second > 1) {
+                if (ctlr.pedidos && ctlr.pedidos.length > 0){
+                    ctlr.pedidos.forEach(function(element,index,array){
+                        if (element.estado == 'PendienteConfirmacion' || element.estado == 'PendienteConfirmacionProveedor') {
+                            if (element.timer.minute > 0 || element.timer.second > 1) {
 
-                            if (element.timer.second > 0) {
-                                element.timer.second -= 1;
-                            } else {
-                                if (element.timer.minute > 0) {
-                                    element.timer.minute -= 1;
-                                    element.timer.second = 59;
+                                if (element.timer.second > 0) {
+                                    element.timer.second -= 1;
+                                } else {
+                                    if (element.timer.minute > 0) {
+                                        element.timer.minute -= 1;
+                                        element.timer.second = 59;
+                                    }
                                 }
-                            }
 
-                            if (element.timer.minute >= 10) {
-                                element.timer.value = element.timer.minute;
-                            } else {
-                                element.timer.value = "0" + element.timer.minute;
-                            }
-                            element.timer.value += ":"
-                            if (element.timer.second >= 10) {
-                                element.timer.value += element.timer.second;
-                            } else {
-                                element.timer.value += "0" + element.timer.second;
-                            }
+                                if (element.timer.minute >= 10) {
+                                    element.timer.value = element.timer.minute;
+                                } else {
+                                    element.timer.value = "0" + element.timer.minute;
+                                }
+                                element.timer.value += ":"
+                                if (element.timer.second >= 10) {
+                                    element.timer.value += element.timer.second;
+                                } else {
+                                    element.timer.value += "0" + element.timer.second;
+                                }
 
-                        } else {
-                            local_pedidos_pendientes_viewmodel.timeout_pedido(element, timeout_pedido_callback);
+                            } else {
+                                local_pedidos_pendientes_viewmodel.timeout_pedido(element, timeout_pedido_callback);
+                            }
                         }
-                    }
-                });
+                    });
+                }
             },1000);
         }
     };

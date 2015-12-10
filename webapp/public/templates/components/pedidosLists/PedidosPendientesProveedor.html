@@ -20,7 +20,7 @@
                 <div class="list-item-inline" ng-repeat="transportista in pedido.transportistas" style="text-align:center;">
                     <img class="list-item-image-sm list-item-image-block" ng-src="{{transportista.photo}}"  ng-click="ctlr.proveedor_tomar(pedido,transportista)" style="cursor: pointer;margin:auto;"/>
                     <span class="list-item-sm">{{transportista.nombre}}</span>
-                    <div class="list-item-check list-item-check-orange" style="left:30px;">
+                    <div class="list-item-check list-item-check-orange" style="left:30px;cursor:context-menu;" ng-attr-title="{{transportista.horaDisponible}}">
                         <span style="color: white;">{{transportista.priority}}</span>
                     </div>
                 </div>
@@ -52,7 +52,7 @@
                     <div class="list-item-inline" ng-repeat="transportista in pedido.transportistas">
                         <img class="list-item-image-sm list-item-image-block" ng-src="{{transportista.photo}}" ng-click="ctlr.proveedor_confirmar(pedido,transportista)" style="cursor: pointer"/>
                         <span class="list-item-sm">{{transportista.nombre}}</span>
-                        <div class="list-item-check list-item-check-orange">
+                        <div class="list-item-check list-item-check-orange" style="left:30px;cursor:context-menu;" ng-attr-title="{{transportista.horaDisponible}}">
                             <span style="color: white;">{{transportista.priority}}</span>
                         </div>
                     </div>
