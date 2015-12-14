@@ -57,6 +57,9 @@
             results.forEach(function(element,index,array){
                 var pedido = local_parser.getJson(element);
                 pedido.transportista = local_parser.getTransportistaJson(element.get("Transportista"));
+                if (local_rootScope.cliente && pedido.object.get("Proveedor")){
+                    pedido.transportista = local_parser.parseProveedorIntoTransportista(pedido.transportista,pedido.object.get("Proveedor"));
+                }
                 pedidos.push(pedido)
             });
             get_pedidos_completados_callback(error,pedidos);

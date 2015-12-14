@@ -72,7 +72,7 @@
 
             local_root_scope = $rootScope;
 
-            //Parse.initialize("LRW3NBrk3JYLeAkXrpTF2TV0bDPn5HQTndrao8my", "e6v72X3KgdBeXe0JZ5cWrSBMmHZ1GIqtEIRICcp3");//PROD
+            //Parse.initialize("VJTDwzZdvOVEjA6c2DnVHduEvOpY8p3Cx4KMwxUi", "zQ1tHay1kKYGRrr7psu8oddu2fnKuOF7EpAWbAdM");//PROD
             Parse.initialize("2hLYHTAUJ9QXMWxQTXsOIZ2jXJLGtMauw2QN34fE", "xSiGu1HbOBQvzcd7ItdgGGyMq2IcpvKmCAFjhY2T");//QA
 
             if (Parse.User.current()) {
@@ -417,6 +417,7 @@
         mainQuery.include("CiudadOrigen");
         mainQuery.include("CiudadDestino");
         mainQuery.include("Transportista");
+        mainQuery.include("Proveedor");
         mainQuery.addAscending("createdAt");
         mainQuery.find({
             success: function(results) {
@@ -435,6 +436,7 @@
         query.include("CiudadOrigen");
         query.include("CiudadDestino");
         query.include("Transportista");
+        query.include("Proveedor");
         query.find({
             success: function(results) {
                 callback(params,null,results);
@@ -452,6 +454,7 @@
         query.include("CiudadOrigen");
         query.include("CiudadDestino");
         query.include("Transportista");
+        query.include("Proveedor");
         query.find({
             success: function(results) {
                 callback(params,null,results);
@@ -473,6 +476,7 @@
         query.include("CiudadOrigen");
         query.include("CiudadDestino");
         query.include("Transportista");
+        query.include("Proveedor");
         query.find({
             success: function(results) {
                 callback(params,null,results);

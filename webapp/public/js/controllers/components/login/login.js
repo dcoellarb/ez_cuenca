@@ -32,7 +32,15 @@
                         $scope.$apply()
                     }
                 });
-            }
+            };
+
+            ctlr.toggleLogin = function(show){
+                if (show){
+                    $("#login").show()
+                }else{
+                    $("#login").hide()
+                }
+            };
         });
 
 })();

@@ -5,25 +5,29 @@
 (function(){
 
     //Variables
+    var local_root_scope;
     var local_utils;
 
     //Public "Methods"
     var local_getJson;
     var getTransportistaJson;
     var getProveedorJson;
+    var local_parseProveedorIntoTransportista
 
     //Methods
     var getTimer;
 
     angular.module("easyRuta")
-        .factory('parser', function(utils) {
+        .factory('parser', function($rootScope,utils) {
 
+            local_root_scope = $rootScope;
             local_utils = utils;
 
             return {
                 getJson : function(element){return local_getJson(element);},
                 getTransportistaJson : function(element){return getTransportistaJson(element);},
-                getProveedorJson : function(element){return getProveedorJson(element);}
+                getProveedorJson : function(element){return getProveedorJson(element);},
+                parseProveedorIntoTransportista : function(transportistaJson,proveedor){ return local_parseProveedorIntoTransportista(transportistaJson,proveedor) }
             };
         });
 
@@ -88,16 +92,32 @@
         var json =  {
             object : element,
             id : element.id,
+            descripcion : element.get("Descripcion"),
             nombre : element.get("Nombre"),
             photo : "resources/images/account_circle.png",
             estado : element.get("Estado"),
             horaDisponible : local_utils.formatDate(element.get("HoraDisponible"))
+        };
+
+        if (local_root_scope.proveedor){
+            json.referencia = json.descripcion;
+        }else if(local_root_scope.cliente){
+            json.referencia = json.nombre;
         }
 
         if (element.get("photo")){
             json.photo = element.get("photo").url();
         }
         return json;
+    };
+
+    local_parseProveedorIntoTransportista = function(transportistaJson, proveedor){
+        transportistaJson.photo = "resources/images/account_circle.png";
+        if (proveedor.get("Imagen")){
+            transportistaJson.photo = proveedor.get("Imagen").url();
+        }
+        transportistaJson.referencia = proveedor.get("Nombre");
+        return transportistaJson;
     };
 
     //Methods

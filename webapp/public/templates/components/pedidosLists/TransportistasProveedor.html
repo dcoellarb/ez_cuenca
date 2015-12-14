@@ -1,9 +1,9 @@
 <div id="pedidosActivos" class="panel panel-default col-nopadding" ng-controller="TransportistasProveedorController as ctlr">
     <div class="panel-heading">Transportistas</div>
-    <div class="panel-body col-nopadding">
+    <div class="panel-body col-nopadding pedidos-lists-transportistas">
         <div ng-repeat="transportista in ctlr.transportistas" class="col-sm-12 col-md-6" style="text-align:center;">
             <img class="list-item-image-sm list-item-image-block" ng-src="{{transportista.photo}}" style="margin:auto;"/>
-            <span class="list-item-sm" style="margin:auto;">{{transportista.nombre}}</span>
+            <span class="list-item-sm" style="margin:auto;">{{transportista.referencia}}</span>
             <div class="list-item-check" ng-class="transportista.checkColor" ng-attr-title="{{transportista.estado}}">
                 <span class="glyphicon" ng-class="transportista.checkGlyphicon" style="color: white;"/>
             </div>
