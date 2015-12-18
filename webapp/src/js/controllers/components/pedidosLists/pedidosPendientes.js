@@ -109,7 +109,7 @@
         local_pedidos_pendientes_viewmodel.rechazar_pedido(pedido,rechazar_pedido_callback)
     };
     verDetalle = function(pedido) {
-        $location.path("/detallePedido/" + pedido.id);
+        local_location.path("/detallePedido/" + pedido.id);
     };
     proveedor_tomar = function(pedido,transportista){
         local_pedidos_pendientes_viewmodel.proveedor_tomar_pedido(pedido,transportista,proveedor_tomar_pedido_callback)
