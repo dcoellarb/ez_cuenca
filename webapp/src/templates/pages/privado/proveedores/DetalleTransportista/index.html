@@ -1,0 +1,152 @@
+<div ng-include="'templates/components/masterPage/clientes.html'"></div>
+<div class="col-nopadding col-md-12 col-lg-10 col-lg-offset-1" ng-controller="TransportistaEditController as ctlr" style="border-radius: 15px;background-color: whitesmoke;margin-top: 70px;">
+    <div class="col-nopadding col-sm-12" style="padding: 20px;">
+        <span class="panel-title">Detalle del transportista</span>
+    </div>
+    <hr class="col-sm-11">
+    <form id="transportistaForm" name="transportistaForm" novalidate>
+        <div class="col-sm-3">
+            <img ng-src="{{ctlr.transportista.photo}}" style="max-height: 270px;max-width: 270px;"/>
+            <input type="file" id="image" class="form-control" ng-model="ctlr.transportista.path"/>
+        </div>
+        <div class="col-sm-9">
+            <label for="Descripcion" class="control-label">Descripcion</label>
+            <input id="Descripcion" name="Descripcion" type="text" class="form-control" ng-model="ctlr.transportista.descripcion" required/>
+            <span class="invalid-label" ng-show="transportistaForm.Descripcion.$dirty && transportistaForm.Descripcion.$invalid">
+                <span ng-show="transportistaForm.Descripcion.$error.required">Descripcion es requerida.</span>
+            </span>
+            <label for="Nombre" class="control-label">Nombre</label>
+            <input id="Nombre" name="Nombre" type="text" class="form-control" ng-model="ctlr.transportista.nombre" required/>
+            <span class="invalid-label" ng-show="transportistaForm.Nombre.$dirty && transportistaForm.Nombre.$invalid">
+                <span ng-show="transportistaForm.Nombre.$error.required">Nombre es requerido.</span>
+            </span>
+            <div class="col-sm-6 col-nopadding">
+                <label for="Cedula" class="control-label">Cedula</label>
+                <input id="Cedula" type="text" class="form-control" ng-model="ctlr.transportista.cedula"/>
+            </div>
+            <div class="col-sm-6" style="padding-right: 0px;">
+                <label for="Telefono" class="control-label">Telefono</label>
+                <input id="Telefono" type="text" class="form-control" ng-model="ctlr.transportista.telefono"/>
+            </div>
+            <div class="col-sm-12" style="padding-top: 10px">
+                <label class="control-label" style="margin-right: 10px;">Es Tercero:</label>
+                <switch id="Tercero" name="Tercero" ng-model="ctlr.transportista.esTercero" class="green" on="Si" off="No"></switch>
+            </div>
+        </div>
+        <div class="col-sm-12">
+            <div class="col-sm-2">
+                <label for="Placa" class="control-label">Placa</label>
+                <input id="Placa" type="text" class="form-control" ng-model="ctlr.transportista.placa"/>
+            </div>
+            <div class="col-sm-3">
+                <label for="Marca" class="control-label">Marca</label>
+                <input id="Marca" type="text" class="form-control" ng-model="ctlr.transportista.marca"/>
+            </div>
+            <div class="col-sm-3">
+                <label for="Modelo" class="control-label">Modelo</label>
+                <input id="Modelo" type="text" class="form-control" ng-model="ctlr.transportista.modelo"/>
+            </div>
+            <div class="col-sm-2">
+                <label for="Año" class="control-label">Año</label>
+                <input id="Año" type="text" class="form-control" ng-model="ctlr.transportista.anio"/>
+            </div>
+            <div class="col-sm-2">
+                <label for="Color" class="control-label">Color</label>
+                <input id="Color" type="text" class="form-control" ng-model="ctlr.transportista.color"/>
+            </div>
+        </div>
+
+        <div class="col-sm-12" style="padding-top: 20px">
+            <label class="control-label">Tipo de Transporte</label>
+            <ul id="truckType" class="nav nav-pills nav-justified">
+                <li role="presentation" ng-class="{active : ctlr.transportista.tipoTransporte=='furgon'}"><a href="" ng-click="ctlr.TipoTransporteSeleccionado('furgon')">
+                    <div style="display: flex;justify-content: center;">
+                        <span class="icon-furgon" style="font-size: xx-large;"></span>
+                    </div>
+                    <div>
+                        <span style="font-size: x-small;">Furgon</span>
+                    </div>
+                </a></li>
+                <li role="presentation" ng-class="{active : ctlr.transportista.tipoTransporte=='plataforma'}"><a  href="" ng-click="ctlr.TipoTransporteSeleccionado('plataforma')">
+                    <div style="display: flex;justify-content: center;">
+                        <span class="icon-plataforma" style="font-size: xx-large;"></span>
+                    </div>
+                    <div>
+                        <span style="font-size: x-small;">Plataforma</span>
+                    </div>
+                </a></li>
+                <li role="presentation" ng-class="{active : ctlr.transportista.tipoTransporte=='cama baja'}"><a href="" ng-click="ctlr.TipoTransporteSeleccionado('cama baja')">
+                    <div style="display: flex;justify-content: center;">
+                        <span class="icon-plataforma" style="font-size: xx-large;"></span>
+                    </div>
+                    <div>
+                        <span style="font-size: x-small;">Cama Baja</span>
+                    </div>
+                </a></li>
+                <li role="presentation" ng-class="{active : ctlr.transportista.tipoTransporte=='banera'}"><a href="" ng-click="ctlr.TipoTransporteSeleccionado('banera')">
+                    <div style="display: flex;justify-content: center;">
+                        <span class="icon-banera" style="font-size: xx-large;"></span>
+                    </div>
+                    <div>
+                        <span style="font-size: x-small;">Banera</span>
+                    </div>
+                </a></li>
+                <li role="presentation" ng-class="{active : ctlr.transportista.tipoTransporte=='tanquero'}"><a href="" ng-click="ctlr.TipoTransporteSeleccionado('tanquero')">
+                    <div style="display: flex;justify-content: center;">
+                        <span class="icon-tanquero" style="font-size: xx-large;"></span>
+                    </div>
+                    <div>
+                        <span style="font-size: x-small;">Tanquero</span>
+                    </div>
+                </a></li>
+                <li role="presentation" ng-class="{active : ctlr.transportista.tipoTransporte=='ninera'}"><a href="" ng-click="ctlr.TipoTransporteSeleccionado('ninera')">
+                    <div style="display: flex;justify-content: center;">
+                        <span class="icon-jaula" style="font-size: xx-large;"></span>
+                    </div>
+                    <div>
+                        <span style="font-size: x-small;">Ninera</span>
+                    </div>
+                </a></li>
+            </ul>
+        </div>
+        <div class="col-sm-12" style="padding-top: 20px" ng-show="ctlr.transportista.tipoTransporte=='furgon'">
+            <div class="col-sm-12">
+                <label class="control-label" style="margin-right: 10px;">Refrigeracion</label>
+                <switch id="CajaRefrigerada" name="CajaRefrigerada" ng-model="ctlr.transportista.refrigerado" class="green" on="Si" off="No"></switch>
+            </div>
+            <div class="col-sm-12">
+                <label for="CubicajeMinimo" class="control-label">Extension Mínima (pies)</label>
+                <input type="number" class="form-control input" id="CubicajeMinimo" name="CubicajeMinimo" ng-model="ctlr.transportista.cubicajeMinimo" required>
+                <span class="invalid-label" ng-show="transportistaForm.CubicajeMinimo.$dirty && (transportistaForm.CubicajeMinimo.$invalid || ctlr.transportista.cubicajeMinimo <= 0)">
+                    <span ng-show="transportistaForm.CubicajeMinimo.$error.required">Extension Minima es requerida.</span>
+                    <span ng-show="transportistaForm.CubicajeMinimo.$dirty && ctlr.data.cubicajeMinimo <= 0">Extension Minima ser mayor a 0.</span>
+                </span>
+            </div>
+        </div>
+        <div class="col-sm-12" style="margin-top: 20px;margin-bottom: 20px" ng-show="ctlr.transportista.tipoTransporte=='plataforma'">
+            <div class="col-sm-12">
+                <label for="ExtensionMinima" class="control-label">Extension Mínima (pies)</label>
+                <input type="number" class="form-control input" id="ExtensionMinima" name="ExtensionMinima" ng-model="ctlr.transportista.extensionMinima" required>
+                <span class="invalid-label" ng-show="transportistaForm.ExtensionMinima.$dirty && (transportistaForm.ExtensionMinima.$invalid || ctlr.transportista.extensionMinima <= 0)">
+                    <span ng-show="transportistaForm.ExtensionMinima.$error.required">Extension Minima es requerida.</span>
+                    <span ng-show="transportistaForm.ExtensionMinima.$dirty && ctlr.transportista.extensionMinima <= 0">Extension Minima ser mayor a 0.</span>
+                </span>
+            </div>
+        </div>
+
+        <div class="col-sm-12" style="padding-top: 20px;padding-bottom: 20px;">
+            <div class="col-sm-4 col-nopadding">
+                <input type="button" class="btn btn-primary" value="Guardar" ng-click="ctlr.save()" ng-disabled="
+                    transportistaForm.Descripcion.$invalid
+                    || transportistaForm.Nombre.$invalid"/>
+                <input type="button" class="btn btn-default" value="Cancelar" ng-click="ctlr.cancel()"/>
+            </div>
+            <div class="col-sm-4 col-nopadding">
+                <input type="button" class="btn btn-danger" value="Delete" ng-click="ctlr.delete()" ng-show="ctlr.transportista.id"/>
+            </div>
+            <div class="col-sm-4 col-nopadding">
+                <input type="button" class="btn btn-primary" value="Habilitar" ng-click="ctlr.habilitar()" ng-show="ctlr.transportista.estado == 'no disponible'" style="float: right"/>
+            </div>
+        </div>
+    </form>
+</div>

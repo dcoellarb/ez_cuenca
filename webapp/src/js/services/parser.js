@@ -142,6 +142,8 @@
         return transportistaJson;
     };
 
+
+
     //Methods
     getTimer = function(element){
         if (element.get('Estado') == 'PendienteConfirmacion') {
