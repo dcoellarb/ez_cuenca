@@ -1,0 +1,33 @@
+<div id="pedidosActivos" class="panel panel-default col-nopadding" ng-controller="PedidosActivosController as ctlr">
+    <div class="panel-heading">Pedidos Activos</div>
+    <div class="panel-body col-nopadding pedidos-lists">
+        <div ng-repeat="pedido in ctlr.pedidos" class="pedido-item">
+            <div class="col-sm-12 col-nopadding" ng-click="ctlr.verDetalle(pedido)" style="cursor: pointer;">
+                <div class="list-item-image-xsm" ng-class="pedido.background"/>
+                <span class="list-heading">{{pedido.viaje}}</span>
+                <div class="col-sm-12 col-nopadding"><span class="list-item-label">Carga:</span><span class="list-item">{{pedido.carga}}</span></div>
+                <div class="col-sm-12 col-nopadding"><span class="list-item-label">Entrega:</span><span class="list-item">{{pedido.entrega}}</span></div>
+
+                <div class="col-sm-12 col-nopadding">
+                    <div class="col-sm-3 col-nopadding">
+                        <div class="list-item-image" ng-style="{'background-image': 'url(' + pedido.transportista.photo + ')'}"/>
+                    </div>
+                    <div class="col-sm-9 col-nopadding">
+                        <div class="col-sm-12 col-nopadding">
+                            <span class="list-heading">{{pedido.transportista.referencia}}</span>
+                        </div>
+                        <div class="col-sm-12 col-nopadding">
+                            <div class="col-sm-12 col-nopadding"><span class="list-item-label">Telefono:</span><span class="list-item">{{pedido.transportista.telefono}}</span></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-12 center-content-horizontal">
+                <input type="button" value="Iniciar" class="btn btn-small btn-primary" ng-click="ctlr.iniciar(pedido)" ng-show="ctlr.isProveedor" style="margin-right: 20px;"/>
+                <input type="button" value="Cancelar" class="btn btn-small btn-danger" ng-click="ctlr.cancelar(pedido)"  ng-show="!ctlr.isProveedor"/>
+                <input type="button" value="Cancelar" class="btn btn-small btn-danger" ng-click="ctlr.cancelarProveedor(pedido)"  ng-show="ctlr.isProveedor"/>
+            </div>
+        </div>
+    </div>
+    <div ng-include="'templates/confirm_dialog.html'"></div>
+</div>

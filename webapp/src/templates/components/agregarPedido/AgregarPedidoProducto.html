@@ -1,0 +1,41 @@
+    <div class="col-sm-7">
+        <label class="control-label">Producto</label>
+        <input type="text" class="form-control input" id="inputProducto" name="inputProducto" ng-model="agrPedCtrl.data.Producto" required>
+        <span class="invalid-label" ng-show="agrPedForm.inputProducto.$dirty && agrPedForm.inputProducto.$invalid">
+            <span ng-show="agrPedForm.inputProducto.$error.required">Producto es requerido.</span>
+        </span>
+    </div>
+    <div class="col-sm-3">
+        <div>
+            <label class="radio-inline control-label"><input type="radio" name="optradio" ng-model="agrPedCtrl.data.TipoUnidad" value="peso" ng-change="agrPedCtrl.ChangeUnidad('peso')">Peso (Tn)</label>
+            <label class="radio-inline control-label"><input type="radio" name="optradio" ng-model="agrPedCtrl.data.TipoUnidad" value="unidades" ng-change="agrPedCtrl.ChangeUnidad('unidades')">Unidades</label>
+        </div>
+        <div id="peso_container" style="display: block; margin-top: 5px;">
+            <div class="input-group">
+                <span class="input-group-addon">Entre</span>
+                <input type="number" class="form-control input" id="inputPesoDesde" name="inputPesoDesde" ng-model="agrPedCtrl.data.PesoDesde"  ng-required="agrPedCtrl.data.TipoUnidad=='peso'">
+                <span class="input-group-addon">y</span>
+                <input type="number" class="form-control input" id="inputPesoHasta" name="inputPesoHasta" ng-model="agrPedCtrl.data.PesoHasta"  ng-required="agrPedCtrl.data.TipoUnidad=='peso'">
+            </div>
+            <span class="invalid-label" ng-show="(agrPedForm.inputPesoDesde.$dirty && (agrPedForm.inputPesoDesde.$invalid || agrPedCtrl.data.PesoDesde <= 0)) || (agrPedForm.inputPesoHasta.$dirty && (agrPedForm.inputPesoHasta.$invalid || agrPedCtrl.data.PesoHasta <= 0))">
+                <span ng-show="agrPedForm.inputPesoDesde.$error.required || agrPedForm.inputPesoHasta.$error.required">Peso es requerido.</span>
+                <span ng-show="agrPedCtrl.data.TipoUnidad=='peso' && ((agrPedForm.inputPesoDesde.$dirty && agrPedCtrl.data.PesoDesde <= 0) || (agrPedForm.inputPesoHasta.$dirty && agrPedCtrl.data.PesoHasta <= 0))">Valor debe ser mayor a 0.</span>
+            </span>
+        </div>
+        <div id="unidades_container" style="display: none; margin-top: 5px;">
+            <input type="number" class="form-control input" id="inputUnidades" name="inputUnidades" ng-model="agrPedCtrl.data.Unidades" ng-required="agrPedCtrl.data.TipoUnidad=='unidades'">
+            <span class="invalid-label" ng-show="agrPedForm.inputUnidades.$dirty && (agrPedForm.inputUnidades.$invalid || agrPedCtrl.data.Unidades <= 0)">
+                <span ng-show="agrPedForm.inputUnidades.$error.required">Unidades es requerido.</span>
+                <span ng-show="agrPedCtrl.data.TipoUnidad=='unidades' && (agrPedForm.inputUnidades.$dirty && agrPedCtrl.data.Unidades <= 0)">Valor debe ser mayor a 0.</span>
+            </span>
+        </div>
+    </div>
+    <div class="col-sm-2">
+        <label for="inputValor" class="control-label">Valor (USD)</label>
+        <input type="number" class="form-control input" id="inputValor" name="inputValor" ng-model="agrPedCtrl.data.Valor" required>
+        <span class="invalid-label" ng-show="agrPedForm.inputValor.$dirty && (agrPedForm.inputValor.$invalid || agrPedCtrl.data.Valor <= 0)">
+            <span ng-show="agrPedForm.inputValor.$error.required">Valor es requerido.</span>
+            <span ng-show="agrPedForm.inputValor.$dirty && agrPedCtrl.data.Valor <= 0">Valor debe ser mayor a 0.</span>
+        </span>
+    </div>
+

@@ -1,7 +1,115 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="0ccc15df-18c8-488c-b882-7e9cbf60319c" name="Default" comment="" />
+    <list default="true" id="0ccc15df-18c8-488c-b882-7e9cbf60319c" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webapp/src/templates/components/pedidosLists/PedidosCompletados.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webapp/src/templates/components/pedidosLists/PedidosEnCurso.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webapp/src/js/controllers/pages/privado/clientes/detallePedido/detallePedido.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webapp/src/js/viewmodels/historico_view_model.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webapp/src/templates/components/home/para_empresas.html" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/webapp/bin/www" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/webapp/public/js/controllers/pages/privado/clientes/detallePedido/detallePedido.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/webapp/public/templates/components/home/para_empresas.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/webapp/public/templates/components/pedidosLists/PedidosCompletados.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/webapp/public/templates/components/pedidosLists/PedidosEnCurso.html" afterPath="" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/webapp/public/css/app.css" afterPath="$PROJECT_DIR$/webapp/src/css/app.css" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/webapp/public/index.html" afterPath="$PROJECT_DIR$/webapp/src/index.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/webapp/public/js/app.js" afterPath="$PROJECT_DIR$/webapp/src/js/app.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/webapp/public/js/config/routes.js" afterPath="$PROJECT_DIR$/webapp/src/js/config/routes.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/webapp/public/js/controllers/components/agregarPedido/agregarPedido.js" afterPath="$PROJECT_DIR$/webapp/src/js/controllers/components/agregarPedido/agregarPedido.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/webapp/public/js/controllers/components/login/login.js" afterPath="$PROJECT_DIR$/webapp/src/js/controllers/components/login/login.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/webapp/public/js/controllers/components/masterPage/masterPage.js" afterPath="$PROJECT_DIR$/webapp/src/js/controllers/components/masterPage/masterPage.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/webapp/public/js/controllers/components/pedidosLists/pedidosActivos.js" afterPath="$PROJECT_DIR$/webapp/src/js/controllers/components/pedidosLists/pedidosActivos.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/webapp/public/js/controllers/components/pedidosLists/pedidosCompletados.js" afterPath="$PROJECT_DIR$/webapp/src/js/controllers/components/pedidosLists/pedidosCompletados.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/webapp/public/js/controllers/components/pedidosLists/pedidosEnCurso.js" afterPath="$PROJECT_DIR$/webapp/src/js/controllers/components/pedidosLists/pedidosEnCurso.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/webapp/public/js/controllers/components/pedidosLists/pedidosPendientes.js" afterPath="$PROJECT_DIR$/webapp/src/js/controllers/components/pedidosLists/pedidosPendientes.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/webapp/public/js/controllers/components/pedidosLists/transportistasProveedor.js" afterPath="$PROJECT_DIR$/webapp/src/js/controllers/components/pedidosLists/transportistasProveedor.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/webapp/public/js/controllers/components/rateTransportista/rateTransportista.js" afterPath="$PROJECT_DIR$/webapp/src/js/controllers/components/rateTransportista/rateTransportista.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/webapp/public/js/controllers/confirm_dialog.js" afterPath="$PROJECT_DIR$/webapp/src/js/controllers/confirm_dialog.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/webapp/public/js/controllers/pages/privado/administracion/register/register.js" afterPath="$PROJECT_DIR$/webapp/src/js/controllers/pages/privado/administracion/register/register.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/webapp/public/js/controllers/pages/privado/clientes/Historico/historico.js" afterPath="$PROJECT_DIR$/webapp/src/js/controllers/pages/privado/clientes/Historico/historico.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/webapp/public/js/controllers/pages/privado/clientes/inicioClientes/incioClientes.js" afterPath="$PROJECT_DIR$/webapp/src/js/controllers/pages/privado/clientes/inicioClientes/incioClientes.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/webapp/public/js/controllers/pages/privado/clientes/perfil/perfil.js" afterPath="$PROJECT_DIR$/webapp/src/js/controllers/pages/privado/clientes/perfil/perfil.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/webapp/public/js/controllers/pages/privado/proveedores/inicio/inicio.js" afterPath="$PROJECT_DIR$/webapp/src/js/controllers/pages/privado/proveedores/inicio/inicio.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/webapp/public/js/services/parse.js" afterPath="$PROJECT_DIR$/webapp/src/js/services/parse.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/webapp/public/js/services/parser.js" afterPath="$PROJECT_DIR$/webapp/src/js/services/parser.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/webapp/public/js/services/pubnub.js" afterPath="$PROJECT_DIR$/webapp/src/js/services/pubnub.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/webapp/public/js/services/utils.js" afterPath="$PROJECT_DIR$/webapp/src/js/services/utils.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/webapp/public/js/viewmodels/agregar_pedido.js" afterPath="$PROJECT_DIR$/webapp/src/js/viewmodels/agregar_pedido.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/webapp/public/js/viewmodels/pedidos_activos.js" afterPath="$PROJECT_DIR$/webapp/src/js/viewmodels/pedidos_activos.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/webapp/public/js/viewmodels/pedidos_completados.js" afterPath="$PROJECT_DIR$/webapp/src/js/viewmodels/pedidos_completados.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/webapp/public/js/viewmodels/pedidos_en_curso.js" afterPath="$PROJECT_DIR$/webapp/src/js/viewmodels/pedidos_en_curso.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/webapp/public/js/viewmodels/pedidos_pendientes.js" afterPath="$PROJECT_DIR$/webapp/src/js/viewmodels/pedidos_pendientes.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/webapp/public/js/viewmodels/transportistas_proveedor.js" afterPath="$PROJECT_DIR$/webapp/src/js/viewmodels/transportistas_proveedor.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/webapp/public/resources/app-debug.apk" afterPath="$PROJECT_DIR$/webapp/src/resources/app-debug.apk" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/webapp/public/resources/app-release.apk" afterPath="$PROJECT_DIR$/webapp/src/resources/app-release.apk" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/webapp/public/resources/css/angular-ui-switch.min.css" afterPath="$PROJECT_DIR$/webapp/src/resources/css/angular-ui-switch.min.css" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/webapp/public/resources/fonts/icomoon.eot" afterPath="$PROJECT_DIR$/webapp/src/resources/fonts/icomoon.eot" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/webapp/public/resources/fonts/icomoon.svg" afterPath="$PROJECT_DIR$/webapp/src/resources/fonts/icomoon.svg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/webapp/public/resources/fonts/icomoon.ttf" afterPath="$PROJECT_DIR$/webapp/src/resources/fonts/icomoon.ttf" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/webapp/public/resources/fonts/icomoon.woff" afterPath="$PROJECT_DIR$/webapp/src/resources/fonts/icomoon.woff" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/webapp/public/resources/images/EASY-RUTA-04.jpg" afterPath="$PROJECT_DIR$/webapp/src/resources/images/EASY-RUTA-04.jpg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/webapp/public/resources/images/account_circle.png" afterPath="$PROJECT_DIR$/webapp/src/resources/images/account_circle.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/webapp/public/resources/images/ambato.jpg" afterPath="$PROJECT_DIR$/webapp/src/resources/images/ambato.jpg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/webapp/public/resources/images/arrow.png" afterPath="$PROJECT_DIR$/webapp/src/resources/images/arrow.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/webapp/public/resources/images/cuenca.jpg" afterPath="$PROJECT_DIR$/webapp/src/resources/images/cuenca.jpg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/webapp/public/resources/images/duran.jpg" afterPath="$PROJECT_DIR$/webapp/src/resources/images/duran.jpg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/webapp/public/resources/images/factory.png" afterPath="$PROJECT_DIR$/webapp/src/resources/images/factory.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/webapp/public/resources/images/guayaquil.jpg" afterPath="$PROJECT_DIR$/webapp/src/resources/images/guayaquil.jpg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/webapp/public/resources/images/logo.png" afterPath="$PROJECT_DIR$/webapp/src/resources/images/logo.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/webapp/public/resources/images/logo_background.png" afterPath="$PROJECT_DIR$/webapp/src/resources/images/logo_background.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/webapp/public/resources/images/logo_texto.png" afterPath="$PROJECT_DIR$/webapp/src/resources/images/logo_texto.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/webapp/public/resources/images/loja.jpg" afterPath="$PROJECT_DIR$/webapp/src/resources/images/loja.jpg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/webapp/public/resources/images/machala.jpg" afterPath="$PROJECT_DIR$/webapp/src/resources/images/machala.jpg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/webapp/public/resources/images/manta.jpg" afterPath="$PROJECT_DIR$/webapp/src/resources/images/manta.jpg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/webapp/public/resources/images/quito.jpg" afterPath="$PROJECT_DIR$/webapp/src/resources/images/quito.jpg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/webapp/public/resources/images/transrodar.png" afterPath="$PROJECT_DIR$/webapp/src/resources/images/transrodar.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/webapp/public/resources/images/truck.png" afterPath="$PROJECT_DIR$/webapp/src/resources/images/truck.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/webapp/public/resources/images/truck_dock.png" afterPath="$PROJECT_DIR$/webapp/src/resources/images/truck_dock.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/webapp/public/resources/js/angular-google-maps.min.js" afterPath="$PROJECT_DIR$/webapp/src/resources/js/angular-google-maps.min.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/webapp/public/resources/js/angular-simple-logger.min.js" afterPath="$PROJECT_DIR$/webapp/src/resources/js/angular-simple-logger.min.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/webapp/public/resources/js/angular-ui-switch.min.js" afterPath="$PROJECT_DIR$/webapp/src/resources/js/angular-ui-switch.min.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/webapp/public/resources/js/ui-bootstrap-tpls-0.14.3.min.js" afterPath="$PROJECT_DIR$/webapp/src/resources/js/ui-bootstrap-tpls-0.14.3.min.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/webapp/public/resources/video/big_buck_bunny.mp4" afterPath="$PROJECT_DIR$/webapp/src/resources/video/big_buck_bunny.mp4" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/webapp/public/resources/video/big_buck_bunny.ogv" afterPath="$PROJECT_DIR$/webapp/src/resources/video/big_buck_bunny.ogv" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/webapp/public/resources/video/big_buck_bunny.webm" afterPath="$PROJECT_DIR$/webapp/src/resources/video/big_buck_bunny.webm" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/webapp/public/resources/video/truck.mov" afterPath="$PROJECT_DIR$/webapp/src/resources/video/truck.mov" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/webapp/public/resources/video/truck.mp4" afterPath="$PROJECT_DIR$/webapp/src/resources/video/truck.mp4" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/webapp/public/resources/video/truck1.mp4" afterPath="$PROJECT_DIR$/webapp/src/resources/video/truck1.mp4" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/webapp/public/templates/components/DetallePedido/mapa.html" afterPath="$PROJECT_DIR$/webapp/src/templates/components/DetallePedido/mapa.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/webapp/public/templates/components/DetallePedido/pedido.html" afterPath="$PROJECT_DIR$/webapp/src/templates/components/DetallePedido/pedido.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/webapp/public/templates/components/DetallePedido/producto.html" afterPath="$PROJECT_DIR$/webapp/src/templates/components/DetallePedido/producto.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/webapp/public/templates/components/DetallePedido/transportista.html" afterPath="$PROJECT_DIR$/webapp/src/templates/components/DetallePedido/transportista.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/webapp/public/templates/components/agregarPedido/AgregarPedido.html" afterPath="$PROJECT_DIR$/webapp/src/templates/components/agregarPedido/AgregarPedido.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/webapp/public/templates/components/agregarPedido/AgregarPedidoActions.html" afterPath="$PROJECT_DIR$/webapp/src/templates/components/agregarPedido/AgregarPedidoActions.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/webapp/public/templates/components/agregarPedido/AgregarPedidoHeader.html" afterPath="$PROJECT_DIR$/webapp/src/templates/components/agregarPedido/AgregarPedidoHeader.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/webapp/public/templates/components/agregarPedido/AgregarPedidoPlantillaModal.html" afterPath="$PROJECT_DIR$/webapp/src/templates/components/agregarPedido/AgregarPedidoPlantillaModal.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/webapp/public/templates/components/agregarPedido/AgregarPedidoProducto.html" afterPath="$PROJECT_DIR$/webapp/src/templates/components/agregarPedido/AgregarPedidoProducto.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/webapp/public/templates/components/agregarPedido/AgregarPedidoTransporte.html" afterPath="$PROJECT_DIR$/webapp/src/templates/components/agregarPedido/AgregarPedidoTransporte.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/webapp/public/templates/components/agregarPedido/AgregarPedidoViaje.html" afterPath="$PROJECT_DIR$/webapp/src/templates/components/agregarPedido/AgregarPedidoViaje.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/webapp/public/templates/components/home/como_funciona.html" afterPath="$PROJECT_DIR$/webapp/src/templates/components/home/como_funciona.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/webapp/public/templates/components/home/contactenos.html" afterPath="$PROJECT_DIR$/webapp/src/templates/components/home/contactenos.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/webapp/public/templates/components/home/para_proveedores.html" afterPath="$PROJECT_DIR$/webapp/src/templates/components/home/para_proveedores.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/webapp/public/templates/components/masterPage/clientes.html" afterPath="$PROJECT_DIR$/webapp/src/templates/components/masterPage/clientes.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/webapp/public/templates/components/masterPage/proveedores.html" afterPath="$PROJECT_DIR$/webapp/src/templates/components/masterPage/proveedores.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/webapp/public/templates/components/masterPage/publico.html" afterPath="$PROJECT_DIR$/webapp/src/templates/components/masterPage/publico.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/webapp/public/templates/components/pedidosLists/PedidosActivos.html" afterPath="$PROJECT_DIR$/webapp/src/templates/components/pedidosLists/PedidosActivos.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/webapp/public/templates/components/pedidosLists/PedidosPendientes.html" afterPath="$PROJECT_DIR$/webapp/src/templates/components/pedidosLists/PedidosPendientes.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/webapp/public/templates/components/pedidosLists/PedidosPendientesProveedor.html" afterPath="$PROJECT_DIR$/webapp/src/templates/components/pedidosLists/PedidosPendientesProveedor.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/webapp/public/templates/components/pedidosLists/TransportistasProveedor.html" afterPath="$PROJECT_DIR$/webapp/src/templates/components/pedidosLists/TransportistasProveedor.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/webapp/public/templates/components/rateTransportista/rateTransportista.html" afterPath="$PROJECT_DIR$/webapp/src/templates/components/rateTransportista/rateTransportista.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/webapp/public/templates/confirm_dialog.html" afterPath="$PROJECT_DIR$/webapp/src/templates/confirm_dialog.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/webapp/public/templates/pages/privado/clientes/DetallePedido/index.html" afterPath="$PROJECT_DIR$/webapp/src/templates/pages/privado/clientes/DetallePedido/index.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/webapp/public/templates/pages/privado/clientes/Historico/index.html" afterPath="$PROJECT_DIR$/webapp/src/templates/pages/privado/clientes/Historico/index.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/webapp/public/templates/pages/privado/clientes/Perfil/index.html" afterPath="$PROJECT_DIR$/webapp/src/templates/pages/privado/clientes/Perfil/index.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/webapp/public/templates/pages/privado/clientes/inicioClientes/index.html" afterPath="$PROJECT_DIR$/webapp/src/templates/pages/privado/clientes/inicioClientes/index.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/webapp/public/templates/pages/privado/proveedores/inicio/index.html" afterPath="$PROJECT_DIR$/webapp/src/templates/pages/privado/proveedores/inicio/index.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/webapp/public/templates/pages/publico/home/index.html" afterPath="$PROJECT_DIR$/webapp/src/templates/pages/publico/home/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/webapp/app.js" afterPath="$PROJECT_DIR$/webapp/app.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/webapp/package.json" afterPath="$PROJECT_DIR$/webapp/package.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/vcs.xml" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+    </list>
     <ignored path="easyruta.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path=".idea/dataSources.local.xml" />
@@ -19,179 +127,82 @@
   <component name="DaemonCodeAnalyzer">
     <disable_hints />
   </component>
+  <component name="DatabaseView">
+    <option name="SHOW_TOOLBAR" value="false" />
+    <option name="FLATTEN" value="false" />
+    <option name="GROUP_BY_TYPE" value="true" />
+    <option name="SORT_CHILDREN" value="false" />
+    <option name="SHOW_TABLE_CONSTRAINTS" value="true" />
+  </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FavoritesManager">
     <favorites_list name="easyruta" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file leaf-file-name="app.css" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/webapp/public/css/app.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-17.0" vertical-offset="8663" max-vertical-offset="9705">
-              <caret line="607" column="13" selection-start-line="607" selection-start-column="13" selection-end-line="607" selection-end-column="13" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="para_empresas.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/webapp/public/templates/components/home/para_empresas.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-3.125" vertical-offset="0" max-vertical-offset="300">
-              <caret line="5" column="203" selection-start-line="5" selection-start-column="203" selection-end-line="5" selection-end-column="203" />
-              <folding>
-                <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#input#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#span#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="para_proveedores.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/webapp/public/templates/components/home/para_proveedores.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-3.75" vertical-offset="0" max-vertical-offset="285">
-              <caret line="6" column="92" selection-start-line="6" selection-start-column="92" selection-end-line="6" selection-end-column="92" />
-              <folding>
-                <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#input#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/webapp/public/templates/pages/publico/home/index.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-18.75" vertical-offset="0" max-vertical-offset="600">
-              <caret line="30" column="57" selection-start-line="30" selection-start-column="43" selection-end-line="30" selection-end-column="57" />
-              <folding>
-                <element signature="n#style#0;n#div#1;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#1;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#img#0;n#div#0;n#div#0;n#div#0;n#div#1;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#img#0;n#div#1;n#div#0;n#div#0;n#div#1;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#1;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#h6#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#1;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#img#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#1;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#2;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#div#2;n#!!top" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="publico.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/webapp/public/templates/components/masterPage/publico.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-6.875" vertical-offset="0" max-vertical-offset="540">
-              <caret line="11" column="0" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="contactenos.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/webapp/public/templates/components/home/contactenos.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-12.5" vertical-offset="0" max-vertical-offset="480">
-              <caret line="20" column="6" selection-start-line="20" selection-start-column="6" selection-end-line="20" selection-end-column="6" />
-              <folding>
-                <element signature="n#style#0;n#table#0;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#span#0;n#td#1;n#tr#0;n#table#0;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#span#0;n#td#1;n#tr#1;n#table#0;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#span#0;n#td#1;n#tr#2;n#table#0;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#span#0;n#td#1;n#tr#4;n#table#0;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#a#0;n#span#0;n#td#1;n#tr#4;n#table#0;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#span#0;n#td#1;n#tr#5;n#table#0;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#a#0;n#span#0;n#td#1;n#tr#5;n#table#0;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#span#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="como_funciona.html" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/webapp/public/templates/components/home/como_funciona.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.6394316" vertical-offset="0" max-vertical-offset="563">
-              <caret line="24" column="66" selection-start-line="24" selection-start-column="66" selection-end-line="24" selection-end-column="66" />
-              <folding>
-                <element signature="n#style#0;n#div#2;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#div#2;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#1;n#div#2;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#2;n#div#2;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#3;n#div#2;n#!!top" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf />
   </component>
   <component name="FindManager">
     <FindUsagesManager>
       <setting name="OPEN_NEW_TAB" value="true" />
     </FindUsagesManager>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/webapp/public/js/view_models/pedidos_pendients.js" />
-        <option value="$PROJECT_DIR$/webapp/public/js/app.js" />
-        <option value="$PROJECT_DIR$/webapp/public/js/controllers/pages/privado/proveedores/inicio/incio.js" />
-        <option value="$PROJECT_DIR$/webapp/public/js/controllers/pages/privado/clientes/inicioClientes/incioClientes.js" />
-        <option value="$PROJECT_DIR$/webapp/public/templates/components/agregarPedido/AgregarPedidoTransporte.html" />
-        <option value="$PROJECT_DIR$/webapp/public/js/config/routes.js" />
-        <option value="$PROJECT_DIR$/webapp/public/js/controllers/pages/privado/clientes/perfil/perfil.js" />
-        <option value="$PROJECT_DIR$/webapp/public/js/viewmodels/pedidos_pendients.js" />
-        <option value="$PROJECT_DIR$/webapp/public/templates/components/agregarPedido/AgregarPedido.html" />
-        <option value="$PROJECT_DIR$/webapp/cloud/main.js" />
-        <option value="$PROJECT_DIR$/webapp/public/templates/components/agregarPedido/AgregarPedidoPlantillaModal.html" />
-        <option value="$PROJECT_DIR$/webapp/public/js/viewmodels/agregar_pedido.js" />
-        <option value="$PROJECT_DIR$/webapp/public/templates/components/confirm_dialog.html" />
-        <option value="$PROJECT_DIR$/webapp/public/js/controllers/confirm_dialog.js" />
-        <option value="$PROJECT_DIR$/webapp/public/js/controllers/components/pedidosLists/pedidosActivos.js" />
-        <option value="$PROJECT_DIR$/webapp/public/js/controllers/components/pedidosLists/pedidosEnCurso.js" />
-        <option value="$PROJECT_DIR$/webapp/public/js/controllers/components/pedidosLists/pedidosCompletados.js" />
-        <option value="$PROJECT_DIR$/webapp/public/js/controllers/components/agregarPedido/agregarPedido.js" />
-        <option value="$PROJECT_DIR$/webapp/public/js/services/utils.js" />
-        <option value="$PROJECT_DIR$/webapp/public/js/controllers/components/pedidosLists/trasnportistasProveedor.js" />
-        <option value="$PROJECT_DIR$/webapp/public/templates/pages/privado/proveedores/inicio/index.html" />
-        <option value="$PROJECT_DIR$/webapp/public/js/controllers/components/pedidosLists/transportistasProveedor.js" />
-        <option value="$PROJECT_DIR$/webapp/public/js/viewmodels/transportistas_proveedor.js" />
-        <option value="$PROJECT_DIR$/webapp/public/js/controllers/components/pedidosLists/pedidosPendientes.js" />
-        <option value="$PROJECT_DIR$/webapp/.parse.local" />
-        <option value="$PROJECT_DIR$/webapp/public/templates/pages/privado/clientes/Historico/index.html" />
-        <option value="$PROJECT_DIR$/webapp/public/templates/components/rateTransportista/rateTransportista.html" />
-        <option value="$PROJECT_DIR$/webapp/public/templates/components/DetallePedido/transportista.html" />
-        <option value="$PROJECT_DIR$/webapp/public/js/viewmodels/pedidos_completados.js" />
-        <option value="$PROJECT_DIR$/webapp/public/js/viewmodels/pedidos_en_curso.js" />
-        <option value="$PROJECT_DIR$/webapp/public/js/viewmodels/pedidos_pendientes.js" />
-        <option value="$PROJECT_DIR$/webapp/public/js/viewmodels/pedidos_activos.js" />
-        <option value="$PROJECT_DIR$/webapp/public/js/services/parser.js" />
-        <option value="$PROJECT_DIR$/webapp/public/index.html" />
-        <option value="$PROJECT_DIR$/webapp/public/js/services/pubnub.js" />
-        <option value="$PROJECT_DIR$/webapp/public/js/services/parse.js" />
-        <option value="$PROJECT_DIR$/webapp/public/js/controllers/components/login/login.js" />
-        <option value="$PROJECT_DIR$/webapp/public/templates/components/pedidosLists/PedidosEnCurso.html" />
-        <option value="$PROJECT_DIR$/webapp/public/templates/components/pedidosLists/PedidosCompletados.html" />
-        <option value="$PROJECT_DIR$/webapp/public/templates/components/pedidosLists/PedidosActivos.html" />
-        <option value="$PROJECT_DIR$/webapp/public/templates/components/pedidosLists/TransportistasProveedor.html" />
-        <option value="$PROJECT_DIR$/webapp/public/templates/components/pedidosLists/PedidosPendientesProveedor.html" />
-        <option value="$PROJECT_DIR$/webapp/public/templates/components/pedidosLists/PedidosPendientes.html" />
-        <option value="$PROJECT_DIR$/webapp/public/js/controllers/components/masterPage/masterPage.js" />
         <option value="$PROJECT_DIR$/webapp/public/templates/components/home/para_empresas.html" />
         <option value="$PROJECT_DIR$/webapp/public/templates/components/home/para_proveedores.html" />
-        <option value="$PROJECT_DIR$/webapp/public/templates/components/masterPage/publico.html" />
-        <option value="$PROJECT_DIR$/webapp/public/templates/pages/publico/home/index.html" />
-        <option value="$PROJECT_DIR$/webapp/public/css/app.css" />
         <option value="$PROJECT_DIR$/webapp/public/templates/components/home/contactenos.html" />
-        <option value="$PROJECT_DIR$/webapp/public/templates/components/home/como_funciona.html" />
+        <option value="$PROJECT_DIR$/webapp/public/templates/components/agregarPedido/AgregarPedidoTransporte.html" />
+        <option value="$PROJECT_DIR$/webapp/public/index.html" />
+        <option value="$PROJECT_DIR$/webapp/public/js/viewmodels/detalle_pedido.js" />
+        <option value="$PROJECT_DIR$/webapp/public/js/controllers/pages/privado/clientes/detallePedido/detallePedido.js" />
+        <option value="$PROJECT_DIR$/webapp/public/templates/components/DetallePedido/pedido.html" />
+        <option value="$PROJECT_DIR$/webapp/public/js/controllers/components/pedidosLists/pedidosCompletados.js" />
+        <option value="$PROJECT_DIR$/webapp/public/templates/components/DetallePedido/producto.html" />
+        <option value="$PROJECT_DIR$/webapp/public/js/services/parser.js" />
+        <option value="$PROJECT_DIR$/webapp/public/templates/components/DetallePedido/transportista.html" />
+        <option value="$PROJECT_DIR$/webapp/public/templates/components/pedidosLists/TransportistasProveedor.html" />
+        <option value="$PROJECT_DIR$/webapp/public/templates/components/pedidosLists/PedidosPendientesProveedor.html" />
+        <option value="$PROJECT_DIR$/webapp/public/templates/components/pedidosLists/PedidosCompletados.html" />
+        <option value="$PROJECT_DIR$/webapp/public/templates/components/pedidosLists/PedidosActivos.html" />
+        <option value="$PROJECT_DIR$/webapp/public/templates/components/pedidosLists/PedidosEnCurso.html" />
+        <option value="$PROJECT_DIR$/webapp/public/templates/components/pedidosLists/PedidosPendientes.html" />
+        <option value="$PROJECT_DIR$/webapp/public/css/app.css" />
+        <option value="$PROJECT_DIR$/webapp/public/templates/components/masterPage/clientes.html" />
+        <option value="$PROJECT_DIR$/webapp/public/templates/components/masterPage/proveedores.html" />
+        <option value="$PROJECT_DIR$/webapp/public/js/controllers/transportista_edit.js" />
+        <option value="$PROJECT_DIR$/webapp/public/js/viewmodels/transportistaEdit.js" />
+        <option value="$PROJECT_DIR$/webapp/public/js/services/parse.js" />
+        <option value="$PROJECT_DIR$/webapp/public/js/viewmodels/transportista_edit.js" />
+        <option value="$PROJECT_DIR$/webapp/public/js/controllers/transportistaEdit.js" />
+        <option value="$PROJECT_DIR$/webapp/public/templates/pages/privado/proveedores/DetalleTransportista/index.html" />
+        <option value="$PROJECT_DIR$/webapp/public/js/test.ts" />
+        <option value="$PROJECT_DIR$/webapp/bin/www" />
+        <option value="$PROJECT_DIR$/webapp/package.json" />
+        <option value="$PROJECT_DIR$/webapp/app.js" />
+        <option value="$PROJECT_DIR$/webapp/src/js/controllers/components/pedidosLists/transportistasProveedor.js" />
+        <option value="$PROJECT_DIR$/webapp/src/js/config/routes.js" />
+        <option value="$PROJECT_DIR$/webapp/src/js/viewmodels/transportista_edit.js" />
+        <option value="$PROJECT_DIR$/webapp/src/templates/components/agregarPedido/AgregarPedidoProducto.html" />
+        <option value="$PROJECT_DIR$/webapp/src/css/app.css" />
+        <option value="$PROJECT_DIR$/webapp/src/js/controllers/transportistaEdit.js" />
+        <option value="$PROJECT_DIR$/webapp/src/templates/pages/privado/proveedores/DetalleTransportista/index.html" />
+        <option value="$PROJECT_DIR$/webapp/src/js/viewmodels/transportistas_proveedor.js" />
+        <option value="$PROJECT_DIR$/webapp/src/js/viewmodels/pedidos_pendientes.js" />
+        <option value="$PROJECT_DIR$/webapp/src/templates/components/pedidosLists/TransportistasProveedor.html" />
+        <option value="$PROJECT_DIR$/webapp/src/templates/components/pedidosLists/PedidosPendientesProveedor.html" />
+        <option value="$PROJECT_DIR$/webapp/src/js/services/parser.js" />
+        <option value="$PROJECT_DIR$/webapp/src/templates/components/DetallePedido/pedido.html" />
+        <option value="$PROJECT_DIR$/webapp/src/js/viewmodels/pedidos_completados.js" />
+        <option value="$PROJECT_DIR$/webapp/src/templates/pages/privado/clientes/Historico/index.html" />
+        <option value="$PROJECT_DIR$/webapp/src/index.html" />
+        <option value="$PROJECT_DIR$/webapp/src/js/viewmodels/historico_view_model.js" />
+        <option value="$PROJECT_DIR$/webapp/src/js/controllers/pages/privado/clientes/Historico/historico.js" />
+        <option value="$PROJECT_DIR$/webapp/src/js/services/parse.js" />
+        <option value="$PROJECT_DIR$/webapp/src/js/controllers/components/agregarPedido/agregarPedido.js" />
       </list>
     </option>
   </component>
@@ -202,7 +213,7 @@
     <option name="width" value="1680" />
     <option name="height" value="1027" />
   </component>
-  <component name="ProjectLevelVcsManager" settingsEditedManually="false">
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <OptionsSetting value="true" id="Add" />
     <OptionsSetting value="true" id="Remove" />
     <OptionsSetting value="true" id="Checkout" />
@@ -228,6 +239,7 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -264,7 +276,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="public" />
+              <option name="myItemId" value="src" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -282,7 +294,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="public" />
+              <option name="myItemId" value="src" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -304,7 +316,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="public" />
+              <option name="myItemId" value="src" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -315,14 +327,6 @@
               <option name="myItemId" value="pages" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="publico" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="home" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -338,7 +342,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="public" />
+              <option name="myItemId" value="src" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -376,7 +380,83 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="public" />
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="templates" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="pages" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="privado" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="proveedores" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="DetalleTransportista" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="easyruta" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="easyruta" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="webapp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="templates" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="pages" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="privado" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="clientes" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Perfil" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="easyruta" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="easyruta" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="webapp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -410,7 +490,83 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="public" />
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="templates" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="pages" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="privado" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="clientes" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Historico" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="easyruta" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="easyruta" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="webapp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="templates" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="pages" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="privado" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="clientes" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="DetallePedido" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="easyruta" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="easyruta" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="webapp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -440,7 +596,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="public" />
+              <option name="myItemId" value="src" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -466,7 +622,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="public" />
+              <option name="myItemId" value="src" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -496,7 +652,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="public" />
+              <option name="myItemId" value="src" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -508,7 +664,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="masterPage" />
+              <option name="myItemId" value="DetallePedido" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -526,7 +682,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="public" />
+              <option name="myItemId" value="src" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -538,7 +694,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="home" />
+              <option name="myItemId" value="agregarPedido" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -556,55 +712,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="public" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="resources" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="easyruta" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="easyruta" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="webapp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="public" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="resources" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="images" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="easyruta" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="easyruta" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="webapp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="public" />
+              <option name="myItemId" value="src" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -612,9 +720,472 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="easyruta" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="easyruta" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="webapp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="js" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="viewmodels" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="easyruta" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="easyruta" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="webapp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="js" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="services" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="easyruta" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="easyruta" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="webapp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="js" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="controllers" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="easyruta" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="easyruta" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="webapp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="js" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="controllers" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="pages" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="privado" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="proveedores" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="inicio" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="easyruta" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="easyruta" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="webapp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="js" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="controllers" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="pages" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="privado" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="clientes" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="perfil" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="easyruta" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="easyruta" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="webapp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="js" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="controllers" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="pages" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="privado" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="clientes" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="easyruta" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="easyruta" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="webapp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="js" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="controllers" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="pages" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="privado" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="clientes" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Historico" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="easyruta" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="easyruta" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="webapp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="js" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="controllers" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="pages" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="privado" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="clientes" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="detallePedido" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="easyruta" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="easyruta" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="webapp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="js" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="controllers" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="pages" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="privado" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="easyruta" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="easyruta" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="webapp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="js" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="controllers" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="components" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="easyruta" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="easyruta" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="webapp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="js" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="controllers" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="components" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="pedidosLists" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="easyruta" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="easyruta" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="webapp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="js" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="controllers" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="components" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="agregarPedido" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="easyruta" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="easyruta" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="webapp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="js" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="config" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="easyruta" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="easyruta" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="webapp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="css" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -626,34 +1197,31 @@
     <property name="recentsLimit" value="5" />
     <property name="FullScreen" value="false" />
     <property name="SearchEverywhereHistoryKey" value="&#9;FILE&#9;file:///Users/dcoellar/webapps/easyruta/webapp/public/js/viewmodels/pedidos_pendientes.js" />
+    <property name="WebServerToolWindowPanel.toolwindow.show.size" value="false" />
+    <property name="WebServerToolWindowPanel.toolwindow.show.date" value="false" />
+    <property name="WebServerToolWindowPanel.toolwindow.show.permissions" value="false" />
+    <property name="WebServerToolWindowPanel.toolwindow.highlight.symlinks" value="false" />
+    <property name="WebServerToolWindowPanel.toolwindow.highlight.mappings" value="true" />
+    <property name="restartRequiresConfirmation" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/webapp/app.js" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/webapp/public/templates/pages/privado/clientes/DetallePedido" />
+      <recent name="$PROJECT_DIR$/webapp/public/templates/pages/privado/clientes/Historico" />
       <recent name="$PROJECT_DIR$/webapp/public/templates/components/home" />
       <recent name="$PROJECT_DIR$/webapp/public/js/controllers/pages/privado/proveedores/inicio" />
       <recent name="$PROJECT_DIR$/webapp/public/templates/components/masterPage" />
-      <recent name="$PROJECT_DIR$/webapp/public/templates/components/pedidosLists" />
-      <recent name="$PROJECT_DIR$/webapp/public/resources" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/webapp/src" />
+      <recent name="$PROJECT_DIR$/webapp/public/templates/pages/privado/proveedores/DetalleTransportista" />
       <recent name="$PROJECT_DIR$/webapp/public/resources/images" />
       <recent name="$PROJECT_DIR$/webapp/public/resources/video" />
       <recent name="$PROJECT_DIR$/webapp/public/resources" />
-      <recent name="$PROJECT_DIR$/webapp/public/templates" />
-      <recent name="$PROJECT_DIR$/webapp/public/js/services" />
     </key>
   </component>
-  <component name="RunManager" selected="JavaScript Debug.index.html">
-    <configuration default="false" name="index.html" type="JavascriptDebugType" factoryName="JavaScript Debug" temporary="true" nameIsGenerated="true" uri="http://localhost:63343/easyruta/webapp/public/index.html">
-      <RunnerSettings RunnerId="JavascriptDebugRunner" />
-      <ConfigurationWrapper RunnerId="JavascriptDebugRunner" />
-      <method />
-    </configuration>
-    <configuration default="false" name="index.html (1)" type="JavascriptDebugType" factoryName="JavaScript Debug" temporary="true" nameIsGenerated="true" uri="http://localhost:63343/easyruta/webapp/public/templates/pages/login/index.html">
-      <RunnerSettings RunnerId="JavascriptDebugRunner" />
-      <ConfigurationWrapper RunnerId="JavascriptDebugRunner" />
-      <method />
-    </configuration>
+  <component name="RunManager" selected="Node.js.easyruta">
     <configuration default="true" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
       <TestRunner />
       <method />
@@ -668,10 +1236,7 @@
       <BehatRunner />
       <method />
     </configuration>
-    <configuration default="true" type="NodeJSConfigurationType" factoryName="Node.js" working-dir="">
-      <method />
-    </configuration>
-    <configuration default="true" type="PhpUnitRemoteRunConfigurationType" factoryName="PHPUnit on Server">
+    <configuration default="true" type="NodeJSConfigurationType" factoryName="Node.js" path-to-node="/usr/local/bin/node" working-dir="">
       <method />
     </configuration>
     <configuration default="true" type="js.build_tools.gulp" factoryName="Gulp.js">
@@ -682,16 +1247,18 @@
       <envs />
       <method />
     </configuration>
-    <list size="2">
-      <item index="0" class="java.lang.String" itemvalue="JavaScript Debug.index.html" />
-      <item index="1" class="java.lang.String" itemvalue="JavaScript Debug.index.html (1)" />
+    <configuration default="true" type="PhpUnitRemoteRunConfigurationType" factoryName="PHPUnit on Server">
+      <method />
+    </configuration>
+    <configuration default="false" name="easyruta" type="NodeJSConfigurationType" factoryName="Node.js" path-to-node="/usr/local/bin/node" path-to-js-file="webapp/app.js" working-dir="$PROJECT_DIR$">
+      <browser name="98ca6316-2f89-46d9-a9e5-fa9e2b0625b3" start="true" url="http://localhost:3000/" />
+      <RunnerSettings RunnerId="Basic" />
+      <ConfigurationWrapper RunnerId="Basic" />
+      <method />
+    </configuration>
+    <list size="1">
+      <item index="0" class="java.lang.String" itemvalue="Node.js.easyruta" />
     </list>
-    <recent_temporary>
-      <list size="2">
-        <item index="0" class="java.lang.String" itemvalue="JavaScript Debug.index.html" />
-        <item index="1" class="java.lang.String" itemvalue="JavaScript Debug.index.html (1)" />
-      </list>
-    </recent_temporary>
   </component>
   <component name="ShelveChangesManager" show_recycled="false" />
   <component name="SvnConfiguration">
@@ -706,29 +1273,50 @@
     </task>
     <servers />
   </component>
+  <component name="TodoView" selected-index="0">
+    <todo-panel id="selected-file">
+      <are-packages-shown value="false" />
+      <are-modules-shown value="false" />
+      <flatten-packages value="false" />
+      <is-autoscroll-to-source value="false" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="false" />
+      <are-modules-shown value="false" />
+      <flatten-packages value="false" />
+      <is-autoscroll-to-source value="false" />
+    </todo-panel>
+    <todo-panel id="default-changelist">
+      <are-packages-shown value="false" />
+      <are-modules-shown value="false" />
+      <flatten-packages value="false" />
+      <is-autoscroll-to-source value="false" />
+    </todo-panel>
+  </component>
   <component name="ToolWindowManager">
     <frame x="-1680" y="23" width="1680" height="1027" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
-      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32491767" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32947975" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.31174535" sideWeight="0.4993895" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="true" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.32875773" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Remote Host" active="false" anchor="right" auto_hide="true" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.32944405" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39884394" sideWeight="0.44886753" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3133998" sideWeight="0.50034314" order="10" side_tool="true" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32600734" sideWeight="0.3846154" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="true" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32890365" sideWeight="0.49965683" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.30769232" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32587412" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32600734" sideWeight="0.61538464" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32930845" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32491767" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="REST Client" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32716763" sideWeight="0.50061053" order="0" side_tool="true" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
     </layout>
     <layout-to-restore>
@@ -749,9 +1337,9 @@
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.29685265" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
     </layout-to-restore>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -772,413 +1360,494 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="95" />
+      <option name="time" value="104" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/webapp/node_modules/express/index.js">
+    <entry file="file://$PROJECT_DIR$/webapp/src/js/controllers/components/masterPage/masterPage.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="453">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.7189097" vertical-offset="448" max-vertical-offset="1050">
+          <caret line="58" column="36" selection-start-line="58" selection-start-column="36" selection-end-line="58" selection-end-column="36" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/webapp/cloud/main.js">
+    <entry file="file://$PROJECT_DIR$/webapp/src/templates/pages/publico/home/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.7284768" vertical-offset="0" max-vertical-offset="1485">
-          <caret line="22" column="47" selection-start-line="22" selection-start-column="47" selection-end-line="22" selection-end-column="47" />
+        <state vertical-scroll-proportion="0.3197158" vertical-offset="0" max-vertical-offset="600">
+          <caret line="12" column="93" selection-start-line="12" selection-start-column="93" selection-end-line="12" selection-end-column="93" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/webapp/public/templates/components/agregarPedido/AgregarPedidoPlantillaModal.html">
+    <entry file="file://$PROJECT_DIR$/webapp/src/templates/components/home/como_funciona.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="429">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="15" selection-end-column="9" />
+        <state vertical-scroll-proportion="-5.0" vertical-offset="0" max-vertical-offset="495">
+          <caret line="8" column="20" selection-start-line="8" selection-start-column="20" selection-end-line="8" selection-end-column="20" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/webapp/public/js/config/routes.js">
+    <entry file="file://$PROJECT_DIR$/webapp/src/templates/components/home/contactenos.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="1.0264901" vertical-offset="0" max-vertical-offset="675">
-          <caret line="31" column="37" selection-start-line="31" selection-start-column="37" selection-end-line="31" selection-end-column="37" />
+        <state vertical-scroll-proportion="-9.375" vertical-offset="0" max-vertical-offset="480">
+          <caret line="15" column="27" selection-start-line="15" selection-start-column="27" selection-end-line="15" selection-end-column="27" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/webapp/public/templates/components/agregarPedido/AgregarPedido.html">
+    <entry file="file://$PROJECT_DIR$/webapp/src/templates/components/home/para_proveedores.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6511628" vertical-offset="80" max-vertical-offset="510">
-          <caret line="24" column="106" selection-start-line="24" selection-start-column="12" selection-end-line="24" selection-end-column="106" />
+        <state vertical-scroll-proportion="0.18650089" vertical-offset="0" max-vertical-offset="563">
+          <caret line="7" column="40" selection-start-line="7" selection-start-column="40" selection-end-line="7" selection-end-column="40" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/webapp/public/templates/confirm_dialog.html">
+    <entry file="file://$PROJECT_DIR$/webapp/src/templates/components/home/para_empresas.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-5.0" vertical-offset="0" max-vertical-offset="255">
-          <caret line="8" column="78" selection-start-line="8" selection-start-column="69" selection-end-line="8" selection-end-column="78" />
+        <state vertical-scroll-proportion="0.23978686" vertical-offset="0" max-vertical-offset="563">
+          <caret line="9" column="98" selection-start-line="9" selection-start-column="98" selection-end-line="9" selection-end-column="98" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/webapp/public/js/controllers/confirm_dialog.js">
+    <entry file="file://$PROJECT_DIR$/webapp/src/js/viewmodels/pedidos_activos.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.33039647" vertical-offset="195" max-vertical-offset="690">
-          <caret line="25" column="26" selection-start-line="25" selection-start-column="26" selection-end-line="25" selection-end-column="26" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="883" max-vertical-offset="1695">
+          <caret line="79" column="0" selection-start-line="79" selection-start-column="0" selection-end-line="83" selection-end-column="17" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/webapp/public/js/viewmodels/agregar_pedido.js">
+    <entry file="file://$PROJECT_DIR$/webapp/src/js/viewmodels/detalle_pedido.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.50220263" vertical-offset="1872" max-vertical-offset="2355">
-          <caret line="162" column="20" selection-start-line="162" selection-start-column="20" selection-end-line="162" selection-end-column="20" />
+        <state vertical-scroll-proportion="0.4633731" vertical-offset="373" max-vertical-offset="1005">
+          <caret line="45" column="41" selection-start-line="45" selection-start-column="41" selection-end-line="45" selection-end-column="41" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/webapp/public/js/controllers/components/pedidosLists/pedidosCompletados.js">
+    <entry file="file://$PROJECT_DIR$/webapp/src/templates/components/pedidosLists/PedidosCompletados.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="688" max-vertical-offset="1485">
-          <caret line="59" column="45" selection-start-line="59" selection-start-column="45" selection-end-line="59" selection-end-column="45" />
+        <state vertical-scroll-proportion="0.07992895" vertical-offset="0" max-vertical-offset="563">
+          <caret line="3" column="67" selection-start-line="3" selection-start-column="47" selection-end-line="3" selection-end-column="67" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/webapp/public/js/controllers/components/pedidosLists/pedidosEnCurso.js">
+    <entry file="file://$PROJECT_DIR$/webapp/src/templates/components/pedidosLists/PedidosEnCurso.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="1318" max-vertical-offset="2175">
-          <caret line="101" column="0" selection-start-line="101" selection-start-column="0" selection-end-line="104" selection-end-column="9" />
+        <state vertical-scroll-proportion="0.6927176" vertical-offset="0" max-vertical-offset="563">
+          <caret line="26" column="0" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/webapp/public/templates/components/masterPage/proveedores.html">
+    <entry file="file://$PROJECT_DIR$/webapp/src/templates/components/pedidosLists/PedidosActivos.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="430">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.20071048" vertical-offset="22" max-vertical-offset="585">
+          <caret line="9" column="0" selection-start-line="5" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/webapp/public/templates/components/masterPage/clientes.html">
+    <entry file="file://$PROJECT_DIR$/webapp/src/templates/components/masterPage/publico.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.4883721" vertical-offset="0" max-vertical-offset="430">
-          <caret line="14" column="112" selection-start-line="14" selection-start-column="106" selection-end-line="14" selection-end-column="112" />
+        <state vertical-scroll-proportion="-1.875" vertical-offset="0" max-vertical-offset="540">
+          <caret line="3" column="0" selection-start-line="3" selection-start-column="0" selection-end-line="13" selection-end-column="19" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/webapp/public/resources/images/manta.jpg">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/webapp/public/resources/css/angular-ui-switch.min.css">
+    <entry file="file://$PROJECT_DIR$/webapp/src/templates/components/masterPage/clientes.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="454">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state vertical-scroll-proportion="-4.375" vertical-offset="0" max-vertical-offset="390">
+          <caret line="7" column="0" selection-start-line="7" selection-start-column="0" selection-end-line="13" selection-end-column="19" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/webapp/public/js/controllers/components/pedidosLists/pedidosActivos.js">
+    <entry file="file://$PROJECT_DIR$/webapp/src/templates/components/masterPage/proveedores.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="1545" max-vertical-offset="2430">
-          <caret line="121" column="6" selection-start-line="121" selection-start-column="6" selection-end-line="121" selection-end-column="6" />
+        <state vertical-scroll-proportion="-5.625" vertical-offset="0" max-vertical-offset="420">
+          <caret line="9" column="45" selection-start-line="9" selection-start-column="45" selection-end-line="9" selection-end-column="45" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/webapp/public/js/controllers/components/agregarPedido/agregarPedido.js">
+    <entry file="file://$PROJECT_DIR$/webapp/src/js/controllers/components/pedidosLists/pedidosCompletados.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="2.024229" vertical-offset="1901" max-vertical-offset="3705">
-          <caret line="278" column="69" selection-start-line="278" selection-start-column="69" selection-end-line="278" selection-end-column="69" />
+        <state vertical-scroll-proportion="0.58379376" vertical-offset="523" max-vertical-offset="1485">
+          <caret line="58" column="32" selection-start-line="58" selection-start-column="26" selection-end-line="58" selection-end-column="32" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/webapp/public/js/viewmodels/transportistas_proveedor.js">
+    <entry file="file://$PROJECT_DIR$/webapp/src/templates/components/DetallePedido/transportista.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.40528634" vertical-offset="671" max-vertical-offset="1125">
-          <caret line="57" column="67" selection-start-line="57" selection-start-column="67" selection-end-line="57" selection-end-column="67" />
+        <state vertical-scroll-proportion="1.7052023" vertical-offset="0" max-vertical-offset="1365">
+          <caret line="59" column="36" selection-start-line="0" selection-start-column="0" selection-end-line="85" selection-end-column="6" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/webapp/public/js/controllers/components/pedidosLists/transportistasProveedor.js">
+    <entry file="file://$PROJECT_DIR$/webapp/package.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.36343613" vertical-offset="465" max-vertical-offset="1725">
-          <caret line="44" column="51" selection-start-line="44" selection-start-column="38" selection-end-line="44" selection-end-column="51" />
+        <state vertical-scroll-proportion="0.4704797" vertical-offset="0" max-vertical-offset="542">
+          <caret line="17" column="0" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webapp/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.21201414" vertical-offset="0" max-vertical-offset="566">
+          <caret line="8" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webapp/.parse.project">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.13863216" vertical-offset="0" max-vertical-offset="541">
+          <caret line="5" column="1" selection-start-line="5" selection-start-column="1" selection-end-line="5" selection-end-column="1" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/webapp/.parse.local">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.19823788" vertical-offset="0" max-vertical-offset="454">
-          <caret line="6" column="64" selection-start-line="6" selection-start-column="64" selection-end-line="6" selection-end-column="64" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="566">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/webapp/public/js/controllers/components/pedidosLists/pedidosPendientes.js">
+    <entry file="file://$PROJECT_DIR$/webapp/src/js/controllers/components/pedidosLists/transportistasProveedor.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.03504673" vertical-offset="3120" max-vertical-offset="4050">
-          <caret line="209" column="0" selection-start-line="209" selection-start-column="0" selection-end-line="209" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="465" max-vertical-offset="1710">
+          <caret line="81" column="6" selection-start-line="81" selection-start-column="6" selection-end-line="81" selection-end-column="6" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/webapp/public/js/services/utils.js">
+    <entry file="file://$PROJECT_DIR$/webapp/src/js/config/routes.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.8259912" vertical-offset="0" max-vertical-offset="780">
-          <caret line="25" column="51" selection-start-line="25" selection-start-column="51" selection-end-line="25" selection-end-column="51" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="94" max-vertical-offset="765">
+          <caret line="25" column="70" selection-start-line="25" selection-start-column="70" selection-end-line="25" selection-end-column="70" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/webapp/public/templates/pages/privado/clientes/Historico/index.html">
+    <entry file="file://$PROJECT_DIR$/webapp/src/templates/pages/privado/clientes/DetallePedido/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5418719" vertical-offset="65" max-vertical-offset="510">
-          <caret line="19" column="112" selection-start-line="19" selection-start-column="102" selection-end-line="19" selection-end-column="112" />
+        <state vertical-scroll-proportion="0.08302583" vertical-offset="0" max-vertical-offset="542">
+          <caret line="3" column="0" selection-start-line="3" selection-start-column="0" selection-end-line="6" selection-end-column="30" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/webapp/public/templates/components/rateTransportista/rateTransportista.html">
+    <entry file="file://$PROJECT_DIR$/webapp/src/templates/components/pedidosLists/PedidosPendientes.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.33333334" vertical-offset="202" max-vertical-offset="645">
-          <caret line="23" column="69" selection-start-line="23" selection-start-column="69" selection-end-line="23" selection-end-column="69" />
+        <state vertical-scroll-proportion="0.15697674" vertical-offset="249" max-vertical-offset="765">
+          <caret line="22" column="79" selection-start-line="22" selection-start-column="69" selection-end-line="22" selection-end-column="79" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/webapp/public/templates/components/DetallePedido/transportista.html">
+    <entry file="file://$PROJECT_DIR$/webapp/src/js/controllers/components/pedidosLists/pedidosActivos.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.25862068" vertical-offset="0" max-vertical-offset="1560">
-          <caret line="7" column="90" selection-start-line="7" selection-start-column="90" selection-end-line="7" selection-end-column="90" />
+        <state vertical-scroll-proportion="-6.923077" vertical-offset="915" max-vertical-offset="2430">
+          <caret line="75" column="59" selection-start-line="75" selection-start-column="8" selection-end-line="75" selection-end-column="59" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/webapp/public/js/viewmodels/pedidos_completados.js">
+    <entry file="file://$PROJECT_DIR$/webapp/src/templates/pages/privado/clientes/Perfil/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="657" max-vertical-offset="1155">
-          <caret line="61" column="17" selection-start-line="61" selection-start-column="17" selection-end-line="61" selection-end-column="17" />
+        <state vertical-scroll-proportion="0.3321033" vertical-offset="0" max-vertical-offset="555">
+          <caret line="12" column="34" selection-start-line="12" selection-start-column="34" selection-end-line="12" selection-end-column="34" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/webapp/public/js/viewmodels/pedidos_en_curso.js">
+    <entry file="file://$PROJECT_DIR$/webapp/src/js/controllers/pages/privado/clientes/perfil/perfil.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="914" max-vertical-offset="1485">
-          <caret line="74" column="17" selection-start-line="74" selection-start-column="17" selection-end-line="74" selection-end-column="17" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1350">
+          <caret line="21" column="0" selection-start-line="21" selection-start-column="0" selection-end-line="23" selection-end-column="13" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/webapp/public/js/viewmodels/pedidos_pendientes.js">
+    <entry file="file://$PROJECT_DIR$/webapp/src/templates/components/agregarPedido/AgregarPedidoActions.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="1229" max-vertical-offset="2670">
-          <caret line="124" column="0" selection-start-line="124" selection-start-column="0" selection-end-line="124" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.52583027" vertical-offset="0" max-vertical-offset="945">
+          <caret line="19" column="17" selection-start-line="2" selection-start-column="12" selection-end-line="19" selection-end-column="17" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/webapp/public/js/services/parser.js">
+    <entry file="file://$PROJECT_DIR$/webapp/src/templates/components/agregarPedido/AgregarPedidoProducto.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.29955947" vertical-offset="299" max-vertical-offset="2355">
-          <caret line="29" column="96" selection-start-line="29" selection-start-column="96" selection-end-line="29" selection-end-column="96" />
+        <state vertical-scroll-proportion="-1.875" vertical-offset="0" max-vertical-offset="705">
+          <caret line="3" column="55" selection-start-line="3" selection-start-column="45" selection-end-line="3" selection-end-column="55" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/webapp/public/js/viewmodels/pedidos_activos.js">
+    <entry file="file://$PROJECT_DIR$/webapp/src/templates/components/agregarPedido/AgregarPedido.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.39867842" vertical-offset="1049" max-vertical-offset="1695">
-          <caret line="82" column="61" selection-start-line="82" selection-start-column="61" selection-end-line="82" selection-end-column="61" />
+        <state vertical-scroll-proportion="-9.375" vertical-offset="0" max-vertical-offset="510">
+          <caret line="15" column="42" selection-start-line="15" selection-start-column="32" selection-end-line="15" selection-end-column="42" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/webapp/public/templates/pages/privado/clientes/inicioClientes/index.html">
+    <entry file="file://$PROJECT_DIR$/webapp/src/templates/components/agregarPedido/AgregarPedidoTransporte.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.37300178" vertical-offset="0" max-vertical-offset="563">
-          <caret line="14" column="92" selection-start-line="14" selection-start-column="3" selection-end-line="14" selection-end-column="92" />
+        <state vertical-scroll-proportion="0.94464946" vertical-offset="118" max-vertical-offset="735">
+          <caret line="93" column="0" selection-start-line="69" selection-start-column="0" selection-end-line="93" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/webapp/public/index.html">
+    <entry file="file://$PROJECT_DIR$/webapp/src/css/app.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.7868561" vertical-offset="442" max-vertical-offset="1005">
-          <caret line="59" column="0" selection-start-line="59" selection-start-column="0" selection-end-line="59" selection-end-column="0" />
+        <state vertical-scroll-proportion="-7.5" vertical-offset="3780" max-vertical-offset="9795">
+          <caret line="265" column="19" selection-start-line="265" selection-start-column="19" selection-end-line="265" selection-end-column="19" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/webapp/public/js/services/parse.js">
+    <entry file="file://$PROJECT_DIR$/webapp/src/js/controllers/transportistaEdit.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.53662694" vertical-offset="795" max-vertical-offset="9345">
-          <caret line="74" column="14" selection-start-line="74" selection-start-column="14" selection-end-line="74" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/webapp/public/js/services/pubnub.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5877342" vertical-offset="0" max-vertical-offset="1710">
-          <caret line="23" column="16" selection-start-line="23" selection-start-column="16" selection-end-line="23" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/webapp/public/js/controllers/components/login/login.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="180" max-vertical-offset="765">
-          <caret line="36" column="28" selection-start-line="36" selection-start-column="28" selection-end-line="36" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/webapp/public/templates/components/pedidosLists/PedidosEnCurso.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-1.25" vertical-offset="0" max-vertical-offset="555">
-          <caret line="2" column="49" selection-start-line="2" selection-start-column="49" selection-end-line="2" selection-end-column="49" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/webapp/public/templates/components/pedidosLists/PedidosCompletados.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-1.25" vertical-offset="0" max-vertical-offset="615">
-          <caret line="2" column="49" selection-start-line="2" selection-start-column="49" selection-end-line="2" selection-end-column="49" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/webapp/public/templates/components/pedidosLists/TransportistasProveedor.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-1.25" vertical-offset="0" max-vertical-offset="300">
-          <caret line="2" column="69" selection-start-line="2" selection-start-column="41" selection-end-line="2" selection-end-column="69" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/webapp/public/templates/components/pedidosLists/PedidosPendientesProveedor.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.053475935" vertical-offset="0" max-vertical-offset="930">
-          <caret line="2" column="75" selection-start-line="2" selection-start-column="75" selection-end-line="2" selection-end-column="75" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/webapp/public/templates/components/pedidosLists/PedidosActivos.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="75" max-vertical-offset="570">
-          <caret line="5" column="97" selection-start-line="5" selection-start-column="68" selection-end-line="5" selection-end-column="97" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/webapp/public/templates/components/pedidosLists/PedidosPendientes.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="75" max-vertical-offset="780">
-          <caret line="5" column="48" selection-start-line="5" selection-start-column="48" selection-end-line="5" selection-end-column="48" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="679" max-vertical-offset="1680">
+          <caret line="81" column="28" selection-start-line="81" selection-start-column="28" selection-end-line="81" selection-end-column="28" />
           <folding>
-            <element signature="n#style#0;n#div#2;n#div#1;n#div#0;n#div#1;n#div#0;n#!!top" expanded="false" />
-            <element signature="n#style#0;n#span#0;n#div#2;n#div#1;n#div#0;n#div#1;n#div#0;n#!!top" expanded="false" />
-            <element signature="n#style#0;n#span#2;n#div#2;n#div#1;n#div#0;n#div#1;n#div#0;n#!!top" expanded="false" />
-            <element signature="n#style#0;n#span#4;n#div#2;n#div#1;n#div#0;n#div#1;n#div#0;n#!!top" expanded="false" />
-            <element signature="n#style#0;n#span#6;n#div#2;n#div#1;n#div#0;n#div#1;n#div#0;n#!!top" expanded="false" />
-            <element signature="n#style#0;n#span#8;n#div#2;n#div#1;n#div#0;n#div#1;n#div#0;n#!!top" expanded="false" />
+            <element signature="e#0#43#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/webapp/public/resources/images/factory.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/webapp/public/resources/images/truck.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/webapp/public/templates/pages/privado/proveedores/inicio/index.html">
+    <entry file="file://$PROJECT_DIR$/webapp/src/templates/pages/privado/proveedores/DetalleTransportista/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.1598579" vertical-offset="0" max-vertical-offset="563">
-          <caret line="6" column="0" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/webapp/public/js/controllers/components/masterPage/masterPage.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.7189097" vertical-offset="448" max-vertical-offset="1050">
-          <caret line="58" column="36" selection-start-line="58" selection-start-column="36" selection-end-line="58" selection-end-column="36" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/webapp/public/templates/components/home/para_empresas.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-3.125" vertical-offset="0" max-vertical-offset="300">
-          <caret line="5" column="203" selection-start-line="5" selection-start-column="203" selection-end-line="5" selection-end-column="203" />
+        <state vertical-scroll-proportion="0.40697673" vertical-offset="195" max-vertical-offset="2115">
+          <caret line="30" column="42" selection-start-line="30" selection-start-column="42" selection-end-line="30" selection-end-column="42" />
           <folding>
-            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#input#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#span#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#div#0;n#div#1;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#img#0;n#div#0;n#form#0;n#div#1;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#div#1;n#div#1;n#form#0;n#div#1;n#!!top" expanded="false" />
+            <element signature="tag#div#1;tag#div#1;tag#form#0;tag#div#1" expanded="false" />
+            <element signature="n#style#0;n#div#2;n#div#1;n#form#0;n#div#1;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#label#0;n#div#2;n#div#1;n#form#0;n#div#1;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#div#3;n#form#0;n#div#1;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#div#0;n#a#0;n#li#0;n#ul#0;n#div#3;n#form#0;n#div#1;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#span#0;n#div#0;n#a#0;n#li#0;n#ul#0;n#div#3;n#form#0;n#div#1;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#span#0;n#div#1;n#a#0;n#li#0;n#ul#0;n#div#3;n#form#0;n#div#1;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#div#0;n#a#0;n#li#1;n#ul#0;n#div#3;n#form#0;n#div#1;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#span#0;n#div#0;n#a#0;n#li#1;n#ul#0;n#div#3;n#form#0;n#div#1;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#span#0;n#div#1;n#a#0;n#li#1;n#ul#0;n#div#3;n#form#0;n#div#1;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#div#0;n#a#0;n#li#2;n#ul#0;n#div#3;n#form#0;n#div#1;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#span#0;n#div#0;n#a#0;n#li#2;n#ul#0;n#div#3;n#form#0;n#div#1;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#span#0;n#div#1;n#a#0;n#li#2;n#ul#0;n#div#3;n#form#0;n#div#1;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#div#0;n#a#0;n#li#3;n#ul#0;n#div#3;n#form#0;n#div#1;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#span#0;n#div#0;n#a#0;n#li#3;n#ul#0;n#div#3;n#form#0;n#div#1;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#span#0;n#div#1;n#a#0;n#li#3;n#ul#0;n#div#3;n#form#0;n#div#1;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#div#0;n#a#0;n#li#4;n#ul#0;n#div#3;n#form#0;n#div#1;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#span#0;n#div#0;n#a#0;n#li#4;n#ul#0;n#div#3;n#form#0;n#div#1;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#span#0;n#div#1;n#a#0;n#li#4;n#ul#0;n#div#3;n#form#0;n#div#1;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#div#0;n#a#0;n#li#5;n#ul#0;n#div#3;n#form#0;n#div#1;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#span#0;n#div#0;n#a#0;n#li#5;n#ul#0;n#div#3;n#form#0;n#div#1;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#span#0;n#div#1;n#a#0;n#li#5;n#ul#0;n#div#3;n#form#0;n#div#1;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#div#4;n#form#0;n#div#1;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#label#0;n#div#0;n#div#4;n#form#0;n#div#1;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#div#5;n#form#0;n#div#1;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#div#6;n#form#0;n#div#1;n#!!top" expanded="false" />
+            <element signature="tag#div#6;tag#form#0;tag#div#1" expanded="false" />
+            <element signature="n#style#0;n#input#0;n#div#2;n#div#6;n#form#0;n#div#1;n#!!top" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/webapp/public/templates/components/home/para_proveedores.html">
+    <entry file="file://$PROJECT_DIR$/webapp/src/js/viewmodels/transportistas_proveedor.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-3.75" vertical-offset="0" max-vertical-offset="285">
-          <caret line="6" column="92" selection-start-line="6" selection-start-column="92" selection-end-line="6" selection-end-column="92" />
-          <folding>
-            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#input#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
-          </folding>
+        <state vertical-scroll-proportion="0.0" vertical-offset="799" max-vertical-offset="1455">
+          <caret line="79" column="47" selection-start-line="79" selection-start-column="47" selection-end-line="79" selection-end-column="47" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/webapp/public/templates/components/masterPage/publico.html">
+    <entry file="file://$PROJECT_DIR$/webapp/src/js/viewmodels/pedidos_pendientes.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-6.875" vertical-offset="0" max-vertical-offset="540">
-          <caret line="11" column="0" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="2239" max-vertical-offset="3540">
+          <caret line="173" column="50" selection-start-line="173" selection-start-column="50" selection-end-line="173" selection-end-column="50" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/webapp/public/templates/pages/publico/home/index.html">
+    <entry file="file://$PROJECT_DIR$/webapp/src/templates/components/pedidosLists/TransportistasProveedor.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-18.75" vertical-offset="0" max-vertical-offset="600">
-          <caret line="30" column="57" selection-start-line="30" selection-start-column="43" selection-end-line="30" selection-end-column="57" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="150" max-vertical-offset="345">
+          <caret line="10" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webapp/src/templates/components/pedidosLists/PedidosPendientesProveedor.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.2268761" vertical-offset="215" max-vertical-offset="1095">
+          <caret line="23" column="118" selection-start-line="23" selection-start-column="118" selection-end-line="23" selection-end-column="118" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webapp/src/templates/components/DetallePedido/producto.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="165" max-vertical-offset="375">
+          <caret line="11" column="66" selection-start-line="11" selection-start-column="66" selection-end-line="11" selection-end-column="66" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webapp/src/js/viewmodels/transportista_edit.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="1.2086811" vertical-offset="641" max-vertical-offset="1545">
+          <caret line="93" column="59" selection-start-line="93" selection-start-column="59" selection-end-line="93" selection-end-column="59" />
+          <folding>
+            <element signature="e#0#43#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webapp/src/js/controllers/pages/privado/clientes/detallePedido/detallePedido.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="197" max-vertical-offset="780">
+          <caret line="19" column="67" selection-start-line="19" selection-start-column="55" selection-end-line="19" selection-end-column="67" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webapp/src/js/viewmodels/pedidos_completados.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="572" max-vertical-offset="1155">
+          <caret line="55" column="2" selection-start-line="55" selection-start-column="2" selection-end-line="63" selection-end-column="15" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webapp/src/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-20.083334" vertical-offset="418" max-vertical-offset="1065">
+          <caret line="60" column="54" selection-start-line="60" selection-start-column="54" selection-end-line="60" selection-end-column="54" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webapp/src/js/viewmodels/historico_view_model.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1095">
+          <caret line="30" column="34" selection-start-line="30" selection-start-column="34" selection-end-line="30" selection-end-column="34" />
+          <folding>
+            <element signature="e#0#43#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webapp/src/js/services/parser.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.10291595" vertical-offset="360" max-vertical-offset="2565">
+          <caret line="20" column="24" selection-start-line="20" selection-start-column="18" selection-end-line="20" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webapp/src/js/controllers/pages/privado/clientes/Historico/historico.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="272" max-vertical-offset="885">
+          <caret line="42" column="22" selection-start-line="42" selection-start-column="22" selection-end-line="42" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webapp/src/js/services/parse.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="2481" max-vertical-offset="5145">
+          <caret line="270" column="0" selection-start-line="270" selection-start-column="0" selection-end-line="270" selection-end-column="0" />
+          <folding>
+            <element signature="e#2241#3952#0" expanded="false" />
+            <element signature="e#4136#4199#0" expanded="false" />
+            <element signature="e#4261#4558#0" expanded="false" />
+            <element signature="e#4611#4673#0" expanded="false" />
+            <element signature="e#4724#4784#0" expanded="false" />
+            <element signature="e#4838#4902#0" expanded="false" />
+            <element signature="e#4953#5013#0" expanded="false" />
+            <element signature="e#5062#5333#0" expanded="false" />
+            <element signature="e#5394#5681#0" expanded="false" />
+            <element signature="e#5739#6020#0" expanded="false" />
+            <element signature="e#6079#6362#0" expanded="false" />
+            <element signature="e#7810#8083#0" expanded="false" />
+            <element signature="e#8144#8214#0" expanded="false" />
+            <element signature="e#8279#8353#0" expanded="false" />
+            <element signature="e#8417#8490#0" expanded="false" />
+            <element signature="e#8543#8605#0" expanded="false" />
+            <element signature="e#8659#8722#0" expanded="false" />
+            <element signature="e#8786#8859#0" expanded="false" />
+            <element signature="e#8913#8975#0" expanded="false" />
+            <element signature="e#9031#9095#0" expanded="false" />
+            <element signature="e#9162#9237#0" expanded="false" />
+            <element signature="e#13437#14754#0" expanded="false" />
+            <element signature="e#14809#15260#0" expanded="false" />
+            <element signature="e#15792#16579#0" expanded="false" />
+            <element signature="e#16632#17041#0" expanded="false" />
+            <element signature="e#17099#18412#0" expanded="false" />
+            <element signature="e#18468#19077#0" expanded="false" />
+            <element signature="e#19134#19744#0" expanded="false" />
+            <element signature="e#19794#20398#0" expanded="false" />
+            <element signature="e#20462#21200#0" expanded="false" />
+            <element signature="e#21973#22342#0" expanded="false" />
+            <element signature="e#22396#22511#0" expanded="false" />
+            <element signature="e#22575#22884#0" expanded="false" />
+            <element signature="e#22949#24049#0" expanded="false" />
+            <element signature="e#24114#24798#0" expanded="false" />
+            <element signature="e#24860#24994#0" expanded="false" />
+            <element signature="e#25060#25199#0" expanded="false" />
+            <element signature="e#25264#25390#0" expanded="false" />
+            <element signature="e#25444#25831#0" expanded="false" />
+            <element signature="e#25887#26537#0" expanded="false" />
+            <element signature="e#26591#26705#0" expanded="false" />
+            <element signature="e#26760#29012#0" expanded="false" />
+            <element signature="e#29077#29985#0" expanded="false" />
+            <element signature="e#30052#31058#0" expanded="false" />
+            <element signature="e#31115#31588#0" expanded="false" />
+            <element signature="e#31646#33629#0" expanded="false" />
+            <element signature="e#33689#34023#0" expanded="false" />
+            <element signature="e#34090#34572#0" expanded="false" />
+            <element signature="e#34621#34860#0" expanded="false" />
+            <element signature="e#35552#36072#0" expanded="false" />
+            <element signature="e#36130#36641#0" expanded="false" />
+            <element signature="e#36718#37461#0" expanded="false" />
+            <element signature="e#37519#38265#0" expanded="false" />
+            <element signature="e#38348#39913#0" expanded="false" />
+            <element signature="e#39985#41322#0" expanded="false" />
+            <element signature="e#41384#42776#0" expanded="false" />
+            <element signature="e#42862#43171#0" expanded="false" />
+            <element signature="e#43244#44518#0" expanded="false" />
+            <element signature="e#44591#46075#0" expanded="false" />
+            <element signature="e#46157#46462#0" expanded="false" />
+            <element signature="e#46530#47931#0" expanded="false" />
+            <element signature="e#48013#49127#0" expanded="false" />
+            <element signature="e#49194#50306#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webapp/src/js/viewmodels/agregar_pedido.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-8.269231" vertical-offset="1360" max-vertical-offset="2685">
+          <caret line="105" column="43" selection-start-line="105" selection-start-column="28" selection-end-line="105" selection-end-column="43" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webapp/src/js/controllers/components/agregarPedido/agregarPedido.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.55060035" vertical-offset="1689" max-vertical-offset="4065">
+          <caret line="134" column="28" selection-start-line="134" selection-start-column="28" selection-end-line="134" selection-end-column="28" />
+          <folding>
+            <element signature="e#4426#4484#0" expanded="false" />
+            <element signature="e#4524#4801#0" expanded="false" />
+            <element signature="e#4842#4936#0" expanded="false" />
+            <element signature="e#4975#5075#0" expanded="false" />
+            <element signature="e#5106#5546#0" expanded="false" />
+            <element signature="e#5805#6482#0" expanded="false" />
+            <element signature="e#6518#7087#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webapp/src/templates/pages/privado/clientes/Historico/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.39399624" vertical-offset="0" max-vertical-offset="533">
+          <caret line="14" column="104" selection-start-line="14" selection-start-column="104" selection-end-line="14" selection-end-column="104" />
           <folding>
             <element signature="n#style#0;n#div#1;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#1;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#img#0;n#div#0;n#div#0;n#div#0;n#div#1;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#img#0;n#div#1;n#div#0;n#div#0;n#div#1;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#1;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#h6#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#1;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#img#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#1;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#2;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#2;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#1;n#div#0;n#div#1;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/webapp/public/css/app.css">
+    <entry file="file://$PROJECT_DIR$/webapp/src/templates/components/DetallePedido/pedido.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-17.0" vertical-offset="8663" max-vertical-offset="9705">
-          <caret line="607" column="13" selection-start-line="607" selection-start-column="13" selection-end-line="607" selection-end-column="13" />
+        <state vertical-scroll-proportion="0.86583185" vertical-offset="221" max-vertical-offset="855">
+          <caret line="47" column="34" selection-start-line="47" selection-start-column="34" selection-end-line="47" selection-end-column="34" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/webapp/public/templates/components/home/contactenos.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-12.5" vertical-offset="0" max-vertical-offset="480">
-          <caret line="20" column="6" selection-start-line="20" selection-start-column="6" selection-end-line="20" selection-end-column="6" />
-          <folding>
-            <element signature="n#style#0;n#table#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#span#0;n#td#1;n#tr#0;n#table#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#span#0;n#td#1;n#tr#1;n#table#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#span#0;n#td#1;n#tr#2;n#table#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#span#0;n#td#1;n#tr#4;n#table#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#a#0;n#span#0;n#td#1;n#tr#4;n#table#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#span#0;n#td#1;n#tr#5;n#table#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#a#0;n#span#0;n#td#1;n#tr#5;n#table#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#span#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/webapp/public/templates/components/home/como_funciona.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6394316" vertical-offset="0" max-vertical-offset="563">
-          <caret line="24" column="66" selection-start-line="24" selection-start-column="66" selection-end-line="24" selection-end-column="66" />
-          <folding>
-            <element signature="n#style#0;n#div#2;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#2;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#1;n#div#2;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#2;n#div#2;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#3;n#div#2;n#!!top" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>

@@ -1,0 +1,45 @@
+<div id="pedidosPendientes" class="panel panel-default col-nopadding" ng-controller="PedidosPendientesController as ctlr">
+    <div class="panel-heading">Pedidos Pendientes</div>
+    <div class="panel-body col-nopadding pedidos-lists">
+        <div ng-repeat="pedido in ctlr.pedidos" class="pedido-item">
+            <div class="col-sm-12 col-nopadding" ng-click="ctlr.verDetalle(pedido)" style="cursor: pointer;">
+                <div class="list-item-image-xsm" ng-class="pedido.background"/>
+                <span class="list-heading">{{pedido.viaje}}</span>
+                <div class="col-sm-12 col-nopadding"><span class="list-item-label">Carga:</span><span class="list-item">{{pedido.carga}}</span></div>
+                <div class="col-sm-12 col-nopadding"><span class="list-item-label">Entrega:</span><span class="list-item">{{pedido.entrega}}</span></div>
+            </div>
+            <div class="col-sm-12 col-nopadding highligthed-section" ng-show="pedido.estado == 'PendienteConfirmacion'">
+                <div class="col-sm-12 center-content-horizontal"><span class="list-heading">Ya tienes conductor:</span></div>
+                <div class="col-sm-12 center-content-horizontal"><span class="list-item">{{pedido.transportista.statistics.efectividad}}% efectividad</span></div>
+                <div class="col-sm-12 center-content-horizontal" style="margin-bottom: 10px;">
+                    <span class="glyphicon glyphicon-star" style="color:#BBD41C" ng-show="pedido.transportista.statistics.rating >= 1"></span><span class="glyphicon glyphicon-star" ng-show="pedido.transportista.statistics.rating < 1"></span>
+                    <span class="glyphicon glyphicon-star" style="color:#BBD41C" ng-show="pedido.transportista.statistics.rating >= 2"></span><span class="glyphicon glyphicon-star" ng-show="pedido.transportista.statistics.rating < 2"></span>
+                    <span class="glyphicon glyphicon-star" style="color:#BBD41C" ng-show="pedido.transportista.statistics.rating >= 3"></span><span class="glyphicon glyphicon-star" ng-show="pedido.transportista.statistics.rating < 3"></span>
+                    <span class="glyphicon glyphicon-star" style="color:#BBD41C" ng-show="pedido.transportista.statistics.rating >= 4"></span><span class="glyphicon glyphicon-star" ng-show="pedido.transportista.statistics.rating < 4"></span>
+                    <span class="glyphicon glyphicon-star" style="color:#BBD41C" ng-show="pedido.transportista.statistics.rating == 5"></span><span class="glyphicon glyphicon-star" ng-show="pedido.transportista.statistics.rating < 5"></span>
+                </div>
+                <div class="col-sm-12 col-nopadding">
+                    <input type="button" value="Confirmar" class="btn btn-primary" ng-click="ctlr.confirmar(pedido)"/>
+                    <input type="button" value="Rechazar" class="btn btn-danger" style="float: right" ng-click="ctlr.rechazar(pedido)"/>
+                </div>
+                <div class="col-sm-12 center-content-horizontal">
+                    <div><span class="list-item-label">Expira en:</span></div>
+                    <div><span class="list-item">{{pedido.timer.value}}</span></div>
+                </div>
+            </div>
+            <div class="col-sm-12 col-nopadding highligthed-section" ng-show="pedido.estado == 'PendienteConfirmacionProveedor'">
+                <div class="col-sm-12 col-nopadding center-content-horizontal">
+                    <span class="list-item-label">Esperando confirmacion de:{{pedido.proveedor.nombre}}</span>
+                </div>
+                <div class="col-sm-12 center-content-horizontal">
+                    <div><span class="list-item-label">Expira en:</span></div>
+                    <div><span class="list-item">{{pedido.timer.value}}</span></div>
+                </div>
+                <div class="col-sm-12 center-content-horizontal">
+                    <input type="button" value="Cancelar" class="btn btn-small btn-danger" ng-click="ctlr.cancelar(pedido)"/>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div ng-include="'templates/confirm_dialog.html'"></div>
+</div>

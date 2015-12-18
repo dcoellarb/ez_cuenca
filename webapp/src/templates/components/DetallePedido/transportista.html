@@ -1,0 +1,86 @@
+<div class="col-nopadding col-nopadding col-sm-12">
+    <div class="col-sm-12" ng-show="ctlr.pedido.transportista">
+        <div class="col-sm-12 col-md-2">
+            <div class="list-item-image-md" ng-style="{'background-image': 'url(' + ctlr.pedido.transportista.photo + ')'}"/>
+        </div>
+        <div class="col-sm-12 col-md-10">
+            <div class="col-sm-12">
+                <span class="form-control-readonly">{{ctlr.pedido.transportista.referencia}}</span>
+            </div>
+            <div class="col-sm-12">
+                <div class="col-sm-2">
+                    <label class="control-label">Rating</label>
+                </div>
+                <div class="col-sm-3">
+                    <label class="control-label">Eficiencia</label>
+                </div>
+                <div class="col-sm-2">
+                    <label class="control-label">Telefono</label>
+                </div>
+                <div class="col-sm-5">
+                    <label class="control-label">Disponibilidad</label>
+                </div>
+                <div class="col-sm-2">
+                    <div class="col-sm-12 col-nopadding">
+                        <span class="glyphicon glyphicon-star" style="color:#BBD41C" ng-show="ctlr.pedido.transportista.rating >= 1"></span><span class="glyphicon glyphicon-star" ng-show="ctlr.pedido.transportista.rating < 1"></span>
+                        <span class="glyphicon glyphicon-star" style="color:#BBD41C" ng-show="ctlr.pedido.transportista.rating >= 2"></span><span class="glyphicon glyphicon-star" ng-show="ctlr.pedido.transportista.rating < 2"></span>
+                        <span class="glyphicon glyphicon-star" style="color:#BBD41C" ng-show="ctlr.pedido.transportista.rating >= 3"></span><span class="glyphicon glyphicon-star" ng-show="ctlr.pedido.transportista.rating < 3"></span>
+                        <span class="glyphicon glyphicon-star" style="color:#BBD41C" ng-show="ctlr.pedido.transportista.rating >= 4"></span><span class="glyphicon glyphicon-star" ng-show="ctlr.pedido.transportista.rating < 4"></span>
+                        <span class="glyphicon glyphicon-star" style="color:#BBD41C" ng-show="ctlr.pedido.transportista.rating == 5"></span><span class="glyphicon glyphicon-star" ng-show="ctlr.pedido.transportista.rating < 5"></span>
+                    </div>                </div>
+                <div class="col-sm-3">
+                    <span class="form-control-readonly">{{ctlr.pedido.transportista.efectividad}}% efectividad</span>
+                </div>
+                <div class="col-sm-2">
+                    <span class="form-control-readonly">{{ctlr.pedido.transportista.telefono}}</span>
+                </div>
+                <div class="col-sm-5">
+                    <span class="form-control-readonly">{{ctlr.pedido.disponibilidad}}</span>
+                </div>
+            </div>
+            <div class="col-sm-12">
+                <div class="col-sm-2">
+                    <label class="control-label">Placa</label>
+                </div>
+                <div class="col-sm-3">
+                    <label class="control-label">Marca</label>
+                </div>
+                <div class="col-sm-2">
+                    <label class="control-label">Año</label>
+                </div>
+                <div class="col-sm-2">
+                    <label class="control-label">Modelo</label>
+                </div>
+                <div class="col-sm-3">
+                    <label class="control-label">Color</label>
+                </div>
+                <div class="col-sm-2">
+                    <span class="form-control-readonly">{{ctlr.pedido.transportista.placa}}</span>
+                </div>
+                <div class="col-sm-3">
+                    <span class="form-control-readonly">{{ctlr.pedido.transportista.modelo}}</span>
+                </div>
+                <div class="col-sm-2">
+                    <span class="form-control-readonly">{{ctlr.pedido.transportista.color}}</span>
+                </div>
+                <div class="col-sm-2">
+                    <span class="form-control-readonly">{{ctlr.pedido.transportista.marca}}</span>
+                </div>
+                <div class="col-sm-3">
+                    <span class="form-control-readonly">{{ctlr.pedido.transportista.anio}}</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <hr class="col-sm-11">
+    <div class="col-sm-12">
+        <div class="col-sm-1">
+            <div style="display: flex;justify-content: center;">
+                <span ng-class="ctlr.pedido.transporte_image" style="font-size: xx-large;"></span>
+            </div>
+        </div>
+        <div class="col-sm-11">
+           <span class="form-control-readonly">{{ctlr.pedido.transporte}} {{ctlr.pedido.transporte_extra}}</span>
+        </div>
+    </div>
+</div>
