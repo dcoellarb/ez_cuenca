@@ -6,6 +6,7 @@
 
     //Variables
     var ctlr;
+    var local_root_scope;
     var local_scope;
     var local_location;
     var local_historico_view_model;
@@ -20,9 +21,10 @@
     var get_historico_pedidos_callback;
 
     angular.module("easyRuta")
-        .controller('historicoController',function($scope,$location,historico_view_model){
+        .controller('historicoController',function($rootScope,$scope,$location,historico_view_model){
 
             ctlr = this;
+            local_root_scope = $rootScope;
             local_scope = $scope;
             local_location = $location
             local_historico_view_model = historico_view_model;

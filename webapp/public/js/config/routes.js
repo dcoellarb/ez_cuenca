@@ -8,28 +8,28 @@
         .config(function($routeProvider){
             $routeProvider
                 .when('/inicioClientes',{
-                    templateUrl : '/templates/pages/privado/clientes/inicioClientes/index.html'
+                    templateUrl : '/templates/pages/inicio_clientes.html'
                 })
                 .when('/inicioProveedores',{
-                    templateUrl : '/templates/pages/privado/proveedores/inicio/index.html'
+                    templateUrl : '/templates/pages/inicio_proveedores.html'
                 })
                 .when('/detallePedido/:id',{
-                    templateUrl : '/templates/pages/privado/clientes/DetallePedido/index.html'
+                    templateUrl : '/templates/pages/detalle_pedido.html'
                 })
                 .when('/historico',{
-                    templateUrl : '/templates/pages/privado/clientes/Historico/index.html'
+                    templateUrl : '/templates/pages/historico.html'
                 })
                 .when('/perfil',{
-                    templateUrl : '/templates/pages/privado/clientes/Perfil/index.html'
+                    templateUrl : '/templates/pages/perfil.html'
                 })
                 .when('/detalleTransportista/:id',{
-                    templateUrl : '/templates/pages/privado/proveedores/DetalleTransportista/index.html'
+                    templateUrl : '/templates/pages/detalle_transportista.html' //Update
                 })
                 .when('/detalleTransportista/',{
-                    templateUrl : '/templates/pages/privado/proveedores/DetalleTransportista/index.html'
+                    templateUrl : '/templates/pages/detalle_transportista.html' //Add
                 })
                 .otherwise({
-                    templateUrl : '/templates/pages/publico/home/index.html'
+                    templateUrl : '/templates/pages/inicio_publico.html'
                 })
         }).
         run(function($rootScope, $location, data_services) {

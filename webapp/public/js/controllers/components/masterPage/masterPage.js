@@ -16,6 +16,7 @@
     var init;
 
     //"Public" Methods
+    var local_inicio;
     var local_logout;
     var local_scrollTo;
     var local_toggleLogin;
@@ -41,6 +42,7 @@
             local_master_page_viewmodel = master_page_viewmodel;
             local_utils = utils;
 
+            ctlr.Inicio = function() { local_inicio(); };
             ctlr.toggleLogin = function(show) { local_toggleLogin(show); };
             ctlr.Logout = function() { local_logout(); };
             ctlr.scrollTo = function(id) { local_scrollTo(id); };
@@ -57,9 +59,17 @@
         local_rootScope.$on(local_rootScope.channels.pedido_confirmado, pedido_confirmado_callback);
         local_rootScope.$on(local_rootScope.channels.pedido_confirmado_proveedor, pedido_confirmado_proveedor_callback);
         local_rootScope.$on(local_rootScope.channels.pedido_cancelado, pedido_cancelado_callback);
-    }
+    };
 
     //"Public" Methods
+    local_inicio = function(){
+        if (local_rootScope.cliente) {
+            local_window.location = "/#/inicioClientes"
+        }
+        if (local_rootScope.proveedor) {
+            local_window.location = "/#/inicioProveedores"
+        }
+    };
     local_logout = function(){
         local_rootScope.loggedInRole = undefined;
         local_rootScope.proveedor = undefined;

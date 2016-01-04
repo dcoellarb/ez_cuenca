@@ -6,6 +6,7 @@
 
     //Variables
     var ctlr;
+    var local_root_scope;
     var local_route_params;
     var local_scope;
     var local_detalle_pedido_viewmodel;
@@ -17,9 +18,10 @@
     var get_pedido_callback;
 
     angular.module("easyRuta")
-        .controller('DetallePedidoController',function($routeParams,$scope,detalle_pedido_viewmodel){
+        .controller('DetallePedidoController',function($rootScope, $routeParams,$scope,detalle_pedido_viewmodel){
 
             ctlr = this;
+            local_root_scope = $rootScope
             local_route_params = $routeParams
             local_scope = $scope
             local_detalle_pedido_viewmodel = detalle_pedido_viewmodel

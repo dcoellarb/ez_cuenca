@@ -39,6 +39,11 @@
                     <input type="button" value="Cancelar" class="btn btn-small btn-danger" ng-click="ctlr.cancelar(pedido)"/>
                 </div>
             </div>
+            <div class="col-sm-12 col-nopadding highligthed-section" ng-show="pedido.estado == 'Pendiente'">
+                <div class="col-sm-12 center-content-horizontal">
+                    <input type="button" value="Cancelar" class="btn btn-small btn-danger" ng-click="ctlr.cancelar(pedido)"/>
+                </div>
+            </div>
         </div>
     </div>
     <div ng-include="'templates/confirm_dialog.html'"></div>
