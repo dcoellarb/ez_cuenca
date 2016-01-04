@@ -1,0 +1,25 @@
+<div class="col-sm-12" ng-controller="MasterPageController as ctlr" style="background-color: #505050;opacity: 0.95;height: 50px;margin-bottom: 10px;/* position: fixed; */height: 50px; width: 100%; position: fixed; left: 0px; top: 0px;z-index: 99;">
+    <div class="col-md-12 col-lg-10 col-lg-offset-1 center-content" style="height: 50px">
+        <div class="col-sm-4">
+            <img src="resources/images/logo.png" style="max-height: 40px;">
+            <img src="resources/images/logo_texto.png" style="max-height: 30px; margin-left: 10px">
+        </div>
+        <div class="col-sm-5">
+            <ul class="menu">
+            <span class="menu">
+                <a href="/#/inicioProveedores">Inicio</a></il>
+                <span class="menu-separator">|</span>
+                <a href="/#/historico">Historico</a></il>
+                <span class="menu-separator">|</span>
+                <a href="/#/perfil">Perfil</a></il>
+            </span>
+            </ul>
+        </div>
+        <div class="col-sm-2">
+            <span class="label-orange" ng-show="ctlr.showSaldo">Saldo:{{ctlr.Saldo}}</span>
+        </div>
+        <div class="col-sm-1">
+            <input type="button" value="Logout" class="btn btn-primary col-md-12 col-lg-2" ng-click="ctlr.Logout()" style="color: white;border-color: whi;border-width: thin;border-style: solid;padding-left: 20px;padding-right: 20px;padding-top: 5px;padding-bottom: 5px;border-radius: 5px;background-color: transparent;border-color: white;float: right; width: 80px;"/>
+        </div>
+    </div>
+</div>
