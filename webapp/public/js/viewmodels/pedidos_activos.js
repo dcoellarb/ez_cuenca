@@ -16,7 +16,6 @@
     //"Public" Methods
     var local_get_pedidos_activos;
     var local_cancelar_pedido;
-    var local_cancelar_pedido_proveedor;
     var local_iniciar_pedido;
 
     //Methods
@@ -24,14 +23,13 @@
     //View Controller callbacks references
     var get_pedidos_activos_callback;
     var cancelar_pedido_callback;
-    var cancelar_pedido_proveedor_callback;
     var iniciar_pedido_callback;
 
     //Data callbacks
     var local_get_pedidos_activos_callback;
     var local_cancelar_pedido_callback;
-    var local_cancelar_pedido_proveedor_callback;
-    var local_iniciar_pedido_callback
+    var local_iniciar_pedido_callback;
+    var agregar_notification_callback;
 
     angular.module("easyRuta")
         .factory('pedidos_activos_viewmodel',function($rootScope,pubnub_services,data_services,parser) {
@@ -48,7 +46,6 @@
     constructor = {
         get_pedidos_activos : function(callback) {local_get_pedidos_activos(callback);},
         cancelar_pedido : function(pedido,callback) { local_cancelar_pedido(pedido,callback); },
-        cancelar_pedido_proveedor : function(pedido,callback) { local_cancelar_pedido_proveedor(pedido,callback); },
         iniciar_pedido : function(pedido,callback) { local_iniciar_pedido(pedido,callback); }
     }
 
@@ -60,10 +57,6 @@
     local_cancelar_pedido = function(pedido,callback){
         cancelar_pedido_callback = callback;
         local_data_services.cancelar_pedido([pedido.object],local_cancelar_pedido_callback);
-    };
-    local_cancelar_pedido_proveedor = function(pedido,callback){
-        cancelar_pedido_proveedor_callback = callback;
-        local_data_services.cancelar_pedido_proveedor([pedido.object],local_cancelar_pedido_proveedor_callback);
     };
     local_iniciar_pedido = function(pedido,callback){
         iniciar_pedido_callback = callback;
@@ -92,17 +85,19 @@
     local_cancelar_pedido_callback = function(params,error,results){
         local_pubnub_services.publish(local_rootScope.channels.pedido_cancelado,{id:params[0].id});
         local_rootScope.$broadcast(local_rootScope.channels.pedido_cancelado, {id:params[0].id});
+
+        local_data_services.agregar_notification(["Pedido Cancelado",params[0]],agregar_notification_callback);
+
         cancelar_pedido_callback(error,results);
-    };
-    local_cancelar_pedido_proveedor_callback = function(params,error,results){
-        local_pubnub_services.publish(local_rootScope.channels.pedido_cancelado_confirmado_proveedor,{id:params[0].id})
-        local_rootScope.$broadcast(local_rootScope.channels.pedido_cancelado_confirmado_proveedor, {id:params[0].id});
-        cancelar_pedido_proveedor_callback(error,results);
     };
     local_iniciar_pedido_callback = function(params,error,results){
         local_pubnub_services.publish(local_rootScope.channels.pedido_iniciado,{id:params[0].id})
         local_rootScope.$broadcast(local_rootScope.channels.pedido_iniciado, {id:params[0].id});
         iniciar_pedido_callback(error,results);
     };
-
+    agregar_notification_callback = function(params,error,results){
+        if (!error){
+            local_pubnub_services.publish(local_rootScope.channels.nueva_notificacion,{id:params[1].id})
+        }
+    };
 })();

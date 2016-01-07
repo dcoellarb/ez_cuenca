@@ -1,5 +1,5 @@
 <div id="pedidosActivos" class="panel panel-default col-nopadding" ng-controller="PedidosActivosController as ctlr">
-    <div class="panel-heading">Pedidos Activos</div>
+    <div class="panel-heading">Pedidos Activos ({{ctlr.pedidos.length}})</div>
     <div class="panel-body col-nopadding pedidos-lists">
         <div ng-repeat="pedido in ctlr.pedidos" class="pedido-item">
             <div class="col-sm-12 col-nopadding" ng-click="ctlr.verDetalle(pedido)" style="cursor: pointer;">
@@ -25,7 +25,6 @@
             <div class="col-sm-12 center-content-horizontal">
                 <input type="button" value="Iniciar" class="btn btn-small btn-primary" ng-click="ctlr.iniciar(pedido)" ng-show="ctlr.isProveedor" style="margin-right: 20px;"/>
                 <input type="button" value="Cancelar" class="btn btn-small btn-danger" ng-click="ctlr.cancelar(pedido)"  ng-show="!ctlr.isProveedor"/>
-                <input type="button" value="Cancelar" class="btn btn-small btn-danger" ng-click="ctlr.cancelarProveedor(pedido)"  ng-show="ctlr.isProveedor"/>
             </div>
         </div>
     </div>

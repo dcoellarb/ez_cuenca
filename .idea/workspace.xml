@@ -2,29 +2,30 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0ccc15df-18c8-488c-b882-7e9cbf60319c" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webapp/public/templates/pages/detalle_pedido.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webapp/public/templates/pages/detalle_transportista.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webapp/public/templates/pages/historico.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webapp/public/templates/pages/perfil.html" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/webapp/public/templates/components/masterPage/clientes.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/webapp/public/templates/pages/privado/clientes/DetallePedido/index.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/webapp/public/templates/pages/privado/clientes/Historico/index.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/webapp/public/templates/pages/privado/clientes/Perfil/index.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/webapp/public/templates/pages/privado/proveedores/DetalleTransportista/index.html" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/webapp/public/templates/components/masterPage/proveedores.html" afterPath="$PROJECT_DIR$/webapp/public/templates/components/master_page_private.html" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/webapp/public/templates/components/masterPage/publico.html" afterPath="$PROJECT_DIR$/webapp/public/templates/components/master_page_publico.html" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/webapp/public/templates/components/rateTransportista/rateTransportista.html" afterPath="$PROJECT_DIR$/webapp/public/templates/components/rateTransportista/rate_transportista.html" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/webapp/public/templates/pages/privado/clientes/inicioClientes/index.html" afterPath="$PROJECT_DIR$/webapp/public/templates/pages/inicio_clientes.html" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/webapp/public/templates/pages/privado/proveedores/inicio/index.html" afterPath="$PROJECT_DIR$/webapp/public/templates/pages/inicio_proveedores.html" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/webapp/public/templates/pages/publico/home/index.html" afterPath="$PROJECT_DIR$/webapp/public/templates/pages/inicio_publico.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webapp/public/templates/notifications_center.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webapp/public/js/controllers/notifications_center.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webapp/public/js/viewmodels/notifications_center.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/webapp/public/templates/components/pedidosLists/PedidosActivos.html" afterPath="$PROJECT_DIR$/webapp/public/templates/components/pedidosLists/PedidosActivos.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/webapp/public/templates/components/pedidosLists/PedidosCompletados.html" afterPath="$PROJECT_DIR$/webapp/public/templates/components/pedidosLists/PedidosCompletados.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/webapp/public/templates/components/pedidosLists/PedidosEnCurso.html" afterPath="$PROJECT_DIR$/webapp/public/templates/components/pedidosLists/PedidosEnCurso.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/webapp/public/templates/components/pedidosLists/PedidosPendientes.html" afterPath="$PROJECT_DIR$/webapp/public/templates/components/pedidosLists/PedidosPendientes.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/webapp/public/templates/components/pedidosLists/PedidosPendientesProveedor.html" afterPath="$PROJECT_DIR$/webapp/public/templates/components/pedidosLists/PedidosPendientesProveedor.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/webapp/public/js/controllers/pages/privado/clientes/detallePedido/detallePedido.js" afterPath="$PROJECT_DIR$/webapp/public/js/controllers/pages/privado/clientes/detallePedido/detallePedido.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/webapp/public/js/controllers/pages/privado/clientes/Historico/historico.js" afterPath="$PROJECT_DIR$/webapp/public/js/controllers/pages/privado/clientes/Historico/historico.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/webapp/public/css/app.css" afterPath="$PROJECT_DIR$/webapp/public/css/app.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/webapp/public/index.html" afterPath="$PROJECT_DIR$/webapp/public/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/webapp/public/templates/pages/inicio_clientes.html" afterPath="$PROJECT_DIR$/webapp/public/templates/pages/inicio_clientes.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/webapp/public/templates/pages/inicio_proveedores.html" afterPath="$PROJECT_DIR$/webapp/public/templates/pages/inicio_proveedores.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/webapp/public/js/controllers/components/masterPage/masterPage.js" afterPath="$PROJECT_DIR$/webapp/public/js/controllers/components/masterPage/masterPage.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/webapp/public/js/viewmodels/master_page.js" afterPath="$PROJECT_DIR$/webapp/public/js/viewmodels/master_page.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/webapp/public/templates/components/master_page_private.html" afterPath="$PROJECT_DIR$/webapp/public/templates/components/master_page_private.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/webapp/public/js/services/parse.js" afterPath="$PROJECT_DIR$/webapp/public/js/services/parse.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/webapp/public/js/services/parser.js" afterPath="$PROJECT_DIR$/webapp/public/js/services/parser.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/webapp/public/js/controllers/components/pedidosLists/pedidosActivos.js" afterPath="$PROJECT_DIR$/webapp/public/js/controllers/components/pedidosLists/pedidosActivos.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/webapp/public/js/controllers/components/pedidosLists/pedidosEnCurso.js" afterPath="$PROJECT_DIR$/webapp/public/js/controllers/components/pedidosLists/pedidosEnCurso.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/webapp/public/js/controllers/components/pedidosLists/pedidosPendientes.js" afterPath="$PROJECT_DIR$/webapp/public/js/controllers/components/pedidosLists/pedidosPendientes.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/webapp/public/js/viewmodels/pedidos_activos.js" afterPath="$PROJECT_DIR$/webapp/public/js/viewmodels/pedidos_activos.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/webapp/public/js/viewmodels/pedidos_en_curso.js" afterPath="$PROJECT_DIR$/webapp/public/js/viewmodels/pedidos_en_curso.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/webapp/public/js/viewmodels/pedidos_pendientes.js" afterPath="$PROJECT_DIR$/webapp/public/js/viewmodels/pedidos_pendientes.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/webapp/public/js/services/pubnub.js" afterPath="$PROJECT_DIR$/webapp/public/js/services/pubnub.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/webapp/public/js/config/routes.js" afterPath="$PROJECT_DIR$/webapp/public/js/config/routes.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="easyruta.iws" />
@@ -57,11 +58,21 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="PedidosPendientesProveedor.html" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/webapp/public/templates/components/pedidosLists/PedidosPendientesProveedor.html">
+      <file leaf-file-name="pedidos_activos.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/webapp/public/js/viewmodels/pedidos_activos.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.07009346" vertical-offset="0" max-vertical-offset="1155">
-              <caret line="2" column="75" selection-start-line="2" selection-start-column="75" selection-end-line="2" selection-end-column="75" />
+            <state vertical-scroll-proportion="-7.769231" vertical-offset="128" max-vertical-offset="1620">
+              <caret line="22" column="40" selection-start-line="22" selection-start-column="32" selection-end-line="22" selection-end-column="40" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="parser.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/webapp/public/js/services/parser.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.6445498" vertical-offset="2067" max-vertical-offset="3255">
+              <caret line="165" column="107" selection-start-line="165" selection-start-column="107" selection-end-line="165" selection-end-column="107" />
               <folding />
             </state>
           </provider>
@@ -80,66 +91,66 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/webapp/src/js/viewmodels/transportistas_proveedor.js" />
-        <option value="$PROJECT_DIR$/webapp/src/js/viewmodels/pedidos_pendientes.js" />
-        <option value="$PROJECT_DIR$/webapp/src/templates/components/pedidosLists/TransportistasProveedor.html" />
-        <option value="$PROJECT_DIR$/webapp/src/templates/components/pedidosLists/PedidosPendientesProveedor.html" />
-        <option value="$PROJECT_DIR$/webapp/src/templates/components/DetallePedido/pedido.html" />
-        <option value="$PROJECT_DIR$/webapp/src/js/viewmodels/pedidos_completados.js" />
-        <option value="$PROJECT_DIR$/webapp/src/templates/pages/privado/clientes/Historico/index.html" />
-        <option value="$PROJECT_DIR$/webapp/src/index.html" />
-        <option value="$PROJECT_DIR$/webapp/src/js/viewmodels/historico_view_model.js" />
-        <option value="$PROJECT_DIR$/webapp/src/js/controllers/pages/privado/clientes/Historico/historico.js" />
-        <option value="$PROJECT_DIR$/webapp/src/js/services/parse.js" />
-        <option value="$PROJECT_DIR$/webapp/src/js/controllers/components/agregarPedido/agregarPedido.js" />
         <option value="$PROJECT_DIR$/webapp/src/js/controllers/components/pedidosLists/pedidosPendientes.js" />
         <option value="$PROJECT_DIR$/webapp/src/js/viewmodels/detalle_pedido.js" />
         <option value="$PROJECT_DIR$/webapp/src/js/services/parser.js" />
         <option value="$PROJECT_DIR$/webapp/app.js" />
         <option value="$PROJECT_DIR$/webapp/public/js/controllers/components/login/login.js" />
         <option value="$PROJECT_DIR$/webapp/public/js/controllers/components/pedidosLists/transportistasProveedor.js" />
-        <option value="$PROJECT_DIR$/webapp/public/js/viewmodels/pedidos_pendientes.js" />
-        <option value="$PROJECT_DIR$/webapp/public/js/controllers/components/pedidosLists/pedidosPendientes.js" />
-        <option value="$PROJECT_DIR$/webapp/public/js/viewmodels/master_page.js" />
         <option value="$USER_HOME$/Downloads/icomoon/demo.html" />
         <option value="$PROJECT_DIR$/webapp/public/templates/pages/privado/proveedores/DetalleTransportista/index.html" />
         <option value="$PROJECT_DIR$/webapp/public/templates/components/agregarPedido/AgregarPedidoTransporte.html" />
-        <option value="$PROJECT_DIR$/webapp/public/index.html" />
         <option value="$PROJECT_DIR$/webapp/public/templates/pages/privado/clientes/Perfil/index.html" />
-        <option value="$PROJECT_DIR$/webapp/public/js/services/parser.js" />
         <option value="$PROJECT_DIR$/webapp/public/js/viewmodels/perfil.js" />
         <option value="$PROJECT_DIR$/webapp/package.json" />
         <option value="$PROJECT_DIR$/webapp/.parse.project" />
         <option value="$PROJECT_DIR$/webapp/public/templates/pages/privado/clientes/Historico/index.html" />
         <option value="$PROJECT_DIR$/webapp/public/js/config/routes.js" />
-        <option value="$PROJECT_DIR$/webapp/public/js/services/parse.js" />
-        <option value="$PROJECT_DIR$/webapp/public/js/services/pubnub.js" />
         <option value="$PROJECT_DIR$/webapp/public/js/controllers/pages/privado/clientes/Historico/historico.js" />
         <option value="$PROJECT_DIR$/webapp/public/js/controllers/pages/privado/clientes/detallePedido/detallePedido.js" />
         <option value="$PROJECT_DIR$/webapp/public/js/controllers/pages/privado/clientes/perfil/perfil.js" />
         <option value="$PROJECT_DIR$/webapp/public/js/controllers/transportistaEdit.js" />
         <option value="$PROJECT_DIR$/webapp/public/templates/components/masterPage/proveedores.html" />
         <option value="$PROJECT_DIR$/webapp/public/templates/components/masterPage/clientes.html" />
-        <option value="$PROJECT_DIR$/webapp/public/js/controllers/components/masterPage/masterPage.js" />
-        <option value="$PROJECT_DIR$/webapp/public/templates/pages/inicio_clientes.html" />
-        <option value="$PROJECT_DIR$/webapp/public/templates/pages/inicio_proveedores.html" />
         <option value="$PROJECT_DIR$/webapp/public/templates/pages/inicio_publico.html" />
         <option value="$PROJECT_DIR$/webapp/public/templates/pages/perfil.html" />
         <option value="$PROJECT_DIR$/webapp/public/templates/pages/detalle_pedido.html" />
         <option value="$PROJECT_DIR$/webapp/public/templates/pages/historico.html" />
         <option value="$PROJECT_DIR$/webapp/public/templates/pages/detalle_transportista.html" />
-        <option value="$PROJECT_DIR$/webapp/public/templates/components/pedidosLists/PedidosPendientes.html" />
+        <option value="$PROJECT_DIR$/webapp/public/js/viewmodels/pedidos_en_curso.js" />
+        <option value="$PROJECT_DIR$/webapp/public/js/controllers/components/pedidosLists/pedidosEnCurso.js" />
+        <option value="$PROJECT_DIR$/webapp/public/js/viewmodels/pedidos_activos.js" />
+        <option value="$PROJECT_DIR$/webapp/public/js/viewmodels/master_page.js" />
+        <option value="$PROJECT_DIR$/webapp/public/js/controllers/confirm_dialog.js" />
+        <option value="$PROJECT_DIR$/webapp/public/js/controllers/notifications_center.js" />
+        <option value="$PROJECT_DIR$/webapp/public/index.html" />
+        <option value="$PROJECT_DIR$/webapp/public/js/controllers/components/pedidosLists/pedidosActivos.js" />
+        <option value="$PROJECT_DIR$/webapp/public/templates/components/master_page_private.html" />
+        <option value="$PROJECT_DIR$/webapp/public/templates/pages/inicio_proveedores.html" />
+        <option value="$PROJECT_DIR$/webapp/public/templates/pages/inicio_clientes.html" />
         <option value="$PROJECT_DIR$/webapp/public/css/app.css" />
+        <option value="$PROJECT_DIR$/webapp/public/templates/notifications_center.html" />
+        <option value="$PROJECT_DIR$/webapp/public/js/services/pubnub.js" />
+        <option value="$PROJECT_DIR$/webapp/public/js/controllers/components/masterPage/masterPage.js" />
+        <option value="$PROJECT_DIR$/webapp/public/js/services/parse.js" />
+        <option value="$PROJECT_DIR$/webapp/public/js/viewmodels/notifications_center.js" />
+        <option value="$PROJECT_DIR$/webapp/public/js/viewmodels/pedidos_pendientes.js" />
+        <option value="$PROJECT_DIR$/webapp/public/js/controllers/components/pedidosLists/pedidosPendientes.js" />
+        <option value="$PROJECT_DIR$/webapp/public/templates/components/pedidosLists/PedidosActivos.html" />
+        <option value="$PROJECT_DIR$/webapp/public/templates/components/pedidosLists/PedidosCompletados.html" />
+        <option value="$PROJECT_DIR$/webapp/public/templates/components/pedidosLists/PedidosEnCurso.html" />
+        <option value="$PROJECT_DIR$/webapp/public/templates/components/pedidosLists/PedidosPendientes.html" />
         <option value="$PROJECT_DIR$/webapp/public/templates/components/pedidosLists/PedidosPendientesProveedor.html" />
+        <option value="$PROJECT_DIR$/webapp/public/js/services/parser.js" />
       </list>
     </option>
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectFrameBounds">
-    <option name="x" value="-1620" />
-    <option name="y" value="170" />
-    <option name="width" value="1440" />
-    <option name="height" value="833" />
+    <option name="x" value="-1680" />
+    <option name="y" value="23" />
+    <option name="width" value="1680" />
+    <option name="height" value="1027" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <OptionsSetting value="true" id="Add" />
@@ -330,15 +341,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="templates" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="components" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="agregarPedido" />
+              <option name="myItemId" value="js" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -361,6 +364,10 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="js" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="viewmodels" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -387,122 +394,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="services" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="easyruta" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="easyruta" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="webapp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="public" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="js" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="controllers" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="easyruta" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="easyruta" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="webapp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="public" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="js" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="controllers" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="components" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="easyruta" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="easyruta" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="webapp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="public" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="js" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="controllers" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="components" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="masterPage" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="easyruta" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="easyruta" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="webapp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="public" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="js" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="config" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -551,11 +442,11 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/webapp/public/js/controllers" />
       <recent name="$PROJECT_DIR$/webapp/public/templates/pages/privado/clientes/DetallePedido" />
       <recent name="$PROJECT_DIR$/webapp/public/templates/pages/privado/clientes/Historico" />
       <recent name="$PROJECT_DIR$/webapp/public/templates/components/home" />
       <recent name="$PROJECT_DIR$/webapp/public/js/controllers/pages/privado/proveedores/inicio" />
-      <recent name="$PROJECT_DIR$/webapp/public/templates/components/masterPage" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/webapp/public/templates/components" />
@@ -583,15 +474,15 @@
     <configuration default="true" type="NodeJSConfigurationType" factoryName="Node.js" path-to-node="/usr/local/bin/node" working-dir="">
       <method />
     </configuration>
-    <configuration default="true" type="PhpUnitRemoteRunConfigurationType" factoryName="PHPUnit on Server">
-      <method />
-    </configuration>
     <configuration default="true" type="js.build_tools.gulp" factoryName="Gulp.js">
       <node-options />
       <gulpfile />
       <tasks />
       <pass-parent-env-vars>false</pass-parent-env-vars>
       <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="PhpUnitRemoteRunConfigurationType" factoryName="PHPUnit on Server">
       <method />
     </configuration>
     <configuration default="false" name="easyruta" type="NodeJSConfigurationType" factoryName="Node.js" path-to-node="/usr/local/bin/node" path-to-js-file="webapp/app.js" working-dir="$PROJECT_DIR$">
@@ -651,11 +542,12 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-1620" y="170" width="1440" height="833" extended-state="6" />
+    <frame x="-1680" y="23" width="1680" height="1027" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4167832" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.48251748" sideWeight="0.4993895" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.35479632" sideWeight="0.4993895" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32410613" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="true" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.32875773" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Remote Host" active="false" anchor="right" auto_hide="true" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.32944405" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39884394" sideWeight="0.44886753" order="7" side_tool="false" content_ui="tabs" />
@@ -665,17 +557,16 @@
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="true" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32890365" sideWeight="0.49965683" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25250357" sideWeight="0.6145833" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32867134" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.21855922" sideWeight="0.6145833" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.27442372" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32447553" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32867134" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="REST Client" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32716763" sideWeight="0.50061053" order="0" side_tool="true" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
@@ -697,9 +588,9 @@
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.39198855" sideWeight="0.6145833" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32867134" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32867134" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
     </layout-to-restore>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -729,107 +620,11 @@
           <option name="timeStamp" value="104" />
         </line-breakpoint>
       </breakpoints>
-      <option name="time" value="108" />
+      <option name="time" value="111" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/webapp/public/templates/components/DetallePedido/producto.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="165" max-vertical-offset="375">
-          <caret line="11" column="66" selection-start-line="11" selection-start-column="66" selection-end-line="11" selection-end-column="66" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/webapp/public/js/viewmodels/pedidos_completados.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="572" max-vertical-offset="1155">
-          <caret line="55" column="2" selection-start-line="55" selection-start-column="2" selection-end-line="63" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/webapp/public/js/viewmodels/historico_view_model.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1095">
-          <caret line="30" column="34" selection-start-line="30" selection-start-column="34" selection-end-line="30" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/webapp/public/js/controllers/components/pedidosLists/pedidosEnCurso.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="800" max-vertical-offset="2205">
-          <caret line="51" column="34" selection-start-line="51" selection-start-column="30" selection-end-line="51" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/webapp/public/js/viewmodels/agregar_pedido.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.4" vertical-offset="1339" max-vertical-offset="2685">
-          <caret line="101" column="38" selection-start-line="101" selection-start-column="30" selection-end-line="101" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/webapp/public/js/controllers/components/agregarPedido/agregarPedido.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.4" vertical-offset="2179" max-vertical-offset="2835">
-          <caret line="183" column="30" selection-start-line="183" selection-start-column="30" selection-end-line="183" selection-end-column="30" />
-          <folding>
-            <element signature="e#4426#4484#0" expanded="false" />
-            <element signature="e#4524#4801#0" expanded="false" />
-            <element signature="e#4842#4936#0" expanded="false" />
-            <element signature="e#4975#5075#0" expanded="false" />
-            <element signature="e#5106#5546#0" expanded="false" />
-            <element signature="e#5805#6482#0" expanded="false" />
-            <element signature="e#6518#7087#0" expanded="false" />
-            <element signature="e#7285#7766#0" expanded="false" />
-            <element signature="e#7858#7970#0" expanded="false" />
-            <element signature="e#8031#8142#0" expanded="false" />
-            <element signature="e#8052#8136#0" expanded="false" />
-            <element signature="e#8201#8310#0" expanded="false" />
-            <element signature="e#8522#8577#0" expanded="false" />
-            <element signature="e#8647#8918#0" expanded="false" />
-            <element signature="e#8989#9156#0" expanded="false" />
-            <element signature="e#9216#10415#0" expanded="false" />
-            <element signature="e#10478#10824#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/webapp/public/templates/components/DetallePedido/transportista.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-12.791667" vertical-offset="923" max-vertical-offset="1365">
-          <caret line="82" column="71" selection-start-line="82" selection-start-column="61" selection-end-line="82" selection-end-column="71" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/webapp/public/js/viewmodels/detalle_pedido.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5171674" vertical-offset="569" max-vertical-offset="1035">
-          <caret line="54" column="54" selection-start-line="54" selection-start-column="54" selection-end-line="54" selection-end-column="54" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/webapp/public/js/controllers/components/login/login.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="89" max-vertical-offset="765">
-          <caret line="16" column="38" selection-start-line="16" selection-start-column="38" selection-end-line="16" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/webapp/public/js/services/utils.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.64377683" vertical-offset="285" max-vertical-offset="780">
-          <caret line="39" column="30" selection-start-line="39" selection-start-column="16" selection-end-line="39" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/webapp/public/js/controllers/components/pedidosLists/transportistasProveedor.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.034334764" vertical-offset="1289" max-vertical-offset="1755">
-          <caret line="89" column="22" selection-start-line="89" selection-start-column="22" selection-end-line="89" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/webapp/public/js/viewmodels/transportistas_proveedor.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.42060086" vertical-offset="989" max-vertical-offset="1455">
@@ -837,52 +632,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/webapp/public/js/controllers/components/pedidosLists/pedidosPendientes.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="2279" max-vertical-offset="3075">
-          <caret line="211" column="65" selection-start-line="211" selection-start-column="43" selection-end-line="211" selection-end-column="65" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/webapp/public/js/viewmodels/pedidos_activos.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="676" max-vertical-offset="1470">
-          <caret line="61" column="39" selection-start-line="61" selection-start-column="39" selection-end-line="61" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/webapp/public/js/viewmodels/master_page.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.7912088" vertical-offset="330" max-vertical-offset="885">
-          <caret line="48" column="64" selection-start-line="48" selection-start-column="64" selection-end-line="48" selection-end-column="64" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/webapp/public/templates/components/agregarPedido/AgregarPedidoTransporte.html">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.33498758" vertical-offset="735" max-vertical-offset="1500">
           <caret line="58" column="33" selection-start-line="58" selection-start-column="33" selection-end-line="58" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/webapp/public/js/viewmodels/pedidos_pendientes.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6514806" vertical-offset="1499" max-vertical-offset="2205">
-          <caret line="119" column="83" selection-start-line="0" selection-start-column="0" selection-end-line="242" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/webapp/public/js/controllers/components/pedidosLists/pedidosActivos.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-4.7727275" vertical-offset="885" max-vertical-offset="2430">
-          <caret line="75" column="22" selection-start-line="75" selection-start-column="8" selection-end-line="75" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/webapp/public/js/viewmodels/perfil.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="678" max-vertical-offset="1560">
-          <caret line="61" column="60" selection-start-line="61" selection-start-column="60" selection-end-line="61" selection-end-column="60" />
         </state>
       </provider>
     </entry>
@@ -898,13 +651,6 @@
         <state vertical-scroll-proportion="0.0" vertical-offset="45" max-vertical-offset="1575">
           <caret line="3" column="5" selection-start-line="0" selection-start-column="0" selection-end-line="99" selection-end-column="5" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/webapp/public/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="15" max-vertical-offset="1095">
-          <caret line="1" column="17" selection-start-line="0" selection-start-column="0" selection-end-line="67" selection-end-column="7" />
         </state>
       </provider>
     </entry>
@@ -926,7 +672,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.5263158" vertical-offset="0" max-vertical-offset="342">
           <caret line="12" column="1" selection-start-line="12" selection-start-column="1" selection-end-line="12" selection-end-column="1" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -934,7 +679,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.14195584" vertical-offset="0" max-vertical-offset="317">
           <caret line="3" column="20" selection-start-line="3" selection-start-column="14" selection-end-line="3" selection-end-column="20" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -942,15 +686,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-4.5416665" vertical-offset="416" max-vertical-offset="855">
           <caret line="35" column="68" selection-start-line="35" selection-start-column="58" selection-end-line="35" selection-end-column="68" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/webapp/public/js/services/parser.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-4.0384617" vertical-offset="630" max-vertical-offset="3060">
-          <caret line="49" column="26" selection-start-line="49" selection-start-column="16" selection-end-line="49" selection-end-column="26" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -958,15 +693,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="342">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/webapp/public/js/services/pubnub.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.13274336" vertical-offset="285" max-vertical-offset="1725">
-          <caret line="23" column="16" selection-start-line="23" selection-start-column="16" selection-end-line="23" selection-end-column="16" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -974,15 +700,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="452">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/webapp/public/js/services/parse.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.33333334" vertical-offset="14888" max-vertical-offset="20190">
-          <caret line="1002" column="28" selection-start-line="1002" selection-start-column="4" selection-end-line="1002" selection-end-column="28" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1014,7 +731,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.6637168" vertical-offset="270" max-vertical-offset="915">
           <caret line="38" column="22" selection-start-line="38" selection-start-column="22" selection-end-line="38" selection-end-column="22" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1030,33 +746,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="540">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/webapp/public/js/controllers/components/masterPage/masterPage.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-6.0384617" vertical-offset="863" max-vertical-offset="1800">
-          <caret line="68" column="12" selection-start-line="68" selection-start-column="12" selection-end-line="68" selection-end-column="12" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/webapp/public/templates/pages/inicio_clientes.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="360">
-          <caret line="0" column="58" selection-start-line="0" selection-start-column="58" selection-end-line="0" selection-end-column="58" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/webapp/public/templates/pages/inicio_proveedores.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="360">
-          <caret line="0" column="58" selection-start-line="0" selection-start-column="58" selection-end-line="0" selection-end-column="58" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1064,15 +753,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="600">
           <caret line="0" column="58" selection-start-line="0" selection-start-column="58" selection-end-line="0" selection-end-column="58" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/webapp/public/templates/components/master_page_private.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-10.625" vertical-offset="0" max-vertical-offset="465">
-          <caret line="17" column="29" selection-start-line="17" selection-start-column="29" selection-end-line="17" selection-end-column="29" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1080,10 +760,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-0.625" vertical-offset="0" max-vertical-offset="420">
           <caret line="1" column="68" selection-start-line="1" selection-start-column="68" selection-end-line="1" selection-end-column="68" />
-          <folding>
-            <element signature="n#style#0;n#div#1;n#div#0;n#!!top" expanded="false" />
-            <element signature="n#style#0;n#div#0;n#div#0;n#div#1;n#div#0;n#!!top" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1127,55 +803,301 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/webapp/public/templates/pages/historico.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.625" vertical-offset="0" max-vertical-offset="555">
-          <caret line="1" column="69" selection-start-line="1" selection-start-column="69" selection-end-line="1" selection-end-column="69" />
-          <folding>
-            <element signature="n#style#0;n#div#1;n#div#0;n#!!top" expanded="false" />
-            <element signature="n#style#0;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#!!top" expanded="false" />
-            <element signature="n#style#0;n#span#0;n#div#1;n#div#0;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#!!top" expanded="false" />
-            <element signature="n#style#0;n#span#0;n#div#2;n#div#0;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#!!top" expanded="false" />
-            <element signature="n#style#0;n#span#0;n#div#4;n#div#0;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#!!top" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/webapp/public/templates/pages/perfil.html">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-0.625" vertical-offset="0" max-vertical-offset="165">
           <caret line="1" column="69" selection-start-line="1" selection-start-column="69" selection-end-line="1" selection-end-column="69" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webapp/public/js/viewmodels/pedidos_en_curso.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1050">
+          <caret line="18" column="0" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
           <folding>
-            <element signature="n#style#0;n#div#1;n#div#0;n#!!top" expanded="true" />
-            <element signature="tag#div#1;tag#div#0" expanded="false" />
-            <element signature="n#style#0;n#div#0;n#div#0;n#div#1;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#img#0;n#div#0;n#form#0;n#div#1;n#div#1;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#2;n#form#0;n#div#1;n#div#1;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#button#0;n#div#2;n#form#0;n#div#1;n#div#1;n#div#0;n#!!top" expanded="true" />
+            <element signature="e#1686#2405#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/webapp/public/templates/components/pedidosLists/PedidosPendientes.html">
+    <entry file="file://$PROJECT_DIR$/webapp/public/js/viewmodels/master_page.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="1.3731344" vertical-offset="78" max-vertical-offset="840">
-          <caret line="42" column="0" selection-start-line="42" selection-start-column="0" selection-end-line="42" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.18505943" vertical-offset="551" max-vertical-offset="1140">
+          <caret line="44" column="6" selection-start-line="44" selection-start-column="6" selection-end-line="44" selection-end-column="6" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webapp/public/js/controllers/components/pedidosLists/pedidosEnCurso.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="510" max-vertical-offset="1815">
+          <caret line="57" column="96" selection-start-line="57" selection-start-column="8" selection-end-line="57" selection-end-column="96" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webapp/public/templates/confirm_dialog.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="255">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="11" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webapp/public/templates/pages/historico.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-13.75" vertical-offset="0" max-vertical-offset="555">
+          <caret line="22" column="30" selection-start-line="9" selection-start-column="24" selection-end-line="22" selection-end-column="30" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webapp/public/js/controllers/confirm_dialog.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="720">
+          <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webapp/public/js/viewmodels/perfil.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="900" max-vertical-offset="1590">
+          <caret line="61" column="60" selection-start-line="61" selection-start-column="60" selection-end-line="61" selection-end-column="60" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webapp/public/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-11.875" vertical-offset="495" max-vertical-offset="1125">
+          <caret line="52" column="55" selection-start-line="52" selection-start-column="55" selection-end-line="52" selection-end-column="55" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webapp/public/js/controllers/components/pedidosLists/pedidosActivos.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="926" max-vertical-offset="2085">
+          <caret line="81" column="45" selection-start-line="81" selection-start-column="26" selection-end-line="81" selection-end-column="45" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webapp/public/templates/components/rateTransportista/rate_transportista.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="645">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webapp/public/templates/pages/inicio_clientes.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.41095892" vertical-offset="0" max-vertical-offset="511">
+          <caret line="14" column="67" selection-start-line="14" selection-start-column="67" selection-end-line="14" selection-end-column="67" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webapp/public/templates/pages/inicio_proveedores.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.36516854" vertical-offset="0" max-vertical-offset="534">
+          <caret line="13" column="70" selection-start-line="13" selection-start-column="70" selection-end-line="13" selection-end-column="70" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webapp/public/templates/components/master_page_private.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-19.375" vertical-offset="0" max-vertical-offset="570">
+          <caret line="31" column="48" selection-start-line="31" selection-start-column="48" selection-end-line="31" selection-end-column="48" />
+          <folding>
+            <element signature="n#style#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#3;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#0;n#div#0;n#div#3;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#3;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#0;n#div#0;n#div#0;n#div#3;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#input#0;n#div#3;n#div#0;n#div#0;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/webapp/public/css/app.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6150235" vertical-offset="5993" max-vertical-offset="9975">
-          <caret line="417" column="25" selection-start-line="417" selection-start-column="25" selection-end-line="417" selection-end-column="25" />
+        <state vertical-scroll-proportion="-10.269231" vertical-offset="6153" max-vertical-offset="9990">
+          <caret line="428" column="16" selection-start-line="428" selection-start-column="16" selection-end-line="428" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webapp/public/templates/notifications_center.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-5.625" vertical-offset="0" max-vertical-offset="630">
+          <caret line="9" column="108" selection-start-line="9" selection-start-column="108" selection-end-line="9" selection-end-column="108" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webapp/public/js/controllers/notifications_center.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="251" max-vertical-offset="840">
+          <caret line="36" column="95" selection-start-line="36" selection-start-column="8" selection-end-line="36" selection-end-column="95" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webapp/public/js/controllers/components/masterPage/masterPage.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="1692" max-vertical-offset="2250">
+          <caret line="143" column="6" selection-start-line="143" selection-start-column="6" selection-end-line="143" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webapp/public/js/viewmodels/notifications_center.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1275">
+          <caret line="80" column="6" selection-start-line="80" selection-start-column="6" selection-end-line="80" selection-end-column="6" />
+          <folding>
+            <element signature="e#0#41#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webapp/public/js/services/pubnub.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1755">
+          <caret line="46" column="60" selection-start-line="46" selection-start-column="60" selection-end-line="46" selection-end-column="60" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webapp/public/js/services/parse.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="18.333334" vertical-offset="1170" max-vertical-offset="11580">
+          <caret line="1450" column="54" selection-start-line="1450" selection-start-column="54" selection-end-line="1450" selection-end-column="54" />
+          <folding>
+            <element signature="e#11738#15175#0" expanded="false" />
+            <element signature="e#15239#16556#0" expanded="false" />
+            <element signature="e#16611#17062#0" expanded="false" />
+            <element signature="e#17115#17538#0" expanded="false" />
+            <element signature="e#17594#18381#0" expanded="false" />
+            <element signature="e#18434#18843#0" expanded="false" />
+            <element signature="e#18901#20214#0" expanded="false" />
+            <element signature="e#20270#20879#0" expanded="false" />
+            <element signature="e#20936#21546#0" expanded="false" />
+            <element signature="e#21596#22200#0" expanded="false" />
+            <element signature="e#22264#23002#0" expanded="false" />
+            <element signature="e#23064#23719#0" expanded="false" />
+            <element signature="e#23775#24144#0" expanded="false" />
+            <element signature="e#24198#24313#0" expanded="false" />
+            <element signature="e#24377#24686#0" expanded="false" />
+            <element signature="e#24751#25851#0" expanded="false" />
+            <element signature="e#25908#26039#0" expanded="false" />
+            <element signature="e#26094#26223#0" expanded="false" />
+            <element signature="e#26288#26972#0" expanded="false" />
+            <element signature="e#27034#27168#0" expanded="false" />
+            <element signature="e#27234#27373#0" expanded="false" />
+            <element signature="e#27438#27564#0" expanded="false" />
+            <element signature="e#27618#28005#0" expanded="false" />
+            <element signature="e#28061#28711#0" expanded="false" />
+            <element signature="e#28765#28879#0" expanded="false" />
+            <element signature="e#28933#29290#0" expanded="false" />
+            <element signature="e#29345#31597#0" expanded="false" />
+            <element signature="e#31662#32570#0" expanded="false" />
+            <element signature="e#32637#33643#0" expanded="false" />
+            <element signature="e#34231#36214#0" expanded="false" />
+            <element signature="e#36274#36608#0" expanded="false" />
+            <element signature="e#36675#37157#0" expanded="false" />
+            <element signature="e#37206#37445#0" expanded="false" />
+            <element signature="e#37497#38442#0" expanded="false" />
+            <element signature="e#38496#39447#0" expanded="false" />
+            <element signature="e#39508#41560#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webapp/public/templates/components/pedidosLists/PedidosCompletados.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.625" vertical-offset="0" max-vertical-offset="630">
+          <caret line="1" column="76" selection-start-line="1" selection-start-column="76" selection-end-line="1" selection-end-column="76" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webapp/public/templates/components/pedidosLists/PedidosEnCurso.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.625" vertical-offset="0" max-vertical-offset="525">
+          <caret line="1" column="73" selection-start-line="1" selection-start-column="73" selection-end-line="1" selection-end-column="73" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webapp/public/templates/components/pedidosLists/TransportistasProveedor.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="610">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webapp/public/templates/components/pedidosLists/PedidosActivos.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.024630541" vertical-offset="0" max-vertical-offset="609">
+          <caret line="1" column="72" selection-start-line="1" selection-start-column="72" selection-end-line="1" selection-end-column="72" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webapp/public/templates/components/pedidosLists/PedidosPendientes.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.024630541" vertical-offset="0" max-vertical-offset="840">
+          <caret line="1" column="75" selection-start-line="1" selection-start-column="75" selection-end-line="1" selection-end-column="75" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webapp/public/js/controllers/components/pedidosLists/pedidosPendientes.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.07413509" vertical-offset="1740" max-vertical-offset="4320">
+          <caret line="119" column="87" selection-start-line="119" selection-start-column="87" selection-end-line="119" selection-end-column="87" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webapp/public/js/viewmodels/pedidos_pendientes.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.81042653" vertical-offset="1647" max-vertical-offset="3765">
+          <caret line="144" column="146" selection-start-line="144" selection-start-column="24" selection-end-line="144" selection-end-column="146" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/webapp/public/templates/components/pedidosLists/PedidosPendientesProveedor.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.07009346" vertical-offset="0" max-vertical-offset="1155">
-          <caret line="2" column="75" selection-start-line="2" selection-start-column="75" selection-end-line="2" selection-end-column="75" />
+        <state vertical-scroll-proportion="0.4679803" vertical-offset="75" max-vertical-offset="1185">
+          <caret line="24" column="54" selection-start-line="24" selection-start-column="54" selection-end-line="24" selection-end-column="54" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#div#3;n#div#0;n#div#1;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#3;n#div#0;n#div#1;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#0;n#div#0;n#div#0;n#div#3;n#div#0;n#div#1;n#div#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webapp/public/js/viewmodels/pedidos_activos.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-7.769231" vertical-offset="128" max-vertical-offset="1620">
+          <caret line="22" column="40" selection-start-line="22" selection-start-column="32" selection-end-line="22" selection-end-column="40" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webapp/public/js/services/parser.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.6445498" vertical-offset="2067" max-vertical-offset="3255">
+          <caret line="165" column="107" selection-start-line="165" selection-start-column="107" selection-end-line="165" selection-end-column="107" />
           <folding />
         </state>
       </provider>

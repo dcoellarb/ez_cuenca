@@ -13,7 +13,6 @@
     var local_rootScope;
     var local_scope;
     var local_location;
-    var local_uiModal;
     var local_pedidos_en_curso_viewmodel;
 
     // Constructor
@@ -22,14 +21,12 @@
     // "Public" methods
     var verDetalle;
     var finalizar;
-    var cancelarProveedor;
 
     // Methods
 
     //Data callbacks
     var get_pedidos_en_cursor_callback;
     var finalizar_pedido_callback;
-    var cancelar_pedido_proveedor_callback;
 
     //Notifications callbacks
     var pedido_iniciado_callback;
@@ -46,12 +43,10 @@
             local_rootScope = $rootScope;
             local_scope = $scope;
             local_location = $location;
-            local_uiModal = $uibModal;
             local_pedidos_en_curso_viewmodel = pedidos_en_curso_viewmodel;
 
             ctlr.verDetalle = verDetalle;
             ctlr.finalizar = finalizar;
-            ctlr.cancelarProveedor = cancelarProveedor;
 
             init();
         });
@@ -80,22 +75,8 @@
     finalizar = function(pedido) {
         local_pedidos_en_curso_viewmodel.finalizar_pedido(pedido,finalizar_pedido_callback)
     };
-    // Methods
-    cancelarProveedor = function(pedido){
-        local_scope.confirm_message = "Esta seguro de cancelar este pedido?"
-        var modalInstance = local_uiModal.open({
-            animation: local_scope.animationsEnabled,
-            templateUrl: 'confirm_dialog.html',
-            controller: 'ConfirmDialogController as ctlr',
-            scope: local_scope
-        });
 
-        modalInstance.result.then(function (result) {
-            local_pedidos_en_curso_viewmodel.cancelar_pedido_proveedor(pedido,cancelar_pedido_proveedor_callback)
-        }, function () {
-            console.log("Modal canceled.");
-        });
-    };
+    // Methods
 
     //Data callbacks
     get_pedidos_en_cursor_callback = function(error,results){
@@ -106,11 +87,6 @@
 
         ctlr.pedidos = results;
         local_scope.$apply();
-    };
-    cancelar_pedido_proveedor_callback = function(error,result){
-        if (!error){
-            local_pedidos_en_curso_viewmodel.get_pedidos_en_curso(get_pedidos_en_cursor_callback);
-        }
     };
     finalizar_pedido_callback = function(error,result) {
         if (!error){

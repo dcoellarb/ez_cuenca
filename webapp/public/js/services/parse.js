@@ -50,6 +50,10 @@
     var local_save_file;
     var local_save_cliente;
     var local_save_proveedor;
+    var local_agregar_notificaction;
+    var local_notifications_count;
+    var local_get_notifications;
+    var local_clear_notifications;
 
     //Methods:
     var get_current_user_role;
@@ -270,6 +274,18 @@
         },
         save_proveedor : function(params,callback){
             local_save_proveedor(params,callback);
+        },
+        agregar_notification : function(params,callback){
+            local_agregar_notificaction(params,callback);
+        },
+        notifications_count : function(params,callback){
+            local_notifications_count(params,callback);
+        },
+        get_notifications : function(params,callback){
+            local_get_notifications(params,callback);
+        },
+        clear_notifications : function(params,callback){
+            local_clear_notifications(params,callback);
         }
     };
 
@@ -966,6 +982,104 @@
             s_proveedor(params,null,null);
         }
     };
+    local_agregar_notificaction = function(params,callback){
+        if (params[1]){
+            var Notification = Parse.Object.extend("Notification");
+
+            if (params[1].get("Proveedor")) {
+                var notificationProveedor = new Notification();
+                notificationProveedor.set("Descripcion",params[0]);
+                notificationProveedor.set("Leida",false);
+                notificationProveedor.set("Pedido",params[1]);
+
+                var acl = new Parse.ACL();
+                acl.setReadAccess(params[1].get("Proveedor").get("user").id, true);
+                acl.setWriteAccess(params[1].get("Proveedor").get("user").id, true);
+                notificationProveedor.setACL(acl);
+
+                notificationProveedor.save(null, {
+                    success: function(result) {
+                        callback(params,null,result);
+                    },
+                    error: function(result, error) {
+                        console.log(error.message)
+                        callback(params,error,null);
+                    }
+                });
+            }
+            if (params[1].get("Transportista")) {
+                var notificationTransportista = new Notification();
+                notificationTransportista.set("Descripcion",params[0]);
+                notificationTransportista.set("Leida",false);
+                notificationTransportista.set("Pedido",params[1]);
+
+                var acl = new Parse.ACL();
+                acl.setReadAccess(params[1].get("Transportista").get("user").id, true);
+                acl.setWriteAccess(params[1].get("Transportista").get("user").id, true);
+                notificationTransportista.setACL(acl);
+
+                notificationTransportista.save(null, {
+                    success: function(result) {
+                        callback(params,null,result);
+                    },
+                    error: function(result, error) {
+                        console.log(error.message)
+                        callback(params,error,null);
+                    }
+                });
+            }
+        }
+    };
+    local_notifications_count = function(params,callback){
+        var Notification = Parse.Object.extend("Notification");
+        var query = new Parse.Query(Notification);
+        query.equalTo("Leida", false);
+        query.count({
+            success: function(count) {
+                callback(params,null,count);
+            },
+            error: function(error) {
+                callback(params,error,null);
+            }
+        });
+    };
+    local_get_notifications = function(params,callback){
+        var Notification = Parse.Object.extend("Notification");
+        var query = new Parse.Query(Notification);
+        query.include(["Pedido.Transportista"]);
+        query.descending("createdAt");
+        query.find({
+            success: function(results) {
+                callback(params,null,results);
+            },
+            error: function(error) {
+                callback(params,error,null);
+            }
+        });
+    };
+    local_clear_notifications = function(params,callback){
+        var Notification = Parse.Object.extend("Notification");
+        var query = new Parse.Query(Notification);
+        query.equalTo("Leida", false);
+        query.find({
+            success: function(results) {
+                results.forEach(function (element,index,array){
+                    element.set("Leida",true)
+                });
+                Parse.Object.saveAll(results,{
+                    success: function(results) {
+                        callback(params,null,results);
+                    },
+                    error: function(error) {
+                        callback(params,error,null);
+                    }
+                });
+            },
+            error: function(error) {
+                callback(params,error,null);
+            }
+        });
+    };
 
     //Methods
     get_current_user_role = function(params,callback){
@@ -1136,6 +1250,7 @@
             params[0].add('TransportistasBloqueados',params[0].get('Transportista').id);
             params[0].unset('Transportista');
             params[0].unset('HoraDisponible');
+            params[0].unset('HoraSeleccion');
             params[0].set('Estado',local_root_scope.pedidos_estados.Pendiente);
 
             var acl = new Parse.ACL(result.get("user"));
@@ -1174,6 +1289,7 @@
         if (!error) {
             params[0].set('Estado','Activo');
             params[0].set('Transportista',params[1]);
+            params[0].set('HoraSeleccion',new Date());
             params[0].set('HoraDisponible',params[1].get("HoraDisponible"));
 
             var acl = new Parse.ACL(params[2].get("user"));

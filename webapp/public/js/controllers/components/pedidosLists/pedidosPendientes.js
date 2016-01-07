@@ -117,7 +117,9 @@
         local_location.path("/detallePedido/" + pedido.id);
     };
     proveedor_tomar = function(pedido,transportista){
-        local_pedidos_pendientes_viewmodel.proveedor_tomar_pedido(pedido,transportista,proveedor_tomar_pedido_callback)
+        if ((local_rootScope.proveedor.get("Saldo") - pedido.object.get("Comision")) >= local_rootScope.proveedor.get("SaldoMin")){
+            local_pedidos_pendientes_viewmodel.proveedor_tomar_pedido(pedido,transportista,proveedor_tomar_pedido_callback)
+        }
     };
     proveedor_confirmar = function(pedido,transportista){
         local_pedidos_pendientes_viewmodel.proveedor_confirmar_pedido(pedido,transportista,proveedor_confirmar_pedido_callback)

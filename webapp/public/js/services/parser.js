@@ -10,9 +10,11 @@
 
     //Public "Methods"
     var local_getJson;
-    var getTransportistaJson;
-    var getProveedorJson;
-    var local_parseProveedorIntoTransportista
+    var local_getTransportistaJson;
+    var local_getProveedorJson;
+    var local_getClienteJson;
+    var local_parseProveedorIntoTransportista;
+    var local_getNotificationJson;
 
     //Methods
     var getTimer;
@@ -25,10 +27,11 @@
 
             return {
                 getJson : function(element){return local_getJson(element);},
-                getTransportistaJson : function(element){return getTransportistaJson(element);},
-                getClienteJson : function(element){return getClienteJson(element);},
-                getProveedorJson : function(element){return getProveedorJson(element);},
-                parseProveedorIntoTransportista : function(transportistaJson,proveedor){ return local_parseProveedorIntoTransportista(transportistaJson,proveedor) }
+                getTransportistaJson : function(element){return local_getTransportistaJson(element);},
+                getClienteJson : function(element){return local_getClienteJson(element);},
+                getProveedorJson : function(element){return local_getProveedorJson(element);},
+                parseProveedorIntoTransportista : function(transportistaJson,proveedor){ return local_parseProveedorIntoTransportista(transportistaJson,proveedor) },
+                getNotificationJson : function(element){ return local_getNotificationJson(element) }
             };
         });
 
@@ -87,7 +90,7 @@
         }
         return json;
     };
-    getClienteJson = function(element){
+    local_getClienteJson = function(element){
         var json = {};
         if (element){
             json =  {
@@ -106,7 +109,7 @@
         }
         return json;
     };
-    getProveedorJson = function(element){
+    local_getProveedorJson = function(element){
         var json = {};
         if (element){
             json =  {
@@ -125,7 +128,7 @@
         }
         return json;
     };
-    getTransportistaJson = function(element){
+    local_getTransportistaJson = function(element){
         var json = {};
         if (element){
             json =  {
@@ -155,22 +158,32 @@
         }
         return json;
     };
-
     local_parseProveedorIntoTransportista = function(transportistaJson, proveedor){
         transportistaJson.photo = "resources/images/account_circle.png";
         if (proveedor.get("Imagen")){
             transportistaJson.photo = proveedor.get("Imagen").url();
         }
-        transportistaJson.referencia = proveedor.get("Nombre");
+        transportistaJson.referencia = proveedor.get("Nombre") + "(" + transportistaJson.descripcion + ")";
         return transportistaJson;
     };
-
-
+    local_getNotificationJson = function(element){
+        var json = {};
+        if (element){
+            json =  {
+                object : element,
+                id : element.id,
+                descripcion : element.get("Descripcion"),
+                creacion : local_utils.formatDate(element.get("createdAt")),
+                leida : element.get("Leida")
+            };
+        }
+        return json;
+    };
 
     //Methods
     getTimer = function(element){
         if (element.get('Estado') == 'PendienteConfirmacion') {
-            var horaEnd = element.get('HoraSeleccion');
+            var horaEnd = new Date(element.get('HoraSeleccion'));
             var horaCurrent = new Date();
             horaEnd.setMinutes(horaEnd.getMinutes() + 30);
 

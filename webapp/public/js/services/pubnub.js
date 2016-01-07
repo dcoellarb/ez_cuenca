@@ -42,7 +42,9 @@
                 pedido_cancelado_confirmado_transportista : "pedido_cancelado_confirmado_transportista",
                 pedido_cancelado_confirmado_proveedor : "pedido_cancelado_confirmado_proveedor",
                 pedido_timeout : "pedido_timeout",
-                transportista_habilitado : "transportista_habilitado"
+                transportista_habilitado : "transportista_habilitado",
+                nueva_notificacion : "nueva_notificacion",
+                clear_notifications : "clear_notifications",
             };
 
             for(subscribe_channel in $rootScope.channels){

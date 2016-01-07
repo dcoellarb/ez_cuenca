@@ -23,14 +23,12 @@
     var verDetalle;
     var iniciar;
     var cancelar;
-    var cancelarProveedor;
 
     // Methods
 
     //Data callbacks
     var get_pedidos_activos_callback;
     var cancelar_pedido_callback;
-    var cancelar_pedido_proveedor_callback;
     var iniciar_pedido_callback;
 
     //Notifications callbacks
@@ -54,7 +52,6 @@
             ctlr.verDetalle = verDetalle;
             ctlr.iniciar = iniciar;
             ctlr.cancelar = cancelar;
-            ctlr.cancelarProveedor = cancelarProveedor;
 
             init();
         });
@@ -93,21 +90,6 @@
             console.log("Modal canceled.");
         });
     };
-    cancelarProveedor = function(pedido){
-        local_scope.confirm_message = "Esta seguro de cancelar este pedido?"
-        var modalInstance = local_uiModal.open({
-            animation: local_scope.animationsEnabled,
-            templateUrl: 'confirm_dialog.html',
-            controller: 'ConfirmDialogController as ctlr',
-            scope: local_scope
-        });
-
-        modalInstance.result.then(function (result) {
-            local_pedidos_activos_viewmodel.cancelar_pedido_proveedor(pedido,cancelar_pedido_proveedor_callback)
-        }, function () {
-            console.log("Modal canceled.");
-        });
-    };
 
     // Methods
 
@@ -125,11 +107,6 @@
         local_pedidos_activos_viewmodel.get_pedidos_activos(get_pedidos_activos_callback);
     };
     cancelar_pedido_callback = function(error,result){
-        if (!error){
-            local_pedidos_activos_viewmodel.get_pedidos_activos(get_pedidos_activos_callback);
-        }
-    };
-    cancelar_pedido_proveedor_callback = function(error,result){
         if (!error){
             local_pedidos_activos_viewmodel.get_pedidos_activos(get_pedidos_activos_callback);
         }

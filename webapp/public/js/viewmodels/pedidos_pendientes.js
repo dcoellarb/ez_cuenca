@@ -142,6 +142,9 @@
                             local_transportista_statistics_callback([null,pedido],null,null);
                         }
                     }else if (local_rootScope.loggedInRole.getName() == "proveedor"){
+                        if ((local_rootScope.proveedor.get("Saldo") - pedido.object.get("Comision")) < local_rootScope.proveedor.get("SaldoMin")){
+                            pedido.valores = pedido.valores + " - Saldo Insuficiente!!!"
+                        }
                         if (element.get("Estado") == local_rootScope.pedidos_estados.Pendiente || element.get("Estado") == local_rootScope.pedidos_estados.PendienteConfirmacionProveedor){
                             local_data_services.transportistas_proveedor([element,pedido],local_transportistas_proveedor_callback);
                         }else if (element.get("Estado") == local_rootScope.pedidos_estados.PendienteConfirmacion) {
