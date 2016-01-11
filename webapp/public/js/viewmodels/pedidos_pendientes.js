@@ -188,11 +188,18 @@
                 return a.object.get("HoraDisponible") - b.object.get("HoraDisponible");
             });
             var count = 0;
-            pedido.transportistas.map(function(object){
-                count++;
-                object.priority = count;
-                return object;
-            });
+            pedido.transportistas = pedido.transportistas
+                .filter(function(object){
+                    return pedido.tipoTransporte == object.tipoTransporte
+                        || (pedido.tipoTransporte == "furgon_plataforma"
+                            && (object.tipoTransporte == "furgon" ||  object.tipoTransporte == "plataforma"))
+                })
+                .map(function(object) {
+                    count++;
+                    object.priority = count;
+                    return object;
+                }
+            );
             pedidosAux.push(pedido);
         }
         local_get_pedidos_pendientes_merge_callback(params,null,null);
@@ -212,12 +219,12 @@
         confirmar_pedido_callback(error,null);
     };
     local_rechazar_pedido_callback = function(params,error,results){
-        local_rootScope.$broadcast(local_rootScope.channels.pedido_rechazado, params[0]);
+        //local_rootScope.$broadcast(local_rootScope.channels.pedido_rechazado, params[0]);
         local_pubnub_services.publish(local_rootScope.channels.pedido_rechazado,{id:params[0].id})
         rechazar_pedido_callback(error,null);
     };
     local_proveedor_tomar_pedido_callback = function(params,error,results){
-        local_rootScope.$broadcast(local_rootScope.channels.pedido_tomado, params[0]);
+        //local_rootScope.$broadcast(local_rootScope.channels.pedido_tomado, params[0]);
         local_pubnub_services.publish(local_rootScope.channels.pedido_tomado,{id:params[0].id})
         proveedor_tomar_pedido_callback(error,null);
     };

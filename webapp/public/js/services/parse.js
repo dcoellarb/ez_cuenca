@@ -24,6 +24,7 @@
     var local_pedidos_en_curso;
     var local_get_pedido;
     var local_get_pedidos_completados;
+    var local_get_pedidos_completados_no_calificados;
     var local_get_historico_pedidos;
     var local_confirmar_pedido;
     var local_rechazar_pedido;
@@ -54,6 +55,7 @@
     var local_notifications_count;
     var local_get_notifications;
     var local_clear_notifications;
+    var local_rate_pedidos;
 
     //Methods:
     var get_current_user_role;
@@ -186,6 +188,13 @@
                 user_context_initialization_quebe.push({function:local_get_pedidos_completados,params:params,callback:callback});
             }
         },
+        get_pedidos_completados_no_calificados : function(params,callback) {
+            if (!user_context_initialization_in_progress){
+                local_get_pedidos_completados_no_calificados(params,callback);
+            }else{
+                user_context_initialization_quebe.push({function:local_get_pedidos_completados_no_calificados,params:params,callback:callback});
+            }
+        },
         get_historico_pedidos : function(params,callback) {
             if (!user_context_initialization_in_progress){
                 local_get_historico_pedidos(params,callback);
@@ -286,6 +295,9 @@
         },
         clear_notifications : function(params,callback){
             local_clear_notifications(params,callback);
+        },
+        rate_pedidos : function(params,callback){
+            local_rate_pedidos(params,callback);
         }
     };
 
@@ -315,15 +327,11 @@
         pedido.set("HoraCarga", data.HoraCarga);
         pedido.set("HoraEntrega", data.HoraEntrega);
         pedido.set("Producto", data.Producto);
-        pedido.set("TipoUnidad", data.TipoUnidad);
         pedido.set("PesoDesde", data.PesoDesde);
         pedido.set("PesoHasta", data.PesoHasta);
-        pedido.set("Unidades", data.Unidades);
         pedido.set("Valor", data.Valor);
         pedido.set("TipoTransporte", data.TipoTransporte);
         pedido.set("CajaRefrigerada", data.CajaRefrigerada);
-        pedido.set("CubicajeMin", data.CubicajeMinimo);
-        pedido.set("ExtensionMin", data.ExtensionMinima);
         pedido.set("empresa", cliente);
 
         if (proveedor) {
@@ -582,6 +590,25 @@
             }
         });
     };
+    local_get_pedidos_completados_no_calificados = function(params,callback) {
+        var pedido = Parse.Object.extend("Pedido");
+        var query = new Parse.Query(pedido);
+        query.equalTo("Estado", "Finalizado");
+        query.equalTo("Rate",undefined);
+        query.include("CiudadOrigen");
+        query.include("CiudadDestino");
+        query.include("Transportista");
+        query.include("Proveedor");
+        query.find({
+            success: function(results) {
+                callback(params,null,results);
+            },
+            error: function(error) {
+                console.log("Error: " + error.code + " " + error.message);
+                callback(params,error,null);
+            }
+        });
+    };
     local_get_historico_pedidos = function(params,callback) {
         var pedido = Parse.Object.extend("Pedido");
         var query = new Parse.Query(pedido);
@@ -633,16 +660,7 @@
         var Transportista = Parse.Object.extend("Transportista");
         var query = new Parse.Query(Transportista);
         if (pedido){
-            query.equalTo("TipoTransporte",pedido.get("TipoTransporte"));
-            if (pedido.get("TipoTransporte") == "furgon"){
-                query.greaterThanOrEqualTo("CubicajeMinimo",pedido.get("CubicajeMin"));
-                if (pedido.get("CajaRefrigerada")){
-                    query.equalTo("Refrigerado",true);
-                }
-            }
-            if (pedido.get("TipoTransporte") == "plataforma"){
-                query.greaterThanOrEqualTo("ExtensionMinima",pedido.get("ExtensionMin"));
-            }
+            query.greaterThanOrEqualTo("PesoMaximo",pedido.get("PesoDesde"));
         }
         query.equalTo("Deleted",false);
         query.addAscending("Nombre");
@@ -875,9 +893,8 @@
         transportista.object.set("Anio", transportista.anio);
         transportista.object.set("Color", transportista.color);
         transportista.object.set("TipoTransporte", transportista.tipoTransporte);
+        transportista.object.set("PesoMaximo",transportista.pesoMaximo);
         transportista.object.set("Refrigerado", transportista.refrigerado);
-        transportista.object.set("CubicajeMinimo", transportista.cubicajeMinimo);
-        transportista.object.set("ExtensionMinima", transportista.extensionMinima);
         transportista.object.set("Deleted",false);
         transportista.object.set("EsTercero",transportista.esTercero);
 
@@ -1076,6 +1093,28 @@
                 });
             },
             error: function(error) {
+                callback(params,error,null);
+            }
+        });
+    };
+    local_rate_pedidos = function(params,callback){
+        var Pedido = Parse.Object.extend("Pedido");
+
+        var pedidosParse = [];
+        params[0].forEach(function(element,index,array){
+            var pedido = element.object;
+            pedido.set("Rate",element.rate);
+            pedidosParse.push(pedido);
+        });
+
+        // save all the newly created objects
+        Parse.Object.saveAll(pedidosParse, {
+            success: function(objs) {
+                callback(params,null,objs);
+            },
+            error: function(error) {
+                console.log("Error saving ratings");
+                console.dir(error);
                 callback(params,error,null);
             }
         });

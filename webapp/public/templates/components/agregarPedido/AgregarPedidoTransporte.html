@@ -14,6 +14,14 @@
 </div>
 <div class="col-md-9 col-lg-7">
     <ul id="truckType" class="nav nav-pills nav-justified">
+        <li role="presentation" ng-class="{active : agrPedCtrl.data.TipoTransporte=='furgon_plataforma'}"><a href="" ng-click="agrPedCtrl.TipoTransporteSeleccionado('furgon_plataforma')">
+            <div style="display: flex;justify-content: center;">
+                <span class="icon-furgon" style="font-size: xx-large;"></span>
+            </div>
+            <div>
+                <span style="font-size: x-small;">Furgon o Plataforma</span>
+            </div>
+        </a></li>
         <li role="presentation" ng-class="{active : agrPedCtrl.data.TipoTransporte=='furgon'}"><a href="" ng-click="agrPedCtrl.TipoTransporteSeleccionado('furgon')">
             <div style="display: flex;justify-content: center;">
                 <span class="icon-furgon" style="font-size: xx-large;"></span>
@@ -72,23 +80,4 @@
         <label class="control-label" style="margin-right: 10px;">Refrigeracion</label>
         <switch id="inputCajaRefrigerada" name="inputCajaRefrigerada" ng-model="agrPedCtrl.data.CajaRefrigerada" class="green" on="Si" off="No"></switch>
     </div>
-    <div class="col-md-12 col-lg-3">
-        <label for="inputCubicajeMinimo" class="control-label">Extension Mínima (pies)</label>
-        <input type="number" class="form-control input" id="inputCubicajeMinimo" name="inputCubicajeMinimo" ng-model="agrPedCtrl.data.CubicajeMinimo" required>
-        <span class="invalid-label" ng-show="agrPedForm.inputCubicajeMinimo.$dirty && (agrPedForm.inputCubicajeMinimo.$invalid || agrPedCtrl.data.CubicajeMinimo <= 0)">
-            <span ng-show="agrPedForm.inputCubicajeMinimo.$error.required">Extension Minima es requerida.</span>
-            <span ng-show="agrPedForm.inputCubicajeMinimo.$dirty && agrPedCtrl.data.CubicajeMinimo <= 0">Extension Minima ser mayor a 0.</span>
-        </span>
-    </div>
 </div>
-<div class="col-sm-12" style="margin-top: 20px;margin-bottom: 20px" ng-show="agrPedCtrl.data.TipoTransporte=='plataforma'">
-    <div class="col-md-12 col-lg-3">
-        <label for="inputExtensionMinima" class="control-label">Extension Mínima (pies)</label>
-        <input type="number" class="form-control input" id="inputExtensionMinima" name="inputExtensionMinima" ng-model="agrPedCtrl.data.ExtensionMinima" required>
-        <span class="invalid-label" ng-show="agrPedForm.inputExtensionMinima.$dirty && (agrPedForm.inputExtensionMinima.$invalid || agrPedCtrl.data.ExtensionMinima <= 0)">
-            <span ng-show="agrPedForm.inputExtensionMinima.$error.required">Extension Minima es requerida.</span>
-            <span ng-show="agrPedForm.inputExtensionMinima.$dirty && agrPedCtrl.data.ExtensionMinima <= 0">Extension Minima ser mayor a 0.</span>
-        </span>
-    </div>
-</div>
-

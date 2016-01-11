@@ -1,5 +1,5 @@
 <div id="pedidosPendientes" class="panel panel-primary col-nopadding" ng-controller="PedidosPendientesController as ctlr">
-    <div class="panel-heading">Pedidos Pendientes ({{ctlr.pedidos.length}})</div>
+    <div class="panel-heading">Pendientes ({{ctlr.pedidos.length}} - por confirmar {{ctlr.pedidosPorConfirmarProveedor}})</div>
     <div class="panel-body col-nopadding pedidos-lists-pendientes-proveedor">
 
         <div ng-repeat="pedido in ctlr.pedidos" class="col-sm-12">
@@ -56,11 +56,14 @@
                 <div class="col-sm-5">
                     <span class="list-item-highlight list-item-block" style="font-size: 25pt;">{{pedido.timer.value}}</span>
                 </div>
-                <div class="col-sm-7 col-nopadding">
-                    <div class="list-item-inline" ng-repeat="transportista in pedido.transportistas">
-                        <img class="list-item-image-sm list-item-image-block" ng-src="{{transportista.photo}}" ng-click="ctlr.proveedor_confirmar(pedido,transportista)" style="cursor: pointer"/>
-                        <span class="list-item-md">{{transportista.referencia}}</span>
-                        <div class="list-item-check list-item-check-orange" style="left:30px;cursor:context-menu;" ng-attr-title="{{transportista.horaDisponible}}">
+                <div class="col-sm-7 col-nopadding" style="width: 150px;overflow-x: scroll;white-space: nowrap;">
+                    <div class="list-item-inline" ng-repeat="transportista in pedido.transportistas" style="text-align:center;">
+                        <img class="list-item-image-sm list-item-image-block" ng-src="{{transportista.photo}}"  ng-click="ctlr.proveedor_confirmar(pedido,transportista)" style="cursor: pointer;margin:auto;"/>
+                        <span class="list-item-md" style="margin:auto;display: block">
+                            {{transportista.referencia}}
+                            <span class="list-item-sm" ng-show="transportista.esTercero">(Tercero)</span>
+                        </span>
+                        <div class="list-item-check list-item-check-orange" style="cursor:context-menu;" ng-attr-title="{{transportista.horaDisponible}}">
                             <span style="color: white;">{{transportista.priority}}</span>
                         </div>
                     </div>

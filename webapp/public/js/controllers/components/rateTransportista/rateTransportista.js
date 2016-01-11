@@ -5,99 +5,68 @@
 
 (function(){
 
+    //Variables
+    var ctlr;
+    var loca_scope;
+    var local_uibModalInstance;
+    var local_utils;
+    var local_rate_transportista_modal_viewmodel;
+
+    //Constructos
+    var modal_init;
+
+    //Methods
+    //"Public" Methods
+    var modal_ok;
+    var modal_cancel;
+
+    //Data Callbacks
+    var local_get_pedidos_completados_callback;
+    var local_save_all_callback;
+
     angular.module("easyRuta")
-        .controller('RateTransportistaController',function($scope,$uibModal){
+        .controller('RateTransportistaModalController',function($scope,$uibModalInstance,utils,rate_transportista_modal_viewmodel){
 
-            var ctlr = this;
+            ctlr = this;
+            loca_scope = $scope;
+            local_uibModalInstance = $uibModalInstance;
+            local_utils = utils;
+            local_rate_transportista_modal_viewmodel = rate_transportista_modal_viewmodel;
 
+            ctlr.ok = modal_ok;
+            ctlr.cancel = modal_cancel;
+
+            modal_init();
         });
 
-    angular.module("easyRuta")
-        .controller('RateTransportistaModalController',function($scope,$uibModalInstance,utils){
-            utilities = utils;
-
-            var ctlr = this;
-
-            inicializarPedidos(ctlr,$scope)
-
-            $scope.ok = function () {
-                saveAll(ctlr,$uibModalInstance);
-            };
-
-            $scope.cancel = function () {
-                $uibModalInstance.dismiss('cancel');
-            };
-
-        });
-
-    var inicializarPedidos = function(ctlr,$scope){
-        var pedido = Parse.Object.extend("Pedido");
-        var query = new Parse.Query(pedido);
-        query.equalTo("Estado", "Finalizado");
-        query.equalTo("Rate",undefined);
-        query.include("CiudadOrigen");
-        query.include("CiudadDestino");
-        query.include("Transportista");
-        query.find({
-            success: function(results) {
-                ctlr.pedidos = new Array();
-                for (var i = 0; i < results.length; i++) {
-                    var pedido = {
-                        data : results[i],
-                        json : pedidoToJson(results[i])
-                    };
-                    pedido.background = "backgroud-photo-" + pedido.data.get("CiudadDestino").get("Nombre").toLowerCase();
-                    ctlr.pedidos.push(pedido);
-                }
-                $scope.$apply();
-            },
-            error: function(error) {
-                console.log("Error: " + error.code + " " + error.message);
-            }
-        });
-    }
-
-    var saveAll = function(ctlr,$uibModalInstance){
-        var Pedido = Parse.Object.extend("Pedido");
-
-        var pedidosParse = [];
-        for (var i = 0; i < ctlr.pedidos.length; i++) {
-            var pedido = ctlr.pedidos[i].data;
-            pedido.set("Rate",ctlr.pedidos[i].json.rate);
-            pedidosParse.push(pedido);
-        }
-
-        // save all the newly created objects
-        Parse.Object.saveAll(pedidosParse, {
-            success: function(objs) {
-                $uibModalInstance.close();
-            },
-            error: function(error) {
-                console.log("Error saving ratings");
-                console.dir(error);
-                //TODO - let the user know
-            }
-        });
-    }
-
-    var pedidoToJson = function(pedido){
-        var imageUrl = "";
-        if (pedido.get("Transportista").get("photo")){
-            imageUrl = pedido.get("Transportista").get("photo").url();
-        }
-        var pedidoJson = {
-            id : pedido.id,
-            viaje : pedido.get("CiudadOrigen").get("Nombre") + " - " + pedido.get("CiudadDestino").get("Nombre"),
-            carga : utilities.formatDate(pedido.get("HoraFinalizacion")),
-            estado : pedido.get("Estado"),
-            rate : pedido.get("Rate"),
-            transportista : {
-                nombre: pedido.get("Transportista").get("Nombre"),
-                telefono: pedido.get("Transportista").get("Telefono"),
-                imageUrl: imageUrl
-            }
-        };
-
-        return pedidoJson;
+    //Constructor
+    modal_init= function(){
+        local_rate_transportista_modal_viewmodel.get_pedidos_completados(local_get_pedidos_completados_callback)
     };
+
+    //Methods
+
+    //"Public" Methods
+    modal_ok = function () {
+        local_rate_transportista_modal_viewmodel.save_all(ctlr.pedidos,local_save_all_callback);
+    };
+    modal_cancel = function () {
+        local_uibModalInstance.dismiss('cancel');
+    };
+
+    //Data Callbacks
+    local_get_pedidos_completados_callback = function(error,results){
+        if (!error){
+            ctlr.pedidos = results;
+            loca_scope.$apply()
+        }
+    };
+    local_save_all_callback = function(error,results){
+        if (!error) {
+            local_uibModalInstance.close();
+        }else{
+
+            //TODO - let user know
+        }
+    }
 })();

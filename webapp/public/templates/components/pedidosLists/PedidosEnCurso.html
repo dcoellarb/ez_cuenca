@@ -1,5 +1,5 @@
 <div id="pedidosActivos" class="panel panel-default col-nopadding" ng-controller="PedidosEnCursoController as ctlr">
-    <div class="panel-heading">Pedidos en Curso ({{ctlr.pedidos.length}})</div>
+    <div class="panel-heading">En Curso ({{ctlr.pedidos.length}})</div>
     <div class="panel-body col-nopadding pedidos-lists">
         <div ng-repeat="pedido in ctlr.pedidos" class="pedido-item">
             <div ng-click="ctlr.verDetalle(pedido)" style="cursor: pointer;">

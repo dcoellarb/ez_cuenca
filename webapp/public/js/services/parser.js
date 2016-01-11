@@ -59,30 +59,17 @@
                 image : "resources/images/" + element.get("CiudadDestino").get("Nombre").toLowerCase() + ".jpg",
                 cantidad : "",
                 transporte : "Tipo de camion: " + element.get("TipoTransporte"),
+                tipoTransporte : element.get("TipoTransporte"),
                 transporte_extra : "",
                 transporte_image : "icon-" + element.get("TipoTransporte"),
                 producto : element.get("Producto"),
+                cantidad : "Peso desde: " + element.get("PesoDesde") + "Tn hasta: " + element.get("PesoHasta") + "Tn",
                 valores : "Valor: " + local_utils.formatCurrency(element.get("Valor")) + " (Comision: " + local_utils.formatCurrency(element.get("Comision")) + ")",
                 valor : local_utils.formatCurrency(element.get("Valor")) + " (Comision: " + local_utils.formatCurrency(element.get("Comision")) + ")"
             }
 
             if (json.estado == "PendienteConfirmacion" || json.estado == "PendienteConfirmacionProveedor"){
                 json.timer = getTimer(element);
-            }
-
-            if (element.get("TipoUnidad") == "peso"){
-                json.cantidad = "Peso desde: " + element.get("PesoDesde") + "Tn hasta: " + element.get("PesoHasta") + "Tn";
-            }else{
-                json.cantidad = element.get("Unidades") + " unidades";
-            }
-
-            if (element.get("TipoTransporte") == "furgon") {
-                json.transporte_extra = "Extension Minima: " + element.get("CubicajeMin") + " pies";
-                if (element.get("CajaRefrigerada")){
-                    json.transporte_extra += " (Requiere caja refrigerada)";
-                }
-            }else if (element.get("TipoTransporte") == "plataforma"){
-                json.transporte_extra = "Extension Minima: " + element.get("ExtensionMin") + " pies";
             }
             if (element.get("Rate")){
                 json.rating = element.get("Rate");
@@ -140,10 +127,9 @@
                 estado : element.get("Estado"),
                 horaDisponible : local_utils.formatDate(element.get("HoraDisponible")),
                 tipoTransporte : element.get("TipoTransporte"),
-                cubicajeMinimo : element.get("CubicajeMinimo"),
-                extensionMinima : element.get("ExtensionMinima"),
                 refrigerado : element.get("Refrigerado"),
-                esTercero : element.get("EsTercero")
+                esTercero : element.get("EsTercero"),
+                pesoMaximo : element.get("PesoMaximo")
             };
 
             if (local_root_scope.proveedor){
@@ -163,7 +149,7 @@
         if (proveedor.get("Imagen")){
             transportistaJson.photo = proveedor.get("Imagen").url();
         }
-        transportistaJson.referencia = proveedor.get("Nombre") + "(" + transportistaJson.descripcion + ")";
+        transportistaJson.referencia = proveedor.get("Nombre") + " (" + transportistaJson.descripcion + ")";
         return transportistaJson;
     };
     local_getNotificationJson = function(element){

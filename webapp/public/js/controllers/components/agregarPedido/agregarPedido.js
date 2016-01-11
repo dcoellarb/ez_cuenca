@@ -25,7 +25,6 @@
     var guardar_como_plantilla;
     var limpiar;
     var tipo_transportista_seleccionado;
-    var change_unidad;
     var plantilla_selected;
     var delete_plantilla;
     var toggle_form;
@@ -69,7 +68,6 @@
             ctlr.GuardarComoPlantilla = guardar_como_plantilla;
             ctlr.Limpiar = limpiar;
             ctlr.TipoTransporteSeleccionado = tipo_transportista_seleccionado;
-            ctlr.ChangeUnidad = change_unidad;
             ctlr.PlantillaSelected = plantilla_selected;
             ctlr.DeletePlantilla  = delete_plantilla
             ctlr.ToggleForm = toggle_form;
@@ -144,16 +142,6 @@
     tipo_transportista_seleccionado = function (TipoTransporte) {
         ctlr.data.TipoTransporte = TipoTransporte;
     };
-    change_unidad = function (unidad) {
-        ctlr.data.TipoUnidad = unidad;
-        if (unidad == "peso") {
-            $('#unidades_container').hide();
-            $('#peso_container').show();
-        } else {
-            $('#unidades_container').show();
-            $('#peso_container').hide();
-        }
-    };
     plantilla_selected = function (id) {
         local_agregar_pedido_viewmodel.get_plantilla(id,local_get_plantilla_callback);
     };
@@ -193,14 +181,10 @@
             HoraEntrega : new Date(),
             Producto : "",
             Valor : 0,
-            TipoUnidad : "peso",
             PesoDesde : 0,
             PesoHasta : 0,
-            Unidades : 0,
             TipoTransporte : "furgon",
-            ExtensionMinima : 43,
-            CajaRefrigerada : false,
-            CubicajeMinimo : 0
+            CajaRefrigerada : false
         };
         if (local_form){
             local_form.$setPristine();
@@ -296,14 +280,10 @@
                 HoraEntrega: results.get("HoraEntrega"),
                 Producto: results.get("Producto"),
                 Valor: results.get("Valor"),
-                TipoUnidad: results.get("TipoUnidad"),
                 PesoDesde: results.get("PesoDesde"),
                 PesoHasta: results.get("PesoHasta"),
-                Unidades: results.get("Unidades"),
                 TipoTransporte: results.get("TipoTransporte"),
-                ExtensionMinima: results.get("ExtensionMin"),
-                CajaRefrigerada: results.get("CajaRefrigerada"),
-                CubicajeMinimo: results.get("CubicajeMin"),
+                CajaRefrigerada: results.get("CajaRefrigerada")
             };
 
             if (results.get("Proveedor")){

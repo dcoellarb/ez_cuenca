@@ -6,8 +6,10 @@
     <div class="panel-body col-nopadding pedidos-lists-transportistas">
         <div ng-repeat="transportista in ctlr.transportistas" class="col-sm-12 col-md-6" style="text-align:center;cursor: pointer" ng-click="ctlr.DetalleTransportista(transportista)">
             <img class="list-item-image-sm list-item-image-block" ng-src="{{transportista.photo}}" style="margin:auto;"/>
-            <span class="list-item-md" style="margin:auto;display: block">{{transportista.referencia}}</span>
-            <span class="list-item-sm" style="margin:auto;" ng-show="transportista.esTercero">(Tercero)</span>
+            <span class="list-item-md" style="margin:auto;display: block">
+                {{transportista.referencia}}
+                <span class="list-item-sm" style="margin:auto;" ng-show="transportista.esTercero">(Tercero)</span>
+            </span>
             <div class="list-item-check" ng-class="transportista.checkColor" ng-attr-title="{{transportista.estado}}">
                 <span class="glyphicon" ng-class="transportista.checkGlyphicon" style="color: white;"/>
             </div>
