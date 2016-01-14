@@ -661,6 +661,7 @@
         var query = new Parse.Query(Transportista);
         if (pedido){
             query.greaterThanOrEqualTo("PesoMaximo",pedido.get("PesoDesde"));
+            query.lessThanOrEqualTo("PesoMaximo",pedido.get("PesoHasta"));
         }
         query.equalTo("Deleted",false);
         query.addAscending("Nombre");
