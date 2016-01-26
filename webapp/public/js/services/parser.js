@@ -129,7 +129,6 @@
                 tipoTransporte : element.get("TipoTransporte"),
                 refrigerado : element.get("Refrigerado"),
                 esTercero : element.get("EsTercero"),
-                pesoMaximo : element.get("PesoMaximo")
             };
 
             if (local_root_scope.proveedor){

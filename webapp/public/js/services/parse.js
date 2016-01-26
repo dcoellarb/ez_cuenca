@@ -660,8 +660,7 @@
         var Transportista = Parse.Object.extend("Transportista");
         var query = new Parse.Query(Transportista);
         if (pedido){
-            query.greaterThanOrEqualTo("PesoMaximo",pedido.get("PesoDesde"));
-            query.lessThanOrEqualTo("PesoMaximo",pedido.get("PesoHasta"));
+            query.equalTo("TipoTransporte",pedido.get("TipoTransporte"));
         }
         query.equalTo("Deleted",false);
         query.addAscending("Nombre");
@@ -894,7 +893,6 @@
         transportista.object.set("Anio", transportista.anio);
         transportista.object.set("Color", transportista.color);
         transportista.object.set("TipoTransporte", transportista.tipoTransporte);
-        transportista.object.set("PesoMaximo",transportista.pesoMaximo);
         transportista.object.set("Refrigerado", transportista.refrigerado);
         transportista.object.set("Deleted",false);
         transportista.object.set("EsTercero",transportista.esTercero);
