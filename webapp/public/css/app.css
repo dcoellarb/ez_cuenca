@@ -82,6 +82,14 @@ hr {
     font-weight: 400;
     font-size: 12pt;
 }
+.list-heading3{
+    font-weight: 400;
+    font-size: 10pt;
+}
+.list-heading4{
+    font-weight: 400;
+    font-size: 8pt;
+}
 .list-item-block{
     display: block;
     margin: auto;
@@ -383,6 +391,12 @@ hr {
 }
 .backgroud-photo-manta{
     background-image: url("../resources/images/manta.jpg");
+}
+.backgroud-photo-quevedo{
+    background-image: url("../resources/images/quevedo.jpg");
+}
+.backgroud-photo-posorja{
+    background-image: url("../resources/images/posorja.jpg");
 }
 
 .backgroud-photo-heading{
