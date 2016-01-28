@@ -37,6 +37,7 @@
     angular.module("easyRuta")
         .controller('MasterPageController',function($rootScope,$scope,$window,$uibModal,master_page_viewmodel,utils) {
 
+
             ctlr = this;
             local_rootScope = $rootScope;
             master_scope = $scope;
@@ -58,8 +59,11 @@
     //Constructor
     init = function(){
         local_toggleLogin(false);
-        local_master_page_viewmodel.get_saldo(local_get_saldo_callback);
-        local_master_page_viewmodel.get_notifications_count(local_get_notifications_count_callback);
+
+        if (Parse.User.current()) {
+            local_master_page_viewmodel.get_saldo(local_get_saldo_callback);
+            local_master_page_viewmodel.get_notifications_count(local_get_notifications_count_callback);
+        }
 
         local_rootScope.$on(local_rootScope.channels.pedido_confirmado, pedido_confirmado_callback);
         local_rootScope.$on(local_rootScope.channels.pedido_confirmado_proveedor, pedido_confirmado_proveedor_callback);

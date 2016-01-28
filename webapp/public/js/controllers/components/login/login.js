@@ -12,6 +12,19 @@
             ctlr.error = "";
 
             ctlr.Login = function(){
+                if (Parse.User.current()){
+                    $rootScope.loggedInRole = undefined;
+                    $rootScope.proveedor = undefined;
+                    $rootScope.cliente = undefined;
+                    Parse.User.logOut();
+
+                    login();
+                }else{
+                    login();
+                }
+            };
+
+            var login = function(){
                 Parse.User.logIn(ctlr.user.username, ctlr.user.password, {
                     success: function(user) {
                         data_services.initializar_user_context([],function(params,error,results){
@@ -32,7 +45,7 @@
                         $scope.$apply()
                     }
                 });
-            };
+            }
 
             ctlr.toggleLogin = function(show){
                 if (show){

@@ -6,6 +6,7 @@
 
     //Variable
     var local_root_scope;
+    var local_window;
     var user_context_initialization_in_progress = false;
     var user_context_initialization_quebe;
 
@@ -58,6 +59,7 @@
     var local_rate_pedidos;
 
     //Methods:
+    var logout;
     var get_current_user_role;
     var get_current_user_proveedor;
     var get_current_user_cliente;
@@ -85,12 +87,13 @@
     var increment_transportista_pedidos_cancelados;
 
     angular.module("easyRuta")
-        .run(function($rootScope){
+        .run(function($rootScope,$window){
 
             local_root_scope = $rootScope;
+            local_window = $window;
 
-            //Parse.initialize("VJTDwzZdvOVEjA6c2DnVHduEvOpY8p3Cx4KMwxUi", "zQ1tHay1kKYGRrr7psu8oddu2fnKuOF7EpAWbAdM");//PROD
-            Parse.initialize("2hLYHTAUJ9QXMWxQTXsOIZ2jXJLGtMauw2QN34fE", "xSiGu1HbOBQvzcd7ItdgGGyMq2IcpvKmCAFjhY2T");//QA
+            Parse.initialize("VJTDwzZdvOVEjA6c2DnVHduEvOpY8p3Cx4KMwxUi", "zQ1tHay1kKYGRrr7psu8oddu2fnKuOF7EpAWbAdM");//PROD
+            //Parse.initialize("2hLYHTAUJ9QXMWxQTXsOIZ2jXJLGtMauw2QN34fE", "xSiGu1HbOBQvzcd7ItdgGGyMq2IcpvKmCAFjhY2T");//QA
 
             if (Parse.User.current()) {
                 user_context_initialization_quebe = new Array();
@@ -416,6 +419,9 @@
                     },
                     error: function(error) {
                         console.log("Error: " + error.code + " " + error.message);
+                        if (error.code == 209){
+                            logout();
+                        }
                         if (count == cliente.get("Proveedores").length){
                             callback(params,null,proveedores);
                         }
@@ -434,6 +440,9 @@
             },
             error: function(error) {
                 console.log("Error: " + error.code + " " + error.message);
+                if (error.code == 209){
+                    logout();
+                }
                 callback(params,error,null);
             }
         });
@@ -447,6 +456,9 @@
             },
             error: function (error) {
                 console.log("Error: " + error.code + " " + error.message);
+                if (error.code == 209){
+                    logout();
+                }
                 callback(params,error,null);
             }
         });
@@ -462,12 +474,18 @@
                     },
                     error: function (myObject, error) {
                         console.log("Error: " + error.code + " " + error.message);
+                        if (error.code == 209){
+                            logout();
+                        }
                         callback(params,error,null);
                     }
                 });
             },
             error: function (error) {
                 console.log("Error: " + error.code + " " + error.message);
+                if (error.code == 209){
+                    logout();
+                }
                 callback(params,error,null);
             }
         });
@@ -481,6 +499,9 @@
             },
             error: function (error) {
                 console.log("Error: " + error.code + " " + error.message);
+                if (error.code == 209){
+                    logout();
+                }
                 callback(params,error,null);
             }
         });
@@ -510,6 +531,9 @@
             },
             error: function(error) {
                 console.log("Error: " + error.code + " " + error.message);
+                if (error.code == 209){
+                    logout();
+                }
                 callback(params,error,null);
             }
         });
@@ -528,6 +552,9 @@
             },
             error: function(error) {
                 console.log("Error: " + error.code + " " + error.message);
+                if (error.code == 209){
+                    logout();
+                }
                 callback(params,error,null);
             }
         });
@@ -546,6 +573,9 @@
             },
             error: function(error) {
                 console.log("Error: " + error.code + " " + error.message);
+                if (error.code == 209){
+                    logout();
+                }
                 callback(params,error,null);
             }
         });
@@ -586,6 +616,9 @@
             },
             error: function(error) {
                 console.log("Error: " + error.code + " " + error.message);
+                if (error.code == 209){
+                    logout();
+                }
                 callback(params,error,null);
             }
         });
@@ -605,6 +638,9 @@
             },
             error: function(error) {
                 console.log("Error: " + error.code + " " + error.message);
+                if (error.code == 209){
+                    logout();
+                }
                 callback(params,error,null);
             }
         });
@@ -624,6 +660,9 @@
             },
             error: function(error) {
                 console.log("Error: " + error.code + " " + error.message);
+                if (error.code == 209){
+                    logout();
+                }
                 callback(params,error,null);
             }
         });
@@ -670,6 +709,9 @@
             },
             error: function(error) {
                 console.log("Error: " + error.code + " " + error.message);
+                if (error.code == 209){
+                    logout();
+                }
                 callback(params,error,null);
             }
         });
@@ -850,6 +892,9 @@
             },
             error: function(error) {
                 console.log("Error: " + error.code + " " + error.message);
+                if (error.code == 209){
+                    logout();
+                }
                 callback(params,error,null);
             }
         });
@@ -864,6 +909,9 @@
             },
             error: function(error) {
                 console.log("Error: " + error.code + " " + error.message);
+                if (error.code == 209){
+                    logout();
+                }
                 callback(params,error,null);
             }
         });
@@ -1120,6 +1168,14 @@
     };
 
     //Methods
+    logout = function(){
+        local_root_scope.loggedInRole = undefined;
+        local_root_scope.proveedor = undefined;
+        local_root_scope.cliente = undefined;
+        Parse.User.logOut();
+
+        local_window.location.href = '/';
+    }
     get_current_user_role = function(params,callback){
         var query = new Parse.Query(Parse.Role);
         query.equalTo("users", Parse.User.current()).find({
@@ -1132,6 +1188,9 @@
             },
             error: function(error) {
                 console.log("Error: " + error.code + " " + error.message);
+                if (error.code == 209){
+                    logout();
+                }
                 callback(params,error,null);
             }
         });
@@ -1186,6 +1245,9 @@
             },
             error: function(error) {
                 console.log("Error: " + error.code + " " + error.message);
+                if (error.code == 209){
+                    logout();
+                }
                 callback(params,error,null);
             }
         });
@@ -1206,6 +1268,9 @@
             },
             error: function(error) {
                 console.log("Error: " + error.code + " " + error.message);
+                if (error.code == 209){
+                    logout();
+                }
                 callback(params,error,null);
             }
         });
@@ -1460,6 +1525,9 @@
             },
             error: function(error) {
                 console.log("Error: " + error.code + " " + error.message);
+                if (error.code == 209){
+                    logout();
+                }
                 callback(params,error,null);
             }
         });
@@ -1487,6 +1555,9 @@
             },
             error: function(error) {
                 console.log("Error: " + error.code + " " + error.message);
+                if (error.code == 209){
+                    logout();
+                }
                 callback(params,error,null);
             }
         });
