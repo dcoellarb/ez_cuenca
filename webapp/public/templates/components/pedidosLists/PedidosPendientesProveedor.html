@@ -5,21 +5,21 @@
         <div ng-repeat="pedido in ctlr.pedidos" class="col-sm-12">
 
             <div class="col-sm-2 list-item-image" style="margin-right: 20px;" ng-style="{'background-image': 'url(' + pedido.image + ')'}"/>
-            <div class="col-sm-3 col-nopadding" style="height:75px;width: 205px;overflow-x: scroll;white-space: nowrap;margin-right: 20px">
+            <div class="col-sm-3 col-nopadding" style="height:90px;width: 205px;overflow-x: scroll;white-space: nowrap;margin-right: 20px">
                 <span class="list-heading3 list-item-block">{{pedido.origenCompleto}}</span>
                 <span class="list-heading3 list-item-block">{{pedido.destinoCompleto}}</span>
                 <span class="list-item list-item-block">{{pedido.carga}}</span>
                 <span class="list-item list-item-block">{{pedido.entrega}}</span>
             </div>
-            <div class="col-sm-4 col-nopadding">
+            <div class="col-sm-3 col-nopadding">
                 <span class="list-item-highlight list-item-block">{{pedido.valores}}</span>
                 <span class="list-item list-item-block">{{pedido.cantidad}}</span>
                 <span class="list-item list-item-block">{{pedido.transporte}}</span>
                 <span class="list-item list-item-block">{{pedido.transporte_extra}}</span>
             </div>
             <div class="col-sm-4 col-nopadding" ng-show="pedido.estado == 'Pendiente'">
-                <div class="col-sm-9 col-nopadding" style="height:75px;width: 205px;overflow-x: scroll;white-space: nowrap;">
-                    <div class="list-item-inline" ng-repeat="transportista in pedido.transportistas" style="cursor:pointer;text-align:center;">
+                <div class="col-sm-9 col-nopadding" style="height:90px;width: 205px;overflow-x: scroll;white-space: nowrap;">
+                    <div class="list-item-inline" ng-repeat="transportista in pedido.transportistas" style="text-align:center;">
                         <span class="list-item-sm" ng-show="transportista.esTercero" style="margin:auto;display: block">(Tercero)</span>
                         <img class="list-item-image-sm list-item-image-block" ng-src="{{transportista.photo}}"  ng-click="ctlr.proveedor_tomar(pedido,transportista)" style="cursor: pointer;margin:auto;"/>
                         <span class="list-item-md" style="margin:auto;display: block">
@@ -51,10 +51,10 @@
             </div>
             <div class="col-sm-4 col-nopadding" ng-show="pedido.estado == 'PendienteConfirmacionProveedor'">
                 <span class="list-item list-item-block" style="margin-bottom: 10px;">Seleccione un transportista para confirmar, o presione <a class="link-danger" ng-click="ctlr.proveedor_rechazar(pedido)">rechazar.</a></span>
-                <div class="col-sm-5">
+                <div class="col-sm-4 col-nopadding">
                     <span class="list-item-highlight list-item-block" style="font-size: 25pt;">{{pedido.timer.value}}</span>
                 </div>
-                <div class="col-sm-7 col-nopadding" style="height:75px;width: 150px;overflow-x: scroll;white-space: nowrap;">
+                <div class="col-sm-8 col-nopadding" style="height:90px;width: 150px;overflow-x: scroll;white-space: nowrap;">
                     <div class="list-item-inline" ng-repeat="transportista in pedido.transportistas" style="cursor: pointer;text-align:center;" ng-attr-title="{{transportista.horaDisponible}}">
                         <span class="list-item-sm" ng-show="transportista.esTercero" style="margin:auto;display: block">(Tercero)</span>
                         <img class="list-item-image-sm list-item-image-block" ng-src="{{transportista.photo}}"  ng-click="ctlr.proveedor_confirmar(pedido,transportista)" style="cursor: pointer;margin:auto;"/>

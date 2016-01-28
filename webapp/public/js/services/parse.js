@@ -92,8 +92,8 @@
             local_root_scope = $rootScope;
             local_window = $window;
 
-            Parse.initialize("VJTDwzZdvOVEjA6c2DnVHduEvOpY8p3Cx4KMwxUi", "zQ1tHay1kKYGRrr7psu8oddu2fnKuOF7EpAWbAdM");//PROD
-            //Parse.initialize("2hLYHTAUJ9QXMWxQTXsOIZ2jXJLGtMauw2QN34fE", "xSiGu1HbOBQvzcd7ItdgGGyMq2IcpvKmCAFjhY2T");//QA
+            //Parse.initialize("VJTDwzZdvOVEjA6c2DnVHduEvOpY8p3Cx4KMwxUi", "zQ1tHay1kKYGRrr7psu8oddu2fnKuOF7EpAWbAdM");//PROD
+            Parse.initialize("2hLYHTAUJ9QXMWxQTXsOIZ2jXJLGtMauw2QN34fE", "xSiGu1HbOBQvzcd7ItdgGGyMq2IcpvKmCAFjhY2T");//QA
 
             if (Parse.User.current()) {
                 user_context_initialization_quebe = new Array();
