@@ -129,7 +129,8 @@
                     <input type="button" class="btn btn-danger" value="Delete" ng-click="ctlr.delete()" ng-show="ctlr.transportista.id"/>
                 </div>
                 <div class="col-sm-4 col-nopadding">
-                    <input type="button" class="btn btn-primary" value="Habilitar" ng-click="ctlr.habilitar()" ng-show="ctlr.transportista.estado == 'no disponible'" style="float: right"/>
+                    <input type="button" class="btn btn-primary" value="Habilitar" ng-click="ctlr.habilitar()" ng-show="ctlr.showHabilitar" style="float: right"/>
+                    <input type="button" class="btn btn-primary" value="Deshabilitar" ng-click="ctlr.deshabilitar()" ng-show="ctlr.showDeshabilitar" style="float: right"/>
                 </div>
             </div>
         </form>

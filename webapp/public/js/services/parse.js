@@ -57,6 +57,7 @@
     var local_get_notifications;
     var local_clear_notifications;
     var local_rate_pedidos;
+    var local_viajes_en_curso_transportista_count;
 
     //Methods:
     var logout;
@@ -301,6 +302,9 @@
         },
         rate_pedidos : function(params,callback){
             local_rate_pedidos(params,callback);
+        },
+        viajes_en_curso_transportista_count : function(params,callback){
+            local_viajes_en_curso_transportista_count(params,callback);
         }
     };
 
@@ -922,11 +926,12 @@
             var Transportista = Parse.Object.extend("Transportista");
             transportista.object = new Transportista();
             transportista.object.set("Saldo", 0);
-            transportista.object.set("Estado", "disponible");
-            transportista.object.set("HoraDisponible", new Date());
+            transportista.object.set("Saldo", -100);
+            transportista.object.set("Estado", local_root_scope.transportistas_estados.NoDisponible);
         }
 
         if (params[1]){
+            transportista.object.set("Saldo", 0);
             transportista.object.set("proveedor", params[1]);
         }
         transportista.object.set("Descripcion", transportista.descripcion);
@@ -942,6 +947,10 @@
         transportista.object.set("Color", transportista.color);
         transportista.object.set("TipoTransporte", transportista.tipoTransporte);
         transportista.object.set("Refrigerado", transportista.refrigerado);
+        transportista.object.set("Rating",0);
+        transportista.object.set("Eficiencia",0);
+        transportista.object.set("PedidosCancelados",0);
+        transportista.object.set("PedidosCompletados",0);
         transportista.object.set("Deleted",false);
         transportista.object.set("EsTercero",transportista.esTercero);
 
@@ -1166,7 +1175,33 @@
             }
         });
     };
+    local_viajes_en_curso_transportista_count = function(params,callback){
+        var Pedido = Parse.Object.extend("Pedido");
 
+        var queryPendientesConfirmacion = new Parse.Query(Pedido);
+        queryPendientesConfirmacion.equalTo("Estado",local_root_scope.pedidos_estados.PendienteConfirmacion);
+        var queryPendientesConfirmacionProveedor = new Parse.Query(Pedido);
+        queryPendientesConfirmacionProveedor.equalTo("Estado", local_root_scope.pedidos_estados.PendienteConfirmacionProveedor);
+        var queryActivo = new Parse.Query(Pedido);
+        queryActivo.equalTo("Estado", local_root_scope.pedidos_estados.Activo);
+        var queryEnCurso = new Parse.Query(Pedido);
+        queryEnCurso.equalTo("Estado", local_root_scope.pedidos_estados.EnCurso);
+        var queryCancelado = new Parse.Query(Pedido);
+        queryCancelado.equalTo("Estado", local_root_scope.pedidos_estados.Cancelado);
+        var queryCanceladoCliente = new Parse.Query(Pedido);
+        queryCanceladoCliente.equalTo("Estado", local_root_scope.pedidos_estados.CanceladoCliente);
+
+        var query = Parse.Query.or(queryPendientesConfirmacion, queryPendientesConfirmacionProveedor, queryActivo, queryEnCurso, queryCancelado, queryCanceladoCliente);
+        query.equalTo("Transportista", params[0]);
+        query.count({
+            success: function(count) {
+                callback(params,null,count);
+            },
+            error: function(error) {
+                callback(params,error,null);
+            }
+        });
+    };
     //Methods
     logout = function(){
         local_root_scope.loggedInRole = undefined;

@@ -20,15 +20,18 @@
     var cancel;
     var borrar;
     var habilitar;
+    var deshabilitar;
     var tipoTransporteSeleccionado;
 
     // Methods
 
     //Data callbacks
     var get_transportista_callback;
+    var get_viajes_count_callback;
     var save_callback;
     var delete_callback;
     var habilitar_callback;
+    var deshabilitar_callback;
 
     angular.module("easyRuta")
         .controller('TransportistaEditController',function($rootScope,$scope,$window,$routeParams,transportista_edit_viewmodel) {
@@ -77,6 +80,9 @@
     habilitar = function(){
         local_transportista_edit_viewmodel.habilitar(ctlr.transportista,habilitar_callback);
     };
+    deshabilitar = function(){
+        local_transportista_edit_viewmodel.deshabilitar(ctlr.transportista,habilitar_callback);
+    };
     tipoTransporteSeleccionado = function(tipoTransporte){
         ctlr.transportista.tipoTransporte = tipoTransporte;
         local_scope.$apply()
@@ -87,8 +93,25 @@
     get_transportista_callback = function(error,results){
         if (!error) {
             ctlr.transportista = results;
-            local_scope.$apply()
+            local_transportista_edit_viewmodel.get_viajes_count(results.object,get_viajes_count_callback);
         }
+    };
+    get_viajes_count_callback = function(error,result){
+        if (ctlr.transportista.estado == local_rootScope.transportistas_estados.NoDisponible){
+            ctlr.showHabilitar = true
+            ctlr.showDeshabilitar = false
+        }else if (ctlr.transportista.estado == local_rootScope.transportistas_estados.EnViaje){
+            if (result > 0){
+                ctlr.showHabilitar = false
+            } else {
+                ctlr.showHabilitar = true
+            }
+            ctlr.showDeshabilitar = false
+        }else{
+            ctlr.showHabilitar = false
+            ctlr.showDeshabilitar = true
+        }
+        local_scope.$apply()
     };
     save_callback = function(error,result){
         if (!error){
@@ -101,6 +124,11 @@
         }
     };
     habilitar_callback = function(error,result){
+        if (!error){
+            local_window.history.back();
+        }
+    };
+    deshabilitar_callback = function(error,result){
         if (!error){
             local_window.history.back();
         }

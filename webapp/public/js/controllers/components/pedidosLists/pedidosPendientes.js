@@ -150,19 +150,21 @@
 
     //Data callbacks
     get_pedidos_pendientes_callback = function(error,results){
-        if (!error){
+        if (!error) {
             ctlr.pedidos = results;
             ctlr.pedidosPorConfirmar = 0;
             ctlr.pedidosPorConfirmarProveedor = 0;
-            results.forEach(function(element,index,array){
-                if (element.estado == 'PendienteConfirmacion'){
-                    ctlr.pedidosPorConfirmar += 1
-                }
-                if (element.estado == 'PendienteConfirmacionProveedor'){
-                    ctlr.pedidosPorConfirmarProveedor += 1
-                }
-            });
-            set_timers()
+            if (results) {
+                results.forEach(function (element, index, array) {
+                    if (element.estado == 'PendienteConfirmacion') {
+                        ctlr.pedidosPorConfirmar += 1
+                    }
+                    if (element.estado == 'PendienteConfirmacionProveedor') {
+                        ctlr.pedidosPorConfirmarProveedor += 1
+                    }
+                });
+                set_timers()
+            }
             local_scope.$apply();
         }
     };
