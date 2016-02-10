@@ -55,12 +55,12 @@
     init = function() {
         local_pedidos_en_curso_viewmodel.get_pedidos_en_curso(get_pedidos_en_cursor_callback);
 
-        local_rootScope.$on(local_rootScope.channels.pedido_iniciado, pedido_iniciado_callback);
-        local_rootScope.$on(local_rootScope.channels.pedido_completado, pedido_completado_callback);
-        local_rootScope.$on(local_rootScope.channels.pedido_cancelado_confirmado_proveedor, pedido_cancelado_confirmado_proveedor_callback);
-        local_rootScope.$on(local_rootScope.channels.pedido_cancelado_confirmado_transportista, pedido_cancelado_confirmado_transportista_callback);
-        local_rootScope.$on(local_rootScope.channels.pedido_cancelado, pedido_cancelado_callback);
-        local_rootScope.$on(local_rootScope.channels.pedido_cancelado_transportista, pedido_cancelado_transportista_callback);
+        local_scope.$on(local_rootScope.channels.pedido_iniciado, pedido_iniciado_callback);
+        local_scope.$on(local_rootScope.channels.pedido_completado, pedido_completado_callback);
+        local_scope.$on(local_rootScope.channels.pedido_cancelado_confirmado_proveedor, pedido_cancelado_confirmado_proveedor_callback);
+        local_scope.$on(local_rootScope.channels.pedido_cancelado_confirmado_transportista, pedido_cancelado_confirmado_transportista_callback);
+        local_scope.$on(local_rootScope.channels.pedido_cancelado, pedido_cancelado_callback);
+        local_scope.$on(local_rootScope.channels.pedido_cancelado_transportista, pedido_cancelado_transportista_callback);
 
         ctlr.isProveedor = false;
         if (local_rootScope.proveedor){

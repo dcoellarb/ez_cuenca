@@ -52,7 +52,7 @@
     init = function() {
         local_pedidos_completados_viewmodel.get_pedidos_completados(get_pedidos_completados_callback);
 
-        local_rootScope.$on(local_rootScope.channels.pedido_completado, pedido_completado_callback);
+        local_scope.$on(local_rootScope.channels.pedido_completado, pedido_completado_callback);
     };
 
     // "Public" methods

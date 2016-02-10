@@ -60,12 +60,12 @@
     init = function() {
         local_pedidos_activos_viewmodel.get_pedidos_activos(get_pedidos_activos_callback);
 
-        local_rootScope.$on(local_rootScope.channels.pedido_confirmado, pedido_confirmado_callback);
-        local_rootScope.$on(local_rootScope.channels.pedido_confirmado_proveedor, pedido_confirmado_proveedor_callback);
-        local_rootScope.$on(local_rootScope.channels.pedido_cancelado, pedido_cancelado_callback);
-        local_rootScope.$on(local_rootScope.channels.pedido_cancelado_transportista, pedido_cancelado_transportista_callback);
-        local_rootScope.$on(local_rootScope.channels.pedido_iniciado, pedido_iniciado_callback);
-        local_rootScope.$on(local_rootScope.channels.pedido_cancelado_confirmado_proveedor, pedido_cancelado_confirmado_proveedor_callback);
+        local_scope.$on(local_rootScope.channels.pedido_confirmado, pedido_confirmado_callback);
+        local_scope.$on(local_rootScope.channels.pedido_confirmado_proveedor, pedido_confirmado_proveedor_callback);
+        local_scope.$on(local_rootScope.channels.pedido_cancelado, pedido_cancelado_callback);
+        local_scope.$on(local_rootScope.channels.pedido_cancelado_transportista, pedido_cancelado_transportista_callback);
+        local_scope.$on(local_rootScope.channels.pedido_iniciado, pedido_iniciado_callback);
+        local_scope.$on(local_rootScope.channels.pedido_cancelado_confirmado_proveedor, pedido_cancelado_confirmado_proveedor_callback);
     };
 
     // "Public" methods

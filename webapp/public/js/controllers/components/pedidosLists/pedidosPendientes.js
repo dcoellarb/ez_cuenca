@@ -84,20 +84,20 @@
     init = function() {
         local_pedidos_pendientes_viewmodel.get_pedidos_pendientes(get_pedidos_pendientes_callback);
 
-        local_rootScope.$on(local_rootScope.channels.new_pedidos, new_pedidos_callback);
-        local_rootScope.$on(local_rootScope.channels.pedido_tomado, pedido_tomado_callback);
-        local_rootScope.$on(local_rootScope.channels.pedido_confirmado, pedido_confirmado_callback);
-        local_rootScope.$on(local_rootScope.channels.pedido_rechazado, pedido_rechazado_callback);
-        local_rootScope.$on(local_rootScope.channels.pedido_confirmado_proveedor, pedido_confirmado_proveedor_callback);
-        local_rootScope.$on(local_rootScope.channels.pedido_rechazado_proveedor, pedido_rechazado_proveedor_callback);
-        local_rootScope.$on(local_rootScope.channels.pedido_cancelado_confirmado_proveedor, pedido_cancelado_confirmado_proveedor_callback);
-        local_rootScope.$on(local_rootScope.channels.pedido_ignorado, pedido_ignorado_callback);
-        local_rootScope.$on(local_rootScope.channels.pedido_cancelado, pedido_cancelado_callback);
-        local_rootScope.$on(local_rootScope.channels.pedido_cancelado_transportista, pedido_cancelado_transportista_callback);
-        local_rootScope.$on(local_rootScope.channels.pedido_cancelado_proveedor, pedido_cancelado_proveedor_callback);
-        local_rootScope.$on(local_rootScope.channels.pedido_completado, pedido_completado_callback);
-        local_rootScope.$on(local_rootScope.channels.pedido_timeout, pedido_timeout_callback);
-        local_rootScope.$on(local_rootScope.channels.transportista_habilitado, transportista_habilitado_callback);
+        local_scope.$on(local_rootScope.channels.new_pedidos, new_pedidos_callback);
+        local_scope.$on(local_rootScope.channels.pedido_tomado, pedido_tomado_callback);
+        local_scope.$on(local_rootScope.channels.pedido_confirmado, pedido_confirmado_callback);
+        local_scope.$on(local_rootScope.channels.pedido_rechazado, pedido_rechazado_callback);
+        local_scope.$on(local_rootScope.channels.pedido_confirmado_proveedor, pedido_confirmado_proveedor_callback);
+        local_scope.$on(local_rootScope.channels.pedido_rechazado_proveedor, pedido_rechazado_proveedor_callback);
+        local_scope.$on(local_rootScope.channels.pedido_cancelado_confirmado_proveedor, pedido_cancelado_confirmado_proveedor_callback);
+        local_scope.$on(local_rootScope.channels.pedido_ignorado, pedido_ignorado_callback);
+        local_scope.$on(local_rootScope.channels.pedido_cancelado, pedido_cancelado_callback);
+        local_scope.$on(local_rootScope.channels.pedido_cancelado_transportista, pedido_cancelado_transportista_callback);
+        local_scope.$on(local_rootScope.channels.pedido_cancelado_proveedor, pedido_cancelado_proveedor_callback);
+        local_scope.$on(local_rootScope.channels.pedido_completado, pedido_completado_callback);
+        local_scope.$on(local_rootScope.channels.pedido_timeout, pedido_timeout_callback);
+        local_scope.$on(local_rootScope.channels.transportista_habilitado, transportista_habilitado_callback);
 
         local_scope.$on('$destroy',function(){
             if (ctlr.timerInterval) {

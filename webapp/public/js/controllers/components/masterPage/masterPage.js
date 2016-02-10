@@ -65,11 +65,11 @@
             local_master_page_viewmodel.get_notifications_count(local_get_notifications_count_callback);
         }
 
-        local_rootScope.$on(local_rootScope.channels.pedido_confirmado, pedido_confirmado_callback);
-        local_rootScope.$on(local_rootScope.channels.pedido_confirmado_proveedor, pedido_confirmado_proveedor_callback);
-        local_rootScope.$on(local_rootScope.channels.pedido_cancelado, pedido_cancelado_callback);
-        local_rootScope.$on(local_rootScope.channels.nueva_notificacion, nueva_notificacion_callback);
-        local_rootScope.$on(local_rootScope.channels.clear_notifications, clear_notifications_callback);
+        master_scope.$on(local_rootScope.channels.pedido_confirmado, pedido_confirmado_callback);
+        master_scope.$on(local_rootScope.channels.pedido_confirmado_proveedor, pedido_confirmado_proveedor_callback);
+        master_scope.$on(local_rootScope.channels.pedido_cancelado, pedido_cancelado_callback);
+        master_scope.$on(local_rootScope.channels.nueva_notificacion, nueva_notificacion_callback);
+        master_scope.$on(local_rootScope.channels.clear_notifications, clear_notifications_callback);
     };
 
     //"Public" Methods

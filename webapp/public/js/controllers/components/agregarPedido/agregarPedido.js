@@ -93,7 +93,7 @@
         local_agregar_pedido_viewmodel.get_plantillas(local_get_plantillas_callback);
         local_agregar_pedido_viewmodel.get_ciudades(local_get_ciudades_callback);
 
-        local_rootScope.$on('presense_' + local_rootScope.channels.new_pedidos, presense_new_pedidos_callback);
+        local_scope.$on('presense_' + local_rootScope.channels.new_pedidos, presense_new_pedidos_callback);
 
         ctlr.availableTransportistas = 0;
         ctlr.open = false;

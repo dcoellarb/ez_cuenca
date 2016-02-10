@@ -60,15 +60,15 @@
         local_transportistas_proveedor_viewmodel.get_transportistas_proveedor(get_transportistas_proveedor_callback);
 
         //suscribe to events
-        local_rootScope.$on(local_rootScope.channels.pedido_tomado, pedido_tomado_callback);
-        local_rootScope.$on(local_rootScope.channels.pedido_rechazado, pedido_rechazado_callback);
-        local_rootScope.$on(local_rootScope.channels.pedido_confirmado_proveedor, pedido_confirmado_proveedor_callback);
-        local_rootScope.$on(local_rootScope.channels.pedido_completado, pedido_completado_callback);
-        local_rootScope.$on(local_rootScope.channels.pedido_cancelado_confirmado, pedido_cancelado_confirmado_callback);
-        local_rootScope.$on(local_rootScope.channels.pedido_cancelado_confirmado_proveedor, pedido_cancelado_confirmado_proveedor_callback);
-        local_rootScope.$on(local_rootScope.channels.pedido_cancelado, pedido_cancelado_callback);
-        local_rootScope.$on(local_rootScope.channels.pedido_cancelado_proveedor, pedido_cancelado_proveedor_callback);
-        local_rootScope.$on(local_rootScope.channels.transportista_habilitado, transportista_habilitado_callback);
+        local_scope.$on(local_rootScope.channels.pedido_tomado, pedido_tomado_callback);
+        local_scope.$on(local_rootScope.channels.pedido_rechazado, pedido_rechazado_callback);
+        local_scope.$on(local_rootScope.channels.pedido_confirmado_proveedor, pedido_confirmado_proveedor_callback);
+        local_scope.$on(local_rootScope.channels.pedido_completado, pedido_completado_callback);
+        local_scope.$on(local_rootScope.channels.pedido_cancelado_confirmado, pedido_cancelado_confirmado_callback);
+        local_scope.$on(local_rootScope.channels.pedido_cancelado_confirmado_proveedor, pedido_cancelado_confirmado_proveedor_callback);
+        local_scope.$on(local_rootScope.channels.pedido_cancelado, pedido_cancelado_callback);
+        local_scope.$on(local_rootScope.channels.pedido_cancelado_proveedor, pedido_cancelado_proveedor_callback);
+        local_scope.$on(local_rootScope.channels.transportista_habilitado, transportista_habilitado_callback);
     };
 
     // "Public" methods

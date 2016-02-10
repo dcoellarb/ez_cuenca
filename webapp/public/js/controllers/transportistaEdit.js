@@ -47,6 +47,7 @@
             ctlr.cancel = cancel;
             ctlr.delete = borrar;
             ctlr.habilitar = habilitar;
+            ctlr.deshabilitar = deshabilitar;
             ctlr.TipoTransporteSeleccionado = tipoTransporteSeleccionado;
 
             init();
