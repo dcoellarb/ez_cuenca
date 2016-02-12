@@ -36,8 +36,6 @@
 
     angular.module("easyRuta")
         .controller('MasterPageController',function($rootScope,$scope,$window,$uibModal,master_page_viewmodel,utils) {
-
-
             ctlr = this;
             local_rootScope = $rootScope;
             master_scope = $scope;
