@@ -86,7 +86,6 @@
     };
     tipoTransporteSeleccionado = function(tipoTransporte){
         ctlr.transportista.tipoTransporte = tipoTransporte;
-        local_scope.$apply()
     };
     // Methods
 

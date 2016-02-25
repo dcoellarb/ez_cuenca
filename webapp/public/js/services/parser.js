@@ -76,6 +76,32 @@
             if (element.get("Rate")){
                 json.rating = element.get("Rate");
             }
+            json.locations = [];
+            if (element.get("Locations")){
+                var location = {
+                    id: 1,
+                    path: [],
+                    stroke: {
+                        color: '#F78F1E',
+                        weight: 5
+                    },
+                    editable: false,
+                    draggable: false,
+                    geodesic: true,
+                    visible: true,
+                    icons: [{
+                        icon: {
+                            path: google.maps.SymbolPath.FORWARD_CLOSED_ARROW
+                        },
+                        offset: '0px',
+                        repeat: '300px'
+                    }]
+                };
+                element.get("Locations").forEach(function(element,index,arrar){
+                    location.path.push({ latitude: element.split(":")[0], longitude: element.split(":")[1]});
+                });
+                json.locations.push(location)
+            }
         }
         return json;
     };

@@ -93,8 +93,8 @@
             local_root_scope = $rootScope;
             local_window = $window;
 
-            Parse.initialize("VJTDwzZdvOVEjA6c2DnVHduEvOpY8p3Cx4KMwxUi", "zQ1tHay1kKYGRrr7psu8oddu2fnKuOF7EpAWbAdM");//PROD
-            //Parse.initialize("2hLYHTAUJ9QXMWxQTXsOIZ2jXJLGtMauw2QN34fE", "xSiGu1HbOBQvzcd7ItdgGGyMq2IcpvKmCAFjhY2T");//QA
+            //Parse.initialize("VJTDwzZdvOVEjA6c2DnVHduEvOpY8p3Cx4KMwxUi", "zQ1tHay1kKYGRrr7psu8oddu2fnKuOF7EpAWbAdM");//PROD
+            Parse.initialize("2hLYHTAUJ9QXMWxQTXsOIZ2jXJLGtMauw2QN34fE", "xSiGu1HbOBQvzcd7ItdgGGyMq2IcpvKmCAFjhY2T");//QA
 
             if (Parse.User.current()) {
                 user_context_initialization_quebe = new Array();
@@ -701,24 +701,66 @@
         var pedido = params[0];
 
         var Transportista = Parse.Object.extend("Transportista");
-        var query = new Parse.Query(Transportista);
         if (pedido){
-            query.equalTo("TipoTransporte",pedido.get("TipoTransporte"));
-        }
-        query.equalTo("Deleted",false);
-        query.addAscending("Nombre");
-        query.find({
-            success: function(results) {
-                callback(params,null,results)
-            },
-            error: function(error) {
-                console.log("Error: " + error.code + " " + error.message);
-                if (error.code == 209){
-                    logout();
-                }
-                callback(params,error,null);
+            if (pedido.get("TipoTransporte") == "furgon_plataforma"){
+                var queryFurgon = new Parse.Query(Transportista);
+                queryFurgon.equalTo("TipoTransporte","furgon");
+
+                var queryPlataforma = new Parse.Query(Transportista);
+                queryPlataforma.equalTo("TipoTransporte","plataforma");
+
+                var query = Parse.Query.or(queryFurgon, queryPlataforma);
+                query.equalTo("Deleted",false);
+                query.addAscending("Nombre");
+                query.find({
+                    success: function(results) {
+                        callback(params,null,results)
+                    },
+                    error: function(error) {
+                        console.log("Error: " + error.code + " " + error.message);
+                        if (error.code == 209){
+                            logout();
+                        }
+                        callback(params,error,null);
+                    }
+                });
+            }else{
+                var query = new Parse.Query(Transportista);
+
+                query.equalTo("TipoTransporte",pedido.get("TipoTransporte"));
+
+                query.equalTo("Deleted",false);
+                query.addAscending("Nombre");
+                query.find({
+                    success: function(results) {
+                        callback(params,null,results)
+                    },
+                    error: function(error) {
+                        console.log("Error: " + error.code + " " + error.message);
+                        if (error.code == 209){
+                            logout();
+                        }
+                        callback(params,error,null);
+                    }
+                });
             }
-        });
+        }else{
+            var query = new Parse.Query(Transportista);
+            query.equalTo("Deleted",false);
+            query.addAscending("Nombre");
+            query.find({
+                success: function(results) {
+                    callback(params,null,results)
+                },
+                error: function(error) {
+                    console.log("Error: " + error.code + " " + error.message);
+                    if (error.code == 209){
+                        logout();
+                    }
+                    callback(params,error,null);
+                }
+            });
+        }
     };
     local_current_proveedor = function(params,callback){
         get_current_user_proveedor([],function(params,error,result){
