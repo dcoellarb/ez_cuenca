@@ -24,7 +24,7 @@
                 </div>
             </div>
             <div class="col-sm-12 col-nopadding">
-                <div class="col-sm-12 center-content-horizontal" ng-show="!pedido.rating && !ctlr.isProveedor">
+                <div class="col-sm-12 center-content-horizontal" ng-show="!pedido.rating && !ctlr.isProveedor && !ctlr.isDespachador">
                     <input type="button" value="Calificar" class="btn-small btn-primary" ng-click="ctlr.calificar()"/>
                 </div>
                 <div class="col-sm-12 col-nopadding" ng-show="pedido.rating" style="margin-bottom: 10px;">

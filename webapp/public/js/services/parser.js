@@ -161,6 +161,8 @@
 
             if (local_root_scope.proveedor){
                 json.referencia = json.descripcion;
+            }else if(local_root_scope.despachador){
+                json.referencia = json.descripcion;
             }else if(local_root_scope.cliente){
                 json.referencia = json.nombre;
             }

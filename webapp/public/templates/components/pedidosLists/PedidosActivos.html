@@ -28,7 +28,7 @@
                 </div>
             </div>
             <div class="col-sm-12 center-content-horizontal">
-                <input type="button" value="Iniciar" class="btn btn-small btn-primary" ng-click="ctlr.iniciar(pedido)" ng-show="ctlr.isProveedor" style="margin-right: 20px;"/>
+                <input type="button" value="Iniciar" class="btn btn-small btn-primary" ng-click="ctlr.iniciar(pedido)" ng-show="ctlr.isProveedor || ctlr.isDespachador" style="margin-right: 20px;"/>
                 <input type="button" value="Cancelar" class="btn btn-small btn-danger" ng-click="ctlr.cancelar(pedido)"  ng-show="!ctlr.isProveedor"/>
             </div>
         </div>

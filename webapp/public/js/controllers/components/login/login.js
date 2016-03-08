@@ -32,6 +32,8 @@
                                 $window.location.href = '/#/inicioClientes';
                             }else if ($rootScope.loggedInRole.getName() == "proveedor") {
                                 $window.location.href = '/#/inicioProveedores';
+                            }else if ($rootScope.loggedInRole.getName() == "despachador") {
+                                $window.location.href = '/#/inicioDespachadores';
                             }
                         });
                     },

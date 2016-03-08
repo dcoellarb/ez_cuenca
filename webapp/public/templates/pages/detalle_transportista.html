@@ -58,7 +58,7 @@
                 </div>
             </div>
 
-            <div class="col-sm-12" style="padding-top: 20px">
+            <div class="col-sm-6" style="padding-top: 20px">
                 <label class="control-label">Tipo de Transporte</label>
                 <ul id="truckType" class="nav nav-pills nav-justified">
                     <li role="presentation" ng-class="{active : ctlr.transportista.tipoTransporte=='furgon'}"><a href="" ng-click="ctlr.TipoTransporteSeleccionado('furgon')">
@@ -110,13 +110,42 @@
                         </div>
                     </a></li>
                 </ul>
-            </div>
-            <div class="col-sm-12" style="padding-top: 20px" ng-show="ctlr.transportista.tipoTransporte=='furgon'">
-                <div class="col-sm-12">
-                    <label class="control-label" style="margin-right: 10px;">Refrigeracion</label>
-                    <switch id="CajaRefrigerada" name="CajaRefrigerada" ng-model="ctlr.transportista.refrigerado" class="green" on="Si" off="No"></switch>
+                <div class="col-sm-12" style="padding-top: 20px" ng-show="ctlr.transportista.tipoTransporte=='furgon'">
+                    <div class="col-sm-12">
+                        <label class="control-label" style="margin-right: 10px;">Refrigeracion</label>
+                        <switch id="CajaRefrigerada" name="CajaRefrigerada" ng-model="ctlr.transportista.refrigerado" class="green" on="Si" off="No"></switch>
+                    </div>
                 </div>
             </div>
+
+            <div class="col-sm-6" style="padding-top: 20px">
+                <div ng-show="!ctlr.isDespachador">
+                    <label class="control-label">Asignaciones
+                        <div class="dropdown" style="display: inline-block;">
+                            <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                                Seleccione para agregar
+                                <span class="caret"></span>
+                            </button>
+                            <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                                <li><span class="list-item-lg" ng-click="agrPedCtrl.Limpiar(agrPedForm)">(ninguna)</span></li>
+                                <li role="separator" class="divider"></li>
+                                <li ng-repeat="asignacion in ctlr.assignaciones_proveedor">
+                                    <span class="list-item-lg" ng-click="ctlr.AddAsignacion(asignacion.id)">{{asignacion.nombre}}</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </label>
+                    <ul class="nav nav-pills nav-justified">
+                        <li ng-repeat="asignacion in ctlr.assignaciones">
+                            <div style="border-color: lightgray;border-width: 1px;border-style: solid;border-radius: 5px;display: inline-block;padding: 5px;">
+                                <span style="font-size: small;">{{asignacion.nombre}}</span>
+                                <span class="glyphicon glyphicon-remove" ng-click="ctlr.DeleteAsignacion(asignacion.id)"/>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
 
             <div class="col-sm-12" style="padding-top: 20px;padding-bottom: 20px;">
                 <div class="col-sm-4 col-nopadding">
@@ -126,11 +155,11 @@
                     <input type="button" class="btn btn-default" value="Cancelar" ng-click="ctlr.cancel()"/>
                 </div>
                 <div class="col-sm-4 col-nopadding">
-                    <input type="button" class="btn btn-danger" value="Delete" ng-click="ctlr.delete()" ng-show="ctlr.transportista.id"/>
+                    <input type="button" class="btn btn-danger" value="Delete" ng-click="ctlr.delete()" ng-show="ctlr.transportista.id && !ctlr.isDespachador"/>
                 </div>
                 <div class="col-sm-4 col-nopadding">
                     <input type="button" class="btn btn-primary" value="Habilitar" ng-click="ctlr.habilitar()" ng-show="ctlr.showHabilitar" style="float: right"/>
-                    <input type="button" class="btn btn-primary" value="Deshabilitar" ng-click="ctlr.deshabilitar()" ng-show="ctlr.showDeshabilitar" style="float: right"/>
+                    <input type="button" class="btn btn-primary" value="Deshabilitar" ng-click="ctlr.deshabilitar()" ng-show="ctlr.showDeshabilitar && !ctlr.isDespachador" style="float: right"/>
                 </div>
             </div>
         </form>

@@ -105,10 +105,6 @@
             templateUrl: 'notifications_center.html',
             controller: 'notifications_center_controller as ctlr'
         });
-
-        //modalInstance.result.then(null, function () {
-        //    console.log("Modal canceled.");
-        //});
     };
 
     //Data callbacks

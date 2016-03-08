@@ -20,9 +20,17 @@
             <div ng-include="'templates/components/agregarPedido/AgregarPedidoProducto.html'"></div>
             <hr class="col-sm-11">
             <div ng-include="'templates/components/agregarPedido/AgregarPedidoTransporte.html'"></div>
+
+            <div class="col-sm-12" ng-show="agrPedCtrl.isDespachador">
+                <hr class="col-sm-11">
+                <div ng-include="'templates/components/agregarPedido/AgregarPedidoTransportistas.html'"></div>
+            </div>
+
             <hr class="col-sm-11">
             <div ng-include="'templates/components/agregarPedido/AgregarPedidoActions.html'"></div>
             <div ng-include="'templates/components/agregarPedido/AgregarPedidoPlantillaModal.html'"></div>
+
+
         </form>
     </div>
 </div>

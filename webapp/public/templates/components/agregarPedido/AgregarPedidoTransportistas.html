@@ -1,0 +1,18 @@
+<div class="col-sm-12">
+    <label class="control-label">Seleccione un Transportista</label>
+</div>
+<div class="list-item-inline" ng-repeat="transportista in agrPedCtrl.transportistas" style="cursor: pointer;text-align:center;" ng-attr-title="{{transportista.horaDisponible}}">
+    <span class="list-item-sm" ng-show="transportista.esTercero" style="margin:auto;display: block">(Tercero)</span>
+
+    <div ng-style="{'background-image':'url({{transportista.photo}})'}" style="background-size: contain;margin:auto;height: 40px;width: 40px;" ng-click="agrPedCtrl.seleccionar_transportista(transportista)">
+        <div style="border-radius: 50%;background-color: rgba(0,0,0,0.7);margin:auto;height: 40px;width: 40px;" ng-show="transportista.id == agrPedCtrl.data.Transportista.id">
+            <div style="width: 20px;height: 20px;border-radius: 50%;margin: auto;position: relative;top: 10px;">
+                <span class="glyphicon glyphicon-ok" style="color: white;"/>
+            </div>
+        </div>
+    </div>
+
+    <span class="list-item-md" style="margin:auto;display: block">
+        {{transportista.referencia}}
+    </span>
+</div>

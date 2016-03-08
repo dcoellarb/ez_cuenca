@@ -25,9 +25,11 @@
     var guardar_como_plantilla;
     var limpiar;
     var tipo_transportista_seleccionado;
+    var proveedor_seleccionado;
     var plantilla_selected;
     var delete_plantilla;
     var toggle_form;
+    var seleccionar_transportista;
 
     var modal_guardar_plantilla;
     var modal_cancelar;
@@ -45,6 +47,7 @@
     var local_get_cliente_proveedores_callback;
     var local_get_plantillas_callback;
     var local_get_ciudades_callback;
+    var local_get_transpostistas_despachador_callback;
     var local_get_active_transportistas_callback;
     var local_guardar_pedido_callback;
     var local_agregar_guardar_pedido_callback;
@@ -68,9 +71,11 @@
             ctlr.GuardarComoPlantilla = guardar_como_plantilla;
             ctlr.Limpiar = limpiar;
             ctlr.TipoTransporteSeleccionado = tipo_transportista_seleccionado;
+            ctlr.proveedor_seleccionado = proveedor_seleccionado;
             ctlr.PlantillaSelected = plantilla_selected;
             ctlr.DeletePlantilla  = delete_plantilla
             ctlr.ToggleForm = toggle_form;
+            ctlr.seleccionar_transportista = seleccionar_transportista;
 
             init();
 
@@ -89,7 +94,6 @@
 
     // Constructor
     init = function() {
-        local_agregar_pedido_viewmodel.get_cliente_proveedores(local_rootScope.cliente,local_get_cliente_proveedores_callback);
         local_agregar_pedido_viewmodel.get_plantillas(local_get_plantillas_callback);
         local_agregar_pedido_viewmodel.get_ciudades(local_get_ciudades_callback);
 
@@ -98,6 +102,7 @@
         ctlr.availableTransportistas = 0;
         ctlr.open = false;
         ctlr.minDate = new Date();
+        ctlr.isDespachador = false;
 
         setup_date_pickers();
         limpiar_form();
@@ -129,6 +134,7 @@
                 ctlr.data.HoraCarga = null;
                 ctlr.data.HoraEntrega = null;
                 ctlr.data.Estado = "Plantilla";
+                ctlr.data.Transportista = null;
                 guardar_pedido(local_plantilla_guardar_pedido_callback)
             }, function () {
                 console.log("Modal canceled.");
@@ -140,7 +146,29 @@
         limpiar_form();
     };
     tipo_transportista_seleccionado = function (TipoTransporte) {
+        ctlr.data.Transportista = null;
         ctlr.data.TipoTransporte = TipoTransporte;
+        var proveedor = null;
+        if (ctlr.data.Proveedor && ctlr.data.Proveedor != "") {
+            ctlr.proveedores.forEach(function (element, index, array) {
+                if (element.id = ctlr.data.Proveedor) {
+                    proveedor = element.data;
+                }
+            });
+        }
+        local_agregar_pedido_viewmodel.get_transpostistas_despachador(proveedor,true,ctlr.data.TipoTransporte,local_get_transpostistas_despachador_callback);
+    };
+    proveedor_seleccionado = function () {
+        ctlr.data.Transportista = null;
+        var proveedor = null;
+        if (ctlr.data.Proveedor && ctlr.data.Proveedor != "") {
+            ctlr.proveedores.forEach(function (element, index, array) {
+                if (element.id = ctlr.data.Proveedor) {
+                    proveedor = element.data;
+                }
+            });
+        }
+        local_agregar_pedido_viewmodel.get_transpostistas_despachador(proveedor,true,ctlr.data.TipoTransporte,local_get_transpostistas_despachador_callback);
     };
     plantilla_selected = function (id) {
         local_agregar_pedido_viewmodel.get_plantilla(id,local_get_plantilla_callback);
@@ -159,7 +187,11 @@
             $('#agregarPedido').addClass('panel-primary');
             ctlr.open = false;
         }
-    }
+    };
+    seleccionar_transportista = function(transportista) {
+        ctlr.data.Transportista = transportista;
+        local_scope.$apply();
+    };
 
     modal_guardar_plantilla = function(){
         modal_local_uibModalInstance.close(modal_ctlr.plantilla);
@@ -184,7 +216,8 @@
             PesoDesde : 0,
             PesoHasta : 0,
             TipoTransporte : "furgon",
-            CajaRefrigerada : false
+            CajaRefrigerada : false,
+            Transportista : null
         };
         if (local_form){
             local_form.$setPristine();
@@ -224,25 +257,42 @@
                 }
             });
         }
-        local_agregar_pedido_viewmodel.guardar_pedidos(ctlr.data,proveedor,ctlr.copias,local_guardar_pedido_callback);
+        var transportista = null;
+        if (ctlr.data.Transportista){
+            transportista = ctlr.data.Transportista.object;
+        }
+        local_agregar_pedido_viewmodel.guardar_pedidos(ctlr.data,proveedor,transportista,ctlr.copias,local_guardar_pedido_callback);
     };
 
     //Data callbacks
+    local_get_plantillas_callback = function(error,results){
+        if (!error){
+            ctlr.plantillas = results;
+            local_scope.$apply();
+        }
+
+        //Call services that require context here
+        local_agregar_pedido_viewmodel.get_cliente_proveedores(local_rootScope.cliente,local_get_cliente_proveedores_callback);
+        if (local_rootScope.despachador){
+            ctlr.isDespachador = true;
+            local_agregar_pedido_viewmodel.get_transpostistas_despachador(null,true,ctlr.data.TipoTransporte,local_get_transpostistas_despachador_callback);
+        }
+    };
+    local_get_ciudades_callback = function(error,results){
+        if (!error){
+            ctlr.ciudades = results;
+            local_scope.$apply();
+        }
+    };
     local_get_cliente_proveedores_callback = function(error,results){
         if (!error){
             ctlr.proveedores = results;
             local_scope.$apply();
         }
     };
-    local_get_plantillas_callback = function(error,results){
+    local_get_transpostistas_despachador_callback = function(error,results){
         if (!error){
-            ctlr.plantillas = results;
-            local_scope.$apply();
-        }
-    };
-    local_get_ciudades_callback = function(error,results){
-        if (!error){
-            ctlr.ciudades = results;
+            ctlr.transportistas = results;
             local_scope.$apply();
         }
     };

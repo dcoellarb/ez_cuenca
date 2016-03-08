@@ -1,6 +1,6 @@
 <div class="col-sm-9" ng-show="agrPedCtrl.proveedores.length > 0">
     <label for="inputProveedor" class="control-label">Proveedor</label>
-    <select class="form-control input" id="inputProveedor" name="inputCiudadOrigen" ng-model="agrPedCtrl.data.Proveedor">
+    <select class="form-control input" id="inputProveedor" name="inputCiudadOrigen" ng-model="agrPedCtrl.data.Proveedor" ng-change="agrPedCtrl.proveedor_seleccionado()">
         <option value="">(todos)</option>
         <option ng-repeat="proveedor in agrPedCtrl.proveedores" value="{{proveedor.id}}" >{{proveedor.nombre}}</option>
     </select>

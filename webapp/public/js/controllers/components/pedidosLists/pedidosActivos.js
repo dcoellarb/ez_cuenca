@@ -32,6 +32,7 @@
     var iniciar_pedido_callback;
 
     //Notifications callbacks
+    var new_pedidos_callback;
     var pedido_confirmado_callback;
     var pedido_confirmado_proveedor_callback;
     var pedido_cancelado_callback;
@@ -60,6 +61,7 @@
     init = function() {
         local_pedidos_activos_viewmodel.get_pedidos_activos(get_pedidos_activos_callback);
 
+        local_scope.$on(local_rootScope.channels.new_pedidos, new_pedidos_callback);
         local_scope.$on(local_rootScope.channels.pedido_confirmado, pedido_confirmado_callback);
         local_scope.$on(local_rootScope.channels.pedido_confirmado_proveedor, pedido_confirmado_proveedor_callback);
         local_scope.$on(local_rootScope.channels.pedido_cancelado, pedido_cancelado_callback);
@@ -99,6 +101,10 @@
         if (local_rootScope.proveedor){
             ctlr.isProveedor = true;
         }
+        ctlr.isDespachador = false;
+        if (local_rootScope.despachador){
+            ctlr.isDespachador = true;
+        }
 
         ctlr.pedidos = results;
         local_scope.$apply();
@@ -113,6 +119,9 @@
     };
 
     //Notifications callbacks
+    new_pedidos_callback = function(m){
+        local_pedidos_activos_viewmodel.get_pedidos_activos(get_pedidos_activos_callback);
+    };
     pedido_confirmado_callback = function(m) {
         local_pedidos_activos_viewmodel.get_pedidos_activos(get_pedidos_activos_callback);
     };

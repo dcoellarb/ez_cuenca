@@ -17,16 +17,15 @@
     // Constructor
     var init;
 
-    // "Public" methods
-    var local_habilitar;
-
     // Methods
 
     //Data callbacks
-    var get_transportistas_proveedor_callback;
+    var check_context_initialization_callback;
+    var get_transportistas_callback;
     var local_habilitar_callback;
 
     //Notifications callbacks
+    var new_pedidos_callback;
     var pedido_tomado_callback;
     var pedido_rechazado_callback;
     var pedido_confirmado_proveedor_callback;
@@ -57,9 +56,10 @@
 
     // Constructor
     init = function() {
-        local_transportistas_proveedor_viewmodel.get_transportistas_proveedor(get_transportistas_proveedor_callback);
+        local_transportistas_proveedor_viewmodel.check_context_initialization(check_context_initialization_callback);
 
         //suscribe to events
+        local_scope.$on(local_rootScope.channels.new_pedidos, new_pedidos_callback);
         local_scope.$on(local_rootScope.channels.pedido_tomado, pedido_tomado_callback);
         local_scope.$on(local_rootScope.channels.pedido_rechazado, pedido_rechazado_callback);
         local_scope.$on(local_rootScope.channels.pedido_confirmado_proveedor, pedido_confirmado_proveedor_callback);
@@ -76,7 +76,19 @@
     // Methods
 
     //Data callbacks
-    get_transportistas_proveedor_callback = function(error,results){
+    check_context_initialization_callback = function(error,results){
+        ctlr.isDespachador = false
+        if (local_rootScope.despachador){
+            ctlr.isDespachador = true
+            local_transportistas_proveedor_viewmodel.get_transpostistas_despachador(null,false,null,get_transportistas_callback);
+        }
+        ctlr.isProveedor = false
+        if (local_rootScope.proveedor){
+            ctlr.isProveedor = true
+            local_transportistas_proveedor_viewmodel.get_transportistas_proveedor(get_transportistas_callback);
+        }
+    };
+    get_transportistas_callback = function(error,results){
         if (!error){
             ctlr.transportistas = results;
             local_scope.$apply();
@@ -84,31 +96,34 @@
     };
 
     //Notifications callbacks
+    new_pedidos_callback = function(m){
+        local_transportistas_proveedor_viewmodel.get_transportistas_proveedor(get_transportistas_callback);
+    };
     pedido_tomado_callback = function(m){
-        local_transportistas_proveedor_viewmodel.get_transportistas_proveedor(get_transportistas_proveedor_callback);
+        local_transportistas_proveedor_viewmodel.get_transportistas_proveedor(get_transportistas_callback);
     };
     pedido_rechazado_callback = function(m){
-        local_transportistas_proveedor_viewmodel.get_transportistas_proveedor(get_transportistas_proveedor_callback);
+        local_transportistas_proveedor_viewmodel.get_transportistas_proveedor(get_transportistas_callback);
     };
     pedido_confirmado_proveedor_callback = function(m){
-        local_transportistas_proveedor_viewmodel.get_transportistas_proveedor(get_transportistas_proveedor_callback);
+        local_transportistas_proveedor_viewmodel.get_transportistas_proveedor(get_transportistas_callback);
     };
     pedido_completado_callback = function(m){
-        local_transportistas_proveedor_viewmodel.get_transportistas_proveedor(get_transportistas_proveedor_callback);
+        local_transportistas_proveedor_viewmodel.get_transportistas_proveedor(get_transportistas_callback);
     };
     pedido_cancelado_confirmado_callback = function(m){
-        local_transportistas_proveedor_viewmodel.get_transportistas_proveedor(get_transportistas_proveedor_callback);
+        local_transportistas_proveedor_viewmodel.get_transportistas_proveedor(get_transportistas_callback);
     };
     pedido_cancelado_confirmado_proveedor_callback = function(m){
-        local_transportistas_proveedor_viewmodel.get_transportistas_proveedor(get_transportistas_proveedor_callback);
+        local_transportistas_proveedor_viewmodel.get_transportistas_proveedor(get_transportistas_callback);
     };
     pedido_cancelado_callback = function(m){
-        local_transportistas_proveedor_viewmodel.get_transportistas_proveedor(get_transportistas_proveedor_callback);
+        local_transportistas_proveedor_viewmodel.get_transportistas_proveedor(get_transportistas_callback);
     };
     pedido_cancelado_proveedor_callback = function(m){
-        local_transportistas_proveedor_viewmodel.get_transportistas_proveedor(get_transportistas_proveedor_callback);
+        local_transportistas_proveedor_viewmodel.get_transportistas_proveedor(get_transportistas_callback);
     };
     transportista_habilitado_callback = function(m){
-        local_transportistas_proveedor_viewmodel.get_transportistas_proveedor(get_transportistas_proveedor_callback);
+        local_transportistas_proveedor_viewmodel.get_transportistas_proveedor(get_transportistas_callback);
     };
 })();

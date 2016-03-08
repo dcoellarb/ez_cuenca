@@ -13,6 +13,9 @@
                 .when('/inicioProveedores',{
                     templateUrl : '/templates/pages/inicio_proveedores.html'
                 })
+                .when('/inicioDespachadores',{
+                    templateUrl : '/templates/pages/inicio_despachadores.html'
+                })
                 .when('/detallePedido/:id',{
                     templateUrl : '/templates/pages/detalle_pedido.html'
                 })

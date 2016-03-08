@@ -84,6 +84,10 @@
         if (local_rootScope.proveedor){
             ctlr.isProveedor = true;
         }
+        ctlr.isDespachador = false;
+        if (local_rootScope.despachador){
+            ctlr.isDespachador = true;
+        }
 
         ctlr.pedidos = results;
         local_scope.$apply();
