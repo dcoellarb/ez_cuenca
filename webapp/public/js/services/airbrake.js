@@ -12,7 +12,8 @@
         }).factory('$exceptionHandler', function() {
             return function(exception, cause) {
                 console.log("exeption caught..........")
-                Airbrake.notify(exception);
+                console.log(exception);
+                //Airbrake.notify(exception);
                 throw exception;
             };
         });

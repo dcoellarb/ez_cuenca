@@ -158,7 +158,20 @@
                     <input type="button" class="btn btn-danger" value="Delete" ng-click="ctlr.delete()" ng-show="ctlr.transportista.id && !ctlr.isDespachador"/>
                 </div>
                 <div class="col-sm-4 col-nopadding">
-                    <input type="button" class="btn btn-primary" value="Habilitar" ng-click="ctlr.habilitar()" ng-show="ctlr.showHabilitar" style="float: right"/>
+                    <input type="button" class="btn btn-primary" value="Habilitar" ng-click="ctlr.habilitar()" ng-show="ctlr.showHabilitar && (ctlr.isDespachador || ctlr.assignaciones.length == 0)" style="float: right"/>
+                    <div class="dropdown" ng-show="ctlr.showHabilitar && !ctlr.isDespachador && ctlr.assignaciones.length > 0">
+                        <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                            Habilitar
+                            <span class="caret"></span>
+                        </button>
+                        <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                            <li><span class="list-item-lg" ng-click="ctlr.habilitar()">(Abierto)</span></li>
+                            <li role="separator" class="divider"></li>
+                            <li ng-repeat="asignacion in ctlr.assignaciones">
+                                <span class="list-item-lg" ng-click="ctlr.habilitar(asignacion.id)">{{asignacion.nombre}}</span>
+                            </li>
+                        </ul>
+                    </div>
                     <input type="button" class="btn btn-primary" value="Deshabilitar" ng-click="ctlr.deshabilitar()" ng-show="ctlr.showDeshabilitar && !ctlr.isDespachador" style="float: right"/>
                 </div>
             </div>

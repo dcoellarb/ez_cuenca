@@ -86,7 +86,14 @@
     borrar = function() {
         local_transportista_edit_viewmodel.delete(ctlr.transportista,delete_callback);
     };
-    habilitar = function(){
+    habilitar = function(id){
+        if (id){
+            ctlr.assignaciones.forEach(function(element,index,array){
+                if (element.id == id){
+                    ctlr.cliente = element.object;
+                }
+            });
+        }
         local_transportista_edit_viewmodel.habilitar(ctlr.transportista,ctlr.cliente,habilitar_callback);
     };
     deshabilitar = function(){
