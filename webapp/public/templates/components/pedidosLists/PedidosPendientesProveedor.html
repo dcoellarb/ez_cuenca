@@ -17,7 +17,7 @@
                 <span class="list-item list-item-block">{{pedido.transporte}}</span>
                 <span class="list-item list-item-block">{{pedido.transporte_extra}}</span>
             </div>
-            <div class="col-sm-4 col-nopadding" ng-show="pedido.estado == 'Pendiente'">
+            <div class="col-sm-4 col-nopadding">
                 <div class="col-sm-9 col-nopadding" style="height:90px;width: 205px;overflow-x: scroll;white-space: nowrap;">
                     <div class="list-item-inline" ng-repeat="transportista in pedido.transportistas" style="text-align:center;">
                         <span class="list-item-sm" ng-show="transportista.esTercero" style="margin:auto;display: block">(Tercero)</span>
@@ -29,39 +29,6 @@
                 </div>
                 <div class="col-sm-3 col-nopadding" style="float: right">
                     <input type="button" class="btn btn-danger" value="Ignorar" ng-click="ctlr.ignorar(pedido)"/>
-                </div>
-            </div>
-            <div class="col-sm-4 col-nopadding" ng-show="pedido.estado == 'PendienteConfirmacion'">
-                <div class="col-sm-5">
-                    <span class="list-item-highlight list-item-block" style="font-size: 25pt;">{{pedido.timer.value}}</span>
-                </div>
-                <div class="col-sm-7 col-nopadding">
-                    <div class="col-sm-4 col-nopadding">
-                        <div class="list-item-image" ng-style="{'background-image': 'url(' + pedido.transportista.photo + ')'}"/>
-                    </div>
-                    <div class="col-sm-8 col-nopadding">
-                        <div class="col-sm-12 col-nopadding">
-                            <span class="list-heading2">{{pedido.transportista.referencia}}</span>
-                        </div>
-                        <div class="col-sm-12 col-nopadding">
-                            <div class="col-sm-12 col-nopadding"><span class="list-item-label">Telefono:</span><span class="list-item">{{pedido.transportista.telefono}}</span></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-sm-4 col-nopadding" ng-show="pedido.estado == 'PendienteConfirmacionProveedor'">
-                <span class="list-item list-item-block" style="margin-bottom: 10px;">Seleccione un transportista para confirmar, o presione <a class="link-danger" ng-click="ctlr.proveedor_rechazar(pedido)">rechazar.</a></span>
-                <div class="col-sm-4 col-nopadding">
-                    <span class="list-item-highlight list-item-block" style="font-size: 25pt;">{{pedido.timer.value}}</span>
-                </div>
-                <div class="col-sm-8 col-nopadding" style="height:90px;width: 150px;overflow-x: scroll;white-space: nowrap;">
-                    <div class="list-item-inline" ng-repeat="transportista in pedido.transportistas" style="cursor: pointer;text-align:center;" ng-attr-title="{{transportista.horaDisponible}}">
-                        <span class="list-item-sm" ng-show="transportista.esTercero" style="margin:auto;display: block">(Tercero)</span>
-                        <img class="list-item-image-sm list-item-image-block" ng-src="{{transportista.photo}}"  ng-click="ctlr.proveedor_confirmar(pedido,transportista)" style="cursor: pointer;margin:auto;"/>
-                        <span class="list-item-md" style="margin:auto;display: block">
-                            {{transportista.referencia}}
-                        </span>
-                    </div>
                 </div>
             </div>
             <hr class="col-sm-11">

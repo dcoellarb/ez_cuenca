@@ -105,11 +105,11 @@
     };
     local_habilitar = function(transportista,cliente,callback){
         habilitar_callback = callback;
-        local_data_services.update_estado_transportista([transportista.object,local_rootScope.transportistas_estados.Disponible,cliente],local_habilitar_callback)
+        local_data_services.update_estado_transportista([transportista.object,null,new Date(),cliente,new Date(),local_rootScope.transportistas_estados.Disponible],local_habilitar_callback)
     };
     local_deshabilitar = function(transportista,callback){
         deshabilitar_callback = callback;
-        local_data_services.update_estado_transportista([transportista.object,local_rootScope.transportistas_estados.NoDisponible,null],local_deshabilitar_callback)
+        local_data_services.update_estado_transportista([transportista.object,null,null,null,undefined,local_rootScope.transportistas_estados.NoDisponible],local_deshabilitar_callback)
     };
     local_add_asignacion = function(transportista,empresa,callback){
         add_asignacion_callback = callback;

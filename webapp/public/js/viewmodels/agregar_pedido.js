@@ -14,7 +14,6 @@
     var constructor;
 
     //"Public" Methods
-    var local_get_cliente_proveedores;
     var local_get_plantillas;
     var local_delete_plantilla;
     var local_get_plantilla;
@@ -26,7 +25,6 @@
     //Methods
 
     //View Controller callbacks references
-    var get_cliente_proveedores_callback;
     var get_plantillas_callback;
     var get_plantilla_callback;
     var delete_plantilla_callback;
@@ -36,7 +34,6 @@
     var guardar_pedidos_callback;
 
     //Data callbacks
-    var local_get_cliente_proveedores_callback;
     var local_get_plantillas_callback;
     var local_get_plantilla_callback;
     var local_delete_plantilla_callback;
@@ -58,9 +55,6 @@
 
     //Constructor
     constructor = {
-        get_cliente_proveedores : function(cliente,callback) {
-            local_get_cliente_proveedores(cliente,callback);
-        },
         get_plantillas : function(callback) {
             local_get_plantillas(callback);
         },
@@ -79,16 +73,12 @@
         get_active_transportistas : function (callback){
             local_get_active_transportistas(callback);
         },
-        guardar_pedidos : function (data,proveedor,transportista,copias,callback){
-            local_guardar_pedidos(data,proveedor,transportista,copias,callback);
+        guardar_pedidos : function (data,transportista,callback){
+            local_guardar_pedidos(data,transportista,callback);
         }
     }
 
     //"Public" Methods
-    local_get_cliente_proveedores = function(cliente,callback){
-        get_cliente_proveedores_callback = callback;
-        local_data_services.get_cliente_proveedores([cliente],local_get_cliente_proveedores_callback)
-    };
     local_get_plantillas = function(callback){
         get_plantillas_callback = callback;
         local_data_services.get_plantillas([],local_get_plantillas_callback)
@@ -113,25 +103,14 @@
         get_active_transportistas_callback = callback;
         local_pubnub_services.here_now(local_get_active_transportistas_callback)
     };
-    local_guardar_pedidos = function(data,proveedor,transportista,copias,callback){
+    local_guardar_pedidos = function(data,transportista,callback){
         guardar_pedidos_callback = callback;
-        local_data_services.guardar_pedidos([data,local_rootScope.cliente,proveedor,transportista,copias],local_guardar_pedidos_callback)
+        local_data_services.guardar_pedidos([data,local_rootScope.cliente,transportista],local_guardar_pedidos_callback)
     };
 
     //Methods
 
     //Data callbacks
-    local_get_cliente_proveedores_callback = function(params,error,results){
-        if (!error){
-            var proveedores = new Array;
-            results.forEach(function(element,index,array){
-                proveedores.push({id:element.id,nombre:element.get("Nombre"),data:element})
-            });
-            get_cliente_proveedores_callback(null,proveedores);
-        }else{
-            get_cliente_proveedores_callback(error,null);
-        }
-    };
     local_get_plantillas_callback = function(params,error,results){
         if (!error){
             var plantillas = new Array;

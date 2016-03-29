@@ -44,7 +44,6 @@
     var guardar_pedido_callback;
 
     //Data callbacks
-    var local_get_cliente_proveedores_callback;
     var local_get_plantillas_callback;
     var local_get_ciudades_callback;
     var local_get_transpostistas_despachador_callback;
@@ -190,7 +189,6 @@
     };
     seleccionar_transportista = function(transportista) {
         ctlr.data.Transportista = transportista;
-        local_scope.$apply();
     };
 
     modal_guardar_plantilla = function(){
@@ -249,19 +247,11 @@
     }
     guardar_pedido = function(callback){
         guardar_pedido_callback = callback
-        var proveedor = null;
-        if (ctlr.data.Proveedor && ctlr.data.Proveedor != "") {
-            ctlr.proveedores.forEach(function (element, index, array) {
-                if (element.id = ctlr.data.Proveedor) {
-                    proveedor = element.data;
-                }
-            });
-        }
         var transportista = null;
         if (ctlr.data.Transportista){
             transportista = ctlr.data.Transportista.object;
         }
-        local_agregar_pedido_viewmodel.guardar_pedidos(ctlr.data,proveedor,transportista,ctlr.copias,local_guardar_pedido_callback);
+        local_agregar_pedido_viewmodel.guardar_pedidos(ctlr.data,transportista,local_guardar_pedido_callback);
     };
 
     //Data callbacks
@@ -272,7 +262,6 @@
         }
 
         //Call services that require context here
-        local_agregar_pedido_viewmodel.get_cliente_proveedores(local_rootScope.cliente,local_get_cliente_proveedores_callback);
         if (local_rootScope.despachador){
             ctlr.isDespachador = true;
             local_agregar_pedido_viewmodel.get_transpostistas_despachador(null,true,ctlr.data.TipoTransporte,local_get_transpostistas_despachador_callback);
@@ -281,12 +270,6 @@
     local_get_ciudades_callback = function(error,results){
         if (!error){
             ctlr.ciudades = results;
-            local_scope.$apply();
-        }
-    };
-    local_get_cliente_proveedores_callback = function(error,results){
-        if (!error){
-            ctlr.proveedores = results;
             local_scope.$apply();
         }
     };

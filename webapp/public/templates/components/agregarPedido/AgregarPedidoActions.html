@@ -39,8 +39,6 @@
                         || agrPedCtrl.data.ValorUnitario <= 0
                         || ((agrPedForm.inputPesoDesde.$invalid || agrPedCtrl.data.PesoDesde <= 0)
                             || (agrPedForm.inputPesoHasta.$invalid || agrPedCtrl.data.PesoHasta <= 0))
-                        || agrPedForm.inputCopias.$invalid
-                        || agrPedCtrl.copias <= 0
                         || (agrPedCtrl.isDespachador && !agrPedCtrl.data.Transportista)
                     ">Agregar Pedido</button>
         </span>

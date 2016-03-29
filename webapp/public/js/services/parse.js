@@ -16,7 +16,6 @@
     //"Public" Methods
     var local_check_context_initialization;
     var local_guardar_pedidos;
-    var local_get_cliente_proveedores;
     var local_get_plantillas;
     var local_get_plantilla;
     var local_delete_plantilla;
@@ -153,13 +152,6 @@
         guardar_pedidos : function(params,callback) {
             local_guardar_pedidos(params,callback);
         },
-        get_cliente_proveedores : function(params,callback) {
-            if (!user_context_initialization_in_progress){
-                local_get_cliente_proveedores(params,callback);
-            }else{
-                user_context_initialization_quebe.push({function:local_get_cliente_proveedores,params:params,callback:callback});
-            }
-        },
         get_plantillas : function(params,callback) {
             if (!user_context_initialization_in_progress){
                 local_get_plantillas(params,callback);
@@ -225,8 +217,6 @@
                 user_context_initialization_quebe.push({function:local_get_historico_pedidos,params:params,callback:callback});
             }
         },
-        confirmar_pedido : function(params,callback) { local_confirmar_pedido(params,callback); },
-        rechazar_pedido : function(params,callback) { local_rechazar_pedido(params,callback); },
         transportista_statistics : function(params,callback) { local_transportista_statistics(params,callback); },
         transportistas_proveedor : function(params,callback) {
             if (!user_context_initialization_in_progress){
@@ -284,15 +274,6 @@
                 user_context_initialization_quebe.push({function:null,params:params,callback:callback});
             }
         },
-        proveedor_tomar_pedido : function(params,callback) {
-            local_proveedor_tomar_pedido(params,callback);
-        },
-        proveedor_confirmar_pedido : function(params,callback) {
-            local_proveedor_confirmar_pedido(params,callback);
-        },
-        proveedor_rechazar_pedido : function(params,callback) {
-            local_proveedor_rechazar_pedido(params,callback);
-        },
         timeout_pedido : function(params,callback) {
             local_timeout_pedido(params,callback);
         },
@@ -301,9 +282,6 @@
         },
         cancelar_pedido : function(params,callback) {
             local_cancelar_pedido(params,callback);
-        },
-        cancelar_pedido_proveedor : function(params,callback) {
-            local_cancelar_pedido_proveedor(params,callback);
         },
         iniciar_pedido  : function(params,callback) {
             local_iniciar_pedido(params,callback);
@@ -369,9 +347,7 @@
     local_guardar_pedidos = function(params,callback){
         var data = params[0];
         var cliente = params[1];
-        var proveedor = params[2];
-        var transportista = params[3];
-        var copias = params[4];
+        var transportista = params[2];
 
         var Pedido = Parse.Object.extend("Pedido");
         var pedido = new Pedido();
@@ -396,37 +372,24 @@
         pedido.set("PesoHasta", data.PesoHasta);
         pedido.set("Valor", data.Valor);
         pedido.set("TipoTransporte", data.TipoTransporte);
-        pedido.set("CajaRefrigerada", data.CajaRefrigerada);
         pedido.set("empresa", cliente);
-
-        if (proveedor) {
-            pedido.set("Proveedor", proveedor);
-        }
-        if (transportista) {
-            pedido.set("Transportista", transportista);
-        }
-
         if (data.Estado == "Plantilla"){
-            copias = 1;
             pedido.setACL(new Parse.ACL(Parse.User.current()));
         } else {
             var acl = new Parse.ACL(Parse.User.current());
-
             if (transportista) { //Ingresado por despachador
                 pedido.set("Estado", local_root_scope.pedidos_estados.Activo);
-                if (proveedor){
-                    pedido.set("Comision", 0);
-                }else{
-                    //Process comision
-                    if (data.Valor <= 200){
-                        if (data.Valor * 0.05 > 5){
-                            pedido.set("Comision", data.Valor * 0.05);
-                        }else{
-                            pedido.set("Comision", 5);
-                        }
+                pedido.set("Proveedor", transportista.get("Proveedor"));
+                pedido.set("Transportista", transportista);
+                //Process comision
+                if (data.Valor <= 200){
+                    if (data.Valor * 0.05 > 5){
+                        pedido.set("Comision", data.Valor * 0.05);
                     }else{
-                        pedido.set("Comision", 10);
+                        pedido.set("Comision", 5);
                     }
+                }else{
+                    pedido.set("Comision", 10);
                 }
 
                 acl.setReadAccess(cliente.get("user").id, true);
@@ -436,14 +399,7 @@
                     acl.setWriteAccess(transportista.get("proveedor").get("user").id, true);
                 }
                 pedido.setACL(acl);
-            } else if (proveedor){ //Ingresado por cliente con proveedor asociado
-                pedido.set("Estado", local_root_scope.pedidos_estados.PendienteConfirmacionProveedor);
-                pedido.set("Comision", 0);
-
-                acl.setReadAccess(proveedor.get("user").id, true);
-                acl.setWriteAccess(proveedor.get("user").id, true);
-                pedido.setACL(acl);
-            }else{ //Ingresado por cliente sin proveedor asociado
+            }else{ //Ingresado por cliente
                 pedido.set("Estado", local_root_scope.pedidos_estados.Pendiente);
                 //Process comision
                 if (data.Valor <= 200){
@@ -466,21 +422,15 @@
             }
         }
 
-        var pedidoArray = [];
-        for(var i=1;i<=copias;i++){
-            var newPedido = pedido.clone();
-            pedidoArray.push(newPedido);
-        }
-
-        Parse.Object.saveAll(pedidoArray, {
-            success: function(pedidos) {
+        pedido.save(null, {
+            success: function(pedido) {
                 if (transportista){ //If added by despachador
-                    local_update_estado_transportista([transportista, local_root_scope.transportistas_estados.EnViaje, null], function (p, e, r) {
+                    local_update_estado_transportista([transportista, ciudadDestino, data.HoraEntrega, undefined, undefined, local_root_scope.transportistas_estados.EnViaje], function (p, e, r) {
                         //get_pedido_transportista_callback(params,null,pedidoUpdated);
-                        callback(params, null, pedidos)
+                        callback(params, null, pedido)
                     });
                 } else {
-                    callback(params, null, pedidos);
+                    callback(params, null, pedido);
                 }
             },
             error: function(error) {
@@ -488,43 +438,6 @@
                 callback(params,error,null);
             }
         });
-    };
-    local_get_cliente_proveedores = function(params,callback) {
-        var cliente = params[0];
-        if (!cliente){
-            cliente = local_root_scope.cliente;
-        }
-
-        if (cliente.get("Proveedores") && cliente.get("Proveedores").length > 0){
-            var proveedores = new Array();
-            var count = 0;
-            cliente.get("Proveedores").forEach(function(element,index,array){
-                count++;
-                var Proveedor = Parse.Object.extend("Proveedor");
-                var query = new Parse.Query(Proveedor);
-                query.equalTo("objectId", element);
-                query.find({
-                    success: function(results) {
-                        if (results && results.length > 0){
-                            proveedores.push(results[0]);
-                        }
-
-                        if (count == cliente.get("Proveedores").length){
-                            callback(params,null,proveedores);
-                        }
-                    },
-                    error: function(error) {
-                        console.log("Error: " + error.code + " " + error.message);
-                        if (error.code == 209){
-                            logout();
-                        }
-                        if (count == cliente.get("Proveedores").length){
-                            callback(params,null,proveedores);
-                        }
-                    }
-                });
-            });
-        }
     };
     local_get_plantillas = function(params,callback) {
         var pedido = Parse.Object.extend("Pedido");
@@ -856,20 +769,18 @@
     local_transportistas_despachador = function(params,callback) {
         var Transportista = Parse.Object.extend("Transportista");
         var query = new Parse.Query(Transportista);
+        query.include("proveedor");
         query.equalTo("Deleted",false);
-        query.equalTo("asignaciones",params[0].id);
+        query.equalTo("EmpresaDisponible",params[0]);
 
-        //if proveedor is selected
-        if (params[1] != null){
-            query.equalTo("proveedor",params[1]);
-        }
         //if is for pedido
         if (params[2] == true){
             query.equalTo("Estado",local_root_scope.transportistas_estados.Disponible);
-            query.equalTo("EmpresaDisponible",params[0]);
+            query.addAscending("EmpresaHoraDisponible");
+        } else {
+            query.addAscending("Nombre");
         }
 
-        query.addAscending("Nombre");
         query.find({
             success: function(results) {
                 callback(params,null,results)
@@ -1002,13 +913,48 @@
         });
     };
     local_finalizar_pedido = function(params,callback){
-        params[0].set('Estado','Finalizado');
-        params[0].set("HoraFinalizacion", new Date());
-        params[0].save(null, {
+        var pedido = params[0];
+        pedido.set('Estado','Finalizado');
+        pedido.set("HoraFinalizacion", new Date());
+        pedido.save(null, {
             success: function(pedidoUpdated) {
-                local_update_estado_transportista([params[0].get("Transportista"),local_root_scope.transportistas_estados.NoDisponible,null],function(p,e,r){
-                    increment_transportista_pedidos_completados(params[0]);
-                    callback(params,null,pedidoUpdated);
+                var Transportista = Parse.Object.extend("Transportista");
+                var query = new Parse.Query(Transportista);
+                query.get(pedido.get("Transportista").id, {
+                    success: function (transportista) {
+                        if (transportista.get("EmpresaDisponible")) {
+                            callback(params, null, pedidoUpdated);
+                        }else{
+                            var Pedido = Parse.Object.extend("Pedido");
+                            var query = new Parse.Query(Pedido);
+                            query.equalTo("Estado", "Activo");
+                            query.equalTo("Transportista",Transportista);
+                            query.count({
+                                success: function(count) {
+                                    if (count > 0){
+                                        callback(params, null, pedidoUpdated);
+                                    }else{
+                                        if (pedido.get("empresa").get("Despachador")) {
+                                            local_update_estado_transportista([transportista, pedido.get("CiudadOrigen"), undefined, pedido.get("empresa"), undefined, local_root_scope.transportistas_estados.EnViaje], function (p, e, r) {
+                                                callback(params, null, pedidoUpdated);
+                                            });
+                                        }else {
+                                            local_update_estado_transportista([transportista, pedido.get("CiudadDestino"), new Date(), undefined, undefined, local_root_scope.transportistas_estados.Disponible], function (p, e, r) {
+                                                callback(params, null, pedidoUpdated);
+                                            });
+                                        }
+                                    }
+                                },
+                                error: function(error) {
+                                    callback(params,error,null);
+                                }
+                            });
+                        }
+                    },
+                    error: function (error) {
+                        console.log(error);
+                        callback(params,error,null);
+                    }
                 });
             },
             error: function(error){
@@ -1056,10 +1002,15 @@
                         || estado == local_root_scope.pedidos_estados.PendienteConfirmacion
                         || estado == local_root_scope.pedidos_estados.Activo){
 
-                        local_update_estado_transportista([transportista,local_root_scope.transportistas_estados.Disponible,transportista.get("EmpresaDisponible")],function(p,e,r){
-                            callback(params,null,pedidoUpdated);
-                        });
-
+                        if (params[0].get("empresa").get("Despachador")) {
+                            local_update_estado_transportista([transportista, params[0].get("CiudadOrigen"), new Date(), params[0].get("empresa"), new Date(), local_root_scope.transportistas_estados.EnViaje], function (p, e, r) {
+                                callback(params, null, pedidoUpdated);
+                            });
+                        }else {
+                            local_update_estado_transportista([transportista,params[0].get("CiudadOrigen"),new Date(),undefined,undefined,local_root_scope.transportistas_estados.Disponible],function(p,e,r){
+                                callback(params,null,pedidoUpdated);
+                            });
+                        }
                     }else{
                         callback(params,null,pedidoUpdated);
                     }
@@ -1073,26 +1024,6 @@
                 callback(params,error,null);
             }
         });
-    };
-    local_cancelar_pedido_proveedor = function(params,callback){
-        if (params[0].get('Estado') == local_root_scope.pedidos_estados.Activo){
-            get_pedido_empresa_callback = callback;
-            get_pedido_empresa(params,cancelar_pedido_proveedor_callback)
-        }else{
-            params[0].set('Estado',local_root_scope.pedidos_estados.Cancelado);
-            params[0].save(null, {
-                success: function(pedidoUpdated) {
-                    local_update_estado_transportista([params[0].get("Transportista"),local_root_scope.transportistas_estados.NoDisponible,null],function(p,e,r){
-                        increment_transportista_pedidos_cancelados(params[0]);
-                        callback(params,null,pedidoUpdated);
-                    });
-                },
-                error: function(error){
-                    console.log(error);
-                    callback(params,error,null);
-                }
-            });
-        }
     };
     local_transportista_active_pedido = function(params,callback){
         var transportista = params[0];
@@ -1195,17 +1126,36 @@
         });
     };
     local_update_estado_transportista = function(params,callback){
-        if (params[1] == local_root_scope.transportistas_estados.Disponible) {
-            params[0].set("HoraDisponible", new Date());
-        }
-        params[0].set("Estado",params[1]);
-        if (params[2]){
-            params[0].set("EmpresaDisponible",params[2]);
-        }else{
-            params[0].unset("EmpresaDisponible");
-        }
+        var transportista = params[0];
+        var ciudadDisponible = params[1];
+        var ciudadHoraDisponible = params[2];
+        var empresaDisponible = params[3];
+        var empresaHoraDisponible = params[4];
+        var estado = params[5];
 
-        params[0].save(null, {
+        if (ciudadDisponible) {
+            transportista.set("CiudadDisponible", ciudadDisponible);
+        }else if (ciudadDisponible === undefined) {
+            transportista.unset("CiudadDisponible");
+        }
+        if (ciudadHoraDisponible) {
+            transportista.set("CiudadHoraDisponible", ciudadHoraDisponible);
+        }else if (ciudadHoraDisponible === undefined) {
+            transportista.unset("CiudadHoraDisponible");
+        }
+        if (empresaDisponible) {
+            transportista.set("EmpresaDisponible", empresaDisponible);
+        }else if (empresaDisponible === undefined) {
+            transportista.unset("EmpresaDisponible");
+        }
+        if (empresaHoraDisponible) {
+            transportista.set("EmpresaHoraDisponible", empresaHoraDisponible);
+        }else if (empresaHoraDisponible === undefined) {
+            transportista.unset("EmpresaHoraDisponible");
+        }
+        transportista.set("Estado",estado);
+
+        transportista.save(null, {
             success: function (updated) {
                 callback(params,null,updated);
             },
@@ -1599,229 +1549,6 @@
     };
 
     //Data callbacks
-    timeout_pedido_callback = function(params,error,result){
-        if (!error){
-            var transportista = params[0].get('Transportista');
-
-            params[0].set('Estado',local_root_scope.pedidos_estados.Pendiente);
-            params[0].unset('Proveedor');
-            params[0].unset('Transportista');
-            params[0].unset('HoraDisponible');
-
-            var acl = new Parse.ACL(result.get("user"));
-            acl.setRoleReadAccess("transportistaIndependiente", true);
-            acl.setRoleReadAccess("proveedor", true);
-            acl.setRoleReadAccess("transportista", true);
-            acl.setRoleWriteAccess("transportistaIndependiente", true);
-            acl.setRoleWriteAccess("proveedor", true);
-            acl.setRoleWriteAccess("transportista", true);
-            params[0].setACL(acl);
-
-            params[0].save(null, {
-                success: function(pedidoUpdated) {
-                    if (transportista){
-                        local_update_estado_transportista([transportista,local_root_scope.transportistas_estados.Disponible,transportista.get("EmpresaDisponible")],function(p,e,r){
-                            get_pedido_empresa_callback(params,null,pedidoUpdated);
-                        });
-                    }else{
-                        get_pedido_empresa_callback(params,null,pedidoUpdated);
-                    }
-                },
-                error: function(error){
-                    console.log(error);
-                    get_pedido_empresa_callback(params,error,null);
-                }
-            });
-        }else{
-            get_pedido_empresa_callback(params,null,null);
-        }
-    };
-    cancelar_pedido_proveedor_callback = function(params,error,result){
-        if (!error){
-            var transportista = params[0].get("Transportista");
-
-            params[0].set('Estado',local_root_scope.pedidos_estados.Pendiente);
-            params[0].unset("Proveedor");
-            params[0].unset("Transportista");
-
-            var acl = new Parse.ACL(result.get("user"));
-            acl.setRoleReadAccess("transportistaIndependiente", true);
-            acl.setRoleReadAccess("proveedor", true);
-            acl.setRoleReadAccess("transportista", true);
-            acl.setRoleWriteAccess("transportistaIndependiente", true);
-            acl.setRoleWriteAccess("proveedor", true);
-            acl.setRoleWriteAccess("transportista", true);
-            params[0].setACL(acl);
-
-            params[0].save(null, {
-                success: function(pedidoUpdated) {
-                    local_update_estado_transportista([transportista,local_root_scope.transportistas_estados.Disponible,transportista.get("EmpresaDisponible")],function(p,e,r){
-                        get_pedido_empresa_callback(params,null,pedidoUpdated);
-                    });
-                },
-                error: function(error){
-                    console.log(error);
-                    get_pedido_empresa_callback(params,error,null);
-                }
-            });
-        }else{
-            get_pedido_empresa_callback(params,null,null);
-        }
-    };
-    rechazar_pedido_callback = function(params,error,result){
-        if (!error){
-            var transportista = params[0].get("Transportista");
-
-            params[0].add('TransportistasBloqueados',params[0].get('Transportista').id);
-            params[0].unset('Transportista');
-            params[0].unset('HoraDisponible');
-            params[0].unset('HoraSeleccion');
-            params[0].set('Estado',local_root_scope.pedidos_estados.Pendiente);
-
-            var acl = new Parse.ACL(result.get("user"));
-            acl.setRoleReadAccess("transportistaIndependiente", true);
-            acl.setRoleReadAccess("proveedor", true);
-            acl.setRoleReadAccess("transportista", true);
-            acl.setRoleWriteAccess("transportistaIndependiente", true);
-            acl.setRoleWriteAccess("proveedor", true);
-            acl.setRoleWriteAccess("transportista", true);
-            params[0].setACL(acl);
-
-            params[0].save(null, {
-                success: function(pedidoUpdated) {
-                    local_update_estado_transportista([transportista,local_root_scope.transportistas_estados.Disponible,transportista.get("EmpresaDisponible")],function(p,e,r){
-                        get_pedido_empresa_callback(params,null,pedidoUpdated);
-                    });
-                },
-                error : function(error){
-                    get_pedido_empresa_callback(params,error,null);
-                }
-            });
-        }else{
-            get_pedido_empresa_callback(params,null,null);
-        }
-    };
-    proveedor_confirmar_pedido_get_empresa_callback = function(params,error,result) {
-        if (!error) {
-            params.push(result);
-            get_pedido_transportista_callback = get_pedido_empresa_callback;
-            get_pedido_transportista(params, proveedor_confirmar_pedido_callback)
-        } else {
-            get_pedido_empresa_callback(params, null, null);
-        }
-    }
-    proveedor_confirmar_pedido_callback = function(params,error,result) {
-        if (!error) {
-            params[0].set('Estado','Activo');
-            params[0].set('Transportista',params[1]);
-            params[0].set('HoraSeleccion',new Date());
-            params[0].set('HoraDisponible',params[1].get("HoraDisponible"));
-
-            var acl = new Parse.ACL(params[2].get("user"));
-            acl.setReadAccess(Parse.User.current().id, true);
-            acl.setWriteAccess(Parse.User.current().id, true);
-            if (result.get("user")){ //Sometimes transportistas don't have users
-                acl.setReadAccess(result.get("user").id, true);
-                acl.setWriteAccess(result.get("user").id, true);
-            }
-            params[0].setACL(acl);
-
-            params[0].save(null, {
-                success: function(pedidoUpdated) {
-                    local_update_estado_transportista([params[1],local_root_scope.transportistas_estados.EnViaje,null],function(p,e,r){
-                        get_pedido_transportista_callback(params,null,pedidoUpdated);
-                    });
-                },
-                error: function(error){
-                    console.log(error);
-                    get_pedido_transportista_callback(params,error,null);
-                }
-            });
-        } else {
-            get_pedido_empresa_callback(params, null, null);
-        }
-    };
-    proveedor_rechazar_pedido_callback = function(params,error,result) {
-        if (!error) {
-            params[0].set('Estado','Pendiente');
-            params[0].unset('Proveedor');
-            params[0].add('ProveedoresBloqueados',params[1].id);
-
-            //Process comision
-            if (params[0].get("Valor") <= 200){
-                if (params[0].get("Valor") * 0.05 > 5){
-                    params[0].set("Comision", params[0].get("Valor") * 0.05);
-                }else{
-                    params[0].set("Comision", 5);
-                }
-            }else{
-                params[0].set("Comision", 10);
-            }
-
-            var acl = new Parse.ACL(result.get("user"));
-            acl.setRoleReadAccess("transportistaIndependiente", true);
-            acl.setRoleReadAccess("proveedor", true);
-            acl.setRoleReadAccess("transportista", true);
-            acl.setRoleWriteAccess("transportistaIndependiente", true);
-            acl.setRoleWriteAccess("proveedor", true);
-            acl.setRoleWriteAccess("transportista", true);
-            params[0].setACL(acl);
-
-            params[0].save(null, {
-                success: function(pedidoUpdated) {
-                    get_pedido_empresa_callback(params,null,pedidoUpdated);
-                },
-                error: function(error){
-                    console.log(error);
-                    get_pedido_empresa_callback(params,error,null);
-                }
-            });
-        } else {
-            get_pedido_empresa_callback(params, null, null);
-        }
-    };
-    proveedor_tomar_pedido_get_empresa_callback = function(params,error,result) {
-        if (!error) {
-            params.push(result);
-            get_pedido_transportista_callback = get_pedido_empresa_callback;
-            get_pedido_transportista(params, proveedor_tomar_pedido_callback)
-        } else {
-            get_pedido_empresa_callback(params, null, null);
-        }
-    }
-    proveedor_tomar_pedido_callback = function(params,error,result){
-        if (!error) {
-
-            params[0].set('Estado','PendienteConfirmacion');
-            params[0].set('Transportista',params[1]);
-            params[0].set('HoraDisponible',params[1].get("HoraDisponible"));
-            params[0].set('Proveedor',params[2]);
-            params[0].set('HoraSeleccion',new Date());
-
-            var acl = new Parse.ACL(params[3].get("user"));
-            acl.setReadAccess(Parse.User.current().id, true);
-            acl.setWriteAccess(Parse.User.current().id, true);
-            if (result.get("user")){ //Sometimes transportistas don't have users
-                acl.setReadAccess(result.get("user").id, true);
-                acl.setWriteAccess(result.get("user").id, true);
-            }
-            params[0].setACL(acl);
-
-            params[0].save(null, {
-                success: function(pedidoUpdated) {
-                    local_update_estado_transportista([params[1],local_root_scope.transportistas_estados.EnViaje,null],function(p,e,r){
-                        get_pedido_transportista_callback(params,null,pedidoUpdated);
-                    });
-                },
-                error: function(error){
-                    console.log(error);
-                    get_pedido_transportista_callback(params,error,null);
-                }
-            });
-        } else {
-            get_pedido_transportista_callback(params, null, null);
-        }
-    }
 
     //Helpers
     increment_transportista_pedidos_completados = function(pedido){
