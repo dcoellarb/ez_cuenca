@@ -18,5 +18,22 @@
             <md-icon class="material-icons">delete</md-icon>
         </md-button>
     </md-list-item>
+    <div ng-show="choferes.length == 0 && seleccionarChofer" flex layout="column" layout-align="center center">
+        <img src= "../../assets/images/logo_new.png" style="max-height: 50px; max-width: 50px; margin: 25px;">
+        <h1>Lista vacia</h1>
+        <h3>No hay transportistas disponibles para este pedido al momento</h3>
+        <h4 class="text-light_blue">Para seleccionar un transportista este debe estar disponible,</h4>
+        <h4 class="text-light_blue">y debe cumplir con lo requerimientos de tipo de camio y peso del pedido</h4>
+    </div>
+    <div ng-show="choferes.length == 0 && addChofer" flex layout="column" layout-align="center center">
+        <img src= "../../assets/images/logo_new.png" style="max-height: 100px; max-width: 100px; margin: 50px;">
+        <h1>Lista vacia</h1>
+        <h3>Aun no has regristrado transportistas en tu flota</h3>
+        <h4 class="text-light_blue">Para agregar un transportista haga click aqui:</h4>
+        <md-button class="md-button md-fab action-yellow" ng-click="addChofer()">
+            <md-tooltip md-direction="left">Agregar Pedido</md-tooltip>
+            <md-icon class="material-icons">add</md-icon>
+        </md-button>
+    </div>
     <md-divider ></md-divider>
 </md-list>

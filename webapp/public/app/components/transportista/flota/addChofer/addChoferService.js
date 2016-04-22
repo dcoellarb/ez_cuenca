@@ -28,8 +28,13 @@ angular.module("easyRuta")
             addChofer: function(chofer) {
                 var acl = {
                     currentUser: true,
-                    permissions: []
+                    permissions: [
+                        {isRole: true, role: rolesEnum.broker, id: undefined, allowRead: true, allowWrite: true},
+                        {isRole: true, role: rolesEnum.proveedorCarga, id: undefined, allowRead: true, allowWrite: true}
+                    ]
                 }
+                //TODO when chofer is user add this permission
+                //{isRole: false, role: undefined, id: chofer.user.id, allowRead: true, allowWrite: true}
 
                 return Rx.Observable.create(function (observer) {
                     var suscription = dataService.add(collectionsEnum.chofer, choferModel.fromJson(chofer), {acl: acl}).subscribe(

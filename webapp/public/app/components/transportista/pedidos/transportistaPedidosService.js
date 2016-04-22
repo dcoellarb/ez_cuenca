@@ -3,7 +3,7 @@
  */
 
 angular.module("easyRuta")
-    .service('transportistaPedidosService',['collectionsEnum','dataService','pedidoModel','pedidoEstadosEnum','realtimeService','realtimeChannels',function(collectionsEnum,dataService,pedidoModel,pedidoEstadosEnum,realtimeService,realtimeChannels){
+    .service('transportistaPedidosService',['collectionsEnum','dataService','pedidoModel','pedidoEstadosEnum','realtimeService','realtimeChannels','choferModel','choferEstadosEnum',function(collectionsEnum,dataService,pedidoModel,pedidoEstadosEnum,realtimeService,realtimeChannels,choferModel,choferEstadosEnum){
 
         //private methods
         return {
@@ -36,19 +36,29 @@ angular.module("easyRuta")
                     updatedFields.push({operator: "set", field: "horaFinalizacion", value: new Date()});
                 }
                 return Rx.Observable.create(function (observer) {
-                    var suscription = dataService.update(collectionsEnum.pedido,pedidoModel.fromJson(pedido),{updatedFields: updatedFields}).subscribe(
-                        function (pedido) {
-                            if (estado == pedidoEstadosEnum.enCurso){
-                                realtimeService.publish(realtimeChannels.pedidoIniciado,{id:pedido.id});
-                            } else if (estado == pedidoEstadosEnum.finalizado){
-                                realtimeService.publish(realtimeChannels.pedidoFinalizado,{id:pedido.id});
+                    var suscription = dataService.update(collectionsEnum.pedido,pedidoModel.fromJson(pedido),{updatedFields: updatedFields})
+                        .flatMap(function(p){
+                            var chofer = pedido.chofer;
+                            pedido = p;
+                            if (estado == pedidoEstadosEnum.finalizado){
+                                return dataService.update(collectionsEnum.chofer,choferModel.fromJson(chofer),{updatedFields: [{operator: "set", field: "estado", value: choferEstadosEnum.disponible}]});
+                            }else{
+                                return Rx.Observable.just(undefined);
                             }
+                        })
+                        .subscribe(
+                            function (c) {
+                                if (estado == pedidoEstadosEnum.enCurso){
+                                    realtimeService.publish(realtimeChannels.pedidoIniciado,{id:pedido.id});
+                                } else if (estado == pedidoEstadosEnum.finalizado){
+                                    realtimeService.publish(realtimeChannels.pedidoFinalizado,{id:pedido.id});
+                                }
 
-                            observer.onNext(pedidoModel.toJson(pedido,[{field:"proveedorCarga"},{field:"transportista"},{field:"chofer"}]));
-                            observer.onCompleted();
-                        },
-                        function (e) { observer.onError(e) },
-                        function () { }
+                                observer.onNext(pedidoModel.toJson(pedido,[{field:"proveedorCarga"},{field:"transportista"},{field:"chofer"}]));
+                                observer.onCompleted();
+                            },
+                            function (e) { observer.onError(e) },
+                            function () { }
                     );
 
                     return function () {

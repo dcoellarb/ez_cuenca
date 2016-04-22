@@ -27,14 +27,19 @@
                 <md-icon class="material-icons">more_vert</md-icon>
             </md-button>
             <md-menu-content width="4">
-                <md-menu-item>
+                <md-menu-item  ng-show="iniciarViaje">
                     <md-button ng-click="iniciarViaje(pedido.id)">
                         Inciar Viaje
                     </md-button>
                 </md-menu-item>
-                <md-menu-item>
+                <md-menu-item  ng-show="detallePedido">
                     <md-button ng-click="detallePedido()">
                         Detalle del Pedido
+                    </md-button>
+                </md-menu-item>
+                <md-menu-item ng-show="cancelarPedido">
+                    <md-button ng-click="cancelarPedido(pedido.id, pedido.estado)">
+                        Cancelar Pedido
                     </md-button>
                 </md-menu-item>
             </md-menu-content>

@@ -2,6 +2,10 @@
     <md-tab label="Pendientes">
         <md-toolbar class="md-hue-2" ng-show="addPedido">
             <div class="md-toolbar-tools" layout="row" layout-align="end center">
+                <md-button class="md-button md-fab md-mini action-donacion" ng-show="addPedido" ng-click="addDonacion()">
+                    <md-tooltip md-direction="left">Enviar Donacion</md-tooltip>
+                    <md-icon class="material-icons">add</md-icon>
+                </md-button>
                 <md-button class="md-button md-fab md-mini action-yellow" ng-show="addPedido" ng-click="addPedido()">
                     <md-tooltip md-direction="left">Agregar Pedido</md-tooltip>
                     <md-icon class="material-icons">add</md-icon>
@@ -11,6 +15,16 @@
         <ul class="pedidos">
             <ez-pedido-pendiente ng-repeat="pedido in pedidosPendientes"></ez-pedido-pendiente>
         </ul>
+        <div ng-show="pedidosPendientes.length == 0" flex layout="column" layout-align="center center">
+            <img src= "../../assets/images/logo_new.png" style="max-height: 100px; max-width: 100px; margin: 50px;">
+            <h1>Lista vacia</h1>
+            <h3>No hay pedidos pendientes al momento</h3>
+            <h4 class="text-light_blue" ng-show="addPedido">Para agregar pedidos haga click aqui:</h4>
+            <md-button class="md-button md-fab action-yellow" ng-show="addPedido" ng-click="addPedido()">
+                <md-tooltip md-direction="left">Agregar Pedido</md-tooltip>
+                <md-icon class="material-icons">add</md-icon>
+            </md-button>
+        </div>
     </md-tab>
     <md-tab label="En Proceso" ng-click="tabClick()">
         <ul class="pedidos">
@@ -19,10 +33,20 @@
                 <ez-pedido-en-curso ng-if="pedido.estado == 'EnCurso'"></ez-pedido-en-curso>
             </div>
         </ul>
+        <div ng-show="pedidosEnProceso.length == 0" flex layout="column" layout-align="center center">
+            <img src= "../../assets/images/logo_new.png" style="max-height: 100px; max-width: 100px; margin: 50px;">
+            <h1>Lista vacia</h1>
+            <h3>No hay pedidos en proceso al momento</h3>
+        </div>
     </md-tab>
     <md-tab label="Completados" ng-click="tabClick()">
         <ul class="pedidos">
             <ez-pedido-completado ng-repeat="pedido in pedidosCompletados"></ez-pedido-completado>
+            <div ng-show="pedidosCompletados.length == 0" flex layout="column" layout-align="center center">
+                <img src= "../../assets/images/logo_new.png" style="max-height: 100px; max-width: 100px; margin: 50px;">
+                <h1>Lista vacia</h1>
+                <h3>Aun no hay pedidos completados</h3>
+            </div>
         </ul>
     </md-tab>
 </md-tabs>

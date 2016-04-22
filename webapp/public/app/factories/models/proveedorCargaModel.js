@@ -19,7 +19,8 @@ angular.module("easyRuta")
                     nombre: proveedorCarga.get("nombre"),
                     telefono: proveedorCarga.get("telefono"),
                     contacto: proveedorCarga.get("contacto"),
-                    asociados: proveedorCarga.get("asociados")
+                    asociados: proveedorCarga.get("asociados"),
+                    asociadoConTodos: proveedorCarga.get("asociadoConTodos")
                 };
 
                 //add pointers if included
@@ -49,6 +50,7 @@ angular.module("easyRuta")
                 proveedorCarga.set("telefono",json.telefono);
                 proveedorCarga.set("contacto",json.contacto);
                 prvoeedorCarga.set("asociados",json.asociados);
+                prvoeedorCarga.set("asociadoConTodos",json.asociadoConTodos);
 
                 if (json.user.object) { prvoeedorCarga.set("user",json.user.object); }
 

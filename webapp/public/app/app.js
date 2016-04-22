@@ -2,7 +2,7 @@
  * Created by dcoellar on 9/14/15.
  */
 
-angular.module("easyRuta",['ngRoute','ngMaterial','ngMessages','LocalStorageModule','ez-Data','ez-RealTime'])
+angular.module("easyRuta",['ngRoute','ngMaterial','ngMessages','ngMap','LocalStorageModule','ez-Data','ez-RealTime'])
     .constant('collectionsEnum',{
         role:'_Role',
         user:'_User',
@@ -21,6 +21,11 @@ angular.module("easyRuta",['ngRoute','ngMaterial','ngMessages','LocalStorageModu
         enCurso:'EnCurso',
         finalizado:'Finalizado',
         cancelado:'Cancelado'
+    })
+    .constant('choferEstadosEnum',{
+        disponible:'Disponible',
+        enViaje:'EnViaje',
+        deshabilitado:'Deshabilitado'
     })
     .constant('uiEventsEnum',{
         pedidosTabChanged:'pedidosTabChanged'

@@ -37,8 +37,13 @@ angular.module("easyRuta")
                     horaCancelacion: pedido.get("horaCancelacion"),
                     horaAsignacion: pedido.get("horaAsignacion"),
                     locations: pedido.get("locations"),
+                    donacion: pedido.get("donacion"),
                     createdAt: pedido.get("createdAt")
                 };
+
+                if (json.locations && json.locations.length > 0){
+                    json.currentLocation = json.locations[json.locations.length-1].split(",")
+                }
 
                 //add pointers if included
                 var proveedorCarga = pedido.get("proveedorCarga");
@@ -92,7 +97,7 @@ angular.module("easyRuta")
                 pedido.set("horaFinalizacion",json.horaFinalizacion);
                 pedido.set("horaCancelacion",json.horaCancelacion);
                 pedido.set("horaAsignacion",json.horaAsignacion);
-                pedido.set("locations",json.locations);
+                pedido.set("donacion",json.donacion);
                 pedido.set("createdAt",json.createdAt);
 
                 if (json.proveedorCarga && json.proveedorCarga.object) { pedido.set("proveedorCarga",json.proveedorCarga.object); }

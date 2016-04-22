@@ -124,6 +124,16 @@ angular.module("easyRuta")
                                 allowWrite: true
                             }
                         );
+                    } else if (pedido.proveedorCarga.asociadoConTodos) {
+                        acl.permissions.push(
+                            {
+                                isRole: true,
+                                role: rolesEnum.transportista,
+                                id: undefined,
+                                allowRead: true,
+                                allowWrite: true
+                            }
+                        );
                     } else if (pedido.transportista) {
                         acl.permissions.push(
                             {

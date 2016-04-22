@@ -3,19 +3,22 @@
  */
 
 angular.module("easyRuta")
-    .service('setTransportistaService',['$rootScope','collectionsEnum','choferModel','dataService','pedidoEstadosEnum','pedidoModel','realtimeService','realtimeChannels',function($rootScope,collectionsEnum,choferModel,dataService,pedidoEstadosEnum,pedidoModel,realtimeService,realtimeChannels){
+    .service('setTransportistaService',['$rootScope','collectionsEnum','choferModel','dataService','pedidoEstadosEnum','pedidoModel','realtimeService','realtimeChannels','choferModel','choferEstadosEnum',function($rootScope,collectionsEnum,choferModel,dataService,pedidoEstadosEnum,pedidoModel,realtimeService,realtimeChannels,choferModel,choferEstadosEnum){
 
         //private methods
 
         return {
             //public methods
-            getChoferes: function() {
+            getChoferes: function(pedido) {
                 return Rx.Observable.create(function (observer) {
-                    var suscription = dataService.getAll(collectionsEnum.chofer,{filters:[{type:"and",operator:"!=",field:"deleted",value:true}],includes:["transportista"]}).subscribe(
+                    var parms = {filters:[{type:"and",operator:"!=",field:"deleted",value:true},{type:"and",operator:"=",field:"estado",value:choferEstadosEnum.disponible}],includes:["transportista"]};
+                    var suscription = dataService.getAll(collectionsEnum.chofer,parms).subscribe(
                         function (choferes) {
-                            observer.onNext(choferes.map(function(chofer){
-                                return choferModel.toJson(chofer,[{field: "transportista"}]);
-                            }));
+                            observer.onNext(
+                                choferes
+                                    .map(function(chofer){ return choferModel.toJson(chofer,[{field: "transportista"}]); })
+                                    .filter(function(chofer){ return pedido.tipoCamion.indexOf(chofer.tipoCamion) >= 0; })
+                            );
                             observer.onCompleted();
                         },
                         function (e) {
@@ -67,15 +70,20 @@ angular.module("easyRuta")
                 }
 
                 return Rx.Observable.create(function (observer) {
-                    var suscription = dataService.update(collectionsEnum.pedido,pedidoModel.fromJson(pedido),{updatedFields: updatedFields, acl: acl}).subscribe(
-                        function (pedido) {
-                            realtimeService.publish(realtimeChannels.pedidoAsignado,{id:pedido.id, acl: acl});
+                    var suscription = dataService.update(collectionsEnum.pedido,pedidoModel.fromJson(pedido),{updatedFields: updatedFields, acl: acl})
+                        .flatMap(function(p){
+                            pedido = p;
+                            return dataService.update(collectionsEnum.chofer,choferModel.fromJson(chofer),{updatedFields: [{operator: "set", field: "estado", value: choferEstadosEnum.enViaje}]});
+                        })
+                        .subscribe(
+                            function (c) {
+                                realtimeService.publish(realtimeChannels.pedidoAsignado,{id:pedido.id, acl: acl});
 
-                            observer.onNext(pedidoModel.toJson(pedido,[{field:"proveedorCarga"},{field:"transportista"},{field:"chofer"}]));
-                            observer.onCompleted();
-                        },
-                        function (e) { observer.onError(e) },
-                        function () { }
+                                observer.onNext(pedidoModel.toJson(pedido,[{field:"proveedorCarga"},{field:"transportista"},{field:"chofer"}]));
+                                observer.onCompleted();
+                            },
+                            function (e) { observer.onError(e) },
+                            function () { }
                     );
 
                     return function () {

@@ -11,6 +11,7 @@ angular.module("easyRuta")
         $scope.showEmpresas = false;
         $scope.showBroker = false;
         $scope.processing = false;
+        $scope.processingForm = true;
 
         //private methods
         var initializeControls = function() {
@@ -179,6 +180,8 @@ angular.module("easyRuta")
             .subscribe (
                 function (success) {
                     console.log("Finish loading form.");
+                    $scope.processingForm = false;
+                    $scope.$apply();
                 },
                 function (e) {
                     console.dir(e);

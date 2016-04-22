@@ -1,4 +1,4 @@
-<li class="pedido-pendientes">
+<li ng-class="pedido.cssClass">
     <div layout="column" layout-gt-md="row" class="body" layout-padding>
         <div flex="40" layout="column" layout-align="space-between start">
             <h1 class="text-large text-600">{{pedido.ciudadOrigen | capitalizeFirst}}: {{pedido.direccionOrigen}}</h1>
@@ -16,7 +16,7 @@
                 <md-tooltip md-direction="top">Seleccionar Tranportista</md-tooltip>
                 <div class="icon-transportista"></div>
             </md-button>
-            <md-button class="md-button md-fab md-mini action-red" ng-show="cancelPedido" ng-click="cancelPedido()">
+            <md-button class="md-button md-fab md-mini action-red" ng-show="cancelarPedido" ng-click="cancelarPedido(pedido.id, pedido.estado)">
                 <md-tooltip md-direction="top">Cancelar Pedido</md-tooltip>
                 <md-icon class="material-icons">remove</md-icon>
             </md-button>

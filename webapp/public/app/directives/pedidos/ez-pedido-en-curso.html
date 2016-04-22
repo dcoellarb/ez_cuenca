@@ -22,8 +22,12 @@
                 </div>
             </div>
         </div>
-        <div flex="50" class="transportista">
-            <div id="map"></div>
+        <div ng-show="pedido.currentLocation" flex="50" class="transportista">
+            <ng-map id="{{pedido.id}}" class="map" center="{{pedido.currentLocation}}"></ng-map>
+        </div>
+        <div ng-show="!pedido.currentLocation" flex="50" class="transportista" layout="column" layout-align="center center">
+            <h2>Tracking desabilitado</h2>
+            <span>El transportista de este pedido no esta usando nuestra app.</span>
         </div>
     </div>
     <div flex="none" class="menu-button" layout="column" layout-align="center center">

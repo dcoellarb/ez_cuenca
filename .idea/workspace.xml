@@ -2,268 +2,33 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0ccc15df-18c8-488c-b882-7e9cbf60319c" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webapp/public/assets/images/exit.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webapp/public/assets/images/transportista-icon.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webapp/public/app/directives/old/components/controllers/MasterController.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webapp/public/assets/css/_decorators.scss" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webapp/public/assets/css/_defaults.scss" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webapp/public/assets/css/_forms.scss" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webapp/public/assets/css/_globals.scss" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webapp/public/assets/css/_header.scss" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webapp/public/assets/css/_lists.scss" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webapp/public/assets/css/_login.scss" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webapp/public/assets/css/_text.scss" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webapp/public/app/components/transportista/flota/addChofer/addChoferController.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webapp/public/app/components/transportista/flota/addChofer/addChoferService.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webapp/public/app/components/transportista/flota/addChofer/addChoferView.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webapp/public/app/components/shared/pedidos/addPedido/addPedidoController.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webapp/public/app/components/shared/pedidos/addPedido/addPedidoService.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webapp/public/app/components/shared/pedidos/addPedido/addpedidoView.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webapp/public/assets/js/vendor/angular-local-storage.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webapp/public/assets/css/app.css.map" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webapp/public/assets/css/app.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webapp/public/app/app.data.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webapp/public/app/app.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webapp/public/modules/login/app.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webapp/public/app/app.localStorage.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webapp/public/app/app.material.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webapp/public/app/app.realTime.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webapp/public/assets/css/app.scss" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webapp/public/app/factories/models/brokerModel.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webapp/public/app/filters/capitalizeFirst.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webapp/public/app/factories/models/choferModel.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webapp/public/app/directives/includes/ciudadesOptions.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webapp/public/modules/data.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webapp/public/app/directives/choferes/ez-choferes.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webapp/public/app/directives/choferes/ez-choferes.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webapp/public/app/directives/pedidos/ez-pedido-activo.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webapp/public/app/directives/pedidos/ez-pedido-activo.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webapp/public/app/directives/pedidos/ez-pedido-completado.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webapp/public/app/directives/pedidos/ez-pedido-completado.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webapp/public/app/directives/pedidos/ez-pedido-en-curso.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webapp/public/app/directives/pedidos/ez-pedido-en-curso.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webapp/public/app/directives/pedidos/ez-pedido-pendiente.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webapp/public/app/directives/pedidos/ez-pedido-pendiente.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webapp/public/app/directives/pedidos/ez-pedidos.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webapp/public/app/directives/pedidos/ez-pedidos.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webapp/public/app/components/shared/master/header/header.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webapp/public/app/components/shared/master/header/headerController.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webapp/public/modules/login/index.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webapp/public/modules/login/login.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webapp/public/app/factories/models/notificacionModel.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webapp/public/app/filters/parsePeso.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webapp/public/app/factories/models/pedidoModel.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webapp/public/app/directives/old/components/pedidos/pedidos.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webapp/public/app/directives/old/components/pedidos/pedidos_completados.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webapp/public/app/directives/old/components/pedidos/pedidos_en_proceso.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webapp/public/app/directives/old/components/pedidos/pedidos_pendientes.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webapp/public/app/directives/includes/pesoOptions.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webapp/public/app/components/shared/progressIndicator/progressIndicatorController.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webapp/public/app/components/shared/progressIndicator/progressIndicatorView.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webapp/public/app/factories/models/proveedorCargaModel.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webapp/public/app/components/proveedorCarga/pedidos/proveedorCargaPedidosController.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webapp/public/app/components/proveedorCarga/pedidos/proveedorCargaPedidosService.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webapp/public/app/components/proveedorCarga/pedidos/proveedorCargaPedidosView.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webapp/public/app/factories/models/proveedorCargaRutasModel.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webapp/public/modules/login/registroChofer.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webapp/public/modules/login/registroProveedorCarga.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webapp/public/modules/login/registroTransportista.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webapp/public/app/components/shared/pedidos/setTransportista/setTransportistaController.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webapp/public/app/components/shared/pedidos/setTransportista/setTransportistaService.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webapp/public/app/components/shared/pedidos/setTransportista/setTransportistaView.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webapp/public/app/components/shared/master/sidenav/sidenav.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webapp/public/app/components/shared/master/sidenav/sidenavController.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webapp/public/app/directives/includes/tiposCamion.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webapp/public/app/components/transportista/flota/transportistaFlotaController.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webapp/public/app/components/transportista/flota/transportistaFlotaService.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webapp/public/app/components/transportista/flota/transportistaFlotaView.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webapp/public/app/factories/models/transportistaModel.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webapp/public/app/components/transportista/pedidos/transportistaPedidosController.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webapp/public/app/components/transportista/pedidos/transportistaPedidosService.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webapp/public/app/components/transportista/pedidos/transportistaPedidosView.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webapp/public/app/factories/models/transportistaRutasModel.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webapp/public/app/factories/models/userModel.js" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/webapp/public/js/app.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/webapp/public/js/controllers/components/login/login.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/webapp/public/js/services/parser.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/webapp/public/js/services/utils.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/webapp/public/resources/css/angular-ui-switch.min.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/webapp/public/resources/css/bootstrap.min.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/webapp/public/resources/css/fonts.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/webapp/public/resources/fonts/glyphicons-halflings-regular.ttf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/webapp/public/resources/fonts/glyphicons-halflings-regular.woff" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/webapp/public/resources/fonts/glyphicons-halflings-regular.woff2" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/webapp/public/resources/fonts/icomoon.eot" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/webapp/public/resources/fonts/icomoon.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/webapp/public/resources/fonts/icomoon.ttf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/webapp/public/resources/fonts/icomoon.woff" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/webapp/public/resources/fonts/woff2/0eC6fl06luXEYWpBSJvXCIX0hVgzZQUfRDuZrPvH3D8.woff2" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/webapp/public/resources/fonts/woff2/1hZf02POANh32k2VkgEoUBkAz4rYn47Zy2rvigWQf6w.woff2" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/webapp/public/resources/fonts/woff2/2tsd397wLxj96qwHyNIkxHYhjbSpvc47ee6xR_80Hnw.woff2" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/webapp/public/resources/fonts/woff2/7m8l7TlFO-S3VkhHuR0at14sYYdJg5dU2qzJEVSuta0.woff2" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/webapp/public/resources/fonts/woff2/7m8l7TlFO-S3VkhHuR0at1BW26QxpSj-_ZKm_xT4hWw.woff2" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/webapp/public/resources/fonts/woff2/7m8l7TlFO-S3VkhHuR0at4gp9Q8gbYrhqGlRav_IXfk.woff2" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/webapp/public/resources/fonts/woff2/7m8l7TlFO-S3VkhHuR0at6E8kM4xWR1_1bYURRojRGc.woff2" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/webapp/public/resources/fonts/woff2/7m8l7TlFO-S3VkhHuR0at9DiNsR5a-9Oe_Ivpu8XWlY.woff2" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/webapp/public/resources/fonts/woff2/7m8l7TlFO-S3VkhHuR0at_ZraR2Tg8w2lzm7kLNL0-w.woff2" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/webapp/public/resources/fonts/woff2/7m8l7TlFO-S3VkhHuR0atwt_Rm691LTebKfY2ZkKSmI.woff2" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/webapp/public/resources/fonts/woff2/Fl4y0QdOxyyTHEGMXX8kcYX0hVgzZQUfRDuZrPvH3D8.woff2" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/webapp/public/resources/fonts/woff2/Hgo13k-tfSpn0qi1SFdUfZBw1xU1rKptJj_0jans920.woff2" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/webapp/public/resources/fonts/woff2/I3S1wsgSg9YCurV6PUkTOYX0hVgzZQUfRDuZrPvH3D8.woff2" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/webapp/public/resources/fonts/woff2/K23cxWVTrIFD6DJsEVi07RkAz4rYn47Zy2rvigWQf6w.woff2" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/webapp/public/resources/fonts/woff2/Ks_cVxiCiwUWVsFWFA3Bjn-_kf6ByYO6CLYdB4HQE-Y.woff2" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/webapp/public/resources/fonts/woff2/L14Jk06m6pUHB-5mXQQnYX0hVgzZQUfRDuZrPvH3D8.woff2" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/webapp/public/resources/fonts/woff2/NJ4vxlgWwWbEsv18dAhqnn-_kf6ByYO6CLYdB4HQE-Y.woff2" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/webapp/public/resources/fonts/woff2/NYDWBdD4gIq26G5XYbHsFIX0hVgzZQUfRDuZrPvH3D8.woff2" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/webapp/public/resources/fonts/woff2/OLffGBTaF0XFOW1gnuHF0Qt_Rm691LTebKfY2ZkKSmI.woff2" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/webapp/public/resources/fonts/woff2/OLffGBTaF0XFOW1gnuHF0V4sYYdJg5dU2qzJEVSuta0.woff2" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/webapp/public/resources/fonts/woff2/OLffGBTaF0XFOW1gnuHF0VBW26QxpSj-_ZKm_xT4hWw.woff2" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/webapp/public/resources/fonts/woff2/OLffGBTaF0XFOW1gnuHF0Ygp9Q8gbYrhqGlRav_IXfk.woff2" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/webapp/public/resources/fonts/woff2/OLffGBTaF0XFOW1gnuHF0aE8kM4xWR1_1bYURRojRGc.woff2" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/webapp/public/resources/fonts/woff2/OLffGBTaF0XFOW1gnuHF0dDiNsR5a-9Oe_Ivpu8XWlY.woff2" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/webapp/public/resources/fonts/woff2/OLffGBTaF0XFOW1gnuHF0fZraR2Tg8w2lzm7kLNL0-w.woff2" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/webapp/public/resources/fonts/woff2/OpXUqTo0UgQQhGj_SFdLWBkAz4rYn47Zy2rvigWQf6w.woff2" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/webapp/public/resources/fonts/woff2/Pru33qjShpZSmG3z6VYwnYX0hVgzZQUfRDuZrPvH3D8.woff2" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/webapp/public/resources/fonts/woff2/RxZJdnzeo3R5zSexge8UUZBw1xU1rKptJj_0jans920.woff2" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/webapp/public/resources/fonts/woff2/VYFx-s824kXq_Ul2BHqYH-_kf6ByYO6CLYdB4HQE-Y.woff2" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/webapp/public/resources/fonts/woff2/VvXUGKZXbHtX_S_VCTLpGhkAz4rYn47Zy2rvigWQf6w.woff2" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/webapp/public/resources/fonts/woff2/WxrXJa0C3KdtC7lMafG4dRkAz4rYn47Zy2rvigWQf6w.woff2" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/webapp/public/resources/fonts/woff2/ZLqKeelYbATG60EpZBSDy4X0hVgzZQUfRDuZrPvH3D8.woff2" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/webapp/public/resources/fonts/woff2/aZMswpodYeVhtRvuABJWvBkAz4rYn47Zy2rvigWQf6w.woff2" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/webapp/public/resources/fonts/woff2/cDKhRaXnQTOVbaoxwdOr9xkAz4rYn47Zy2rvigWQf6w.woff2" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/webapp/public/resources/fonts/woff2/e7MeVAyvogMqFwwl61PKhBkAz4rYn47Zy2rvigWQf6w.woff2" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/webapp/public/resources/fonts/woff2/frNV30OaYdlFRtH2VnZZdhkAz4rYn47Zy2rvigWQf6w.woff2" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/webapp/public/resources/fonts/woff2/gwVJDERN2Amz39wrSoZ7FxkAz4rYn47Zy2rvigWQf6w.woff2" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/webapp/public/resources/fonts/woff2/mbmhprMH69Zi6eEPBYVFhYX0hVgzZQUfRDuZrPvH3D8.woff2" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/webapp/public/resources/fonts/woff2/mx9Uck6uB63VIKFYnEMXrYX0hVgzZQUfRDuZrPvH3D8.woff2" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/webapp/public/resources/fonts/woff2/oHi30kwQWvpCWqAhzHcCSIX0hVgzZQUfRDuZrPvH3D8.woff2" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/webapp/public/resources/fonts/woff2/oMMgfZMQthOryQo9n22dcuvvDin1pK8aKteLpeZ5c0A.woff2" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/webapp/public/resources/fonts/woff2/oOeFwZNlrTefzLYmlVV1UIX0hVgzZQUfRDuZrPvH3D8.woff2" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/webapp/public/resources/fonts/woff2/rGvHdJnr2l75qb0YND9NyIX0hVgzZQUfRDuZrPvH3D8.woff2" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/webapp/public/resources/fonts/woff2/sTdaA6j0Psb920Vjv-mrzH-_kf6ByYO6CLYdB4HQE-Y.woff2" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/webapp/public/resources/fonts/woff2/tnj4SB6DNbdaQnsM8CFqBX-_kf6ByYO6CLYdB4HQE-Y.woff2" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/webapp/public/resources/fonts/woff2/ty9dfvLAziwdqQ2dHoyjphkAz4rYn47Zy2rvigWQf6w.woff2" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/webapp/public/resources/fonts/woff2/uYECMKoHcO9x1wdmbyHIm3-_kf6ByYO6CLYdB4HQE-Y.woff2" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/webapp/public/resources/fonts/woff2/vPcynSL0qHq_6dX7lKVByXYhjbSpvc47ee6xR_80Hnw.woff2" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/webapp/public/resources/fonts/woff2/vSzulfKSK0LLjjfeaxcREhkAz4rYn47Zy2rvigWQf6w.woff2" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/webapp/public/css/app.css" afterPath="$PROJECT_DIR$/webapp/public/assets/css/app_old.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/webapp/public/js/config/routes.js" afterPath="$PROJECT_DIR$/webapp/public/app/app.routes.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/webapp/public/js/controllers/components/agregarPedido/agregarPedido.js" afterPath="$PROJECT_DIR$/webapp/public/app/directives/old/components/controllers/components/agregarPedido/agregarPedido.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/webapp/public/js/controllers/components/masterPage/masterPage.js" afterPath="$PROJECT_DIR$/webapp/public/app/directives/old/components/controllers/components/masterPage/masterPage.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/webapp/public/js/controllers/components/pedidosLists/pedidosActivos.js" afterPath="$PROJECT_DIR$/webapp/public/app/directives/old/components/controllers/components/pedidosLists/pedidosActivos.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/webapp/public/js/controllers/components/pedidosLists/pedidosCompletados.js" afterPath="$PROJECT_DIR$/webapp/public/app/directives/old/components/controllers/components/pedidosLists/pedidosCompletados.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/webapp/public/js/controllers/components/pedidosLists/pedidosEnCurso.js" afterPath="$PROJECT_DIR$/webapp/public/app/directives/old/components/controllers/components/pedidosLists/pedidosEnCurso.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/webapp/public/js/controllers/components/pedidosLists/pedidosPendientes.js" afterPath="$PROJECT_DIR$/webapp/public/app/directives/old/components/controllers/components/pedidosLists/pedidosPendientes.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/webapp/public/js/controllers/components/pedidosLists/transportistasProveedor.js" afterPath="$PROJECT_DIR$/webapp/public/app/directives/old/components/controllers/components/pedidosLists/transportistasProveedor.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/webapp/public/js/controllers/components/rateTransportista/rateTransportista.js" afterPath="$PROJECT_DIR$/webapp/public/app/directives/old/components/controllers/components/rateTransportista/rateTransportista.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/webapp/public/js/controllers/confirm_dialog.js" afterPath="$PROJECT_DIR$/webapp/public/app/directives/old/components/controllers/confirm_dialog.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/webapp/public/js/controllers/incioDespachadores.js" afterPath="$PROJECT_DIR$/webapp/public/app/directives/old/components/controllers/incioDespachadores.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/webapp/public/js/controllers/notifications_center.js" afterPath="$PROJECT_DIR$/webapp/public/app/directives/old/components/controllers/notifications_center.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/webapp/public/js/controllers/pages/privado/administracion/register/register.js" afterPath="$PROJECT_DIR$/webapp/public/app/directives/old/components/controllers/pages/privado/administracion/register/register.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/webapp/public/js/controllers/pages/privado/clientes/Historico/historico.js" afterPath="$PROJECT_DIR$/webapp/public/app/directives/old/components/controllers/pages/privado/clientes/Historico/historico.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/webapp/public/js/controllers/pages/privado/clientes/detallePedido/detallePedido.js" afterPath="$PROJECT_DIR$/webapp/public/app/directives/old/components/controllers/pages/privado/clientes/detallePedido/detallePedido.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/webapp/public/js/controllers/pages/privado/clientes/inicioClientes/incioClientes.js" afterPath="$PROJECT_DIR$/webapp/public/app/directives/old/components/controllers/pages/privado/clientes/inicioClientes/incioClientes.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/webapp/public/js/controllers/pages/privado/clientes/perfil/perfil.js" afterPath="$PROJECT_DIR$/webapp/public/app/directives/old/components/controllers/pages/privado/clientes/perfil/perfil.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/webapp/public/js/controllers/pages/privado/proveedores/inicio/inicio.js" afterPath="$PROJECT_DIR$/webapp/public/app/directives/old/components/controllers/pages/privado/proveedores/inicio/inicio.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/webapp/public/js/controllers/transportistaEdit.js" afterPath="$PROJECT_DIR$/webapp/public/app/directives/old/components/controllers/transportistaEdit.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/webapp/public/js/services/airbrake.js" afterPath="$PROJECT_DIR$/webapp/public/app/factories/airbrake.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/webapp/public/js/services/parse.js" afterPath="$PROJECT_DIR$/webapp/public/modules/realTime.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/webapp/public/js/services/pubnub.js" afterPath="$PROJECT_DIR$/webapp/public/app/factories/pubnub.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/webapp/public/js/viewmodels/agregar_pedido.js" afterPath="$PROJECT_DIR$/webapp/public/app/directives/old/components/viewmodels/agregar_pedido.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/webapp/public/js/viewmodels/detalle_pedido.js" afterPath="$PROJECT_DIR$/webapp/public/app/directives/old/components/viewmodels/detalle_pedido.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/webapp/public/js/viewmodels/historico_view_model.js" afterPath="$PROJECT_DIR$/webapp/public/app/directives/old/components/viewmodels/historico_view_model.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/webapp/public/js/viewmodels/master_page.js" afterPath="$PROJECT_DIR$/webapp/public/app/directives/old/components/viewmodels/master_page.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/webapp/public/js/viewmodels/notifications_center.js" afterPath="$PROJECT_DIR$/webapp/public/app/directives/old/components/viewmodels/notifications_center.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/webapp/public/js/viewmodels/pedidos_activos.js" afterPath="$PROJECT_DIR$/webapp/public/app/directives/old/components/viewmodels/pedidos_activos.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/webapp/public/js/viewmodels/pedidos_completados.js" afterPath="$PROJECT_DIR$/webapp/public/app/directives/old/components/viewmodels/pedidos_completados.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/webapp/public/js/viewmodels/pedidos_en_curso.js" afterPath="$PROJECT_DIR$/webapp/public/app/directives/old/components/viewmodels/pedidos_en_curso.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/webapp/public/js/viewmodels/pedidos_pendientes.js" afterPath="$PROJECT_DIR$/webapp/public/app/directives/old/components/viewmodels/pedidos_pendientes.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/webapp/public/js/viewmodels/perfil.js" afterPath="$PROJECT_DIR$/webapp/public/app/directives/old/components/viewmodels/perfil.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/webapp/public/js/viewmodels/rate_transportista_modal.js" afterPath="$PROJECT_DIR$/webapp/public/app/directives/old/components/viewmodels/rate_transportista_modal.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/webapp/public/js/viewmodels/transportista_edit.js" afterPath="$PROJECT_DIR$/webapp/public/app/directives/old/components/viewmodels/transportista_edit.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/webapp/public/js/viewmodels/transportistas_proveedor.js" afterPath="$PROJECT_DIR$/webapp/public/app/directives/old/components/viewmodels/transportistas_proveedor.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/webapp/public/resources/app-debug.apk" afterPath="$PROJECT_DIR$/webapp/public/assets/apk/app-debug.apk" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/webapp/public/resources/app-release.apk" afterPath="$PROJECT_DIR$/webapp/public/assets/apk/app-release.apk" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/webapp/public/resources/images/EASY-RUTA-04.jpg" afterPath="$PROJECT_DIR$/webapp/public/assets/images/EASY-RUTA-04.jpg" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/webapp/public/resources/images/account_circle.png" afterPath="$PROJECT_DIR$/webapp/public/assets/images/account_circle.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/webapp/public/resources/images/ambato.jpg" afterPath="$PROJECT_DIR$/webapp/public/assets/images/ambato.jpg" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/webapp/public/resources/images/arrow.png" afterPath="$PROJECT_DIR$/webapp/public/assets/images/arrow.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/webapp/public/resources/images/cuenca.jpg" afterPath="$PROJECT_DIR$/webapp/public/assets/images/cuenca.jpg" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/webapp/public/resources/images/duran.jpg" afterPath="$PROJECT_DIR$/webapp/public/assets/images/duran.jpg" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/webapp/public/resources/images/factory.png" afterPath="$PROJECT_DIR$/webapp/public/assets/images/factory.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/webapp/public/resources/images/guayaquil.jpg" afterPath="$PROJECT_DIR$/webapp/public/assets/images/guayaquil.jpg" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/webapp/public/resources/images/logo.png" afterPath="$PROJECT_DIR$/webapp/public/assets/images/logo.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/webapp/public/resources/images/logo_background.png" afterPath="$PROJECT_DIR$/webapp/public/assets/images/logo_background.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/webapp/public/resources/images/logo_texto.png" afterPath="$PROJECT_DIR$/webapp/public/assets/images/logo_texto.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/webapp/public/resources/images/loja.jpg" afterPath="$PROJECT_DIR$/webapp/public/assets/images/loja.jpg" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/webapp/public/resources/images/machala.jpg" afterPath="$PROJECT_DIR$/webapp/public/assets/images/machala.jpg" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/webapp/public/resources/images/manta.jpg" afterPath="$PROJECT_DIR$/webapp/public/assets/images/manta.jpg" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/webapp/public/resources/images/posorja.jpg" afterPath="$PROJECT_DIR$/webapp/public/assets/images/posorja.jpg" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/webapp/public/resources/images/quevedo.jpg" afterPath="$PROJECT_DIR$/webapp/public/assets/images/quevedo.jpg" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/webapp/public/resources/images/quito.jpg" afterPath="$PROJECT_DIR$/webapp/public/assets/images/quito.jpg" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/webapp/public/resources/images/transrodar.png" afterPath="$PROJECT_DIR$/webapp/public/assets/images/transrodar.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/webapp/public/resources/images/truck.png" afterPath="$PROJECT_DIR$/webapp/public/assets/images/truck.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/webapp/public/resources/images/truck_dock.png" afterPath="$PROJECT_DIR$/webapp/public/assets/images/truck_dock.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/webapp/public/resources/js/airbrake/client.min.js" afterPath="$PROJECT_DIR$/webapp/public/assets/js/vendor/airbrake/client.min.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/webapp/public/resources/js/angular-google-maps.min.js" afterPath="$PROJECT_DIR$/webapp/public/assets/js/vendor/angular-google-maps.min.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/webapp/public/resources/js/angular-route.min.js" afterPath="$PROJECT_DIR$/webapp/public/assets/js/vendor/angular-route.min.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/webapp/public/resources/js/angular-simple-logger.min.js" afterPath="$PROJECT_DIR$/webapp/public/assets/js/vendor/angular-simple-logger.min.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/webapp/public/resources/js/angular-ui-switch.min.js" afterPath="$PROJECT_DIR$/webapp/public/assets/js/vendor/angular-ui-switch.min.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/webapp/public/resources/js/angular.min.js" afterPath="$PROJECT_DIR$/webapp/public/assets/js/vendor/angular.min.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/webapp/public/resources/js/bootstrap.min.js" afterPath="$PROJECT_DIR$/webapp/public/assets/js/vendor/bootstrap.min.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/webapp/public/resources/js/googleapis/common.js" afterPath="$PROJECT_DIR$/webapp/public/assets/js/vendor/googleapis/common.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/webapp/public/resources/js/googleapis/map.js" afterPath="$PROJECT_DIR$/webapp/public/assets/js/vendor/googleapis/map.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/webapp/public/resources/js/googleapis/stats.js" afterPath="$PROJECT_DIR$/webapp/public/assets/js/vendor/googleapis/stats.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/webapp/public/resources/js/googleapis/util.js" afterPath="$PROJECT_DIR$/webapp/public/assets/js/vendor/googleapis/util.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/webapp/public/resources/js/jquery.min.js" afterPath="$PROJECT_DIR$/webapp/public/assets/js/vendor/jquery.min.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/webapp/public/resources/js/lodash.min.js" afterPath="$PROJECT_DIR$/webapp/public/assets/js/vendor/lodash.min.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/webapp/public/resources/js/parse-1.6.0.min.js" afterPath="$PROJECT_DIR$/webapp/public/assets/js/vendor/parse-1.6.0.min.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/webapp/public/resources/js/pubnub-dev.js" afterPath="$PROJECT_DIR$/webapp/public/assets/js/vendor/pubnub-dev.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/webapp/public/resources/js/ui-bootstrap-tpls-0.14.3.min.js" afterPath="$PROJECT_DIR$/webapp/public/assets/js/vendor/ui-bootstrap-tpls-0.14.3.min.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/webapp/public/resources/video/big_buck_bunny.mp4" afterPath="$PROJECT_DIR$/webapp/public/assets/video/big_buck_bunny.mp4" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/webapp/public/resources/video/big_buck_bunny.ogv" afterPath="$PROJECT_DIR$/webapp/public/assets/video/big_buck_bunny.ogv" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/webapp/public/resources/video/big_buck_bunny.webm" afterPath="$PROJECT_DIR$/webapp/public/assets/video/big_buck_bunny.webm" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/webapp/public/resources/video/truck.mov" afterPath="$PROJECT_DIR$/webapp/public/assets/video/truck.mov" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/webapp/public/resources/video/truck.mp4" afterPath="$PROJECT_DIR$/webapp/public/assets/video/truck.mp4" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/webapp/public/resources/video/truck1.mp4" afterPath="$PROJECT_DIR$/webapp/public/assets/video/truck1.mp4" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/webapp/public/templates/components/DetallePedido/mapa.html" afterPath="$PROJECT_DIR$/webapp/public/app/directives/old/templates/components/DetallePedido/mapa.html" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/webapp/public/templates/components/DetallePedido/pedido.html" afterPath="$PROJECT_DIR$/webapp/public/app/directives/old/templates/components/DetallePedido/pedido.html" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/webapp/public/templates/components/DetallePedido/producto.html" afterPath="$PROJECT_DIR$/webapp/public/app/directives/old/templates/components/DetallePedido/producto.html" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/webapp/public/templates/components/DetallePedido/transportista.html" afterPath="$PROJECT_DIR$/webapp/public/app/directives/old/templates/components/DetallePedido/transportista.html" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/webapp/public/templates/components/agregarPedido/AgregarPedido.html" afterPath="$PROJECT_DIR$/webapp/public/app/directives/old/templates/components/agregarPedido/AgregarPedido.html" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/webapp/public/templates/components/agregarPedido/AgregarPedidoActions.html" afterPath="$PROJECT_DIR$/webapp/public/app/directives/old/templates/components/agregarPedido/AgregarPedidoActions.html" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/webapp/public/templates/components/agregarPedido/AgregarPedidoHeader.html" afterPath="$PROJECT_DIR$/webapp/public/app/directives/old/templates/components/agregarPedido/AgregarPedidoHeader.html" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/webapp/public/templates/components/agregarPedido/AgregarPedidoPlantillaModal.html" afterPath="$PROJECT_DIR$/webapp/public/app/directives/old/templates/components/agregarPedido/AgregarPedidoPlantillaModal.html" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/webapp/public/templates/components/agregarPedido/AgregarPedidoProducto.html" afterPath="$PROJECT_DIR$/webapp/public/app/directives/old/templates/components/agregarPedido/AgregarPedidoProducto.html" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/webapp/public/templates/components/agregarPedido/AgregarPedidoTransporte.html" afterPath="$PROJECT_DIR$/webapp/public/app/directives/old/templates/components/agregarPedido/AgregarPedidoTransporte.html" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/webapp/public/templates/components/agregarPedido/AgregarPedidoTransportistas.html" afterPath="$PROJECT_DIR$/webapp/public/app/directives/old/templates/components/agregarPedido/AgregarPedidoTransportistas.html" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/webapp/public/templates/components/agregarPedido/AgregarPedidoViaje.html" afterPath="$PROJECT_DIR$/webapp/public/app/directives/old/templates/components/agregarPedido/AgregarPedidoViaje.html" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/webapp/public/templates/components/home/como_funciona.html" afterPath="$PROJECT_DIR$/webapp/public/app/directives/old/templates/components/home/como_funciona.html" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/webapp/public/templates/components/home/contactenos.html" afterPath="$PROJECT_DIR$/webapp/public/app/directives/old/templates/components/home/contactenos.html" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/webapp/public/templates/components/home/para_empresas.html" afterPath="$PROJECT_DIR$/webapp/public/app/directives/old/templates/components/home/para_empresas.html" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/webapp/public/templates/components/home/para_proveedores.html" afterPath="$PROJECT_DIR$/webapp/public/app/directives/old/templates/components/home/para_proveedores.html" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/webapp/public/templates/components/master_page_private.html" afterPath="$PROJECT_DIR$/webapp/public/app/directives/old/templates/components/master_page_private.html" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/webapp/public/templates/components/master_page_publico.html" afterPath="$PROJECT_DIR$/webapp/public/app/directives/old/templates/components/master_page_publico.html" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/webapp/public/templates/components/pedidosLists/PedidosActivos.html" afterPath="$PROJECT_DIR$/webapp/public/app/directives/old/templates/components/pedidosLists/PedidosActivos.html" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/webapp/public/templates/components/pedidosLists/PedidosCompletados.html" afterPath="$PROJECT_DIR$/webapp/public/app/directives/old/templates/components/pedidosLists/PedidosCompletados.html" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/webapp/public/templates/components/pedidosLists/PedidosEnCurso.html" afterPath="$PROJECT_DIR$/webapp/public/app/directives/old/templates/components/pedidosLists/PedidosEnCurso.html" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/webapp/public/templates/components/pedidosLists/PedidosPendientes.html" afterPath="$PROJECT_DIR$/webapp/public/app/directives/old/templates/components/pedidosLists/PedidosPendientes.html" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/webapp/public/templates/components/pedidosLists/PedidosPendientesProveedor.html" afterPath="$PROJECT_DIR$/webapp/public/app/directives/old/templates/components/pedidosLists/PedidosPendientesProveedor.html" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/webapp/public/templates/components/pedidosLists/TransportistasProveedor.html" afterPath="$PROJECT_DIR$/webapp/public/app/directives/old/templates/components/pedidosLists/TransportistasProveedor.html" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/webapp/public/templates/components/rateTransportista/rate_transportista.html" afterPath="$PROJECT_DIR$/webapp/public/app/directives/old/templates/components/rateTransportista/rate_transportista.html" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/webapp/public/templates/confirm_dialog.html" afterPath="$PROJECT_DIR$/webapp/public/app/directives/old/templates/confirm_dialog.html" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/webapp/public/templates/notifications_center.html" afterPath="$PROJECT_DIR$/webapp/public/app/directives/old/templates/notifications_center.html" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/webapp/public/templates/pages/detalle_pedido.html" afterPath="$PROJECT_DIR$/webapp/public/app/directives/old/templates/pages/detalle_pedido.html" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/webapp/public/templates/pages/detalle_transportista.html" afterPath="$PROJECT_DIR$/webapp/public/app/directives/old/templates/pages/detalle_transportista.html" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/webapp/public/templates/pages/historico.html" afterPath="$PROJECT_DIR$/webapp/public/app/directives/old/templates/pages/historico.html" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/webapp/public/templates/pages/inicio_clientes.html" afterPath="$PROJECT_DIR$/webapp/public/app/directives/old/templates/pages/inicio_clientes.html" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/webapp/public/templates/pages/inicio_despachadores.html" afterPath="$PROJECT_DIR$/webapp/public/app/directives/old/templates/pages/inicio_despachadores.html" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/webapp/public/templates/pages/inicio_proveedores.html" afterPath="$PROJECT_DIR$/webapp/public/app/directives/old/templates/pages/inicio_proveedores.html" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/webapp/public/templates/pages/inicio_publico.html" afterPath="$PROJECT_DIR$/webapp/public/app/directives/old/templates/pages/inicio_publico.html" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/webapp/public/templates/pages/perfil.html" afterPath="$PROJECT_DIR$/webapp/public/app/directives/old/templates/pages/perfil.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/easyruta.iml" afterPath="$PROJECT_DIR$/.idea/easyruta.iml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webapp/public/assets/js/vendor/ng-map.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/webapp/public/assets/images/truck.png" afterPath="$PROJECT_DIR$/webapp/public/assets/images/truck.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/webapp/public/assets/css/_actions.scss" afterPath="$PROJECT_DIR$/webapp/public/assets/css/_actions.scss" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/webapp/public/assets/css/_lists.scss" afterPath="$PROJECT_DIR$/webapp/public/assets/css/_lists.scss" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/webapp/public/app/components/transportista/flota/addChofer/addChoferService.js" afterPath="$PROJECT_DIR$/webapp/public/app/components/transportista/flota/addChofer/addChoferService.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/webapp/public/app/components/shared/pedidos/addPedido/addPedidoController.js" afterPath="$PROJECT_DIR$/webapp/public/app/components/shared/pedidos/addPedido/addPedidoController.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/webapp/public/app/components/shared/pedidos/addPedido/addPedidoService.js" afterPath="$PROJECT_DIR$/webapp/public/app/components/shared/pedidos/addPedido/addPedidoService.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/webapp/public/app/components/shared/pedidos/addPedido/addpedidoView.html" afterPath="$PROJECT_DIR$/webapp/public/app/components/shared/pedidos/addPedido/addpedidoView.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/webapp/public/assets/css/app.css.map" afterPath="$PROJECT_DIR$/webapp/public/assets/css/app.css.map" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/webapp/public/assets/css/app.css" afterPath="$PROJECT_DIR$/webapp/public/assets/css/app.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/webapp/public/app/app.js" afterPath="$PROJECT_DIR$/webapp/public/app/app.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/webapp/public/app/directives/choferes/ez-choferes.html" afterPath="$PROJECT_DIR$/webapp/public/app/directives/choferes/ez-choferes.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/webapp/public/app/directives/pedidos/ez-pedido-activo.html" afterPath="$PROJECT_DIR$/webapp/public/app/directives/pedidos/ez-pedido-activo.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/webapp/public/app/directives/pedidos/ez-pedido-en-curso.html" afterPath="$PROJECT_DIR$/webapp/public/app/directives/pedidos/ez-pedido-en-curso.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/webapp/public/app/directives/pedidos/ez-pedido-pendiente.html" afterPath="$PROJECT_DIR$/webapp/public/app/directives/pedidos/ez-pedido-pendiente.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/webapp/public/app/directives/pedidos/ez-pedidos.html" afterPath="$PROJECT_DIR$/webapp/public/app/directives/pedidos/ez-pedidos.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/webapp/public/index.html" afterPath="$PROJECT_DIR$/webapp/public/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/watcherTasks.xml" afterPath="$PROJECT_DIR$/.idea/watcherTasks.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/webapp/public/app/factories/models/pedidoModel.js" afterPath="$PROJECT_DIR$/webapp/public/app/factories/models/pedidoModel.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/webapp/public/app/factories/models/proveedorCargaModel.js" afterPath="$PROJECT_DIR$/webapp/public/app/factories/models/proveedorCargaModel.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/webapp/public/app/components/proveedorCarga/pedidos/proveedorCargaPedidosController.js" afterPath="$PROJECT_DIR$/webapp/public/app/components/proveedorCarga/pedidos/proveedorCargaPedidosController.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/webapp/public/app/components/proveedorCarga/pedidos/proveedorCargaPedidosService.js" afterPath="$PROJECT_DIR$/webapp/public/app/components/proveedorCarga/pedidos/proveedorCargaPedidosService.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/webapp/public/modules/login/registroProveedorCarga.html" afterPath="$PROJECT_DIR$/webapp/public/modules/login/registroProveedorCarga.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/webapp/public/app/components/shared/pedidos/setTransportista/setTransportistaController.js" afterPath="$PROJECT_DIR$/webapp/public/app/components/shared/pedidos/setTransportista/setTransportistaController.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/webapp/public/app/components/shared/pedidos/setTransportista/setTransportistaService.js" afterPath="$PROJECT_DIR$/webapp/public/app/components/shared/pedidos/setTransportista/setTransportistaService.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/webapp/public/app/components/shared/pedidos/setTransportista/setTransportistaView.html" afterPath="$PROJECT_DIR$/webapp/public/app/components/shared/pedidos/setTransportista/setTransportistaView.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/webapp/public/app/components/transportista/pedidos/transportistaPedidosController.js" afterPath="$PROJECT_DIR$/webapp/public/app/components/transportista/pedidos/transportistaPedidosController.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/webapp/public/app/components/transportista/pedidos/transportistaPedidosService.js" afterPath="$PROJECT_DIR$/webapp/public/app/components/transportista/pedidos/transportistaPedidosService.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="easyruta.iws" />
@@ -296,65 +61,74 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="transportistaPedidosController.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/webapp/public/app/components/transportista/pedidos/transportistaPedidosController.js">
+      <file leaf-file-name="ez-pedido-pendiente.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/webapp/public/app/directives/pedidos/ez-pedido-pendiente.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="716" max-vertical-offset="1230">
-              <caret line="98" column="48" selection-start-line="98" selection-start-column="48" selection-end-line="98" selection-end-column="48" />
-              <folding>
-                <element signature="e#1807#3597#0" expanded="false" />
-                <element signature="e#4558#4598#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="main.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/webapp/cloud/main.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="1441" max-vertical-offset="2265">
-              <caret line="108" column="9" selection-start-line="108" selection-start-column="9" selection-end-line="108" selection-end-column="9" />
+            <state vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="465">
+              <caret line="0" column="29" selection-start-line="0" selection-start-column="21" selection-end-line="0" selection-end-column="29" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="addPedidoController.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/webapp/public/app/components/shared/pedidos/addPedido/addPedidoController.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="279" max-vertical-offset="1470">
-              <caret line="126" column="44" selection-start-line="126" selection-start-column="44" selection-end-line="126" selection-end-column="44" />
-              <folding>
-                <element signature="e#0#42#0" expanded="false" />
-                <element signature="e#549#1130#0" expanded="false" />
-                <element signature="e#1170#2699#0" expanded="false" />
-                <element signature="e#2748#3362#0" expanded="false" />
-                <element signature="e#3415#4458#0" expanded="false" />
-                <element signature="e#6473#6514#0" expanded="false" />
-                <element signature="e#6561#6730#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="setTransportistaController.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/webapp/public/app/components/shared/pedidos/setTransportista/setTransportistaController.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="129" max-vertical-offset="1020">
-              <caret line="27" column="34" selection-start-line="27" selection-start-column="34" selection-end-line="27" selection-end-column="34" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="proveedorCargaPedidosController.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="proveedorCargaPedidosController.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/webapp/public/app/components/proveedorCarga/pedidos/proveedorCargaPedidosController.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.5586592" vertical-offset="45" max-vertical-offset="960">
-              <caret line="23" column="36" selection-start-line="23" selection-start-column="36" selection-end-line="23" selection-end-column="36" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="495" max-vertical-offset="1620">
+              <caret line="87" column="42" selection-start-line="87" selection-start-column="42" selection-end-line="87" selection-end-column="42" />
               <folding>
-                <element signature="e#1854#2326#0" expanded="false" />
-                <element signature="e#2371#2729#0" expanded="false" />
+                <element signature="e#801#1276#0" expanded="false" />
+                <element signature="e#1338#1867#0" expanded="false" />
+                <element signature="e#1950#2270#0" expanded="false" />
+                <element signature="e#5366#5838#0" expanded="false" />
+                <element signature="e#5897#7695#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="proveedorCargaPedidosView.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/webapp/public/app/components/proveedorCarga/pedidos/proveedorCargaPedidosView.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="135">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ez-pedidos.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/webapp/public/app/directives/pedidos/ez-pedidos.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.08751459" vertical-offset="0" max-vertical-offset="870">
+              <caret line="5" column="67" selection-start-line="5" selection-start-column="67" selection-end-line="5" selection-end-column="67" />
+              <folding>
+                <element signature="n#style#0;n#img#0;n#div#0;n#md-tab#0;n#md-tabs#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#img#0;n#div#0;n#md-tab#1;n#md-tabs#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#img#0;n#div#0;n#ul#0;n#md-tab#2;n#md-tabs#0;n#!!top" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="_actions.scss" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/webapp/public/assets/css/_actions.scss">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-16.25" vertical-offset="0" max-vertical-offset="660">
+              <caret line="26" column="1" selection-start-line="26" selection-start-column="1" selection-end-line="26" selection-end-column="1" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="_lists.scss" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/webapp/public/assets/css/_lists.scss">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-15.625" vertical-offset="0" max-vertical-offset="540">
+              <caret line="41" column="21" selection-start-line="41" selection-start-column="3" selection-end-line="41" selection-end-column="21" />
+              <folding>
+                <element signature="e#180#497#0" expanded="false" />
+                <element signature="e#515#614#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -373,32 +147,17 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/webapp/public/app/factories/models/transportistaModel.js" />
-        <option value="$PROJECT_DIR$/webapp/public/app/factories/models/userModel.js" />
-        <option value="$PROJECT_DIR$/webapp/public/app/components/proveedorCarga/pedidos/proveedorCargaPedidosService.js" />
-        <option value="$PROJECT_DIR$/webapp/public/app/components/shared/progressIndicator/progressIndicatorController.js" />
-        <option value="$PROJECT_DIR$/webapp/public/app/components/shared/progressIndicator/progressIndicatorView.html" />
-        <option value="$PROJECT_DIR$/webapp/public/app/directives/choferes/ez-choferes.js" />
-        <option value="$PROJECT_DIR$/webapp/public/app/components/shared/pedidos/setTransportista/setTransportistaView.html" />
-        <option value="$PROJECT_DIR$/webapp/public/assets/css/_globals.scss" />
         <option value="$PROJECT_DIR$/webapp/public/app/components/transportista/flota/transportistaFlotaView.html" />
         <option value="$PROJECT_DIR$/webapp/public/assets/css/_forms.scss" />
         <option value="$PROJECT_DIR$/webapp/public/app/components/transportista/flota/addChofer/addChoferView.html" />
         <option value="$PROJECT_DIR$/webapp/public/app/components/transportista/flota/addChofer/addChoferController.js" />
-        <option value="$PROJECT_DIR$/webapp/public/app/directives/choferes/ez-choferes.html" />
-        <option value="$PROJECT_DIR$/webapp/public/app/components/transportista/flota/addChofer/addChoferService.js" />
         <option value="$PROJECT_DIR$/webapp/public/app/factories/models/choferModel.js" />
-        <option value="$PROJECT_DIR$/webapp/public/app/components/transportista/flota/transportistaFlotaService.js" />
         <option value="$PROJECT_DIR$/webapp/public/app/app.routes.js" />
         <option value="$PROJECT_DIR$/webapp/public/app/filters/capitalizeFirst.js" />
         <option value="$PROJECT_DIR$/webapp/public/app/filters/parsePeso.js" />
-        <option value="$PROJECT_DIR$/webapp/public/app/directives/pedidos/ez-pedido-pendiente.html" />
-        <option value="$PROJECT_DIR$/webapp/public/app/directives/pedidos/ez-pedido-activo.html" />
         <option value="$PROJECT_DIR$/webapp/public/app/directives/pedidos/ez-pedido-completado.html" />
-        <option value="$PROJECT_DIR$/webapp/public/app/directives/pedidos/ez-pedido-en-curso.html" />
         <option value="$PROJECT_DIR$/webapp/public/app/components/shared/master/sidenav/sidenavController.js" />
         <option value="$PROJECT_DIR$/webapp/public/app/components/transportista/flota/transportistaFlotaController.js" />
-        <option value="$PROJECT_DIR$/webapp/public/app/factories/models/pedidoModel.js" />
         <option value="$PROJECT_DIR$/webapp/public/app/factories/models/notificacionModel.js" />
         <option value="$PROJECT_DIR$/webapp/public/app/factories/models/proveedorCargaRutasModel.js" />
         <option value="$PROJECT_DIR$/webapp/public/app/factories/models/transportistaRutasModel.js" />
@@ -407,29 +166,44 @@
         <option value="$PROJECT_DIR$/webapp/public/modules/login/registroChofer.html" />
         <option value="$PROJECT_DIR$/webapp/public/modules/data.js" />
         <option value="$PROJECT_DIR$/webapp/public/modules/login/index.html" />
-        <option value="$PROJECT_DIR$/webapp/public/modules/login/registroProveedorCarga.html" />
         <option value="$PROJECT_DIR$/webapp/public/modules/login/registroTransportista.html" />
         <option value="$PROJECT_DIR$/webapp/public/modules/login/app.js" />
         <option value="$PROJECT_DIR$/webapp/public/modules/pubnub.js" />
-        <option value="$PROJECT_DIR$/webapp/public/app/app.js" />
         <option value="$PROJECT_DIR$/webapp/public/app/app.pubnub.js" />
-        <option value="$PROJECT_DIR$/webapp/public/index.html" />
         <option value="$PROJECT_DIR$/webapp/public/modules/realTime.js" />
         <option value="$PROJECT_DIR$/webapp/public/app/factories/pubnub.js" />
         <option value="$PROJECT_DIR$/webapp/public/app/app.realTime.js" />
-        <option value="$PROJECT_DIR$/webapp/public/app/components/shared/pedidos/addPedido/addPedidoController.js" />
-        <option value="$PROJECT_DIR$/webapp/public/app/components/shared/pedidos/addPedido/addPedidoService.js" />
-        <option value="$PROJECT_DIR$/webapp/public/app/components/shared/pedidos/setTransportista/setTransportistaService.js" />
+        <option value="$PROJECT_DIR$/webapp/public/app/directives/pedidos/ez-pedido-activo.html" />
+        <option value="$PROJECT_DIR$/webapp/public/app/components/transportista/pedidos/transportistaPedidosController.js" />
+        <option value="$PROJECT_DIR$/webapp/public/app/components/transportista/flota/addChofer/addChoferService.js" />
+        <option value="$PROJECT_DIR$/webapp/public/app/components/proveedorCarga/pedidos/proveedorCargaPedidosService.js" />
         <option value="$PROJECT_DIR$/webapp/public/app/components/transportista/pedidos/transportistaPedidosService.js" />
         <option value="$PROJECT_DIR$/webapp/public/app/components/shared/pedidos/setTransportista/setTransportistaController.js" />
-        <option value="$PROJECT_DIR$/webapp/public/app/components/transportista/pedidos/transportistaPedidosController.js" />
+        <option value="$PROJECT_DIR$/webapp/public/app/factories/models/proveedorCargaModel.js" />
+        <option value="$PROJECT_DIR$/webapp/public/app/components/shared/pedidos/addPedido/addPedidoService.js" />
+        <option value="$PROJECT_DIR$/webapp/public/app/components/shared/pedidos/addPedido/addPedidoController.js" />
+        <option value="$PROJECT_DIR$/webapp/public/app/components/shared/pedidos/addPedido/addpedidoView.html" />
+        <option value="$PROJECT_DIR$/webapp/public/app/app.js" />
+        <option value="$PROJECT_DIR$/webapp/public/index.html" />
+        <option value="$PROJECT_DIR$/webapp/public/app/directives/pedidos/ez-pedido-en-curso.html" />
+        <option value="$PROJECT_DIR$/webapp/public/app/components/shared/pedidos/setTransportista/setTransportistaService.js" />
+        <option value="$PROJECT_DIR$/webapp/public/app/components/transportista/pedidos/transportistaPedidosView.html" />
+        <option value="$PROJECT_DIR$/webapp/public/modules/login/registroProveedorCarga.html" />
+        <option value="$PROJECT_DIR$/webapp/public/app/components/shared/pedidos/setTransportista/setTransportistaView.html" />
+        <option value="$PROJECT_DIR$/webapp/public/app/components/transportista/flota/transportistaFlotaService.js" />
+        <option value="$PROJECT_DIR$/webapp/public/app/directives/choferes/ez-choferes.html" />
+        <option value="$PROJECT_DIR$/webapp/public/app/factories/models/pedidoModel.js" />
+        <option value="$PROJECT_DIR$/webapp/public/assets/css/_lists.scss" />
+        <option value="$PROJECT_DIR$/webapp/public/app/directives/pedidos/ez-pedido-pendiente.html" />
         <option value="$PROJECT_DIR$/webapp/public/app/components/proveedorCarga/pedidos/proveedorCargaPedidosController.js" />
+        <option value="$PROJECT_DIR$/webapp/public/assets/css/_actions.scss" />
+        <option value="$PROJECT_DIR$/webapp/public/app/directives/pedidos/ez-pedidos.html" />
       </list>
     </option>
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectFrameBounds">
-    <option name="x" value="-1680" />
+    <option name="x" value="-1661" />
     <option name="y" value="23" />
     <option name="width" value="1680" />
     <option name="height" value="1027" />
@@ -534,7 +308,33 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="modules" />
+              <option name="myItemId" value="assets" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="easyruta" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="easyruta" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="webapp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="public" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="assets" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="css" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -557,32 +357,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="easyruta" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="easyruta" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="webapp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="public" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="factories" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -682,7 +456,67 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="node_modules" />
+              <option name="myItemId" value="public" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="components" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="proveedorCarga" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="pedidos" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="easyruta" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="easyruta" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="webapp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="public" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="components" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="proveedorCarga" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="easyruta" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="easyruta" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="bower_components" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -710,18 +544,18 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/webapp/public/assets/js/vendor" />
       <recent name="$PROJECT_DIR$/webapp/public/app" />
       <recent name="$PROJECT_DIR$/webapp/public/modules" />
       <recent name="$PROJECT_DIR$/webapp/public/modules/login" />
       <recent name="$PROJECT_DIR$/webapp/public/app/filters" />
-      <recent name="$PROJECT_DIR$/webapp/public/app/directives/includes" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/webapp/public/assets/images" />
+      <recent name="$PROJECT_DIR$/webapp/public/app/components/shared/pedidos/addPedido" />
+      <recent name="$PROJECT_DIR$/webapp/public/app/components/shared/progressIndicator" />
       <recent name="$PROJECT_DIR$/webapp/public/assets/js/vendor" />
       <recent name="$PROJECT_DIR$/webapp/public/app/directives/pedidos" />
-      <recent name="$PROJECT_DIR$/webapp/public/app/directives/addPedido" />
-      <recent name="$PROJECT_DIR$/webapp/public" />
-      <recent name="$PROJECT_DIR$/webapp/public/app/modules" />
     </key>
   </component>
   <component name="RunManager" selected="Node.js.data.js">
@@ -821,12 +655,12 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-1680" y="23" width="1680" height="1027" extended-state="6" />
-    <editor active="false" />
+    <frame x="-1661" y="23" width="1680" height="1027" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4167832" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.26713288" sideWeight="0.49928468" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.37843785" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.26622662" sideWeight="0.49928468" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.37843785" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="true" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.32875773" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Remote Host" active="false" anchor="right" auto_hide="true" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.32944405" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39884394" sideWeight="0.44886753" order="7" side_tool="false" content_ui="tabs" />
@@ -836,8 +670,8 @@
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="true" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32890365" sideWeight="0.49965683" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.27045178" sideWeight="0.6145833" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.27140975" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.27045178" sideWeight="0.6145833" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.27062705" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -873,156 +707,10 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/webapp/public/app/directives/old/components/controllers/components/pedidosLists/pedidosActivos.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.33223686" vertical-offset="979" max-vertical-offset="2220">
-          <caret line="74" column="15" selection-start-line="74" selection-start-column="15" selection-end-line="74" selection-end-column="15" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/webapp/public/app/filters/capitalizeFirst.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="195">
-          <caret line="5" column="28" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="28" />
-          <folding>
-            <element signature="e#0#42#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/webapp/public/app/filters/parsePeso.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="225">
-          <caret line="5" column="22" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="22" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/webapp/public/app/directives/pedidos/ez-pedido-activo.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.19607843" vertical-offset="0" max-vertical-offset="735">
-          <caret line="4" column="84" selection-start-line="4" selection-start-column="84" selection-end-line="4" selection-end-column="84" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/webapp/public/app/directives/pedidos/ez-pedido-pendiente.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.04901961" vertical-offset="30" max-vertical-offset="465">
-          <caret line="3" column="83" selection-start-line="3" selection-start-column="65" selection-end-line="3" selection-end-column="83" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/webapp/public/app/factories/models/brokerModel.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.9776536" vertical-offset="90" max-vertical-offset="795">
-          <caret line="41" column="0" selection-start-line="37" selection-start-column="0" selection-end-line="41" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/webapp/public/app/factories/models/pedidoModel.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="539" max-vertical-offset="1665">
-          <caret line="52" column="57" selection-start-line="52" selection-start-column="57" selection-end-line="52" selection-end-column="57" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/webapp/public/app/factories/models/choferModel.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="286" max-vertical-offset="1425">
-          <caret line="34" column="18" selection-start-line="34" selection-start-column="18" selection-end-line="34" selection-end-column="18" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/webapp/public/app/factories/models/notificacionModel.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="900">
-          <caret line="26" column="57" selection-start-line="26" selection-start-column="57" selection-end-line="26" selection-end-column="57" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/webapp/public/app/factories/models/proveedorCargaModel.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="945">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/webapp/public/app/factories/models/proveedorCargaRutasModel.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="945">
-          <caret line="28" column="73" selection-start-line="28" selection-start-column="73" selection-end-line="28" selection-end-column="73" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/webapp/public/app/factories/models/transportistaModel.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="915">
-          <caret line="24" column="24" selection-start-line="24" selection-start-column="20" selection-end-line="24" selection-end-column="24" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/webapp/public/app/factories/models/transportistaRutasModel.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="975">
-          <caret line="29" column="71" selection-start-line="29" selection-start-column="71" selection-end-line="29" selection-end-column="71" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/webapp/public/app/factories/models/userModel.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="795">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/webapp/public/app/app.routes.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="45" max-vertical-offset="735">
-          <caret line="14" column="31" selection-start-line="14" selection-start-column="31" selection-end-line="14" selection-end-column="31" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/webapp/public/app/directives/pedidos/ez-pedido-completado.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.3" vertical-offset="0" max-vertical-offset="795">
-          <caret line="10" column="57" selection-start-line="10" selection-start-column="57" selection-end-line="10" selection-end-column="57" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/webapp/public/app/app.material.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.22346368" vertical-offset="0" max-vertical-offset="537">
-          <caret line="8" column="33" selection-start-line="8" selection-start-column="28" selection-end-line="8" selection-end-column="33" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/webapp/public/assets/css/app.scss">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="675">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/webapp/public/assets/css/_forms.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-18.125" vertical-offset="0" max-vertical-offset="750">
-          <caret line="29" column="16" selection-start-line="29" selection-start-column="16" selection-end-line="29" selection-end-column="16" />
           <folding />
         </state>
       </provider>
@@ -1040,44 +728,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/webapp/public/modules/login/registroChofer.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="750">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="4" selection-end-column="54" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/webapp/public/modules/login/login.html">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-11.25" vertical-offset="0" max-vertical-offset="465">
           <caret line="18" column="60" selection-start-line="18" selection-start-column="52" selection-end-line="18" selection-end-column="60" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/webapp/public/modules/login/app.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.2756052" vertical-offset="707" max-vertical-offset="1320">
-          <caret line="154" column="48" selection-start-line="154" selection-start-column="48" selection-end-line="154" selection-end-column="48" />
-          <folding>
-            <element signature="e#1128#3858#0" expanded="false" />
-            <element signature="e#4007#6763#0" expanded="false" />
-            <element signature="e#9637#12212#0" expanded="false" />
-            <element signature="e#12314#14348#0" expanded="false" />
-            <element signature="e#14505#15773#0" expanded="false" />
-            <element signature="e#14724#15767#0" expanded="false" />
-            <element signature="e#15937#17126#0" expanded="false" />
-            <element signature="e#17257#18390#0" expanded="false" />
-            <element signature="e#18503#19565#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/webapp/public/modules/login/registroProveedorCarga.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-15.625" vertical-offset="120" max-vertical-offset="765">
-          <caret line="33" column="0" selection-start-line="29" selection-start-column="0" selection-end-line="33" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -1130,14 +784,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/webapp/public/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-16.75" vertical-offset="273" max-vertical-offset="1485">
-          <caret line="45" column="36" selection-start-line="45" selection-start-column="36" selection-end-line="45" selection-end-column="36" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/webapp/public/app/directives/old/components/viewmodels/agregar_pedido.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.33268103" vertical-offset="550" max-vertical-offset="3060">
@@ -1146,29 +792,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/webapp/public/app/factories/pubnub.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="120" max-vertical-offset="1410">
-          <caret line="64" column="51" selection-start-line="64" selection-start-column="51" selection-end-line="64" selection-end-column="51" />
-          <folding>
-            <element signature="e#3784#3993#0" expanded="false" />
-            <element signature="e#4037#4680#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/webapp/public/app/directives/old/components/pedidos/pedidos_pendientes.html">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="537">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/webapp/public/app/app.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="228" max-vertical-offset="825">
-          <caret line="42" column="31" selection-start-line="42" selection-start-column="15" selection-end-line="42" selection-end-column="31" />
           <folding />
         </state>
       </provider>
@@ -1197,100 +824,29 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/webapp/public/app/components/shared/pedidos/addPedido/addPedidoService.js">
+    <entry file="file://$PROJECT_DIR$/webapp/public/app/components/transportista/flota/transportistaFlotaController.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="705" max-vertical-offset="1305">
-          <caret line="154" column="108" selection-start-line="154" selection-start-column="28" selection-end-line="154" selection-end-column="108" />
-          <folding>
-            <element signature="e#0#42#0" expanded="false" />
-            <element signature="e#556#1245#0" expanded="false" />
-            <element signature="e#1282#2069#0" expanded="false" />
-            <element signature="e#2116#2998#0" expanded="false" />
-            <element signature="e#3049#4439#0" expanded="false" />
-            <element signature="e#4482#4613#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/webapp/public/app/components/shared/pedidos/setTransportista/setTransportistaService.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.41340783" vertical-offset="768" max-vertical-offset="1305">
-          <caret line="71" column="110" selection-start-line="71" selection-start-column="28" selection-end-line="71" selection-end-column="110" />
-          <folding>
-            <element signature="e#1669#2037#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/webapp/public/app/components/transportista/pedidos/transportistaPedidosService.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="555">
-          <caret line="10" column="34" selection-start-line="10" selection-start-column="34" selection-end-line="10" selection-end-column="34" />
-          <folding>
-            <element signature="e#1402#3023#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/webapp/public/app/components/transportista/pedidos/transportistaPedidosView.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="537">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/webapp/public/app/directives/pedidos/ez-pedido-en-curso.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-9.5" vertical-offset="297" max-vertical-offset="810">
-          <caret line="35" column="61" selection-start-line="35" selection-start-column="61" selection-end-line="35" selection-end-column="61" />
+        <state vertical-scroll-proportion="0.31843576" vertical-offset="354" max-vertical-offset="1575">
+          <caret line="35" column="40" selection-start-line="35" selection-start-column="40" selection-end-line="35" selection-end-column="40" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/webapp/cloud/main.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="1441" max-vertical-offset="2265">
+        <state vertical-scroll-proportion="0.2801252" vertical-offset="1441" max-vertical-offset="2265">
           <caret line="108" column="9" selection-start-line="108" selection-start-column="9" selection-end-line="108" selection-end-column="9" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/webapp/public/app/components/shared/pedidos/addPedido/addPedidoController.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="279" max-vertical-offset="1470">
-          <caret line="126" column="44" selection-start-line="126" selection-start-column="44" selection-end-line="126" selection-end-column="44" />
-          <folding>
-            <element signature="e#0#42#0" expanded="false" />
-            <element signature="e#549#1130#0" expanded="false" />
-            <element signature="e#1170#2699#0" expanded="false" />
-            <element signature="e#2748#3362#0" expanded="false" />
-            <element signature="e#3415#4458#0" expanded="false" />
-            <element signature="e#6473#6514#0" expanded="false" />
-            <element signature="e#6561#6730#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/webapp/public/app/components/transportista/pedidos/transportistaPedidosController.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="716" max-vertical-offset="1230">
-          <caret line="98" column="48" selection-start-line="98" selection-start-column="48" selection-end-line="98" selection-end-column="48" />
-          <folding>
-            <element signature="e#1807#3597#0" expanded="false" />
-            <element signature="e#4558#4598#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/webapp/public/modules/data.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="399" max-vertical-offset="26175">
-          <caret line="250" column="29" selection-start-line="250" selection-start-column="29" selection-end-line="250" selection-end-column="29" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="26565">
+          <caret line="109" column="50" selection-start-line="109" selection-start-column="37" selection-end-line="109" selection-end-column="50" />
           <folding>
             <element signature="e#371#1699#0" expanded="false" />
             <element signature="e#1758#4283#0" expanded="false" />
-            <element signature="e#4340#5489#0" expanded="false" />
             <element signature="e#5535#6342#0" expanded="false" />
             <element signature="e#6452#6520#0" expanded="false" />
             <element signature="e#6575#7476#0" expanded="false" />
@@ -1302,29 +858,309 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/webapp/public/app/components/transportista/flota/transportistaFlotaController.js">
+    <entry file="file://$PROJECT_DIR$/webapp/public/app/directives/pedidos/ez-pedido-activo.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.31843576" vertical-offset="354" max-vertical-offset="1575">
-          <caret line="35" column="40" selection-start-line="35" selection-start-column="40" selection-end-line="35" selection-end-column="40" />
+        <state vertical-scroll-proportion="0.5121951" vertical-offset="195" max-vertical-offset="810">
+          <caret line="34" column="53" selection-start-line="34" selection-start-column="53" selection-end-line="34" selection-end-column="53" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webapp/public/modules/login/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.5285481" vertical-offset="441" max-vertical-offset="2010">
+          <caret line="51" column="111" selection-start-line="51" selection-start-column="44" selection-end-line="51" selection-end-column="111" />
+          <folding>
+            <element signature="e#4007#6763#0" expanded="false" />
+            <element signature="e#9637#12212#0" expanded="false" />
+            <element signature="e#12314#14348#0" expanded="false" />
+            <element signature="e#14505#15773#0" expanded="false" />
+            <element signature="e#14724#15767#0" expanded="false" />
+            <element signature="e#15937#17126#0" expanded="false" />
+            <element signature="e#17257#18390#0" expanded="false" />
+            <element signature="e#18503#19565#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webapp/public/app/components/transportista/flota/addChofer/addChoferService.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="270" max-vertical-offset="1410">
+          <caret line="31" column="113" selection-start-line="31" selection-start-column="113" selection-end-line="31" selection-end-column="113" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webapp/public/app/components/transportista/pedidos/transportistaPedidosController.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="381" max-vertical-offset="1305">
+          <caret line="74" column="22" selection-start-line="74" selection-start-column="16" selection-end-line="74" selection-end-column="22" />
+          <folding>
+            <element signature="e#1807#3597#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/webapp/public/app/components/shared/pedidos/setTransportista/setTransportistaController.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="129" max-vertical-offset="1020">
-          <caret line="27" column="34" selection-start-line="27" selection-start-column="34" selection-end-line="27" selection-end-column="34" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="15" max-vertical-offset="1020">
+          <caret line="14" column="61" selection-start-line="14" selection-start-column="61" selection-end-line="14" selection-end-column="61" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webapp/public/app/factories/models/proveedorCargaModel.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.69483566" vertical-offset="336" max-vertical-offset="975">
+          <caret line="52" column="75" selection-start-line="52" selection-start-column="75" selection-end-line="52" selection-end-column="75" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webapp/public/app/factories/models/transportistaModel.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.13145539" vertical-offset="276" max-vertical-offset="915">
+          <caret line="24" column="24" selection-start-line="24" selection-start-column="20" selection-end-line="24" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webapp/public/app/components/shared/pedidos/addPedido/addpedidoView.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.31707317" vertical-offset="0" max-vertical-offset="2520">
+          <caret line="13" column="69" selection-start-line="13" selection-start-column="69" selection-end-line="13" selection-end-column="69" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webapp/public/app/components/shared/pedidos/addPedido/addPedidoController.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.5106036" vertical-offset="1847" max-vertical-offset="2475">
+          <caret line="182" column="49" selection-start-line="182" selection-start-column="49" selection-end-line="182" selection-end-column="49" />
+          <folding>
+            <element signature="e#0#42#0" expanded="false" />
+            <element signature="e#2786#3400#0" expanded="false" />
+            <element signature="e#4570#4954#0" expanded="false" />
+            <element signature="e#5006#5239#0" expanded="false" />
+            <element signature="e#6511#6552#0" expanded="false" />
+            <element signature="e#6599#6768#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webapp/public/app/components/shared/pedidos/addPedido/addPedidoService.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.2112676" vertical-offset="300" max-vertical-offset="1455">
+          <caret line="117" column="45" selection-start-line="117" selection-start-column="45" selection-end-line="117" selection-end-column="45" />
+          <folding>
+            <element signature="e#0#42#0" expanded="false" />
+            <element signature="e#556#1245#0" expanded="false" />
+            <element signature="e#1282#2069#0" expanded="false" />
+            <element signature="e#2116#2998#0" expanded="false" />
+            <element signature="e#3049#4439#0" expanded="false" />
+            <element signature="e#4482#4613#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webapp/public/assets/js/vendor/ng-map.min.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="639">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webapp/public/app/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="900">
+          <caret line="4" column="69" selection-start-line="4" selection-start-column="69" selection-end-line="4" selection-end-column="69" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webapp/public/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-16.25" vertical-offset="0" max-vertical-offset="1545">
+          <caret line="26" column="77" selection-start-line="26" selection-start-column="77" selection-end-line="26" selection-end-column="77" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webapp/public/assets/css/_forms.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.7618214" vertical-offset="0" max-vertical-offset="750">
+          <caret line="29" column="16" selection-start-line="29" selection-start-column="16" selection-end-line="29" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webapp/public/assets/css/_globals.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-8.75" vertical-offset="0" max-vertical-offset="735">
+          <caret line="14" column="20" selection-start-line="14" selection-start-column="14" selection-end-line="14" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webapp/public/app/components/shared/pedidos/setTransportista/setTransportistaService.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="1.1672078" vertical-offset="1" max-vertical-offset="1110">
+          <caret line="74" column="34" selection-start-line="74" selection-start-column="28" selection-end-line="74" selection-end-column="34" />
+          <folding>
+            <element signature="e#546#1920#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webapp/public/app/directives/pedidos/ez-pedido-en-curso.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-16.875" vertical-offset="30" max-vertical-offset="870">
+          <caret line="29" column="24" selection-start-line="29" selection-start-column="24" selection-end-line="29" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webapp/public/app/components/proveedorCarga/pedidos/proveedorCargaPedidosService.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.91549295" vertical-offset="0" max-vertical-offset="990">
+          <caret line="39" column="29" selection-start-line="39" selection-start-column="29" selection-end-line="39" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webapp/public/app/components/transportista/pedidos/transportistaPedidosView.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-1.25" vertical-offset="0" max-vertical-offset="135">
+          <caret line="2" column="0" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webapp/public/modules/login/registroChofer.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-2.5" vertical-offset="0" max-vertical-offset="720">
+          <caret line="4" column="0" selection-start-line="3" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webapp/public/modules/login/registroProveedorCarga.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-10.625" vertical-offset="0" max-vertical-offset="765">
+          <caret line="17" column="53" selection-start-line="17" selection-start-column="53" selection-end-line="17" selection-end-column="53" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webapp/public/app/components/shared/pedidos/setTransportista/setTransportistaView.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-5.0" vertical-offset="0" max-vertical-offset="225">
+          <caret line="8" column="24" selection-start-line="8" selection-start-column="24" selection-end-line="8" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webapp/public/app/directives/choferes/ez-choferes.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.63414633" vertical-offset="60" max-vertical-offset="675">
+          <caret line="30" column="18" selection-start-line="30" selection-start-column="18" selection-end-line="30" selection-end-column="18" />
+          <folding>
+            <element signature="n#style#0;n#img#0;n#div#0;n#md-list#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#img#0;n#div#1;n#md-list#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webapp/public/app/components/transportista/flota/transportistaFlotaView.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.07317073" vertical-offset="0" max-vertical-offset="615">
+          <caret line="3" column="109" selection-start-line="3" selection-start-column="100" selection-end-line="3" selection-end-column="109" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webapp/public/app/components/transportista/pedidos/transportistaPedidosService.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.9389671" vertical-offset="0" max-vertical-offset="1140">
+          <caret line="40" column="32" selection-start-line="40" selection-start-column="32" selection-end-line="40" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webapp/public/app/components/transportista/flota/transportistaFlotaService.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.1971831" vertical-offset="336" max-vertical-offset="975">
+          <caret line="14" column="45" selection-start-line="14" selection-start-column="45" selection-end-line="14" selection-end-column="45" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webapp/public/app/factories/models/pedidoModel.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="1065" max-vertical-offset="1740">
+          <caret line="99" column="51" selection-start-line="99" selection-start-column="51" selection-end-line="99" selection-end-column="51" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webapp/public/app/directives/pedidos/ez-pedido-pendiente.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="465">
+          <caret line="0" column="29" selection-start-line="0" selection-start-column="21" selection-end-line="0" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webapp/public/assets/css/_lists.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-15.625" vertical-offset="0" max-vertical-offset="540">
+          <caret line="41" column="21" selection-start-line="41" selection-start-column="3" selection-end-line="41" selection-end-column="21" />
+          <folding>
+            <element signature="e#180#497#0" expanded="false" />
+            <element signature="e#515#614#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/webapp/public/app/components/proveedorCarga/pedidos/proveedorCargaPedidosController.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5586592" vertical-offset="45" max-vertical-offset="960">
-          <caret line="23" column="36" selection-start-line="23" selection-start-column="36" selection-end-line="23" selection-end-column="36" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="495" max-vertical-offset="1620">
+          <caret line="87" column="42" selection-start-line="87" selection-start-column="42" selection-end-line="87" selection-end-column="42" />
           <folding>
-            <element signature="e#1854#2326#0" expanded="false" />
-            <element signature="e#2371#2729#0" expanded="false" />
+            <element signature="e#801#1276#0" expanded="false" />
+            <element signature="e#1338#1867#0" expanded="false" />
+            <element signature="e#1950#2270#0" expanded="false" />
+            <element signature="e#5366#5838#0" expanded="false" />
+            <element signature="e#5897#7695#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webapp/public/assets/css/_actions.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-16.25" vertical-offset="0" max-vertical-offset="660">
+          <caret line="26" column="1" selection-start-line="26" selection-start-column="1" selection-end-line="26" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webapp/public/app/components/proveedorCarga/pedidos/proveedorCargaPedidosView.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="639">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webapp/public/app/directives/pedidos/ez-pedidos.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.08751459" vertical-offset="0" max-vertical-offset="870">
+          <caret line="5" column="67" selection-start-line="5" selection-start-column="67" selection-end-line="5" selection-end-column="67" />
+          <folding>
+            <element signature="n#style#0;n#img#0;n#div#0;n#md-tab#0;n#md-tabs#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#img#0;n#div#0;n#md-tab#1;n#md-tabs#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#img#0;n#div#0;n#ul#0;n#md-tab#2;n#md-tabs#0;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>

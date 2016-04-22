@@ -2,7 +2,7 @@
     <form id="add-pedido-form" name="pedidoForm" class="md-inline-form" novalidate>
         <md-toolbar>
             <div class="md-toolbar-tools">
-                <h2 flex>Agregar Pedido</h2>
+                <h2 flex>Agregar Pedido <md-progress-circular md-diameter="20px" ng-show="processingForm"></md-progress-circular></h2>
                 {{pedido.valor | currency}}
             </div>
         </md-toolbar>
@@ -25,7 +25,7 @@
                     </md-select>
                     <md-button class="md-warn" ng-show="selectablePlantilla" ng-click="eliminarPlantilla()">Eliminar Plantilla</md-button>
                 </md-input-container>
-                <md-switch ng-model="pedido.managedByBroker" aria-label="Managed by Broker" flex-gt-sm="25"  ng-show="showBroker && transportistas">
+                <md-switch ng-model="pedido.managedByBroker" aria-label="Managed by Broker" flex-gt-sm="25"  ng-show="showBroker && transportistas && !proveedorCarga.asociadoConTodos">
                     Administrado por Broker
                 </md-switch>
             </md-content>
@@ -127,7 +127,7 @@
                     </md-input-container>
                 </div>
                 <div layout="column" layout-gt-sm="row">
-                    <md-input-container class="md-block hidden" flex ng-show="transportistas && pedido.managedByBroker == false">
+                    <md-input-container class="md-block hidden" flex ng-show="transportistas && pedido.managedByBroker == false && !pedido.proveedorCarga.asociadoConTodos">
                         <label>Seleccione un tranportista</label>
                         <md-select ng-model="selectedTransportista" ng-change="transportistaSelected()">
                             <md-option ng-repeat="transportista in transportistas" value="{{transportista.id}}">

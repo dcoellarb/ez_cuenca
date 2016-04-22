@@ -23,11 +23,12 @@ ul.pedidos {
       background-color: $light_gray;
       border: solid 1px $dark_gray;
     }
-    #map {
-      width: 100%;
-      height: 140px;
-      background-color: $light_gray;
+    .map {
+      height: 185px;
     }
+  }
+  .pedido-donacion {
+    background: linear-gradient(yellow,blue,red)
   }
   .pedido-pendientes {
     background-color: $red;

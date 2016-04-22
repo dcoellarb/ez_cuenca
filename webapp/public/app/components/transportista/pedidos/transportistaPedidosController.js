@@ -110,4 +110,7 @@ angular.module("easyRuta")
         $scope.$on(realtimeChannels.pedidoAsignado, function(event, args){
             loadPedidos();
         });
+        $scope.$on(realtimeChannels.pedidoCancelado, function(event, args){
+            loadPedidos();
+        });
     }]);

@@ -12,7 +12,7 @@ angular.module("easyRuta")
 
         //private methods
         var loadChoferes = function() {
-            return setTransportistaService.getChoferes();
+            return setTransportistaService.getChoferes(pedido);
         };
 
         //public methods

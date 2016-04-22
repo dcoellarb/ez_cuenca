@@ -412,6 +412,15 @@ md-icon.rate span:hover {
 .md-button.md-icon-button.action-white md-icon {
   color: #FFF; }
 
+.md-button.md-fab.action-donacion {
+  background: linear-gradient(yellow, blue, red);
+  color: #FFF; }
+  .md-button.md-fab.action-donacion md-icon {
+    color: #FFF; }
+
+.md-button.md-icon-button.action-donacion md-icon {
+  color: #FFF; }
+
 .action-full-width {
   width: 100%; }
 
@@ -523,10 +532,10 @@ ul.pedidos {
       width: 40px;
       background-color: #F9F9F9;
       border: solid 1px #9B9B9B; }
-    ul.pedidos li #map {
-      width: 100%;
-      height: 140px;
-      background-color: #F9F9F9; }
+    ul.pedidos li .map {
+      height: 185px; }
+  ul.pedidos .pedido-donacion {
+    background: linear-gradient(yellow, blue, red); }
   ul.pedidos .pedido-pendientes {
     background-color: #E91E63; }
   ul.pedidos .pedido-activos {
