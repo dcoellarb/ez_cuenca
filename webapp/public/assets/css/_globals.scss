@@ -1,0 +1,44 @@
+$xs: 599px;
+$sm: 959px;
+$md: 1279px;
+$lg: 1919px;
+
+@mixin respond-to($val,$query) {
+  @media ($val: $query) {
+    @content
+  }
+}
+
+$blue: #607d8b;
+$red: #E91E63;
+$yellow: #E9B01E;
+$light_blue: #1EB2E9;
+$light_green: #1EE997;
+$green: #B8E986;
+$aqua:  #50E3C2;
+$black: #000;
+$darker_gray: #4A4A4A;
+$dark_gray: #9B9B9B;
+$gray: #D5D5D5;
+$light_gray: #F9F9F9;
+$white: #FFF;
+$colors: (('blue', $blue), ('red', $red), ('yellow', $yellow), ('light_blue', $light_blue), ('light_green', $light_green), ('green', $green), ('aqua', $aqua), ('black', $black), ('darker_gray', $darker_gray), ('gray', $gray), ('light_gray', $light_gray), ('white', $white));
+
+.left {
+  float: left;
+}
+.right {
+  float: right;
+}
+.horizontal-box {
+  display: inline-block;
+}
+.vertical-box {
+  display: block;
+}
+.hidden {
+  display: none;
+}
+.no-padding {
+  padding: 0px;
+}

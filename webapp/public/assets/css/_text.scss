@@ -1,0 +1,34 @@
+$font-family: avenir, tahoma, helveltica, arial;
+@each $color in $colors {
+  $name: nth($color, 1);
+  $value: nth($color, 2);
+  .text-#{$name} {
+    color: $value;
+  }
+}
+$weights: (100,200,300,400,500,600,700,800,900);
+@each $weight in $weights {
+  .text-#{$weight} {
+    font-weight: $weight;
+  }
+}
+$text-x-small: 0.7em;
+$text-small: 0.8em;
+$text-medium: 0.9em;
+$text-large: 1em;
+$text-x-large: 1.5em;
+$text-xx-large: 1em;
+$text-sizes: (('x-small',$text-x-small),('small',$text-small),('medium',$text-medium),('large',$text-large),('x-large',$text-x-large),('xx-large',$text-xx-large));
+@each $size in $text-sizes {
+  $name: nth($size, 1);
+  $value: nth($size, 2);
+  .text-#{$name} {
+    font-size: $value;
+  }
+}
+
+body {
+  font-family: $font-family;
+}
+
+

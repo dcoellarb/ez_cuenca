@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html ng-app="login">
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>easyRuta</title>
+
+    <!-- Angular Material Library -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.gitcdn.link/cdn/angular/bower-material/v1.1.0-rc2/angular-material.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <!-- Custom css-->
+    <link rel="stylesheet" type="text/css" href="../../../assets/css/app.css">
+
+    <!-- Angular.js Libraries -->
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular-animate.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular-aria.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular-messages.min.js"></script>
+    <script src="../../../assets/js/vendor/angular-local-storage.min.js"></script>
+    <!-- Angular Material Library -->
+    <script src="http://ajax.googleapis.com/ajax/libs/angular_material/1.1.0-rc2/angular-material.min.js"></script>
+    <!-- RxJS Library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/rxjs/4.1.0/rx.lite.js"></script>
+    <!-- SDKs parse, pubnub, airbrake -->
+    <script src="https://www.parsecdn.com/js/parse-1.6.14.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/airbrake-js/0.5.8/client.min.js"></script>
+
+    <!-- ez modules -->
+    <script src="../data.js"></script>
+
+    <!-- Custom js -->
+    <script src="app.js"></script>
+
+
+</head>
+<body>
+    <md-content ng-controller="homeController">
+        <md-toolbar class="md-tall" layout-padding>
+            <h1>
+                <span>Easyruta</span>
+            </h1>
+            <div flex layout="row" layout-align="end center">
+                <md-button class="md-raised md-accent" ng-click="login()">Ingresar</md-button>
+                <md-button class="" ng-click="registroProveedorCarga()">Proveedores</md-button>
+                <md-button class="" ng-click="registroTransportista()">Transportistas</md-button>
+                <md-button class="" ng-click="registroChofer()">Conductores</md-button>
+            </div>
+        </md-toolbar>
+        <md-content layout="columns" layout-align="center center">
+            <div layout="columns" flex="30"  layout-align="center center">
+                <h1>Conectamos proveedores de carga con transportistas</h1>
+            </div>
+        </md-content>
+    </md-content>
+</body>
+</html>

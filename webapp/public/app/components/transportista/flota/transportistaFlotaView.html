@@ -1,0 +1,11 @@
+<div ng-controller="transportistaFlotaController">
+    <md-toolbar class="md-hue-2">
+        <div class="md-toolbar-tools" layout="row" layout-align="end center">
+            <md-button class="md-button md-fab md-mini action-yellow" ng-show="addChofer" ng-click="addChofer()">
+                <md-tooltip md-direction="left">Agregar Transportista</md-tooltip>
+                <md-icon class="material-icons">add</md-icon>
+            </md-button>
+        </div>
+    </md-toolbar>
+    <ez-choferes></ez-choferes>
+</div>

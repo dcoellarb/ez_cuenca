@@ -1,0 +1,15 @@
+<div id="header" layout="column" layout-align="start end" ng-controller="headerController">
+    <md-toolbar>
+        <div class="md-toolbar-tools">
+            <md-button class="md-icon-button" ng-click="toggleLeft()">
+                <md-icon class="material-icons text-white">menu</md-icon>
+            </md-button>
+            <h1 class="text-large">Easyruta</h1>
+            <span flex></span>
+            <md-button class="md-icon-button exit" ng-click="logout()">
+                <md-tooltip md-direction="left">Cerrar Session</md-tooltip>
+                <img src="assets/images/exit.png"></md-icon>
+            </md-button>
+        </div>
+    </md-toolbar>
+</div>

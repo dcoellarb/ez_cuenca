@@ -1,0 +1,28 @@
+<md-tabs md-dynamic-height md-border-bottom md-selected="selectedTabIndex" class="md-primary">
+    <md-tab label="Pendientes">
+        <md-toolbar class="md-hue-2" ng-show="addPedido">
+            <div class="md-toolbar-tools" layout="row" layout-align="end center">
+                <md-button class="md-button md-fab md-mini action-yellow" ng-show="addPedido" ng-click="addPedido()">
+                    <md-tooltip md-direction="left">Agregar Pedido</md-tooltip>
+                    <md-icon class="material-icons">add</md-icon>
+                </md-button>
+            </div>
+        </md-toolbar>
+        <ul class="pedidos">
+            <ez-pedido-pendiente ng-repeat="pedido in pedidosPendientes"></ez-pedido-pendiente>
+        </ul>
+    </md-tab>
+    <md-tab label="En Proceso" ng-click="tabClick()">
+        <ul class="pedidos">
+            <div ng-repeat="pedido in pedidosEnProceso">
+                <ez-pedido-activo ng-if="pedido.estado == 'Activo'"></ez-pedido-activo>
+                <ez-pedido-en-curso ng-if="pedido.estado == 'EnCurso'"></ez-pedido-en-curso>
+            </div>
+        </ul>
+    </md-tab>
+    <md-tab label="Completados" ng-click="tabClick()">
+        <ul class="pedidos">
+            <ez-pedido-completado ng-repeat="pedido in pedidosCompletados"></ez-pedido-completado>
+        </ul>
+    </md-tab>
+</md-tabs>

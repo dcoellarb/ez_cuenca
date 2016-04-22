@@ -1,0 +1,45 @@
+<md-dialog  ng-cloak layout="column" layout-align="center center">
+    <form id="registrarForm" name="registrarForm">
+        <md-dialog-content layout-padding layout-align="start center">
+            <h2>Ingresa con tu cuenta de Easyruta</h2>
+            <md-content layout-padding>
+                <md-input-container class="md-block">
+                    <label>Nombre de la empresa o institucion</label>
+                    <input ng-model="proveedorCarga.nombre" type="email" required>
+                </md-input-container>
+                <md-input-container class="md-block">
+                    <label>Persona de Contacto</label>
+                    <input ng-model="proveedorCarga.contacto" required>
+                </md-input-container>
+                <md-input-container class="md-block">
+                    <label>Telefono</label>
+                    <input ng-model="proveedorCarga.telefono" required>
+                </md-input-container>
+                <md-input-container class="md-block">
+                    <label>Email</label>
+                    <input ng-model="proveedorCarga.username" type="email" required>
+                </md-input-container>
+                <md-input-container class="md-block">
+                    <label>Clave</label>
+                    <input ng-model="proveedorCarga.password" type="password" required>
+                </md-input-container>
+                <md-input-container class="md-block">
+                    <label>ConfirmarClave</label>
+                    <input ng-model="proveedorCarga.confirmPassword" type="password" required>
+                </md-input-container>
+                <md-button layout="row" layout-align="space-around" class="md-raised" ng-Click="registrar()" ng-disabled="registrarForm.$invalid || processing">
+                    <md-progress-circular md-diameter="20px" ng-show="processing"></md-progress-circular>
+                    <span ng-show="processing == false">Registrarme</span>
+                </md-button>
+                <span class="text-red text-medium" ng-show="showError">{{error}}</span>
+            </md-content>
+        </md-dialog-content>
+    </form>
+</md-dialog>
+
+
+
+
+
+
+

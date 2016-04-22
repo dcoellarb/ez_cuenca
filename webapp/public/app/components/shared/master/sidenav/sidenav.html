@@ -1,0 +1,32 @@
+<div ng-controller="sidenavController">
+    <md-sidenav class="md-sidenav-left md-whiteframe-4dp" md-component-id="sidenav-left">
+        <md-toolbar>
+            <h1 class="md-toolbar-tools">Easyruta</h1>
+        </md-toolbar>
+        <md-content layout-padding>
+            <md-menu-content width="4">
+                <md-menu-item>
+                    <md-button ng-click="inicio()" ng-show="showInicio" ng-disabled="disabledInicio">
+                        Inicio
+                    </md-button>
+                </md-menu-item>
+                <md-divider></md-divider>
+                <md-menu-item>
+                    <md-button ng-click="pedidos()" ng-show="showPedidos" ng-disabled="disabledPedidos">
+                        Pedidos
+                    </md-button>
+                </md-menu-item>
+                <md-menu-item>
+                    <md-button ng-click="rutas()" ng-show="showRutas" ng-disabled="disabledRutas">
+                        Rutas
+                    </md-button>
+                </md-menu-item>
+                <md-menu-item>
+                    <md-button ng-click="flota()" ng-show="showFlota" ng-disabled="disabledFlota">
+                        Flota
+                    </md-button>
+                </md-menu-item>
+            </md-menu-content>
+        </md-content>
+    </md-sidenav>
+</div>

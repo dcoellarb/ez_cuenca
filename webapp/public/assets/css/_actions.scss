@@ -1,0 +1,25 @@
+@each $color in $colors {
+  $name: nth($color, 1);
+  $value: nth($color, 2);
+  .md-button.md-fab.action-#{$name}{
+    background-color: $value;
+    color: $white;
+    md-icon {
+      color: $white;
+    }
+  }
+  .md-button.md-fab.action-#{$name}:not([disabled]):hover {
+    background-color: darken($value,5%);
+  }
+  .md-button.md-icon-button.action-#{$name}{
+    md-icon {
+      color: $value;
+    }
+  }
+}
+.action-full-width {
+  width: 100%;
+}
+.action-with-progress-circular {
+  min-height: 52px;
+}

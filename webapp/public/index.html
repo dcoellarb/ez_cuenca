@@ -1,74 +1,94 @@
 <!DOCTYPE html>
-<html ng-app="easyRuta">
+<html ng-app="easyRuta" ng-strict-di>
 <head lang="en">
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>easyRuta</title>
-    <link rel="stylesheet" href="resources/css/bootstrap.min.css">
 
-    <script src="resources/js/jquery.min.js"></script>
-    <script src="resources/js/lodash.min.js"></script>
+    <!-- JQuery libraries -->
+    <script   src="https://code.jquery.com/jquery-2.2.3.min.js"   integrity="sha256-a23g1Nt4dtEYOj7bR+vTu7+T8VP13humZFBJNIYoEJo="   crossorigin="anonymous"></script>
 
-    <script src="resources/js/bootstrap.min.js"></script>
-    <script src="resources/js/angular.min.js"></script>
-    <script src="resources/js/angular-route.min.js"></script>
-    <script src="resources/js/parse-1.6.0.min.js"></script>
-    <script src="resources/js/pubnub-dev.js"></script>
-    <script src="resources/js/airbrake/client.min.js"></script>
+    <!-- Angular.js Libraries -->
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-i18n/1.5.5/angular-locale_es-ec.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular-route.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular-animate.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular-aria.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular-messages.min.js"></script>
+    <script src="assets/js/vendor/angular-local-storage.min.js"></script>
 
-    <script src="resources/js/ui-bootstrap-tpls-0.14.3.min.js"></script>
+    <!-- Angular Material Library -->
+    <script src="http://ajax.googleapis.com/ajax/libs/angular_material/1.1.0-rc2/angular-material.min.js"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" >
+    <link rel="stylesheet" href="https://cdn.gitcdn.link/cdn/angular/bower-material/v1.1.0-rc2/angular-material.css">
 
-    <link href='resources/css/fonts.css'>
+    <!-- RxJS Library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/rxjs/4.1.0/rx.lite.js"></script>
 
-    <script src="resources/js/angular-ui-switch.min.js"></script>
-    <link href=resources/css/angular-ui-switch.min.css rel='stylesheet' type='text/css'>
+    <!-- SDKs parse, pubnub, airbrake -->
+    <script src="https://www.parsecdn.com/js/parse-1.6.14.min.js"></script>
+    <script src="https://cdn.pubnub.com/pubnub-3.14.5.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/airbrake-js/0.5.8/client.min.js"></script>
 
-    <link rel="stylesheet" href="css/app.css">
+    <!-- Custom css-->
+    <link rel="stylesheet" type="text/css" href="assets/css/app.css">
 
-    <script src="resources/js/googleapis/map.js"></script>
-    <script src="resources/js/angular-simple-logger.min.js"></script>
-    <script src="resources/js/angular-google-maps.min.js"></script>
+    <!-- ez modules -->
+    <script src="modules/data.js"></script>
+    <script src="modules/realTime.js"></script>
 
-    <script src="js/app.js"></script>
-    <script src="js/config/routes.js"></script>
-    <script src="js/services/parse.js"></script>
-    <script src="js/services/pubnub.js"></script>
-    <script src="js/services/utils.js"></script>
-    <script src="js/services/parser.js"></script>
-    <script src="js/services/airbrake.js"></script>
-    <script src="js/controllers/components/masterPage/masterPage.js"></script>
-    <script src="js/controllers/components/login/login.js"></script>
-    <script src="js/controllers/pages/privado/administracion/register/register.js"></script>
-    <script src="js/controllers/pages/privado/clientes/inicioClientes/incioClientes.js"></script>
-    <script src="js/controllers/pages/privado/proveedores/inicio/inicio.js"></script>
-    <script src="js/controllers/incioDespachadores.js"></script>
-    <script src="js/controllers/components/agregarPedido/agregarPedido.js"></script>
-    <script src="js/controllers/components/pedidosLists/pedidosPendientes.js"></script>
-    <script src="js/controllers/components/pedidosLists/pedidosActivos.js"></script>
-    <script src="js/controllers/components/pedidosLists/pedidosEnCurso.js"></script>
-    <script src="js/controllers/components/pedidosLists/pedidosCompletados.js"></script>
-    <script src="js/controllers/components/pedidosLists/transportistasProveedor.js"></script>
-    <script src="js/controllers/components/rateTransportista/rateTransportista.js"></script>
-    <script src="js/controllers/pages/privado/clientes/detallePedido/detallePedido.js"></script>
-    <script src="js/controllers/pages/privado/clientes/Historico/historico.js"></script>
-    <script src="js/controllers/pages/privado/clientes/perfil/perfil.js"></script>
-    <script src="js/controllers/confirm_dialog.js"></script>
-    <script src="js/controllers/transportistaEdit.js"></script>
-    <script src="js/controllers/notifications_center.js"></script>
-    <script src="js/viewmodels/agregar_pedido.js"></script>
-    <script src="js/viewmodels/pedidos_pendientes.js"></script>
-    <script src="js/viewmodels/pedidos_activos.js"></script>
-    <script src="js/viewmodels/pedidos_en_curso.js"></script>
-    <script src="js/viewmodels/pedidos_completados.js"></script>
-    <script src="js/viewmodels/transportistas_proveedor.js"></script>
-    <script src="js/viewmodels/detalle_pedido.js"></script>
-    <script src="js/viewmodels/transportista_edit.js"></script>
-    <script src="js/viewmodels/historico_view_model.js"></script>
-    <script src="js/viewmodels/master_page.js"></script>
-    <script src="js/viewmodels/perfil.js"></script>
-    <script src="js/viewmodels/notifications_center.js"></script>
-    <script src="js/viewmodels/rate_transportista_modal.js"></script>
+    <!-- Custom js -->
+    <script src="app/app.js"></script>
+    <script src="app/app.data.js"></script>
+    <script src="app/app.routes.js"></script>
+    <script src="app/app.localStorage.js"></script>
+    <script src="app/app.material.js"></script>
+    <script src="app/app.realTime.js"></script>
+    <script src="app/filters/capitalizeFirst.js"></script>
+    <script src="app/filters/parsePeso.js"></script>
+    <script src="app/factories/models/userModel.js"></script>
+    <script src="app/factories/models/proveedorCargaModel.js"></script>
+    <script src="app/factories/models/brokerModel.js"></script>
+    <script src="app/factories/models/transportistaModel.js"></script>
+    <script src="app/factories/models/proveedorCargaRutasModel.js"></script>
+    <script src="app/factories/models/transportistaRutasModel.js"></script>
+    <script src="app/factories/models/choferModel.js"></script>
+    <script src="app/factories/models/pedidoModel.js"></script>
+    <script src="app/factories/models/notificacionModel.js"></script>
+    <script src="app/directives/pedidos/ez-pedido-activo.js"></script>
+    <script src="app/directives/pedidos/ez-pedido-completado.js"></script>
+    <script src="app/directives/pedidos/ez-pedido-en-curso.js"></script>
+    <script src="app/directives/pedidos/ez-pedido-pendiente.js"></script>
+    <script src="app/directives/pedidos/ez-pedidos.js"></script>
+    <script src="app/directives/choferes/ez-choferes.js"></script>
+    <script src="app/components/shared/master/sidenav/sidenavController.js"></script>
+    <script src="app/components/shared/master/header/headerController.js"></script>
+    <script src="app/components/proveedorCarga/pedidos/proveedorCargaPedidosService.js"></script>
+    <script src="app/components/proveedorCarga/pedidos/proveedorCargaPedidosController.js"></script>
+    <script src="app/components/transportista/pedidos/transportistaPedidosService.js"></script>
+    <script src="app/components/transportista/pedidos/transportistaPedidosController.js"></script>
+    <script src="app/components/transportista/flota/transportistaFlotaService.js"></script>
+    <script src="app/components/transportista/flota/transportistaFlotaController.js"></script>
+    <script src="app/components/shared/progressIndicator/progressIndicatorController.js"></script>
+    <script src="app/components/shared/pedidos/addPedido/addPedidoService.js"></script>
+    <script src="app/components/shared/pedidos/addPedido/addPedidoController.js"></script>
+    <script src="app/components/shared/pedidos/setTransportista/setTransportistaService.js"></script>
+    <script src="app/components/shared/pedidos/setTransportista/setTransportistaController.js"></script>
+    <script src="app/components/transportista/flota/addChofer/addChoferService.js"></script>
+    <script src="app/components/transportista/flota/addChofer/addChoferController.js"></script>
 </head>
-<body style="background-color: #505050;">
-    <div ng-view></div>
+<body>
+<div class="main" layout="column" ng-cloak>
+    <section layout="row" flex>
+        <div ng-include="'app/components/shared/master/sidenav/sidenav.html'"></div>
+        <md-content class="main-content">
+            <!-- custom content header -->
+            <div ng-include="'app/components/shared/master/header/header.html'"></div>
+            <div class="inner_body">
+                <div ng-view></div>
+            </div>
+        </md-content>
+    </section>
+</div>
 </body>
 </html>

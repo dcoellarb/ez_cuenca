@@ -1,0 +1,539 @@
+html, body {
+  margin: 0px;
+  padding: 0px;
+  border: 0px; }
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+  padding: 0;
+  font-weight: normal; }
+
+p, th, td, li, dd, dt, ul, ol, blockquote, q, acronym, abbr, a, input, select, textarea {
+  margin: 0;
+  padding: 0; }
+
+a, a:link, a:visited, a:active, a:hover {
+  text-decoration: none; }
+
+img {
+  border: none; }
+
+table {
+  margin: 0;
+  padding: 0;
+  border: none; }
+
+form {
+  margin: 0;
+  padding: 0;
+  display: inline; }
+
+label {
+  cursor: pointer; }
+
+.left {
+  float: left; }
+
+.right {
+  float: right; }
+
+.horizontal-box {
+  display: inline-block; }
+
+.vertical-box {
+  display: block; }
+
+.hidden {
+  display: none; }
+
+.no-padding {
+  padding: 0px; }
+
+.text-blue {
+  color: #607d8b; }
+
+.text-red {
+  color: #E91E63; }
+
+.text-yellow {
+  color: #E9B01E; }
+
+.text-light_blue {
+  color: #1EB2E9; }
+
+.text-light_green {
+  color: #1EE997; }
+
+.text-green {
+  color: #B8E986; }
+
+.text-aqua {
+  color: #50E3C2; }
+
+.text-black {
+  color: #000; }
+
+.text-darker_gray {
+  color: #4A4A4A; }
+
+.text-gray {
+  color: #D5D5D5; }
+
+.text-light_gray {
+  color: #F9F9F9; }
+
+.text-white {
+  color: #FFF; }
+
+.text-100 {
+  font-weight: 100; }
+
+.text-200 {
+  font-weight: 200; }
+
+.text-300 {
+  font-weight: 300; }
+
+.text-400 {
+  font-weight: 400; }
+
+.text-500 {
+  font-weight: 500; }
+
+.text-600 {
+  font-weight: 600; }
+
+.text-700 {
+  font-weight: 700; }
+
+.text-800 {
+  font-weight: 800; }
+
+.text-900 {
+  font-weight: 900; }
+
+.text-x-small {
+  font-size: 0.7em; }
+
+.text-small {
+  font-size: 0.8em; }
+
+.text-medium {
+  font-size: 0.9em; }
+
+.text-large {
+  font-size: 1em; }
+
+.text-x-large {
+  font-size: 1.5em; }
+
+.text-xx-large {
+  font-size: 1em; }
+
+body {
+  font-family: avenir, tahoma, helveltica, arial; }
+
+/* Rounded Icons */
+.flat-icon-blue {
+  margin: 5px;
+  width: 56px;
+  height: 56px;
+  border-radius: 28px;
+  background-color: #607d8b;
+  color: #FFF; }
+  .flat-icon-blue md-icon {
+    color: #FFF; }
+
+.flat-icon-red {
+  margin: 5px;
+  width: 56px;
+  height: 56px;
+  border-radius: 28px;
+  background-color: #E91E63;
+  color: #FFF; }
+  .flat-icon-red md-icon {
+    color: #FFF; }
+
+.flat-icon-yellow {
+  margin: 5px;
+  width: 56px;
+  height: 56px;
+  border-radius: 28px;
+  background-color: #E9B01E;
+  color: #FFF; }
+  .flat-icon-yellow md-icon {
+    color: #FFF; }
+
+.flat-icon-light_blue {
+  margin: 5px;
+  width: 56px;
+  height: 56px;
+  border-radius: 28px;
+  background-color: #1EB2E9;
+  color: #FFF; }
+  .flat-icon-light_blue md-icon {
+    color: #FFF; }
+
+.flat-icon-light_green {
+  margin: 5px;
+  width: 56px;
+  height: 56px;
+  border-radius: 28px;
+  background-color: #1EE997;
+  color: #FFF; }
+  .flat-icon-light_green md-icon {
+    color: #FFF; }
+
+.flat-icon-green {
+  margin: 5px;
+  width: 56px;
+  height: 56px;
+  border-radius: 28px;
+  background-color: #B8E986;
+  color: #FFF; }
+  .flat-icon-green md-icon {
+    color: #FFF; }
+
+.flat-icon-aqua {
+  margin: 5px;
+  width: 56px;
+  height: 56px;
+  border-radius: 28px;
+  background-color: #50E3C2;
+  color: #FFF; }
+  .flat-icon-aqua md-icon {
+    color: #FFF; }
+
+.flat-icon-black {
+  margin: 5px;
+  width: 56px;
+  height: 56px;
+  border-radius: 28px;
+  background-color: #000;
+  color: #FFF; }
+  .flat-icon-black md-icon {
+    color: #FFF; }
+
+.flat-icon-darker_gray {
+  margin: 5px;
+  width: 56px;
+  height: 56px;
+  border-radius: 28px;
+  background-color: #4A4A4A;
+  color: #FFF; }
+  .flat-icon-darker_gray md-icon {
+    color: #FFF; }
+
+.flat-icon-gray {
+  margin: 5px;
+  width: 56px;
+  height: 56px;
+  border-radius: 28px;
+  background-color: #D5D5D5;
+  color: #FFF; }
+  .flat-icon-gray md-icon {
+    color: #FFF; }
+
+.flat-icon-light_gray {
+  margin: 5px;
+  width: 56px;
+  height: 56px;
+  border-radius: 28px;
+  background-color: #F9F9F9;
+  color: #FFF; }
+  .flat-icon-light_gray md-icon {
+    color: #FFF; }
+
+.flat-icon-white {
+  margin: 5px;
+  width: 56px;
+  height: 56px;
+  border-radius: 28px;
+  background-color: #FFF;
+  color: #FFF; }
+  .flat-icon-white md-icon {
+    color: #FFF; }
+
+.icon-transportista {
+  background-image: url("../images/transportista-icon.png");
+  background-repeat: no-repeat;
+  height: 100%;
+  width: 100%;
+  background-position: center; }
+
+/* Rating */
+md-icon.rate span {
+  cursor: pointer;
+  color: #E9B01E; }
+md-icon.rate span:hover {
+  color: #d0a537; }
+
+.md-button.md-fab.action-blue {
+  background-color: #607d8b;
+  color: #FFF; }
+  .md-button.md-fab.action-blue md-icon {
+    color: #FFF; }
+
+.md-button.md-fab.action-blue:not([disabled]):hover {
+  background-color: #566f7c; }
+
+.md-button.md-icon-button.action-blue md-icon {
+  color: #607d8b; }
+
+.md-button.md-fab.action-red {
+  background-color: #E91E63;
+  color: #FFF; }
+  .md-button.md-fab.action-red md-icon {
+    color: #FFF; }
+
+.md-button.md-fab.action-red:not([disabled]):hover {
+  background-color: #d81558; }
+
+.md-button.md-icon-button.action-red md-icon {
+  color: #E91E63; }
+
+.md-button.md-fab.action-yellow {
+  background-color: #E9B01E;
+  color: #FFF; }
+  .md-button.md-fab.action-yellow md-icon {
+    color: #FFF; }
+
+.md-button.md-fab.action-yellow:not([disabled]):hover {
+  background-color: #d8a215; }
+
+.md-button.md-icon-button.action-yellow md-icon {
+  color: #E9B01E; }
+
+.md-button.md-fab.action-light_blue {
+  background-color: #1EB2E9;
+  color: #FFF; }
+  .md-button.md-fab.action-light_blue md-icon {
+    color: #FFF; }
+
+.md-button.md-fab.action-light_blue:not([disabled]):hover {
+  background-color: #15a3d8; }
+
+.md-button.md-icon-button.action-light_blue md-icon {
+  color: #1EB2E9; }
+
+.md-button.md-fab.action-light_green {
+  background-color: #1EE997;
+  color: #FFF; }
+  .md-button.md-fab.action-light_green md-icon {
+    color: #FFF; }
+
+.md-button.md-fab.action-light_green:not([disabled]):hover {
+  background-color: #15d88a; }
+
+.md-button.md-icon-button.action-light_green md-icon {
+  color: #1EE997; }
+
+.md-button.md-fab.action-green {
+  background-color: #B8E986;
+  color: #FFF; }
+  .md-button.md-fab.action-green md-icon {
+    color: #FFF; }
+
+.md-button.md-fab.action-green:not([disabled]):hover {
+  background-color: #abe570; }
+
+.md-button.md-icon-button.action-green md-icon {
+  color: #B8E986; }
+
+.md-button.md-fab.action-aqua {
+  background-color: #50E3C2;
+  color: #FFF; }
+  .md-button.md-fab.action-aqua md-icon {
+    color: #FFF; }
+
+.md-button.md-fab.action-aqua:not([disabled]):hover {
+  background-color: #3adfba; }
+
+.md-button.md-icon-button.action-aqua md-icon {
+  color: #50E3C2; }
+
+.md-button.md-fab.action-black {
+  background-color: #000;
+  color: #FFF; }
+  .md-button.md-fab.action-black md-icon {
+    color: #FFF; }
+
+.md-button.md-fab.action-black:not([disabled]):hover {
+  background-color: black; }
+
+.md-button.md-icon-button.action-black md-icon {
+  color: #000; }
+
+.md-button.md-fab.action-darker_gray {
+  background-color: #4A4A4A;
+  color: #FFF; }
+  .md-button.md-fab.action-darker_gray md-icon {
+    color: #FFF; }
+
+.md-button.md-fab.action-darker_gray:not([disabled]):hover {
+  background-color: #3d3d3d; }
+
+.md-button.md-icon-button.action-darker_gray md-icon {
+  color: #4A4A4A; }
+
+.md-button.md-fab.action-gray {
+  background-color: #D5D5D5;
+  color: #FFF; }
+  .md-button.md-fab.action-gray md-icon {
+    color: #FFF; }
+
+.md-button.md-fab.action-gray:not([disabled]):hover {
+  background-color: #c8c8c8; }
+
+.md-button.md-icon-button.action-gray md-icon {
+  color: #D5D5D5; }
+
+.md-button.md-fab.action-light_gray {
+  background-color: #F9F9F9;
+  color: #FFF; }
+  .md-button.md-fab.action-light_gray md-icon {
+    color: #FFF; }
+
+.md-button.md-fab.action-light_gray:not([disabled]):hover {
+  background-color: #ececec; }
+
+.md-button.md-icon-button.action-light_gray md-icon {
+  color: #F9F9F9; }
+
+.md-button.md-fab.action-white {
+  background-color: #FFF;
+  color: #FFF; }
+  .md-button.md-fab.action-white md-icon {
+    color: #FFF; }
+
+.md-button.md-fab.action-white:not([disabled]):hover {
+  background-color: #f2f2f2; }
+
+.md-button.md-icon-button.action-white md-icon {
+  color: #FFF; }
+
+.action-full-width {
+  width: 100%; }
+
+.action-with-progress-circular {
+  min-height: 52px; }
+
+body {
+  background-color: #F9F9F9;
+  margin: 0px; }
+
+.main {
+  position: relative;
+  overflow: hidden;
+  max-width: 1024px;
+  width: 100%;
+  margin: auto; }
+
+.main-content {
+  max-width: 1024px;
+  width: 100%;
+  margin: auto; }
+
+#loginForm img {
+  max-width: 100px;
+  max-height: 100px;
+  margin: 50px; }
+
+#header {
+  background-color: #FFF;
+  max-width: 1024px;
+  width: 100%;
+  margin: auto; }
+  #header .exit {
+    height: 20px;
+    font-size: 1.5em;
+    font-weight: 400; }
+    #header .exit img {
+      max-height: 20px;
+      margin-right: 5px; }
+  #header .actions {
+    position: relative;
+    top: -38px;
+    height: 28px; }
+
+.inner_body {
+  width: 100%;
+  height: 100vh;
+  background-color: #FFF;
+  max-width: 1024px;
+  width: 100%;
+  margin: auto;
+  box-sizing: border-box; }
+
+.validation-messages {
+  font-size: 12px;
+  color: #E91E63;
+  margin: 10px 0 0 25px; }
+
+.validation-hint {
+  font-size: 12px;
+  color: #9B9B9B;
+  margin: 10px 0 0 25px; }
+
+@media (min-width: 959px) {
+  #add-pedido-form {
+    width: 800px; } }
+@media (max-width: 599px) {
+  #add-pedido-form #add-pedido-guardar_plantilla {
+    display: none; } }
+#add-pedido-form md-content {
+  overflow-x: hidden; }
+
+@media (min-width: 959px) {
+  #setTransportistaDialog {
+    width: 600px; } }
+
+#progressIndicatorDialog {
+  height: 200px; }
+  @media (min-width: 959px) {
+    #progressIndicatorDialog {
+      width: 400px; } }
+  #progressIndicatorDialog md-dialog-content {
+    height: 100%; }
+    #progressIndicatorDialog md-dialog-content div {
+      width: 300px; }
+
+@media (min-width: 959px) {
+  #add-chofer-form {
+    width: 800px; } }
+
+ul.pedidos {
+  list-style-type: none;
+  margin-top: 20px; }
+  ul.pedidos li {
+    border-bottom: solid 1px #F9F9F9;
+    border-top: solid 1px #F9F9F9;
+    margin-bottom: 5px; }
+    ul.pedidos li .body {
+      background-color: #FFF;
+      margin-left: 15px; }
+      ul.pedidos li .body .transportista {
+        background-color: #F9F9F9; }
+        ul.pedidos li .body .transportista .rate-container {
+          width: 170px;
+          padding: 10px 20px 10px 20px;
+          background-color: #607d8b;
+          box-shadow: 2px 2px 1px #4A4A4A; }
+    ul.pedidos li .menu-button {
+      width: 40px;
+      background-color: #F9F9F9;
+      border: solid 1px #9B9B9B; }
+    ul.pedidos li #map {
+      width: 100%;
+      height: 140px;
+      background-color: #F9F9F9; }
+  ul.pedidos .pedido-pendientes {
+    background-color: #E91E63; }
+  ul.pedidos .pedido-activos {
+    background-color: #E9B01E; }
+  ul.pedidos .pedido-en-curso {
+    background-color: #1EB2E9; }
+  ul.pedidos .pedido-completados {
+    background-color: #B8E986; }
+
+/*# sourceMappingURL=app.css.map */

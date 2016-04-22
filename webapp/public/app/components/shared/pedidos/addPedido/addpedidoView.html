@@ -1,0 +1,163 @@
+<md-dialog ng-cloak>
+    <form id="add-pedido-form" name="pedidoForm" class="md-inline-form" novalidate>
+        <md-toolbar>
+            <div class="md-toolbar-tools">
+                <h2 flex>Agregar Pedido</h2>
+                {{pedido.valor | currency}}
+            </div>
+        </md-toolbar>
+        <md-dialog-content>
+            <md-content md-theme="dark" layout="column" layout-gt-sm="row" layout-padding>
+                <md-input-container class="md-block hidden" flex-gt-sm="50" ng-show="showEmpresas">
+                    <label>Empresa</label>
+                    <md-select ng-model="pedido.proveedorCarga">
+                        <md-option ng-repeat="empresa in empresas" value="{{empresa}}">
+                            {{empresa.nombre}}
+                        </md-option>
+                    </md-select>
+                </md-input-container>
+                <md-input-container class="md-block" flex-gt-sm="25">
+                    <label>Plantilla</label>
+                    <md-select ng-model="selectablePlantilla" ng-change="plantillaSelected()">
+                        <md-option ng-repeat="p in selectablePlantillas" value="{{p.id}}">
+                            <span flex>{{p.plantilla}}</span>
+                        </md-option>
+                    </md-select>
+                    <md-button class="md-warn" ng-show="selectablePlantilla" ng-click="eliminarPlantilla()">Eliminar Plantilla</md-button>
+                </md-input-container>
+                <md-switch ng-model="pedido.managedByBroker" aria-label="Managed by Broker" flex-gt-sm="25"  ng-show="showBroker && transportistas">
+                    Administrado por Broker
+                </md-switch>
+            </md-content>
+            <md-content layout-padding>
+                <div layout="column" layout-gt-sm="row">
+                    <md-input-container class="md-block" flex-gt-sm="25">
+                        <label>Ciudad Origen</label>
+                        <md-select ng-model="pedido.ciudadOrigen" name="ciudadOrigen" required ng-change="calculateValor()">
+                            <ng-include src="'app/directives/includes/ciudadesOptions.html'"></ng-include>
+                        </md-select>
+                        <div ng-messages="pedidoForm.ciudadOrigen.$error">
+                            <div ng-message="required">
+                                Ooops!!! necesitamos saber de donde va ha salir el pedido.
+                            </div>
+                        </div>
+                    </md-input-container>
+                    <md-input-container class="md-block" flex-gt-sm="50">
+                        <label>Direccion Origen</label>
+                        <input ng-model="pedido.direccionOrigen" name="direccionOrigen" type="text" required>
+                        <div class="validation-messages" ng-messages="pedidoForm.direccionOrigen.$error">
+                            <div ng-message="required">
+                                Ooops!!! necesitamos la direccion para recojer el pedido.
+                            </div>
+                        </div>
+                    </md-input-container>
+                    <div layout="column" flex-gt-sm="25">
+                        <md-datepicker ng-model="pedido.horaCarga" name="horaCarga" md-placeholder="Carga" ng-required="!saveAsPlantilla" md-min-date="minDate" md-max-date="maxDate"></md-datepicker>
+                        <div class="validation-messages" ng-messages="pedidoForm.horaCarga.$error">
+                            <div ng-message="required">¿A que hora recojemos el pedidod?.</div>
+                            <div ng-message="mindate">Ooops!!! no se puedo ingresar pedidos en el pasado.</div>
+                            <div ng-message="maxdate">Ooops!!! no se pueden ingresar pedidos a mas de un mes.</div>
+                        </div>
+                    </div>
+                </div>
+                <div layout="column" layout-gt-sm="row">
+                    <md-input-container class="md-block" flex-gt-sm="25">
+                        <label>Cuidad Destino</label>
+                        <md-select ng-model="pedido.ciudadDestino" name="ciudadDestino" required ng-change="calculateValor()">
+                            <ng-include src="'app/directives/includes/ciudadesOptions.html'"></ng-include>
+                        </md-select>
+                        <div ng-messages="pedidoForm.ciudadDestino.$error">
+                            <div ng-message="required">
+                                Ooops!!! necesitamos saber donde vamos ha entregar el pedido.
+                            </div>
+                        </div>
+                    </md-input-container>
+                    <md-input-container class="md-block" flex-gt-sm="50">
+                        <label>Direccion Destino</label>
+                        <input ng-model="pedido.direccionDestino" name="direccionDestino" type="text" required>
+                        <div ng-messages="pedidoForm.direccionDestino.$error">
+                            <div ng-message="required">
+                                Ooops!!! necesitamos la direccion para entregar el pedido.
+                            </div>
+                        </div>
+                    </md-input-container>
+                    <div layout="column" flex-gt-sm="25">
+                        <md-datepicker ng-model="pedido.horaEntrega" name="horaEntrega" md-placeholder="Entrega" flex-gt-sm="25" ng-required="!saveAsPlantilla" md-min-date="minDate" md-max-date="maxDate"></md-datepicker>
+                        <div class="validation-messages" ng-messages="pedidoForm.horaEntrega.$error">
+                            <div ng-message="required">¿A que hora necesitas que el pedidod sea entregado?.</div>
+                            <div ng-message="mindate">Ooops!!! no se puedo ingresar pedidos en el pasado.</div>
+                            <div ng-message="maxdate">Ooops!!! no se pueden ingresar pedidos a mas de un mes.</div>
+                        </div>
+                        <div class="validation-messages" ng-show="!saveAsPlantilla && pedido.horaCarga > pedido.horaEntrega">
+                            Ooops!!! la hora de entrega debe ser posterior a la hora de carga.
+                        </div>
+                    </div>
+                </div>
+                <div layout="column" layout-gt-sm="row">
+                    <md-input-container class="md-block" flex-gt-sm="50">
+                        <label>Producto</label>
+                        <input ng-model="pedido.producto" name="producto" type="text" required>
+                        <div ng-messages="pedidoForm.producto.$error">
+                            <div ng-message="required">
+                                Ooops!!! necesitamos saver que vamos a llevar.
+                            </div>
+                        </div>
+                    </md-input-container>
+                    <md-input-container class="md-block" flex-gt-sm="25">
+                        <label>Tipo de Camión</label>
+                        <md-select ng-model="pedido.tipoCamion" name="tipoCamion" multiple required>
+                            <ng-include src="'app/directives/includes/tiposCamion.html'"></ng-include>
+                        </md-select>
+                        <div ng-messages="pedidoForm.tipoCamion.$error">
+                            <div ng-message="required">
+                                ¿Que tipo de camion necesitas para este pedido?.
+                            </div>
+                        </div>
+                    </md-input-container>
+                    <md-input-container class="md-block" flex-gt-sm="25">
+                        <label>Peso</label>
+                        <md-select ng-model="pedido.peso" name="peso" required ng-change="calculateValor()">
+                            <ng-include src="'app/directives/includes/pesoOptions.html'"></ng-include>
+                        </md-select>
+                        <div ng-messages="pedidoForm.peso.$error">
+                            <div ng-message="required">
+                                ¿Cuanto peso vas ha llevar? necesitamos solo un aproximado.
+                            </div>
+                        </div>
+                    </md-input-container>
+                </div>
+                <div layout="column" layout-gt-sm="row">
+                    <md-input-container class="md-block hidden" flex ng-show="transportistas && pedido.managedByBroker == false">
+                        <label>Seleccione un tranportista</label>
+                        <md-select ng-model="selectedTransportista" ng-change="transportistaSelected()">
+                            <md-option ng-repeat="transportista in transportistas" value="{{transportista.id}}">
+                                {{transportista.nombre}}
+                            </md-option>
+                        </md-select>
+                        <div class="validation-hint">
+                            Opcional: Puedes asignar este pedido a un Transportista en particular, de no ser aceptado el pedido quedara abierto a todos sus transportistas asociados.
+                        </div>
+                    </md-input-container>
+                </div>
+            </md-content>
+        </md-dialog-content>
+        <md-dialog-actions layout="column" layout-gt-sm="row">
+            <div id="add-pedido-guardar_plantilla" layout="column" layout-gt-sm="row" flex-gt-sm="70">
+                <md-checkbox ng-model="saveAsPlantilla" aria-label="Guardar como Plantilla" flex-gt-sm="50">
+                    Guardar como Plantilla
+                </md-checkbox>
+                <md-input-container class="md-block" ng-show="saveAsPlantilla"  flex-gt-sm="50">
+                    <label>Plantilla</label>
+                    <input ng-model="pedido.plantilla" type="text" ng-required="saveAsPlantilla">
+                </md-input-container>
+            </div>
+            <div flex layout="row" layout-align="end center" flex-gt-sm="30">
+                <md-button ng-click="cerrar()" ng-disabled="processing">Cerrar</md-button>
+                <md-button class="md-primary" ng-disabled="pedidoForm.$invalid || (!saveAsPlantilla && pedido.horaCarga > pedido.horaEntrega) || processing" ng-click="guardarPedido()">
+                    <md-progress-circular md-diameter="10px" ng-show="processing"></md-progress-circular>
+                    <span ng-show="!processing">Guardar</span>
+                </md-button>
+            </div>
+        </md-dialog-actions>
+    </form>
+</md-dialog>

@@ -1,0 +1,38 @@
+/* Rounded Icons */
+//Flat Icons Backgrounds
+@each $color in $colors {
+  $name: nth($color, 1);
+  $value: nth($color, 2);
+  .flat-icon-#{$name} {
+    margin: 5px;
+    width: 56px;
+    height: 56px;
+    border-radius: 28px;
+    background-color: $value;
+    color: $white;
+    md-icon {
+      color: $white;
+    }
+  }
+}
+
+//Specific Icons
+.icon-transportista {
+  background-image: url("../images/transportista-icon.png");
+  background-repeat: no-repeat;
+  height: 100%;
+  width: 100%;
+  background-position: center;
+}
+
+/* Rating */
+md-icon.rate {
+  span {
+    cursor: pointer;
+    color: $yellow;
+  }
+  span:hover {
+    color: desaturate($yellow,20%);
+  }
+}
+

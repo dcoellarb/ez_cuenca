@@ -1,0 +1,39 @@
+@import 'defaults';
+@import 'globals';
+@import 'text';
+@import 'decorators';
+@import 'actions';
+
+body {
+  background-color: $light_gray;
+  margin: 0px;
+}
+
+@mixin app-positioning {
+  max-width: 1024px;
+  width: 100%;
+  margin: auto;
+}
+
+.main {
+  position: relative;
+  overflow: hidden;
+  @include app-positioning;
+}
+.main-content{
+  @include app-positioning;
+}
+
+@import "login";
+@import 'header';
+
+.inner_body {
+  width: 100%;
+  height: 100vh;
+  background-color: $white;
+  @include app-positioning;
+  box-sizing: border-box;
+}
+
+@import 'forms';
+@import 'lists';

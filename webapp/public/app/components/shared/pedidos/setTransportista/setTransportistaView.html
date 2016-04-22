@@ -1,0 +1,13 @@
+<md-dialog ng-cloak id="setTransportistaDialog">
+    <md-toolbar>
+        <div class="md-toolbar-tools">
+            <h2 flex>Seleccionar Transportista</h2>
+        </div>
+    </md-toolbar>
+    <md-dialog-content>
+        <ez-choferes></ez-choferes>
+    </md-dialog-content>
+    <md-dialog-actions layout="column" layout-gt-sm="row">
+        <md-button ng-click="cerrar()" ng-disabled="processing">Cerrar</md-button>
+    </md-dialog-actions>
+</md-dialog>

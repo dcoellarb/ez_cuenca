@@ -1,0 +1,48 @@
+<li class="pedido-en-curso" layout="row">
+    <div flex layout="column" layout-gt-md="row" class="body" layout-padding class="body">
+        <div flex="50" layout="column">
+            <div layout="column" layout-align="space-between start">
+                <h1 class="text-large text-600">{{pedido.ciudadOrigen | capitalizeFirst}}: {{pedido.direccionOrigen | date:'medium'}}</h1>
+                <h1 class="text-large text-600">{{pedido.ciudadDestino | capitalizeFirst}}: {{pedido.direccionDestino | date:'medium'}}</h1>
+                <div><span class="text-medium text-400">Hora de Carga:</span><span class="text-medium text-600">{{pedido.horaCarga}}</span></div>
+                <div><span class="text-medium text-400">Hora de Inicio:</span><span class="text-medium text-600">{{pedido.horaInicio}}</span></div>
+            </div>
+            <div class="transportista" layout="row" layout-align="space-between stretch" layout-padding>
+                <div flex layout="row">
+                    <div flex="none" class="flat-icon-white">
+                        <div class="icon-transportista"></div>
+                    </div>
+                    <div flex layout="column" layout-align="center start">
+                        <h1 class="text-medium text-600">{{pedido.transportista.nombre}}: {{pedido.chofer.nombre}}</h1>
+                        <span>{{pedido.chofer.descripcion}}</span>
+                    </div>
+                </div>
+                <div flex="none" layout="column" layout-align="start end">
+                    <span class="text-red text-x-large">{{pedido.valor}}</span>
+                </div>
+            </div>
+        </div>
+        <div flex="50" class="transportista">
+            <div id="map"></div>
+        </div>
+    </div>
+    <div flex="none" class="menu-button" layout="column" layout-align="center center">
+        <md-menu md-position-mode="target-right target">
+            <md-button class="md-icon-button md-accent action-blue" aria-label="Mas" ng-click="openMenu($mdOpenMenu, $event)">
+                <md-icon class="material-icons">more_vert</md-icon>
+            </md-button>
+            <md-menu-content width="4">
+                <md-menu-item>
+                    <md-button ng-click="finalizarViaje(pedido.id)">
+                        Finalizar Viaje
+                    </md-button>
+                </md-menu-item>
+                <md-menu-item>
+                    <md-button ng-click="detallePedido">
+                        Detalle del Pedido
+                    </md-button>
+                </md-menu-item>
+            </md-menu-content>
+        </md-menu>
+    </div>
+</li>
