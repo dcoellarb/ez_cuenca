@@ -3,7 +3,8 @@
         <md-toolbar>
             <div class="md-toolbar-tools">
                 <h2 flex>Agregar Pedido <md-progress-circular md-diameter="20px" ng-show="processingForm"></md-progress-circular></h2>
-                {{pedido.valor | currency}}
+                <span ng-show="!pedido.donacion">{{pedido.valor | currency}}</span>
+                <span ng-show="pedido.donacion">El envio de donaciones es gratuito</span>
             </div>
         </md-toolbar>
         <md-dialog-content>
@@ -51,8 +52,16 @@
                             </div>
                         </div>
                     </md-input-container>
-                    <div layout="column" flex-gt-sm="25">
+                    <div layout="column" flex-gt-sm="25" ng-show="!saveAsPlantilla">
+                        <!--
                         <md-datepicker ng-model="pedido.horaCarga" name="horaCarga" md-placeholder="Carga" ng-required="!saveAsPlantilla" md-min-date="minDate" md-max-date="maxDate"></md-datepicker>
+                        -->
+                        <md-input-container flex-gt-md="30">
+                            <label>Timepicker Only</label>
+                            <input ng-model="pedido.horaCarga" ng-required="!saveAsPlantilla" mdc-datetime-picker="" date="true" time="true" type="text" id="datetime"
+                                   placeholder="Date" min-date="date" ng-model="dateTime" class=" md-input">
+                        </md-input-container>
+
                         <div class="validation-messages" ng-messages="pedidoForm.horaCarga.$error">
                             <div ng-message="required">¿A que hora recojemos el pedidod?.</div>
                             <div ng-message="mindate">Ooops!!! no se puedo ingresar pedidos en el pasado.</div>
@@ -81,8 +90,8 @@
                             </div>
                         </div>
                     </md-input-container>
-                    <div layout="column" flex-gt-sm="25">
-                        <md-datepicker ng-model="pedido.horaEntrega" name="horaEntrega" md-placeholder="Entrega" flex-gt-sm="25" ng-required="!saveAsPlantilla" md-min-date="minDate" md-max-date="maxDate"></md-datepicker>
+                    <div layout="column" flex-gt-sm="25" ng-show="!saveAsPlantilla && pedido.managedByBroker && !pedido.donacion">
+                        <md-datepicker ng-model="pedido.horaEntrega" name="horaEntrega" md-placeholder="Entrega" flex-gt-sm="25" ng-required="!saveAsPlantilla && pedido.managedByBroker && !pedido.donacion" md-min-date="minDate" md-max-date="maxDate"></md-datepicker>
                         <div class="validation-messages" ng-messages="pedidoForm.horaEntrega.$error">
                             <div ng-message="required">¿A que hora necesitas que el pedidod sea entregado?.</div>
                             <div ng-message="mindate">Ooops!!! no se puedo ingresar pedidos en el pasado.</div>

@@ -16,6 +16,27 @@ angular.module("easyRuta")
         //private methods
         var loadPedidos = function() {
             transportistaPedidosService.getPedidos().subscribe(function (x) {
+                    pedidos = pedidos.map(function(pedido){
+                        if (pedido.donacion) {
+                            pedido.cssClass = "pedido-donacion"
+                        }else{
+                            switch (pedido.estado) {
+                                case pedidoEstadosEnum.pendiente:
+                                    pedido.cssClass = "pedido-pendientes";
+                                    break;
+                                case pedidoEstadosEnum.activo:
+                                    pedido.cssClass = "pedido-activos";
+                                    break;
+                                case pedidoEstadosEnum.enCurso:
+                                    pedido.cssClass = "pedido-en-curso";
+                                    break;
+                                case pedidoEstadosEnum.finalizado:
+                                    pedido.cssClass = "pedido-completados";
+                                    break;
+                            }
+                        }
+                        return pedido;
+                    });
                     $scope.pedidosPendientes = x.filter(function(pedido){return pedido.estado == pedidoEstadosEnum.pendiente});
                     $scope.pedidosEnProceso = x.filter(function(pedido){return pedido.estado == pedidoEstadosEnum.activo || pedido.estado == pedidoEstadosEnum.enCurso});
                     $scope.pedidosCompletados = x.filter(function(pedido){return pedido.estado == pedidoEstadosEnum.finalizado});

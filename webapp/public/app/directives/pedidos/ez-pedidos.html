@@ -2,11 +2,11 @@
     <md-tab label="Pendientes">
         <md-toolbar class="md-hue-2" ng-show="addPedido">
             <div class="md-toolbar-tools" layout="row" layout-align="end center">
-                <md-button class="md-button md-fab md-mini action-donacion" ng-show="addPedido" ng-click="addDonacion()">
+                <md-button class="md-button md-fab md-mini action-donacion" ng-show="addDonacion" ng-click="addDonacion()">
                     <md-tooltip md-direction="left">Enviar Donacion</md-tooltip>
                     <md-icon class="material-icons">add</md-icon>
                 </md-button>
-                <md-button class="md-button md-fab md-mini action-yellow" ng-show="addPedido" ng-click="addPedido()">
+                <md-button class="md-button md-fab md-mini action-yellow" ng-disabled="true" ng-show="addPedido" ng-click="addPedido()">
                     <md-tooltip md-direction="left">Agregar Pedido</md-tooltip>
                     <md-icon class="material-icons">add</md-icon>
                 </md-button>
@@ -19,8 +19,13 @@
             <img src= "../../assets/images/logo_new.png" style="max-height: 100px; max-width: 100px; margin: 50px;">
             <h1>Lista vacia</h1>
             <h3>No hay pedidos pendientes al momento</h3>
-            <h4 class="text-light_blue" ng-show="addPedido">Para agregar pedidos haga click aqui:</h4>
-            <md-button class="md-button md-fab action-yellow" ng-show="addPedido" ng-click="addPedido()">
+            <h4 class="text-light_blue" ng-show="addPedido">Para enviar donaciones haga click aqui:</h4>
+            <md-button class="md-button md-fab action-donacion" ng-show="addDonacion" ng-click="addDonacion()">
+                <md-tooltip md-direction="left">Enviar Donacion</md-tooltip>
+                <md-icon class="material-icons">add</md-icon>
+            </md-button>
+            <h4 class="text-light_blue" ng-show="addPedido">Para enviar pedidos privados haga click aqui:</h4>
+            <md-button class="md-button md-fab action-yellow" ng-disabled="true" ng-show="addPedido" ng-click="addPedido()">
                 <md-tooltip md-direction="left">Agregar Pedido</md-tooltip>
                 <md-icon class="material-icons">add</md-icon>
             </md-button>

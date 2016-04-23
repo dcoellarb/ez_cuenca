@@ -109,8 +109,9 @@ angular.module("easyRuta")
             );
         }
         //public methods
-        $scope.addPedido = function(ev) {
+        $scope.addPedido = function(ev, pedido) {
             $mdDialog.show({
+                locals:{local:{donacion: false,scope: $scope,pedido: pedido}},
                 controller: 'addPedidoController',
                 templateUrl: 'app/components/shared/pedidos/addPedido/addPedidoView.html',
                 parent: angular.element(document.body),
@@ -118,6 +119,22 @@ angular.module("easyRuta")
                 clickOutsideToClose:true
             }).then(function(pedido){
                 if (pedido){
+                    pedido.cssClass = "pedido-pendientes";
+                    $scope.pedidosPendientes.push(pedido);
+                }
+            });
+        };
+        $scope.addDonacion = function(ev, pedido) {
+            $mdDialog.show({
+                locals:{local:{donacion: true,scope: $scope,pedido: pedido}},
+                controller: 'addPedidoController',
+                templateUrl: 'app/components/shared/pedidos/addPedido/addPedidoView.html',
+                parent: angular.element(document.body),
+                targetEvent: ev,
+                clickOutsideToClose:true
+            }).then(function(pedido){
+                if (pedido){
+                    pedido.cssClass = "pedido-donacion";
                     $scope.pedidosPendientes.push(pedido);
                 }
             });

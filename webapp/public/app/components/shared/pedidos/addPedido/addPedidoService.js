@@ -94,8 +94,12 @@ angular.module("easyRuta")
                     }
                 });
             },
-            getDefaultPedido: function() {
+            getDefaultPedido: function(pedido, donacion) {
+                if (pedido) {
+                    return pedido;
+                }
                 return {
+                    donacion: donacion,
                     managedByBroker: false,
                     valor: 0
                 }
@@ -124,7 +128,7 @@ angular.module("easyRuta")
                                 allowWrite: true
                             }
                         );
-                    } else if (pedido.proveedorCarga.asociadoConTodos) {
+                    } else if (pedido.proveedorCarga.asociadoConTodos || pedido.donacion) {
                         acl.permissions.push(
                             {
                                 isRole: true,
@@ -158,7 +162,8 @@ angular.module("easyRuta")
                         });
                     }
                 }
-
+                if (pedido.horaCarga) { pedido.horaCarga = pedido.horaCarga._d; }
+                if (pedido.horaEntrega) { pedido.horaEntrega = pedido.horaEntrega._d; }
                 return Rx.Observable.create(function (observer) {
                     var suscription = dataService.add(collectionsEnum.pedido,pedidoModel.fromJson(pedido),{acl: acl}).subscribe(
                         function (pedido) {

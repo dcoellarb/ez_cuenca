@@ -1,7 +1,8 @@
 <md-dialog  ng-cloak layout="column" layout-align="center center">
     <form id="registrarForm" name="registrarForm">
-        <md-dialog-content layout-padding layout-align="start center">
-            <h2>Ingresa con tu cuenta de Easyruta</h2>
+        <md-dialog-content layout-padding layout="column" layout-align="center center">
+            <img src="../../assets/images/logo_new.png">
+            <h4>Registra tus datos</h4>
             <md-content layout-padding>
                 <md-input-container class="md-block">
                     <label>Nombre de la empresa</label>
@@ -19,12 +20,14 @@
                     <label>ConfirmarClave</label>
                     <input ng-model="transportista.confirmPassword" type="password" required>
                 </md-input-container>
-                <md-button layout="row" layout-align="space-around" class="md-raised" ng-Click="registrar()" ng-disabled="registrarForm.$invalid || processing">
-                    <md-progress-circular md-diameter="20px" ng-show="processing"></md-progress-circular>
-                    <span ng-show="processing == false">Registrarme</span>
-                </md-button>
-                <span class="text-red text-medium" ng-show="showError">{{error}}</span>
             </md-content>
         </md-dialog-content>
+        <md-dialog-actions layout="row">
+            <span class="text-red text-medium" ng-show="showError">{{error}}</span>
+            <md-button layout="row" layout-align="space-around" class="md-raised" ng-Click="registrar()" ng-disabled="registrarForm.$invalid || processing">
+                <md-progress-circular md-diameter="20px" ng-show="processing"></md-progress-circular>
+                <span ng-show="processing == false">Registrarme</span>
+            </md-button>
+        </md-dialog-actions>
     </form>
 </md-dialog>

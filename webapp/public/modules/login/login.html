@@ -1,13 +1,13 @@
 <md-dialog  ng-cloak layout="column" layout-align="center center">
     <form id="loginForm" name="loginForm">
-        <md-dialog-content layout-padding layout-align="start center">
+        <md-dialog-content layout-padding layout="column" layout-align="center center">
             <img src="../../assets/images/logo_new.png">
-            <h2>Ingresa con tu cuenta de Easyruta</h2>
-            <md-input-container class="md-block">
+            <h4>Ingresa con tu cuenta de Easyruta</h4>
+            <md-input-container flex class="md-block">
                 <label>Email</label>
                 <input ng-model="user.username" type="email" required>
             </md-input-container>
-            <md-input-container class="md-block">
+            <md-input-container flex class="md-block">
                 <label>Clave</label>
                 <input ng-model="user.password" type="password" required>
             </md-input-container>

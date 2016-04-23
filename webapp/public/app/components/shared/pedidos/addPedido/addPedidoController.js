@@ -3,7 +3,7 @@
  */
 
 angular.module("easyRuta")
-    .controller('addPedidoController',['$rootScope','$scope', 'addPedidoService','rolesEnum','$mdDialog','$mdToast','pedidoModel','transportistaModel',function($rootScope, $scope, addPedidoService,rolesEnum,$mdDialog,$mdToast,pedidoModel,transportistaModel){
+    .controller('addPedidoController',['$rootScope','$scope', 'addPedidoService','rolesEnum','$mdDialog','$mdToast','pedidoModel','transportistaModel','local',function($rootScope, $scope, addPedidoService,rolesEnum,$mdDialog,$mdToast,pedidoModel,transportistaModel,local){
 
         //members
 
@@ -104,8 +104,13 @@ angular.module("easyRuta")
                             observer.onCompleted();
                         }
                     );
-                } else {
+                } else if (!empresa.asociadoConTodos && !local.donacion) {
                     $scope.pedido.managedByBroker = true;
+
+                    observer.onNext(empresa);
+                    observer.onCompleted();
+                } else {
+                    $scope.pedido.managedByBroker = false;
 
                     observer.onNext(empresa);
                     observer.onCompleted();
@@ -122,7 +127,10 @@ angular.module("easyRuta")
             $scope.pedido.plantilla = undefined;
             $scope.pedido.object = undefined;
             $scope.saveAsPlantilla = false;
-
+            if (local.donacion){
+                $scope.pedido.managedByBroker = false;
+                $scope.pedido.donacion = true;
+            }
         };
         $scope.transportistaSelected = function() {
             var temp = $scope.transportistas.find(function(p){
@@ -143,7 +151,6 @@ angular.module("easyRuta")
                 },
                 function (e) {
                     console.dir(e);
-                    var pinTo = $scope.getToastPosition();
                     $mdToast.show(
                         $mdToast.simple()
                             .textContent('Ooops!!! parece que estmos experimentando problemas en nuestro servidores por favor contacte a soporte.')
@@ -168,7 +175,8 @@ angular.module("easyRuta")
         };
 
         //init
-        $scope.pedido = addPedidoService.getDefaultPedido();
+        $scope.pedido = addPedidoService.getDefaultPedido(local.pedido,local.donacion);
+        $scope.dialog = local.scope.addDonacion;
         initializeControls();
         loadEmpresas()
             .flatMap(function(empresa) {

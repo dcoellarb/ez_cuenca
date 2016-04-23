@@ -443,10 +443,76 @@ body {
   width: 100%;
   margin: auto; }
 
-#loginForm img {
-  max-width: 100px;
-  max-height: 100px;
-  margin: 50px; }
+#loginForm {
+  min-width: 300px; }
+  @media (min-width: 1279px) {
+    #loginForm {
+      min-width: 450px; } }
+  #loginForm img {
+    max-width: 100px;
+    max-height: 100px;
+    margin: 25px; }
+  #loginForm md-input-container {
+    min-width: 280px; }
+    @media (min-width: 1279px) {
+      #loginForm md-input-container {
+        min-width: 300px; } }
+
+#registrarForm {
+  min-width: 300px; }
+  @media (min-width: 1279px) {
+    #registrarForm {
+      min-width: 450px; } }
+  #registrarForm img {
+    max-width: 100px;
+    max-height: 100px;
+    margin: 25px; }
+  #registrarForm md-input-container {
+    min-width: 280px; }
+    @media (min-width: 1279px) {
+      #registrarForm md-input-container {
+        min-width: 300px; } }
+
+.info-container-proveedores {
+  width: 450px;
+  height: 280px;
+  color: #ffffff;
+  background-image: linear-gradient(to bottom, #607d8b, rgba(96, 125, 139, 0.5)), url("../../assets/images/factory.png");
+  background-repeat: no-repeat, no-repeat;
+  background-position: bottom right, left;
+  background-size: cover;
+  margin-bottom: 50px; }
+  .info-container-proveedores md-toolbar {
+    margin-top: -30px; }
+
+.info-container-transportistas {
+  width: 450px;
+  height: 280px;
+  color: #ffffff;
+  background-image: linear-gradient(to bottom, #607d8b, rgba(96, 125, 139, 0.5)), url("../../assets/images/truck_dock.png");
+  background-repeat: no-repeat, no-repeat;
+  background-position: bottom right, left;
+  background-size: cover;
+  margin-bottom: 50px; }
+  .info-container-transportistas md-toolbar {
+    margin-top: -30px; }
+
+.info-container-conductores {
+  width: 450px;
+  height: 280px;
+  color: #ffffff;
+  background-image: linear-gradient(to bottom, #607d8b, rgba(96, 125, 139, 0.5)), url("../../assets/images/truck_dock.png");
+  background-repeat: no-repeat, no-repeat;
+  background-position: bottom right, left;
+  background-size: cover;
+  margin-bottom: 50px; }
+  .info-container-conductores md-toolbar {
+    margin-top: -30px; }
+
+@media (min-width: 1279px) {
+  #homeFooter {
+    position: absolute;
+    bottom: 0px; } }
 
 #header {
   background-color: #FFF;
