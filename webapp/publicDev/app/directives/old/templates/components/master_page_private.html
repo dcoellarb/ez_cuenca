@@ -1,0 +1,32 @@
+<div class="col-sm-12" ng-controller="MasterPageController as ctlr" style="background-color: #505050;opacity: 0.95;height: 50px;margin-bottom: 10px;/* position: fixed; */height: 50px; width: 100%; position: fixed; left: 0px; top: 0px;z-index: 99;">
+    <div class="col-md-12 col-lg-10 col-lg-offset-1 center-content" style="height: 50px">
+        <div class="col-sm-3">
+            <img src="resources/images/logo.png" style="max-height: 40px;">
+            <img src="resources/images/logo_texto.png" style="max-height: 30px; margin-left: 10px">
+        </div>
+        <div class="col-sm-5" style="padding-top:10px;">
+            <ul class="menu">
+            <span class="menu">
+                <a ng-click="ctlr.Inicio()">Inicio</a></il>
+                <span class="menu-separator">|</span>
+                <a href="/#/historico">Historico</a></il>
+                <span class="menu-separator">|</span>
+                <a href="/#/perfil">Perfil</a></il>
+            </span>
+            </ul>
+        </div>
+        <div class="col-sm-2">
+            <span class="label-orange" ng-show="ctlr.showSaldo">Saldo:{{ctlr.Saldo}}</span>
+        </div>
+        <div class="col-sm-2">
+            <div style="display: inline-block;cursor: pointer" ng-click="ctlr.showNotifications()">
+                <span class="glyphicon glyphicon-comment" aria-hidden="true" style="color:#ffffff;margin-top:5px;font-size:25px"></span>
+                <div ng-show="ctlr.notificationsCount > 0" style="background-color: red;border-radius: 12px;position: absolute;top: 15px;left: 30px;min-width: 25px;height: 25px;text-align: center;">
+                    <span style="color: white;font-size: 8px;">{{ctlr.notificationsCount}}</span>
+                </div>
+            </div>
+            <input type="button" value="Logout" class="btn btn-primary col-md-12 col-lg-2" ng-click="ctlr.Logout()" style="color: white;border-color: whi;border-width: thin;border-style: solid;padding-left: 20px;padding-right: 20px;padding-top: 5px;padding-bottom: 5px;border-radius: 5px;background-color: transparent;border-color: white;float: right; width: 80px;"/>
+        </div>
+    </div>
+</div>
+<div ng-include="'templates/notifications_center.html'"></div>

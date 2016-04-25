@@ -1,0 +1,40 @@
+<div id="pedidosActivos" class="panel panel-default col-nopadding" ng-controller="PedidosCompletadosController as ctlr">
+    <div class="panel-heading">Completados ({{ctlr.pedidos.length}})</div>
+    <div class="panel-body col-nopadding pedidos-lists">
+        <div ng-repeat="pedido in ctlr.pedidos" class="pedido-item">
+            <div class="col-sm-12 col-nopadding" ng-click="ctlr.verDetalle(pedido)" style="cursor: pointer;">
+                <div class="col-sm-2 col-nopadding list-item-image-xsm" ng-class="pedido.background"/>
+                <div class="col-sm-10 col-nopadding" style="height:50px;width: 85%;overflow-x: scroll;white-space: nowrap;">
+                    <span class="list-heading3 list-item-block">{{pedido.origenCompleto}}</span>
+                    <span class="list-heading3 list-item-block">{{pedido.destinoCompleto}}</span>
+                </div>
+                <div class="col-sm-12 col-nopadding" style="height:35px;width: 100%;overflow-x: scroll;white-space: nowrap;">
+                    <div class="col-sm-12 col-nopadding"><span class="list-item-label">Entregado:</span><span class="list-item">{{pedido.finalizacion}}</span></div>
+                </div>
+                <div class="col-sm-3 col-nopadding">
+                    <div class="list-item-image" ng-style="{'background-image': 'url(' + pedido.transportista.photo + ')'}"/>
+                </div>
+                <div class="col-sm-9 col-nopadding">
+                    <div class="col-sm-12 col-nopadding">
+                        <span class="list-heading">{{pedido.transportista.referencia}}</span>
+                    </div>
+                    <div class="col-sm-12 col-nopadding">
+                        <div class="col-sm-12 col-nopadding"><span class="list-item-label">Telefono:</span><span class="list-item">{{pedido.transportista.telefono}}</span></div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-12 col-nopadding">
+                <div class="col-sm-12 center-content-horizontal" ng-show="!pedido.rating && !ctlr.isProveedor && !ctlr.isDespachador">
+                    <input type="button" value="Calificar" class="btn-small btn-primary" ng-click="ctlr.calificar()"/>
+                </div>
+                <div class="col-sm-12 col-nopadding" ng-show="pedido.rating" style="margin-bottom: 10px;">
+                    <span class="glyphicon glyphicon-star" style="color:#BBD41C" ng-show="pedido.rating >= 1"></span><span class="glyphicon glyphicon-star" ng-show="pedido.rating < 1"></span>
+                    <span class="glyphicon glyphicon-star" style="color:#BBD41C" ng-show="pedido.rating >= 2"></span><span class="glyphicon glyphicon-star" ng-show="pedido.rating < 2"></span>
+                    <span class="glyphicon glyphicon-star" style="color:#BBD41C" ng-show="pedido.rating >= 3"></span><span class="glyphicon glyphicon-star" ng-show="pedido.rating < 3"></span>
+                    <span class="glyphicon glyphicon-star" style="color:#BBD41C" ng-show="pedido.rating >= 4"></span><span class="glyphicon glyphicon-star" ng-show="pedido.rating < 4"></span>
+                    <span class="glyphicon glyphicon-star" style="color:#BBD41C" ng-show="pedido.rating == 5"></span><span class="glyphicon glyphicon-star" ng-show="pedido.rating < 5"></span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

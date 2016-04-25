@@ -1,0 +1,83 @@
+<div class="col-sm-9" ng-show="agrPedCtrl.proveedores.length > 0">
+    <label for="inputProveedor" class="control-label">Proveedor</label>
+    <select class="form-control input" id="inputProveedor" name="inputCiudadOrigen" ng-model="agrPedCtrl.data.Proveedor" ng-change="agrPedCtrl.proveedor_seleccionado()">
+        <option value="">(todos)</option>
+        <option ng-repeat="proveedor in agrPedCtrl.proveedores" value="{{proveedor.id}}" >{{proveedor.nombre}}</option>
+    </select>
+    <hr>
+</div>
+<div class="col-sm-9 col-lg-7">
+    <label class="control-label">Tipo de Transporte</label>
+</div>
+<div class="col-sm-3">
+    <label class="control-label" style="display: none">Transportistas disponibles</label>
+</div>
+<div class="col-md-9 col-lg-7">
+    <ul id="truckType" class="nav nav-pills nav-justified">
+        <li role="presentation" ng-class="{active : agrPedCtrl.data.TipoTransporte=='furgon_plataforma'}"><a href="" ng-click="agrPedCtrl.TipoTransporteSeleccionado('furgon_plataforma')">
+            <div style="display: flex;justify-content: center;">
+                <span class="icon-furgon" style="font-size: xx-large;"></span>
+            </div>
+            <div>
+                <span style="font-size: x-small;">Furgon o Plataforma</span>
+            </div>
+        </a></li>
+        <li role="presentation" ng-class="{active : agrPedCtrl.data.TipoTransporte=='furgon'}"><a href="" ng-click="agrPedCtrl.TipoTransporteSeleccionado('furgon')">
+            <div style="display: flex;justify-content: center;">
+                <span class="icon-furgon" style="font-size: xx-large;"></span>
+            </div>
+            <div>
+                <span style="font-size: x-small;">Furgon</span>
+            </div>
+        </a></li>
+        <li role="presentation" ng-class="{active : agrPedCtrl.data.TipoTransporte=='plataforma'}"><a  href="" ng-click="agrPedCtrl.TipoTransporteSeleccionado('plataforma')">
+            <div style="display: flex;justify-content: center;">
+                <span class="icon-plataforma" style="font-size: xx-large;"></span>
+            </div>
+            <div>
+                <span style="font-size: x-small;">Plataforma</span>
+            </div>
+        </a></li>
+        <li role="presentation" ng-class="{active : agrPedCtrl.data.TipoTransporte=='cama baja'}"><a href="" ng-click="agrPedCtrl.TipoTransporteSeleccionado('cama baja')">
+            <div style="display: flex;justify-content: center;">
+                <span class="icon-cama-baja" style="font-size: xx-large;"></span>
+            </div>
+            <div>
+                <span style="font-size: x-small;">Cama Baja</span>
+            </div>
+        </a></li>
+        <li role="presentation" ng-class="{active : agrPedCtrl.data.TipoTransporte=='banera'}"><a href="" ng-click="agrPedCtrl.TipoTransporteSeleccionado('banera')">
+            <div style="display: flex;justify-content: center;">
+                <span class="icon-banera" style="font-size: xx-large;"></span>
+            </div>
+            <div>
+                <span style="font-size: x-small;">Banera</span>
+            </div>
+        </a></li>
+        <li role="presentation" ng-class="{active : agrPedCtrl.data.TipoTransporte=='tanquero'}"><a href="" ng-click="agrPedCtrl.TipoTransporteSeleccionado('tanquero')">
+            <div style="display: flex;justify-content: center;">
+                <span class="icon-tanquero" style="font-size: xx-large;"></span>
+            </div>
+            <div>
+                <span style="font-size: x-small;">Tanquero</span>
+            </div>
+        </a></li>
+        <li role="presentation" ng-class="{active : agrPedCtrl.data.TipoTransporte=='ninera'}"><a href="" ng-click="agrPedCtrl.TipoTransporteSeleccionado('ninera')">
+            <div style="display: flex;justify-content: center;">
+                <span class="icon-ninera" style="font-size: xx-large;"></span>
+            </div>
+            <div>
+                <span style="font-size: x-small;">Ninera</span>
+            </div>
+        </a></li>
+    </ul>
+</div>
+<div class="col-md-3">
+    <span style="font-size: 4em;color: #F78F1E;display:none">{{agrPedCtrl.availableTransportistas}}</span>
+</div>
+<div class="col-sm-12 center-content" style="margin-top: 20px;margin-bottom: 20px" ng-show="agrPedCtrl.data.TipoTransporte=='furgon'">
+    <div class="col-md-12 col-lg-2 center-content">
+        <label class="control-label" style="margin-right: 10px;">Refrigeracion</label>
+        <switch id="inputCajaRefrigerada" name="inputCajaRefrigerada" ng-model="agrPedCtrl.data.CajaRefrigerada" class="green" on="Si" off="No"></switch>
+    </div>
+</div>

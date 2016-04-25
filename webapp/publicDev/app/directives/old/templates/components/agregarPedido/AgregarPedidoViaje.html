@@ -1,0 +1,70 @@
+<div class="col-nopadding col-sm-12">
+    <div class="col-sm-12 col-md-6 col-lg-2">
+    <label for="inputCiudadOrigen" class="control-label">Origen</label>
+    <select class="form-control input" id="inputCiudadOrigen" name="inputCiudadOrigen" ng-model="agrPedCtrl.data.CiudadOrigen" required>
+        <option value="">(ciudad)</option>
+        <option ng-repeat="ciudad in agrPedCtrl.ciudades" value="{{ciudad.id}}" >{{ciudad.nombre}}</option>
+    </select>
+    <span class="invalid-label" ng-show="agrPedForm.inputCiudadOrigen.$dirty && agrPedForm.inputCiudadOrigen.$invalid">
+        <span ng-show="agrPedForm.inputCiudadOrigen.$error.required">Ciudad es requerida.</span>
+    </span>
+</div>
+    <div class="col-sm-12 col-md-6 col-lg-5">
+    <input type="text" class="form-control input input-nolabel" id="inputDireccionOrigen" name="inputDireccionOrigen" ng-model="agrPedCtrl.data.DireccionOrigen" required placeholder="Direccion">
+    <span class="invalid-label" ng-show="agrPedForm.inputDireccionOrigen.$dirty && agrPedForm.inputDireccionOrigen.$invalid">
+        <span ng-show="agrPedForm.inputDireccionOrigen.$error.required">Direccion es requerida.</span>
+    </span>
+</div>
+    <div class="col-nopadding col-sm-12 col-md-12 col-lg-5">
+        <div class="col-sm-12 col-md-6">
+            <label for="inputHoraCarga" class="control-label">Hora Maxima de Carga</label>
+            <div class="input-group">
+                <input id="inputHoraCarga" name="inputHoraCarga" type="text" class="form-control input" datepicker-popup="{{format}}" min-date="agrPedCtrl.minDate" ng-model="agrPedCtrl.data.HoraCarga" is-open="horaMaxCargaStatus.opened" required/>
+                <span class="input-group-btn">
+                    <button type="button" class="btn btn-default input" ng-click="horaMaxCargaOpen($event)"><i class="glyphicon glyphicon-calendar"></i></button>
+                </span>
+            </div>
+            <span class="invalid-label" ng-show="agrPedForm.inputHoraCarga.$dirty && agrPedForm.inputHoraCarga.$invalid">
+                <span ng-show="agrPedForm.inputHoraCarga.$error.required">Fecha es requerida.</span>
+            </span>
+        </div>
+        <div class="col-sm-12 col-md-6">
+            <timepicker ng-model="agrPedCtrl.data.HoraCarga" hour-step="1" minute-step="15" class="input input-nolabel" show-spinners="false"></timepicker>
+        </div>
+    </div>
+</div>
+<div class="col-nopadding col-sm-12">
+    <div class="col-sm-12 col-md-6 col-lg-2">
+    <label for="inputCiudadDestino" class="control-label">Destino</label>
+    <select class="form-control input" id="inputCiudadDestino" name="inputCiudadDestino" ng-model="agrPedCtrl.data.CiudadDestino" required>
+        <option value="">(destino)</option>
+        <option ng-repeat="ciudad in agrPedCtrl.ciudades" value="{{ciudad.id}}" >{{ciudad.nombre}}</option>
+    </select>
+    <span class="invalid-label" ng-show="agrPedForm.inputCiudadDestino.$dirty && agrPedForm.inputCiudadDestino.$invalid">
+        <span ng-show="agrPedForm.inputCiudadDestino.$error.required">Ciudad es requerida.</span>
+    </span>
+</div>
+    <div class="col-sm-12 col-md-6 col-lg-5">
+    <input type="text" class="form-control input input-nolabel" id="inputDireccionDestino" name="inputDireccionDestino" ng-model="agrPedCtrl.data.DireccionDestino" required placeholder="Direccion">
+    <span class="invalid-label" ng-show="agrPedForm.inputDireccionDestino.$dirty && agrPedForm.inputDireccionDestino.$invalid">
+        <span ng-show="agrPedForm.inputDireccionDestino.$error.required">Direccion es requerida.</span>
+    </span>
+</div>
+    <div class="col-nopadding col-sm-12 col-md-12 col-lg-5">
+    <div class="col-sm-6">
+        <label for="inputHoraDescarga" class="control-label">Hora Max. Descarga</label>
+        <p class="input-group">
+            <input id="inputHoraDescarga" name="inputHoraDescarga" type="text" class="form-control input" datepicker-popup="{{format}}" min-date="agrPedCtrl.minDate" ng-model="agrPedCtrl.data.HoraEntrega" is-open="horaMaxDescargaStatus.opened" required/>
+            <span class="input-group-btn">
+                <button type="button" class="btn btn-default input" ng-click="horaMaxDescargaOpen($event)"><i class="glyphicon glyphicon-calendar"></i></button>
+            </span>
+        </p>
+        <span class="invalid-label" ng-show="agrPedForm.inputHoraDescarga.$dirty && agrPedForm.inputHoraDescarga.$invalid">
+            <span ng-show="agrPedForm.inputHoraDescarga.$error.required">Fecha es requerida.</span>
+        </span>
+    </div>
+    <div class="col-sm-6">
+        <timepicker ng-model="agrPedCtrl.data.HoraEntrega" hour-step="1" minute-step="15" class="input input-nolabel" show-spinners="false"></timepicker>
+    </div>
+</div>
+</div>

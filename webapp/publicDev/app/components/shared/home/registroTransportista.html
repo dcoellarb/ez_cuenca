@@ -1,0 +1,56 @@
+<md-dialog  ng-cloak layout="column" layout-align="center center">
+    <form id="registrarForm" name="registrarForm">
+        <md-dialog-content layout-padding layout="column" layout-align="center center">
+            <img src="../../../../assets/images/logo_new.png">
+            <h4>Registra tus datos</h4>
+            <md-content layout-padding>
+                <md-input-container class="md-block">
+                    <label>Nombre de la empresa</label>
+                    <input ng-model="transportista.nombre" name="nombre" required>
+                    <div class="validation-messages" ng-messages="registrarForm.nombre.$error">
+                        <div ng-message="required">
+                            Requerimos el nombre de tu empresa o institucion.
+                        </div>
+                    </div>
+                </md-input-container>
+                <md-input-container class="md-block">
+                    <label>Email</label>
+                    <input ng-model="transportista.email" name="email" type="email" required>
+                    <div class="validation-messages" ng-messages="registrarForm.email.$error">
+                        <div ng-message="required">
+                            Tu email servira para contactarte e ingresar la sistema la proxima ves.
+                        </div>
+                    </div>
+                </md-input-container>
+                <md-input-container class="md-block">
+                    <label>Clave</label>
+                    <input ng-model="transportista.password" name="password" type="password" required>
+                    <div class="validation-messages" ng-messages="registrarForm.password.$error">
+                        <div ng-message="required">
+                            Necesitamos una clave para la proxima ves que ingreses al sistema.
+                        </div>
+                    </div>
+                </md-input-container>
+                <md-input-container class="md-block">
+                    <label>ConfirmarClave</label>
+                    <input ng-model="transportista.confirmPassword" name="confirmPassword" type="password" required required data-password-verify="transportista.password">
+                    <div class="validation-messages" ng-messages="registrarForm.confirmPassword.$error">
+                        <div ng-message="required">
+                            Necesitamos que confirmes tu clave.
+                        </div>
+                        <div ng-message="passwordVerify">
+                            Las claves no coinciden.
+                        </div>
+                    </div>
+                </md-input-container>
+            </md-content>
+        </md-dialog-content>
+        <md-dialog-actions layout="row">
+            <span class="text-red text-medium" ng-show="showError">{{error}}</span>
+            <md-button layout="row" layout-align="space-around" class="md-raised" ng-Click="registrar()" ng-disabled="registrarForm.$invalid || processing">
+                <md-progress-circular md-diameter="20px" ng-show="processing"></md-progress-circular>
+                <span ng-show="processing == false">Registrarme</span>
+            </md-button>
+        </md-dialog-actions>
+    </form>
+</md-dialog>

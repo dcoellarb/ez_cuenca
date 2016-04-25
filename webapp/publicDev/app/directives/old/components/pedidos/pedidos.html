@@ -1,0 +1,15 @@
+<div ng-cloak>
+    <md-content>
+        <md-tabs md-dynamic-height md-border-bottom>
+            <md-tab label="Pendientes">
+                <div ng-include="'templates/pedidos_pendientes.html'"></div>
+            </md-tab>
+            <md-tab label="En Proceso">
+                <div ng-include="'templates/pedidos_en_proceso.html'"></div>
+            </md-tab>
+            <md-tab label="Completados">
+                <div ng-include="'templates/pedidos_completados.html'"></div>
+            </md-tab>
+        </md-tabs>
+    </md-content>
+</div>

@@ -2,47 +2,205 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0ccc15df-18c8-488c-b882-7e9cbf60319c" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webapp/public/app/components/shared/home/homeView.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webapp/public/app/components/shared/home/login.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webapp/public/app/components/shared/master/masterView.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webapp/public/app/directives/passwordVerify.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webapp/public/app/components/shared/home/publicView.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webapp/public/app/components/shared/home/registroProveedorCarga.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webapp/public/app/components/shared/home/registroTransportista.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webapp/public/app/filters/tipoCamionList.js" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/webapp/public/modules/login/index.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/webapp/public/modules/login/login.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/webapp/public/modules/login/registroProveedorCarga.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/webapp/public/modules/login/registroTransportista.html" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/webapp/public/app/components/shared/pedidos/addPedido/addpedidoView.html" afterPath="$PROJECT_DIR$/webapp/public/app/components/shared/pedidos/addPedido/addPedidoView.html" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/webapp/public/modules/login/app.js" afterPath="$PROJECT_DIR$/webapp/public/app/components/shared/home/home.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/webapp/public/modules/login/registroChofer.html" afterPath="$PROJECT_DIR$/webapp/public/app/components/shared/home/registroChofer.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/webapp/.parse.local" afterPath="$PROJECT_DIR$/webapp/.parse.local" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/webapp/public/assets/css/_globals.scss" afterPath="$PROJECT_DIR$/webapp/public/assets/css/_globals.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/webapp/public/assets/css/_login.scss" afterPath="$PROJECT_DIR$/webapp/public/assets/css/_login.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/webapp/public/app/components/transportista/flota/addChofer/addChoferController.js" afterPath="$PROJECT_DIR$/webapp/public/app/components/transportista/flota/addChofer/addChoferController.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/webapp/public/app/components/transportista/flota/addChofer/addChoferService.js" afterPath="$PROJECT_DIR$/webapp/public/app/components/transportista/flota/addChofer/addChoferService.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/webapp/public/app/components/shared/pedidos/addPedido/addPedidoController.js" afterPath="$PROJECT_DIR$/webapp/public/app/components/shared/pedidos/addPedido/addPedidoController.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/webapp/public/app/components/shared/pedidos/addPedido/addPedidoService.js" afterPath="$PROJECT_DIR$/webapp/public/app/components/shared/pedidos/addPedido/addPedidoService.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/webapp/public/assets/css/app.css.map" afterPath="$PROJECT_DIR$/webapp/public/assets/css/app.css.map" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/webapp/public/assets/css/app.css" afterPath="$PROJECT_DIR$/webapp/public/assets/css/app.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/webapp/public/app/app.data.js" afterPath="$PROJECT_DIR$/webapp/public/app/app.data.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/webapp/public/app/app.js" afterPath="$PROJECT_DIR$/webapp/public/app/app.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/webapp/public/app/app.routes.js" afterPath="$PROJECT_DIR$/webapp/public/app/app.routes.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/webapp/public/modules/data.js" afterPath="$PROJECT_DIR$/webapp/public/modules/data.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/webapp/public/app/directives/choferes/ez-choferes.html" afterPath="$PROJECT_DIR$/webapp/public/app/directives/choferes/ez-choferes.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/webapp/public/app/directives/pedidos/ez-pedido-activo.html" afterPath="$PROJECT_DIR$/webapp/public/app/directives/pedidos/ez-pedido-activo.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/webapp/public/app/directives/pedidos/ez-pedido-completado.html" afterPath="$PROJECT_DIR$/webapp/public/app/directives/pedidos/ez-pedido-completado.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/webapp/public/app/directives/pedidos/ez-pedido-en-curso.html" afterPath="$PROJECT_DIR$/webapp/public/app/directives/pedidos/ez-pedido-en-curso.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/webapp/public/app/directives/pedidos/ez-pedido-pendiente.html" afterPath="$PROJECT_DIR$/webapp/public/app/directives/pedidos/ez-pedido-pendiente.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/webapp/public/app/components/shared/master/header/headerController.js" afterPath="$PROJECT_DIR$/webapp/public/app/components/shared/master/header/headerController.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/webapp/public/index.html" afterPath="$PROJECT_DIR$/webapp/public/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/webapp/public/assets/css/vendor/material-datetimepicker.min.css" afterPath="$PROJECT_DIR$/webapp/public/assets/css/vendor/material-datetimepicker.min.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/webapp/public/app/components/proveedorCarga/pedidos/proveedorCargaPedidosController.js" afterPath="$PROJECT_DIR$/webapp/public/app/components/proveedorCarga/pedidos/proveedorCargaPedidosController.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/webapp/public/app/components/shared/pedidos/setTransportista/setTransportistaController.js" afterPath="$PROJECT_DIR$/webapp/public/app/components/shared/pedidos/setTransportista/setTransportistaController.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/webapp/public/app/components/shared/master/sidenav/sidenavController.js" afterPath="$PROJECT_DIR$/webapp/public/app/components/shared/master/sidenav/sidenavController.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/webapp/public/app/components/transportista/flota/transportistaFlotaController.js" afterPath="$PROJECT_DIR$/webapp/public/app/components/transportista/flota/transportistaFlotaController.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/webapp/public/app/components/transportista/pedidos/transportistaPedidosController.js" afterPath="$PROJECT_DIR$/webapp/public/app/components/transportista/pedidos/transportistaPedidosController.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webapp/Gruntfile.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webapp/publicDev/app/components/shared/pedidos/addPedido/addPedidoView.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webapp/publicDev/app/directives/includes/ciudadesOptions.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webapp/publicDev/app/directives/includes/pesoOptions.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webapp/publicDev/app/components/shared/pedidos/setTransportista/setTransportistaController.js" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/webapp/public/app/components/shared/pedidos/setTransportista/setTransportistaController.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/webapp/public/app/directives/includes/ciudadesOptions.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/webapp/public/app/directives/includes/pesoOptions.html" afterPath="" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/webapp/public/app/app.data.js" afterPath="$PROJECT_DIR$/webapp/publicDev/app/appData.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/webapp/public/app/app.js" afterPath="$PROJECT_DIR$/webapp/publicDev/app/app.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/webapp/public/app/app.localStorage.js" afterPath="$PROJECT_DIR$/webapp/publicDev/app/appLocalStorage.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/webapp/public/app/app.material.js" afterPath="$PROJECT_DIR$/webapp/publicDev/app/appMaterial.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/webapp/public/app/app.realTime.js" afterPath="$PROJECT_DIR$/webapp/publicDev/app/appRealTime.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/webapp/public/app/app.routes.js" afterPath="$PROJECT_DIR$/webapp/publicDev/app/appRoutes.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/webapp/public/app/components/proveedorCarga/pedidos/proveedorCargaPedidosController.js" afterPath="$PROJECT_DIR$/webapp/publicDev/app/components/proveedorCarga/pedidos/proveedorCargaPedidosController.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/webapp/public/app/components/proveedorCarga/pedidos/proveedorCargaPedidosService.js" afterPath="$PROJECT_DIR$/webapp/publicDev/app/components/proveedorCarga/pedidos/proveedorCargaPedidosService.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/webapp/public/app/components/proveedorCarga/pedidos/proveedorCargaPedidosView.html" afterPath="$PROJECT_DIR$/webapp/publicDev/app/components/proveedorCarga/pedidos/proveedorCargaPedidosView.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/webapp/public/app/components/shared/home/home.js" afterPath="$PROJECT_DIR$/webapp/publicDev/app/components/shared/home/home.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/webapp/public/app/components/shared/home/homeView.html" afterPath="$PROJECT_DIR$/webapp/publicDev/app/components/shared/home/homeView.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/webapp/public/app/components/shared/home/login.html" afterPath="$PROJECT_DIR$/webapp/publicDev/app/components/shared/home/login.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/webapp/public/app/components/shared/home/publicView.html" afterPath="$PROJECT_DIR$/webapp/publicDev/app/components/shared/home/publicView.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/webapp/public/app/components/shared/home/registroChofer.html" afterPath="$PROJECT_DIR$/webapp/publicDev/app/components/shared/home/registroChofer.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/webapp/public/app/components/shared/home/registroProveedorCarga.html" afterPath="$PROJECT_DIR$/webapp/publicDev/app/components/shared/home/registroProveedorCarga.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/webapp/public/app/components/shared/home/registroTransportista.html" afterPath="$PROJECT_DIR$/webapp/publicDev/app/components/shared/home/registroTransportista.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/webapp/public/app/components/shared/master/header/header.html" afterPath="$PROJECT_DIR$/webapp/publicDev/app/components/shared/master/header/header.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/webapp/public/app/components/shared/master/header/headerController.js" afterPath="$PROJECT_DIR$/webapp/publicDev/app/components/shared/master/header/headerController.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/webapp/public/app/components/shared/master/masterView.html" afterPath="$PROJECT_DIR$/webapp/publicDev/app/components/shared/master/masterView.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/webapp/public/app/components/shared/master/sidenav/sidenav.html" afterPath="$PROJECT_DIR$/webapp/publicDev/app/components/shared/master/sidenav/sidenav.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/webapp/public/app/components/shared/master/sidenav/sidenavController.js" afterPath="$PROJECT_DIR$/webapp/publicDev/app/components/shared/master/sidenav/sidenavController.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/webapp/public/app/components/shared/pedidos/addPedido/addPedidoController.js" afterPath="$PROJECT_DIR$/webapp/publicDev/app/components/shared/pedidos/addPedido/addPedidoController.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/webapp/public/app/components/shared/pedidos/addPedido/addPedidoService.js" afterPath="$PROJECT_DIR$/webapp/publicDev/app/components/shared/pedidos/addPedido/addPedidoService.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/webapp/public/app/components/shared/pedidos/setTransportista/setTransportistaService.js" afterPath="$PROJECT_DIR$/webapp/publicDev/app/components/shared/pedidos/setTransportista/setTransportistaService.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/webapp/public/app/components/shared/pedidos/setTransportista/setTransportistaView.html" afterPath="$PROJECT_DIR$/webapp/publicDev/app/components/shared/pedidos/setTransportista/setTransportistaView.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/webapp/public/app/components/shared/progressIndicator/progressIndicatorController.js" afterPath="$PROJECT_DIR$/webapp/publicDev/app/components/shared/progressIndicator/progressIndicatorController.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/webapp/public/app/components/shared/progressIndicator/progressIndicatorView.html" afterPath="$PROJECT_DIR$/webapp/publicDev/app/components/shared/progressIndicator/progressIndicatorView.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/webapp/public/app/components/transportista/flota/addChofer/addChoferController.js" afterPath="$PROJECT_DIR$/webapp/publicDev/app/components/transportista/flota/addChofer/addChoferController.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/webapp/public/app/components/transportista/flota/addChofer/addChoferService.js" afterPath="$PROJECT_DIR$/webapp/publicDev/app/components/transportista/flota/addChofer/addChoferService.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/webapp/public/app/components/transportista/flota/addChofer/addChoferView.html" afterPath="$PROJECT_DIR$/webapp/publicDev/app/components/transportista/flota/addChofer/addChoferView.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/webapp/public/app/components/transportista/flota/transportistaFlotaController.js" afterPath="$PROJECT_DIR$/webapp/publicDev/app/components/transportista/flota/transportistaFlotaController.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/webapp/public/app/components/transportista/flota/transportistaFlotaService.js" afterPath="$PROJECT_DIR$/webapp/publicDev/app/components/transportista/flota/transportistaFlotaService.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/webapp/public/app/components/transportista/flota/transportistaFlotaView.html" afterPath="$PROJECT_DIR$/webapp/publicDev/app/components/transportista/flota/transportistaFlotaView.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/webapp/public/app/components/transportista/pedidos/transportistaPedidosController.js" afterPath="$PROJECT_DIR$/webapp/publicDev/app/components/transportista/pedidos/transportistaPedidosController.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/webapp/public/app/components/transportista/pedidos/transportistaPedidosService.js" afterPath="$PROJECT_DIR$/webapp/publicDev/app/components/transportista/pedidos/transportistaPedidosService.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/webapp/public/app/components/transportista/pedidos/transportistaPedidosView.html" afterPath="$PROJECT_DIR$/webapp/publicDev/app/components/transportista/pedidos/transportistaPedidosView.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/webapp/public/app/directives/choferes/ez-choferes.html" afterPath="$PROJECT_DIR$/webapp/publicDev/app/directives/choferes/ez-choferes.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/webapp/public/app/directives/choferes/ez-choferes.js" afterPath="$PROJECT_DIR$/webapp/publicDev/app/directives/choferes/ez-choferes.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/webapp/public/app/directives/includes/tiposCamion.html" afterPath="$PROJECT_DIR$/webapp/publicDev/app/directives/includes/tiposCamion.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/webapp/public/app/directives/old/components/controllers/MasterController.js" afterPath="$PROJECT_DIR$/webapp/publicDev/app/directives/old/components/controllers/MasterController.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/webapp/public/app/directives/old/components/controllers/components/agregarPedido/agregarPedido.js" afterPath="$PROJECT_DIR$/webapp/publicDev/app/directives/old/components/controllers/components/agregarPedido/agregarPedido.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/webapp/public/app/directives/old/components/controllers/components/masterPage/masterPage.js" afterPath="$PROJECT_DIR$/webapp/publicDev/app/directives/old/components/controllers/components/masterPage/masterPage.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/webapp/public/app/directives/old/components/controllers/components/pedidosLists/pedidosActivos.js" afterPath="$PROJECT_DIR$/webapp/publicDev/app/directives/old/components/controllers/components/pedidosLists/pedidosActivos.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/webapp/public/app/directives/old/components/controllers/components/pedidosLists/pedidosCompletados.js" afterPath="$PROJECT_DIR$/webapp/publicDev/app/directives/old/components/controllers/components/pedidosLists/pedidosCompletados.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/webapp/public/app/directives/old/components/controllers/components/pedidosLists/pedidosEnCurso.js" afterPath="$PROJECT_DIR$/webapp/publicDev/app/directives/old/components/controllers/components/pedidosLists/pedidosEnCurso.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/webapp/public/app/directives/old/components/controllers/components/pedidosLists/pedidosPendientes.js" afterPath="$PROJECT_DIR$/webapp/publicDev/app/directives/old/components/controllers/components/pedidosLists/pedidosPendientes.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/webapp/public/app/directives/old/components/controllers/components/pedidosLists/transportistasProveedor.js" afterPath="$PROJECT_DIR$/webapp/publicDev/app/directives/old/components/controllers/components/pedidosLists/transportistasProveedor.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/webapp/public/app/directives/old/components/controllers/components/rateTransportista/rateTransportista.js" afterPath="$PROJECT_DIR$/webapp/publicDev/app/directives/old/components/controllers/components/rateTransportista/rateTransportista.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/webapp/public/app/directives/old/components/controllers/confirm_dialog.js" afterPath="$PROJECT_DIR$/webapp/publicDev/app/directives/old/components/controllers/confirm_dialog.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/webapp/public/app/directives/old/components/controllers/incioDespachadores.js" afterPath="$PROJECT_DIR$/webapp/publicDev/app/directives/old/components/controllers/incioDespachadores.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/webapp/public/app/directives/old/components/controllers/notifications_center.js" afterPath="$PROJECT_DIR$/webapp/publicDev/app/directives/old/components/controllers/notifications_center.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/webapp/public/app/directives/old/components/controllers/pages/privado/administracion/register/register.js" afterPath="$PROJECT_DIR$/webapp/publicDev/app/directives/old/components/controllers/pages/privado/administracion/register/register.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/webapp/public/app/directives/old/components/controllers/pages/privado/clientes/Historico/historico.js" afterPath="$PROJECT_DIR$/webapp/publicDev/app/directives/old/components/controllers/pages/privado/clientes/Historico/historico.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/webapp/public/app/directives/old/components/controllers/pages/privado/clientes/detallePedido/detallePedido.js" afterPath="$PROJECT_DIR$/webapp/publicDev/app/directives/old/components/controllers/pages/privado/clientes/detallePedido/detallePedido.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/webapp/public/app/directives/old/components/controllers/pages/privado/clientes/inicioClientes/incioClientes.js" afterPath="$PROJECT_DIR$/webapp/publicDev/app/directives/old/components/controllers/pages/privado/clientes/inicioClientes/incioClientes.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/webapp/public/app/directives/old/components/controllers/pages/privado/clientes/perfil/perfil.js" afterPath="$PROJECT_DIR$/webapp/publicDev/app/directives/old/components/controllers/pages/privado/clientes/perfil/perfil.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/webapp/public/app/directives/old/components/controllers/pages/privado/proveedores/inicio/inicio.js" afterPath="$PROJECT_DIR$/webapp/publicDev/app/directives/old/components/controllers/pages/privado/proveedores/inicio/inicio.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/webapp/public/app/directives/old/components/controllers/transportistaEdit.js" afterPath="$PROJECT_DIR$/webapp/publicDev/app/directives/old/components/controllers/transportistaEdit.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/webapp/public/app/directives/old/components/pedidos/pedidos.html" afterPath="$PROJECT_DIR$/webapp/publicDev/app/directives/old/components/pedidos/pedidos.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/webapp/public/app/directives/old/components/pedidos/pedidos_completados.html" afterPath="$PROJECT_DIR$/webapp/publicDev/app/directives/old/components/pedidos/pedidos_completados.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/webapp/public/app/directives/old/components/pedidos/pedidos_en_proceso.html" afterPath="$PROJECT_DIR$/webapp/publicDev/app/directives/old/components/pedidos/pedidos_en_proceso.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/webapp/public/app/directives/old/components/pedidos/pedidos_pendientes.html" afterPath="$PROJECT_DIR$/webapp/publicDev/app/directives/old/components/pedidos/pedidos_pendientes.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/webapp/public/app/directives/old/components/viewmodels/agregar_pedido.js" afterPath="$PROJECT_DIR$/webapp/publicDev/app/directives/old/components/viewmodels/agregar_pedido.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/webapp/public/app/directives/old/components/viewmodels/detalle_pedido.js" afterPath="$PROJECT_DIR$/webapp/publicDev/app/directives/old/components/viewmodels/detalle_pedido.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/webapp/public/app/directives/old/components/viewmodels/historico_view_model.js" afterPath="$PROJECT_DIR$/webapp/publicDev/app/directives/old/components/viewmodels/historico_view_model.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/webapp/public/app/directives/old/components/viewmodels/master_page.js" afterPath="$PROJECT_DIR$/webapp/publicDev/app/directives/old/components/viewmodels/master_page.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/webapp/public/app/directives/old/components/viewmodels/notifications_center.js" afterPath="$PROJECT_DIR$/webapp/publicDev/app/directives/old/components/viewmodels/notifications_center.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/webapp/public/app/directives/old/components/viewmodels/pedidos_activos.js" afterPath="$PROJECT_DIR$/webapp/publicDev/app/directives/old/components/viewmodels/pedidos_activos.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/webapp/public/app/directives/old/components/viewmodels/pedidos_completados.js" afterPath="$PROJECT_DIR$/webapp/publicDev/app/directives/old/components/viewmodels/pedidos_completados.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/webapp/public/app/directives/old/components/viewmodels/pedidos_en_curso.js" afterPath="$PROJECT_DIR$/webapp/publicDev/app/directives/old/components/viewmodels/pedidos_en_curso.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/webapp/public/app/directives/old/components/viewmodels/pedidos_pendientes.js" afterPath="$PROJECT_DIR$/webapp/publicDev/app/directives/old/components/viewmodels/pedidos_pendientes.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/webapp/public/app/directives/old/components/viewmodels/perfil.js" afterPath="$PROJECT_DIR$/webapp/publicDev/app/directives/old/components/viewmodels/perfil.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/webapp/public/app/directives/old/components/viewmodels/rate_transportista_modal.js" afterPath="$PROJECT_DIR$/webapp/publicDev/app/directives/old/components/viewmodels/rate_transportista_modal.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/webapp/public/app/directives/old/components/viewmodels/transportista_edit.js" afterPath="$PROJECT_DIR$/webapp/publicDev/app/directives/old/components/viewmodels/transportista_edit.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/webapp/public/app/directives/old/components/viewmodels/transportistas_proveedor.js" afterPath="$PROJECT_DIR$/webapp/publicDev/app/directives/old/components/viewmodels/transportistas_proveedor.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/webapp/public/app/directives/old/templates/components/DetallePedido/mapa.html" afterPath="$PROJECT_DIR$/webapp/publicDev/app/directives/old/templates/components/DetallePedido/mapa.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/webapp/public/app/directives/old/templates/components/DetallePedido/pedido.html" afterPath="$PROJECT_DIR$/webapp/publicDev/app/directives/old/templates/components/DetallePedido/pedido.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/webapp/public/app/directives/old/templates/components/DetallePedido/producto.html" afterPath="$PROJECT_DIR$/webapp/publicDev/app/directives/old/templates/components/DetallePedido/producto.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/webapp/public/app/directives/old/templates/components/DetallePedido/transportista.html" afterPath="$PROJECT_DIR$/webapp/publicDev/app/directives/old/templates/components/DetallePedido/transportista.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/webapp/public/app/directives/old/templates/components/agregarPedido/AgregarPedido.html" afterPath="$PROJECT_DIR$/webapp/publicDev/app/directives/old/templates/components/agregarPedido/AgregarPedido.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/webapp/public/app/directives/old/templates/components/agregarPedido/AgregarPedidoActions.html" afterPath="$PROJECT_DIR$/webapp/publicDev/app/directives/old/templates/components/agregarPedido/AgregarPedidoActions.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/webapp/public/app/directives/old/templates/components/agregarPedido/AgregarPedidoHeader.html" afterPath="$PROJECT_DIR$/webapp/publicDev/app/directives/old/templates/components/agregarPedido/AgregarPedidoHeader.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/webapp/public/app/directives/old/templates/components/agregarPedido/AgregarPedidoPlantillaModal.html" afterPath="$PROJECT_DIR$/webapp/publicDev/app/directives/old/templates/components/agregarPedido/AgregarPedidoPlantillaModal.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/webapp/public/app/directives/old/templates/components/agregarPedido/AgregarPedidoProducto.html" afterPath="$PROJECT_DIR$/webapp/publicDev/app/directives/old/templates/components/agregarPedido/AgregarPedidoProducto.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/webapp/public/app/directives/old/templates/components/agregarPedido/AgregarPedidoTransporte.html" afterPath="$PROJECT_DIR$/webapp/publicDev/app/directives/old/templates/components/agregarPedido/AgregarPedidoTransporte.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/webapp/public/app/directives/old/templates/components/agregarPedido/AgregarPedidoTransportistas.html" afterPath="$PROJECT_DIR$/webapp/publicDev/app/directives/old/templates/components/agregarPedido/AgregarPedidoTransportistas.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/webapp/public/app/directives/old/templates/components/agregarPedido/AgregarPedidoViaje.html" afterPath="$PROJECT_DIR$/webapp/publicDev/app/directives/old/templates/components/agregarPedido/AgregarPedidoViaje.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/webapp/public/app/directives/old/templates/components/home/como_funciona.html" afterPath="$PROJECT_DIR$/webapp/publicDev/app/directives/old/templates/components/home/como_funciona.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/webapp/public/app/directives/old/templates/components/home/contactenos.html" afterPath="$PROJECT_DIR$/webapp/publicDev/app/directives/old/templates/components/home/contactenos.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/webapp/public/app/directives/old/templates/components/home/para_empresas.html" afterPath="$PROJECT_DIR$/webapp/publicDev/app/directives/old/templates/components/home/para_empresas.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/webapp/public/app/directives/old/templates/components/home/para_proveedores.html" afterPath="$PROJECT_DIR$/webapp/publicDev/app/directives/old/templates/components/home/para_proveedores.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/webapp/public/app/directives/old/templates/components/master_page_private.html" afterPath="$PROJECT_DIR$/webapp/publicDev/app/directives/old/templates/components/master_page_private.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/webapp/public/app/directives/old/templates/components/master_page_publico.html" afterPath="$PROJECT_DIR$/webapp/publicDev/app/directives/old/templates/components/master_page_publico.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/webapp/public/app/directives/old/templates/components/pedidosLists/PedidosActivos.html" afterPath="$PROJECT_DIR$/webapp/publicDev/app/directives/old/templates/components/pedidosLists/PedidosActivos.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/webapp/public/app/directives/old/templates/components/pedidosLists/PedidosCompletados.html" afterPath="$PROJECT_DIR$/webapp/publicDev/app/directives/old/templates/components/pedidosLists/PedidosCompletados.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/webapp/public/app/directives/old/templates/components/pedidosLists/PedidosEnCurso.html" afterPath="$PROJECT_DIR$/webapp/publicDev/app/directives/old/templates/components/pedidosLists/PedidosEnCurso.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/webapp/public/app/directives/old/templates/components/pedidosLists/PedidosPendientes.html" afterPath="$PROJECT_DIR$/webapp/publicDev/app/directives/old/templates/components/pedidosLists/PedidosPendientes.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/webapp/public/app/directives/old/templates/components/pedidosLists/PedidosPendientesProveedor.html" afterPath="$PROJECT_DIR$/webapp/publicDev/app/directives/old/templates/components/pedidosLists/PedidosPendientesProveedor.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/webapp/public/app/directives/old/templates/components/pedidosLists/TransportistasProveedor.html" afterPath="$PROJECT_DIR$/webapp/publicDev/app/directives/old/templates/components/pedidosLists/TransportistasProveedor.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/webapp/public/app/directives/old/templates/components/rateTransportista/rate_transportista.html" afterPath="$PROJECT_DIR$/webapp/publicDev/app/directives/old/templates/components/rateTransportista/rate_transportista.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/webapp/public/app/directives/old/templates/confirm_dialog.html" afterPath="$PROJECT_DIR$/webapp/publicDev/app/directives/old/templates/confirm_dialog.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/webapp/public/app/directives/old/templates/notifications_center.html" afterPath="$PROJECT_DIR$/webapp/publicDev/app/directives/old/templates/notifications_center.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/webapp/public/app/directives/old/templates/pages/detalle_pedido.html" afterPath="$PROJECT_DIR$/webapp/publicDev/app/directives/old/templates/pages/detalle_pedido.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/webapp/public/app/directives/old/templates/pages/detalle_transportista.html" afterPath="$PROJECT_DIR$/webapp/publicDev/app/directives/old/templates/pages/detalle_transportista.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/webapp/public/app/directives/old/templates/pages/historico.html" afterPath="$PROJECT_DIR$/webapp/publicDev/app/directives/old/templates/pages/historico.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/webapp/public/app/directives/old/templates/pages/inicio_clientes.html" afterPath="$PROJECT_DIR$/webapp/publicDev/app/directives/old/templates/pages/inicio_clientes.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/webapp/public/app/directives/old/templates/pages/inicio_despachadores.html" afterPath="$PROJECT_DIR$/webapp/publicDev/app/directives/old/templates/pages/inicio_despachadores.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/webapp/public/app/directives/old/templates/pages/inicio_proveedores.html" afterPath="$PROJECT_DIR$/webapp/publicDev/app/directives/old/templates/pages/inicio_proveedores.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/webapp/public/app/directives/old/templates/pages/inicio_publico.html" afterPath="$PROJECT_DIR$/webapp/publicDev/app/directives/old/templates/pages/inicio_publico.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/webapp/public/app/directives/old/templates/pages/perfil.html" afterPath="$PROJECT_DIR$/webapp/publicDev/app/directives/old/templates/pages/perfil.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/webapp/public/app/directives/passwordVerify.js" afterPath="$PROJECT_DIR$/webapp/publicDev/app/directives/passwordVerify.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/webapp/public/app/directives/pedidos/ez-pedido-activo.html" afterPath="$PROJECT_DIR$/webapp/publicDev/app/directives/pedidos/ez-pedido-activo.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/webapp/public/app/directives/pedidos/ez-pedido-activo.js" afterPath="$PROJECT_DIR$/webapp/publicDev/app/directives/pedidos/ez-pedido-activo.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/webapp/public/app/directives/pedidos/ez-pedido-completado.html" afterPath="$PROJECT_DIR$/webapp/publicDev/app/directives/pedidos/ez-pedido-completado.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/webapp/public/app/directives/pedidos/ez-pedido-completado.js" afterPath="$PROJECT_DIR$/webapp/publicDev/app/directives/pedidos/ez-pedido-completado.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/webapp/public/app/directives/pedidos/ez-pedido-en-curso.html" afterPath="$PROJECT_DIR$/webapp/publicDev/app/directives/pedidos/ez-pedido-en-curso.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/webapp/public/app/directives/pedidos/ez-pedido-en-curso.js" afterPath="$PROJECT_DIR$/webapp/publicDev/app/directives/pedidos/ez-pedido-en-curso.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/webapp/public/app/directives/pedidos/ez-pedido-pendiente.html" afterPath="$PROJECT_DIR$/webapp/publicDev/app/directives/pedidos/ez-pedido-pendiente.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/webapp/public/app/directives/pedidos/ez-pedido-pendiente.js" afterPath="$PROJECT_DIR$/webapp/publicDev/app/directives/pedidos/ez-pedido-pendiente.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/webapp/public/app/directives/pedidos/ez-pedidos.html" afterPath="$PROJECT_DIR$/webapp/publicDev/app/directives/pedidos/ez-pedidos.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/webapp/public/app/directives/pedidos/ez-pedidos.js" afterPath="$PROJECT_DIR$/webapp/publicDev/app/directives/pedidos/ez-pedidos.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/webapp/public/app/factories/airbrake.js" afterPath="$PROJECT_DIR$/webapp/publicDev/app/factories/airbrake.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/webapp/public/app/factories/models/brokerModel.js" afterPath="$PROJECT_DIR$/webapp/publicDev/app/factories/models/brokerModel.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/webapp/public/app/factories/models/choferModel.js" afterPath="$PROJECT_DIR$/webapp/publicDev/app/factories/models/choferModel.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/webapp/public/app/factories/models/notificacionModel.js" afterPath="$PROJECT_DIR$/webapp/publicDev/app/factories/models/notificacionModel.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/webapp/public/app/factories/models/pedidoModel.js" afterPath="$PROJECT_DIR$/webapp/publicDev/app/factories/models/pedidoModel.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/webapp/public/app/factories/models/proveedorCargaModel.js" afterPath="$PROJECT_DIR$/webapp/publicDev/app/factories/models/proveedorCargaModel.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/webapp/public/app/factories/models/proveedorCargaRutasModel.js" afterPath="$PROJECT_DIR$/webapp/publicDev/app/factories/models/proveedorCargaRutasModel.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/webapp/public/app/factories/models/transportistaModel.js" afterPath="$PROJECT_DIR$/webapp/publicDev/app/factories/models/transportistaModel.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/webapp/public/app/factories/models/transportistaRutasModel.js" afterPath="$PROJECT_DIR$/webapp/publicDev/app/factories/models/transportistaRutasModel.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/webapp/public/app/factories/models/userModel.js" afterPath="$PROJECT_DIR$/webapp/publicDev/app/factories/models/userModel.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/webapp/public/app/filters/capitalizeFirst.js" afterPath="$PROJECT_DIR$/webapp/publicDev/app/filters/capitalizeFirst.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/webapp/public/app/filters/parsePeso.js" afterPath="$PROJECT_DIR$/webapp/publicDev/app/filters/parsePeso.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/webapp/public/app/filters/tipoCamionList.js" afterPath="$PROJECT_DIR$/webapp/publicDev/app/filters/tipoCamionList.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/webapp/public/assets/apk/app-debug.apk" afterPath="$PROJECT_DIR$/webapp/publicDev/assets/apk/app-debug.apk" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/webapp/public/assets/apk/app-release.apk" afterPath="$PROJECT_DIR$/webapp/publicDev/assets/apk/app-release.apk" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/webapp/public/assets/css/_actions.scss" afterPath="$PROJECT_DIR$/webapp/publicDev/assets/css/_actions.scss" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/webapp/public/assets/css/_decorators.scss" afterPath="$PROJECT_DIR$/webapp/publicDev/assets/css/_decorators.scss" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/webapp/public/assets/css/_defaults.scss" afterPath="$PROJECT_DIR$/webapp/publicDev/assets/css/_defaults.scss" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/webapp/public/assets/css/_forms.scss" afterPath="$PROJECT_DIR$/webapp/publicDev/assets/css/_forms.scss" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/webapp/public/assets/css/_globals.scss" afterPath="$PROJECT_DIR$/webapp/publicDev/assets/css/_globals.scss" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/webapp/public/assets/css/_header.scss" afterPath="$PROJECT_DIR$/webapp/publicDev/assets/css/_header.scss" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/webapp/public/assets/css/_lists.scss" afterPath="$PROJECT_DIR$/webapp/publicDev/assets/css/_lists.scss" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/webapp/public/assets/css/_login.scss" afterPath="$PROJECT_DIR$/webapp/publicDev/assets/css/_login.scss" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/webapp/public/assets/css/_text.scss" afterPath="$PROJECT_DIR$/webapp/publicDev/assets/css/_text.scss" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/webapp/public/assets/css/app.css" afterPath="$PROJECT_DIR$/webapp/publicDev/assets/css/app.css" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/webapp/public/assets/css/app.css.map" afterPath="$PROJECT_DIR$/webapp/publicDev/assets/css/app.css.map" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/webapp/public/assets/css/app.scss" afterPath="$PROJECT_DIR$/webapp/publicDev/assets/css/app.scss" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/webapp/public/assets/css/app_old.css" afterPath="$PROJECT_DIR$/webapp/publicDev/assets/css/app_old.css" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/webapp/public/assets/css/vendor/material-datetimepicker.min.css" afterPath="$PROJECT_DIR$/webapp/publicDev/assets/css/vendor/material-datetimepicker.min.css" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/webapp/public/assets/images/EASY-RUTA-04.jpg" afterPath="$PROJECT_DIR$/webapp/publicDev/assets/images/EASY-RUTA-04.jpg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/webapp/public/assets/images/account_circle.png" afterPath="$PROJECT_DIR$/webapp/publicDev/assets/images/account_circle.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/webapp/public/assets/images/ambato.jpg" afterPath="$PROJECT_DIR$/webapp/publicDev/assets/images/ambato.jpg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/webapp/public/assets/images/arrow.png" afterPath="$PROJECT_DIR$/webapp/publicDev/assets/images/arrow.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/webapp/public/assets/images/cuenca.jpg" afterPath="$PROJECT_DIR$/webapp/publicDev/assets/images/cuenca.jpg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/webapp/public/assets/images/duran.jpg" afterPath="$PROJECT_DIR$/webapp/publicDev/assets/images/duran.jpg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/webapp/public/assets/images/exit.png" afterPath="$PROJECT_DIR$/webapp/publicDev/assets/images/exit.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/webapp/public/assets/images/factory.png" afterPath="$PROJECT_DIR$/webapp/publicDev/assets/images/factory.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/webapp/public/assets/images/guayaquil.jpg" afterPath="$PROJECT_DIR$/webapp/publicDev/assets/images/guayaquil.jpg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/webapp/public/assets/images/logo.png" afterPath="$PROJECT_DIR$/webapp/publicDev/assets/images/logo.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/webapp/public/assets/images/logo_background.png" afterPath="$PROJECT_DIR$/webapp/publicDev/assets/images/logo_background.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/webapp/public/assets/images/logo_new.png" afterPath="$PROJECT_DIR$/webapp/publicDev/assets/images/logo_new.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/webapp/public/assets/images/logo_texto.png" afterPath="$PROJECT_DIR$/webapp/publicDev/assets/images/logo_texto.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/webapp/public/assets/images/loja.jpg" afterPath="$PROJECT_DIR$/webapp/publicDev/assets/images/loja.jpg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/webapp/public/assets/images/machala.jpg" afterPath="$PROJECT_DIR$/webapp/publicDev/assets/images/machala.jpg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/webapp/public/assets/images/manta.jpg" afterPath="$PROJECT_DIR$/webapp/publicDev/assets/images/manta.jpg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/webapp/public/assets/images/posorja.jpg" afterPath="$PROJECT_DIR$/webapp/publicDev/assets/images/posorja.jpg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/webapp/public/assets/images/quevedo.jpg" afterPath="$PROJECT_DIR$/webapp/publicDev/assets/images/quevedo.jpg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/webapp/public/assets/images/quito.jpg" afterPath="$PROJECT_DIR$/webapp/publicDev/assets/images/quito.jpg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/webapp/public/assets/images/transportista-icon.png" afterPath="$PROJECT_DIR$/webapp/publicDev/assets/images/transportista-icon.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/webapp/public/assets/images/transrodar.png" afterPath="$PROJECT_DIR$/webapp/publicDev/assets/images/transrodar.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/webapp/public/assets/images/truck.png" afterPath="$PROJECT_DIR$/webapp/publicDev/assets/images/truck.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/webapp/public/assets/images/truck_dock.png" afterPath="$PROJECT_DIR$/webapp/publicDev/assets/images/truck_dock.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/webapp/public/assets/images/truck_driver.jpg" afterPath="$PROJECT_DIR$/webapp/publicDev/assets/images/truck_driver.jpg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/webapp/public/assets/js/vendor/airbrake/client.min.js" afterPath="$PROJECT_DIR$/webapp/publicDev/assets/js/vendor/airbrake/client.min.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/webapp/public/assets/js/vendor/angular-local-storage.min.js" afterPath="$PROJECT_DIR$/webapp/publicDev/assets/js/vendor/angular-local-storage.min.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/webapp/public/assets/js/vendor/angular-material-datetimepicker.js" afterPath="$PROJECT_DIR$/webapp/publicDev/assets/js/vendor/angular-material-datetimepicker.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/webapp/public/assets/js/vendor/angular-ui-router.min.js" afterPath="$PROJECT_DIR$/webapp/publicDev/assets/js/vendor/angular-ui-router.min.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/webapp/public/assets/js/vendor/moment-with-locales.min.js" afterPath="$PROJECT_DIR$/webapp/publicDev/assets/js/vendor/moment-with-locales.min.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/webapp/public/assets/js/vendor/ng-map.min.js" afterPath="$PROJECT_DIR$/webapp/publicDev/assets/js/vendor/ng-map.min.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/webapp/public/assets/video/big_buck_bunny.mp4" afterPath="$PROJECT_DIR$/webapp/publicDev/assets/video/big_buck_bunny.mp4" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/webapp/public/assets/video/big_buck_bunny.ogv" afterPath="$PROJECT_DIR$/webapp/publicDev/assets/video/big_buck_bunny.ogv" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/webapp/public/assets/video/big_buck_bunny.webm" afterPath="$PROJECT_DIR$/webapp/publicDev/assets/video/big_buck_bunny.webm" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/webapp/public/assets/video/truck.mov" afterPath="$PROJECT_DIR$/webapp/publicDev/assets/video/truck.mov" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/webapp/public/assets/video/truck.mp4" afterPath="$PROJECT_DIR$/webapp/publicDev/assets/video/truck.mp4" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/webapp/public/assets/video/truck1.mp4" afterPath="$PROJECT_DIR$/webapp/publicDev/assets/video/truck1.mp4" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/webapp/public/index.html" afterPath="$PROJECT_DIR$/webapp/publicDev/index.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/webapp/public/modules/data.js" afterPath="$PROJECT_DIR$/webapp/publicDev/modules/data.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/webapp/public/modules/realTime.js" afterPath="$PROJECT_DIR$/webapp/publicDev/modules/realTime.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/webapp/app.js" afterPath="$PROJECT_DIR$/webapp/app.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/webapp/package.json" afterPath="$PROJECT_DIR$/webapp/package.json" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="easyruta.iws" />
@@ -75,76 +233,63 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="app.data.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/webapp/public/app/app.data.js">
+      <file leaf-file-name="appData.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/webapp/publicDev/app/appData.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="210">
-              <caret line="7" column="10" selection-start-line="7" selection-start-column="10" selection-end-line="7" selection-end-column="10" />
+            <state vertical-scroll-proportion="0.25316456" vertical-offset="0" max-vertical-offset="474">
+              <caret line="8" column="8" selection-start-line="8" selection-start-column="8" selection-end-line="8" selection-end-column="8" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ez-choferes.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/webapp/public/app/directives/choferes/ez-choferes.html">
+      <file leaf-file-name="transportistaPedidosController.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/webapp/publicDev/app/components/transportista/pedidos/transportistaPedidosController.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-7.5" vertical-offset="285" max-vertical-offset="750">
-              <caret line="31" column="10" selection-start-line="31" selection-start-column="10" selection-end-line="31" selection-end-column="10" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="603" max-vertical-offset="1320">
+              <caret line="106" column="11" selection-start-line="106" selection-start-column="11" selection-end-line="106" selection-end-column="11" />
               <folding>
-                <element signature="n#style#0;n#h4#0;n#div#0;n#md-list#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#h4#2;n#div#0;n#md-list#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#md-button#0;n#div#0;n#md-list#0;n#!!top" expanded="true" />
+                <element signature="e#890#1931#0" expanded="false" />
+                <element signature="e#3204#4994#0" expanded="false" />
+                <element signature="e#6087#6127#0" expanded="false" />
+                <element signature="e#6175#6372#0" expanded="false" />
+                <element signature="e#6422#6625#0" expanded="false" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/webapp/public/index.html">
+      <file leaf-file-name="homeView.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/webapp/publicDev/app/components/shared/home/homeView.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="1.875" vertical-offset="1035" max-vertical-offset="1485">
-              <caret line="66" column="49" selection-start-line="66" selection-start-column="49" selection-end-line="66" selection-end-column="49" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="homeView.html" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/webapp/public/app/components/shared/home/homeView.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.73333335" vertical-offset="420" max-vertical-offset="870">
-              <caret line="50" column="102" selection-start-line="50" selection-start-column="102" selection-end-line="50" selection-end-column="102" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="sidenavController.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/webapp/public/app/components/shared/master/sidenav/sidenavController.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="360" max-vertical-offset="1020">
-              <caret line="48" column="38" selection-start-line="48" selection-start-column="38" selection-end-line="48" selection-end-column="38" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="setTransportistaView.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/webapp/public/app/components/shared/pedidos/setTransportista/setTransportistaView.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="225">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <state vertical-scroll-proportion="-0.72" vertical-offset="414" max-vertical-offset="870">
+              <caret line="30" column="103" selection-start-line="30" selection-start-column="103" selection-end-line="30" selection-end-column="103" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
       <file leaf-file-name="setTransportistaController.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/webapp/public/app/components/shared/pedidos/setTransportista/setTransportistaController.js">
+        <entry file="file://$PROJECT_DIR$/webapp/publicDev/app/components/shared/pedidos/setTransportista/setTransportistaController.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="426" max-vertical-offset="1080">
-              <caret line="48" column="24" selection-start-line="48" selection-start-column="24" selection-end-line="48" selection-end-column="24" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="300" max-vertical-offset="1380">
+              <caret line="43" column="49" selection-start-line="43" selection-start-column="49" selection-end-line="43" selection-end-column="49" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="setTransportistaService.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/webapp/publicDev/app/components/shared/pedidos/setTransportista/setTransportistaService.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1020">
+              <caret line="48" column="59" selection-start-line="48" selection-start-column="59" selection-end-line="48" selection-end-column="59" />
+              <folding>
+                <element signature="e#546#1920#0" expanded="false" />
+                <element signature="e#2985#3353#0" expanded="false" />
+                <element signature="e#3380#3956#0" expanded="false" />
+                <element signature="e#3990#4283#0" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -162,22 +307,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/webapp/public/app/components/proveedorCarga/pedidos/proveedorCargaPedidosService.js" />
-        <option value="$PROJECT_DIR$/webapp/public/app/components/transportista/pedidos/transportistaPedidosService.js" />
-        <option value="$PROJECT_DIR$/webapp/public/app/factories/models/proveedorCargaModel.js" />
-        <option value="$PROJECT_DIR$/webapp/public/app/components/shared/pedidos/setTransportista/setTransportistaService.js" />
-        <option value="$PROJECT_DIR$/webapp/public/app/components/transportista/pedidos/transportistaPedidosView.html" />
-        <option value="$PROJECT_DIR$/webapp/public/app/components/shared/pedidos/setTransportista/setTransportistaView.html" />
-        <option value="$PROJECT_DIR$/webapp/public/app/components/transportista/flota/transportistaFlotaService.js" />
-        <option value="$PROJECT_DIR$/webapp/public/app/factories/models/pedidoModel.js" />
-        <option value="$PROJECT_DIR$/webapp/public/assets/css/_lists.scss" />
-        <option value="$PROJECT_DIR$/webapp/public/assets/js/vendor/angular-material-datetimepicker.js" />
-        <option value="$PROJECT_DIR$/webapp/public/app/directives/pedidos/ez-pedidos.html" />
-        <option value="$PROJECT_DIR$/webapp/public/modules/login/login.html" />
-        <option value="$PROJECT_DIR$/webapp/public/modules/login/registroTransportista.html" />
-        <option value="$PROJECT_DIR$/webapp/public/modules/login/registroProveedorCarga.html" />
-        <option value="$PROJECT_DIR$/webapp/public/assets/css/_actions.scss" />
-        <option value="$PROJECT_DIR$/webapp/public/modules/data.js" />
         <option value="$PROJECT_DIR$/webapp/public/app/components/shared/pedidos/addPedido/addpedidoView.html" />
         <option value="$PROJECT_DIR$/webapp/public/app/components/transportista/flota/addChofer/addChoferService.js" />
         <option value="$PROJECT_DIR$/webapp/.parse.local" />
@@ -195,7 +324,6 @@
         <option value="$PROJECT_DIR$/webapp/public/app/directives/pedidos/ez-pedido-activo.html" />
         <option value="$PROJECT_DIR$/webapp/public/app/directives/pedidos/ez-pedido-completado.html" />
         <option value="$PROJECT_DIR$/webapp/public/app/app.routes.js" />
-        <option value="$PROJECT_DIR$/webapp/public/index.html" />
         <option value="$PROJECT_DIR$/webapp/public/app/components/shared/home/registroProveedorCarga.html" />
         <option value="$PROJECT_DIR$/webapp/public/app/directives/passwordVerify.js" />
         <option value="$PROJECT_DIR$/webapp/public/app/components/shared/home/registroTransportista.html" />
@@ -213,6 +341,23 @@
         <option value="$PROJECT_DIR$/webapp/public/app/components/shared/pedidos/setTransportista/setTransportistaController.js" />
         <option value="$PROJECT_DIR$/webapp/public/app/directives/choferes/ez-choferes.html" />
         <option value="$PROJECT_DIR$/webapp/public/app/components/shared/home/homeView.html" />
+        <option value="$PROJECT_DIR$/webapp/package.json" />
+        <option value="$PROJECT_DIR$/webapp/public/index_temp.html" />
+        <option value="$PROJECT_DIR$/webapp/public/index.html" />
+        <option value="$PROJECT_DIR$/webapp/Gruntfile.js" />
+        <option value="$PROJECT_DIR$/webapp/app.js" />
+        <option value="$PROJECT_DIR$/webapp/publicDev/index.html" />
+        <option value="$PROJECT_DIR$/webapp/public/app/directives/includes/pesoOptions.html" />
+        <option value="$PROJECT_DIR$/webapp/public/app/directives/includes/tiposCamion.html" />
+        <option value="$PROJECT_DIR$/webapp/publicDev/app/directives/includes/ciudadesOptions.html" />
+        <option value="$PROJECT_DIR$/webapp/publicDev/app/directives/includes/tiposCamion.html" />
+        <option value="$PROJECT_DIR$/webapp/publicDev/app/directives/includes/pesoOptions.html" />
+        <option value="$PROJECT_DIR$/webapp/publicDev/app/components/transportista/flota/transportistaFlotaController.js" />
+        <option value="$PROJECT_DIR$/webapp/publicDev/app/components/shared/pedidos/setTransportista/setTransportistaService.js" />
+        <option value="$PROJECT_DIR$/webapp/publicDev/app/components/transportista/pedidos/transportistaPedidosController.js" />
+        <option value="$PROJECT_DIR$/webapp/publicDev/app/components/shared/pedidos/setTransportista/setTransportistaController.js" />
+        <option value="$PROJECT_DIR$/webapp/publicDev/app/components/shared/home/homeView.html" />
+        <option value="$PROJECT_DIR$/webapp/publicDev/app/appData.js" />
       </list>
     </option>
   </component>
@@ -288,24 +433,6 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="easyruta" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="easyruta" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="webapp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="public" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
         </subPane>
       </pane>
     </panes>
@@ -329,18 +456,18 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/webapp/public" />
       <recent name="$PROJECT_DIR$/webapp/public/app/filters" />
       <recent name="$PROJECT_DIR$/webapp/public/assets/js/vendor" />
       <recent name="$PROJECT_DIR$/webapp/public/app" />
       <recent name="$PROJECT_DIR$/webapp/public/modules" />
-      <recent name="$PROJECT_DIR$/webapp/public/modules/login" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/webapp/publicDev" />
+      <recent name="$PROJECT_DIR$/webapp/public" />
+      <recent name="$PROJECT_DIR$/webapp/public/app" />
+      <recent name="$PROJECT_DIR$/webapp/public/assets" />
       <recent name="$PROJECT_DIR$/webapp/public/app/components/shared/home" />
-      <recent name="$PROJECT_DIR$/webapp/bower_components/angular-material-datetimepicker/js" />
-      <recent name="$PROJECT_DIR$/webapp/public/assets/js/vendor" />
-      <recent name="$PROJECT_DIR$/webapp/public/assets/css/vendor" />
-      <recent name="$PROJECT_DIR$/webapp" />
     </key>
   </component>
   <component name="RunManager" selected="Node.js.data.js">
@@ -445,24 +572,24 @@
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4167832" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.26067746" sideWeight="0.49928468" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="true" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32890365" sideWeight="0.49965683" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="true" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.32875773" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Remote Host" active="false" anchor="right" auto_hide="true" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.32944405" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39884394" sideWeight="0.44886753" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2716763" sideWeight="0.5" order="10" side_tool="true" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39198855" sideWeight="0.38541666" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="true" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32890365" sideWeight="0.49965683" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
-      <window_info id="Remote Host" active="false" anchor="right" auto_hide="true" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.32944405" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2771673" sideWeight="0.6145833" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39198855" sideWeight="0.38541666" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2716763" sideWeight="0.5" order="10" side_tool="true" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.269514" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.37733772" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39884394" sideWeight="0.44886753" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32867134" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="REST Client" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32716763" sideWeight="0.50061053" order="0" side_tool="true" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.26993006" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
     </layout>
@@ -492,138 +619,31 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/webapp/public/assets/images/factory.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/webapp/public/assets/css/_header.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="704">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/webapp/public/assets/css/_lists.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5514706" vertical-offset="0" max-vertical-offset="680">
-          <caret line="41" column="21" selection-start-line="41" selection-start-column="3" selection-end-line="41" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/webapp/public/assets/css/_decorators.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="704">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/webapp/public/assets/css/_actions.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-7.0833335" vertical-offset="160" max-vertical-offset="660">
-          <caret line="22" column="16" selection-start-line="22" selection-start-column="16" selection-end-line="22" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/webapp/public/assets/images/logo.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/webapp/public/assets/css/_forms.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-5.4583335" vertical-offset="34" max-vertical-offset="750">
-          <caret line="11" column="11" selection-start-line="11" selection-start-column="11" selection-end-line="11" selection-end-column="11" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/webapp/bower_components/ngmap/README.md">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-9.48" vertical-offset="1668" max-vertical-offset="2085">
-          <caret line="127" column="73" selection-start-line="127" selection-start-column="73" selection-end-line="127" selection-end-column="73" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/webapp/node_modules/express/lib/response.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="9671" max-vertical-offset="15810">
-          <caret line="662" column="35" selection-start-line="662" selection-start-column="35" selection-end-line="662" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/webapp/public/app/components/proveedorCarga/pedidos/proveedorCargaPedidosService.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="118" max-vertical-offset="990">
-          <caret line="39" column="29" selection-start-line="39" selection-start-column="29" selection-end-line="39" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/webapp/public/app/components/transportista/pedidos/transportistaPedidosService.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.4147844" vertical-offset="323" max-vertical-offset="1140">
-          <caret line="35" column="22" selection-start-line="35" selection-start-column="22" selection-end-line="35" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/webapp/public/app/components/transportista/flota/addChofer/addChoferService.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.07597536" vertical-offset="368" max-vertical-offset="1410">
-          <caret line="27" column="41" selection-start-line="27" selection-start-column="41" selection-end-line="27" selection-end-column="41" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/webapp/.parse.local">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.1764706" vertical-offset="0" max-vertical-offset="510">
-          <caret line="6" column="64" selection-start-line="6" selection-start-column="64" selection-end-line="6" selection-end-column="64" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/webapp/public/app/app.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="915">
-          <caret line="5" column="9" selection-start-line="5" selection-start-column="9" selection-end-line="5" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/webapp/public/app/components/shared/master/sidenav/sidenav.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="570">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/webapp/public/app/components/shared/master/header/headerController.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.27698863" vertical-offset="0" max-vertical-offset="704">
-          <caret line="13" column="43" selection-start-line="13" selection-start-column="43" selection-end-line="13" selection-end-column="43" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/webapp/public/app/components/shared/master/masterView.html">
+    <entry file="file://$PROJECT_DIR$/webapp/publicDev/app/components/shared/master/masterView.html">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-4.375" vertical-offset="0" max-vertical-offset="255">
           <caret line="7" column="16" selection-start-line="7" selection-start-column="16" selection-end-line="7" selection-end-column="35" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/webapp/public/app/components/shared/home/login.html">
+    <entry file="file://$PROJECT_DIR$/webapp/publicDev/app/components/shared/home/login.html">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-14.375" vertical-offset="0" max-vertical-offset="495">
           <caret line="23" column="16" selection-start-line="23" selection-start-column="16" selection-end-line="23" selection-end-column="16" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/webapp/public/app/components/shared/home/publicView.html">
+    <entry file="file://$PROJECT_DIR$/webapp/publicDev/app/components/shared/home/publicView.html">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="105">
           <caret line="0" column="8" selection-start-line="0" selection-start-column="8" selection-end-line="0" selection-end-column="8" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/webapp/public/app/components/transportista/flota/addChofer/addChoferController.js">
+    <entry file="file://$PROJECT_DIR$/webapp/publicDev/app/components/transportista/flota/addChofer/addChoferController.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="387" max-vertical-offset="1245">
           <caret line="44" column="18" selection-start-line="44" selection-start-column="18" selection-end-line="44" selection-end-column="18" />
@@ -631,7 +651,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/webapp/public/app/filters/tipoCamionList.js">
+    <entry file="file://$PROJECT_DIR$/webapp/publicDev/app/filters/tipoCamionList.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="225">
           <caret line="5" column="27" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="27" />
@@ -639,36 +659,31 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/webapp/public/app/directives/pedidos/ez-pedido-completado.html">
+    <entry file="file://$PROJECT_DIR$/webapp/publicDev/app/directives/pedidos/ez-pedido-completado.html">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-19.375" vertical-offset="0" max-vertical-offset="810">
           <caret line="31" column="0" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/webapp/public/app/directives/pedidos/ez-pedido-en-curso.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.30882353" vertical-offset="60" max-vertical-offset="855">
-          <caret line="18" column="65" selection-start-line="18" selection-start-column="24" selection-end-line="18" selection-end-column="65" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/webapp/public/app/directives/pedidos/ez-pedido-activo.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.7058824" vertical-offset="30" max-vertical-offset="795">
-          <caret line="34" column="65" selection-start-line="34" selection-start-column="65" selection-end-line="34" selection-end-column="65" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/webapp/public/app/app.routes.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="165" max-vertical-offset="1740">
-          <caret line="51" column="44" selection-start-line="51" selection-start-column="44" selection-end-line="51" selection-end-column="44" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/webapp/public/app/directives/pedidos/ez-pedido-activo.js">
+    <entry file="file://$PROJECT_DIR$/webapp/publicDev/app/directives/pedidos/ez-pedido-en-curso.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.30882353" vertical-offset="60" max-vertical-offset="855">
+          <caret line="18" column="65" selection-start-line="18" selection-start-column="24" selection-end-line="18" selection-end-column="65" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webapp/publicDev/app/directives/pedidos/ez-pedido-activo.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.7058824" vertical-offset="30" max-vertical-offset="795">
+          <caret line="34" column="65" selection-start-line="34" selection-start-column="65" selection-end-line="34" selection-end-column="65" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webapp/publicDev/app/directives/pedidos/ez-pedido-activo.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.11363637" vertical-offset="0" max-vertical-offset="660">
           <caret line="5" column="14" selection-start-line="4" selection-start-column="0" selection-end-line="5" selection-end-column="14" />
@@ -676,7 +691,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/webapp/public/app/directives/passwordVerify.js">
+    <entry file="file://$PROJECT_DIR$/webapp/publicDev/app/directives/passwordVerify.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="585">
           <caret line="22" column="26" selection-start-line="22" selection-start-column="26" selection-end-line="22" selection-end-column="26" />
@@ -686,21 +701,23 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/webapp/public/app/components/shared/home/registroTransportista.html">
+    <entry file="file://$PROJECT_DIR$/webapp/publicDev/app/components/shared/home/registroTransportista.html">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.5424528" vertical-offset="285" max-vertical-offset="930">
           <caret line="42" column="30" selection-start-line="42" selection-start-column="30" selection-end-line="42" selection-end-column="30" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/webapp/public/app/components/shared/home/registroProveedorCarga.html">
+    <entry file="file://$PROJECT_DIR$/webapp/publicDev/app/components/shared/home/registroProveedorCarga.html">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.754717" vertical-offset="315" max-vertical-offset="1305">
           <caret line="53" column="163" selection-start-line="53" selection-start-column="108" selection-end-line="53" selection-end-column="163" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/webapp/public/assets/css/_globals.scss">
+    <entry file="file://$PROJECT_DIR$/webapp/publicDev/assets/css/_globals.scss">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-6.25" vertical-offset="15" max-vertical-offset="735">
           <caret line="11" column="14" selection-start-line="11" selection-start-column="8" selection-end-line="11" selection-end-column="14" />
@@ -708,7 +725,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/webapp/public/assets/css/vendor/material-datetimepicker.min.css">
+    <entry file="file://$PROJECT_DIR$/webapp/publicDev/assets/css/vendor/material-datetimepicker.min.css">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="605">
           <caret line="0" column="534" selection-start-line="0" selection-start-column="534" selection-end-line="0" selection-end-column="534" />
@@ -716,7 +733,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/webapp/public/assets/css/_login.scss">
+    <entry file="file://$PROJECT_DIR$/webapp/publicDev/assets/css/_login.scss">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.6367925" vertical-offset="435" max-vertical-offset="1155">
           <caret line="56" column="132" selection-start-line="56" selection-start-column="132" selection-end-line="56" selection-end-column="132" />
@@ -724,7 +741,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/webapp/public/app/components/shared/home/home.js">
+    <entry file="file://$PROJECT_DIR$/webapp/publicDev/app/components/shared/home/home.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.84090906" vertical-offset="1305" max-vertical-offset="2115">
           <caret line="335" column="85" selection-start-line="335" selection-start-column="85" selection-end-line="335" selection-end-column="85" />
@@ -739,49 +756,48 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/webapp/public/app/components/proveedorCarga/pedidos/proveedorCargaPedidosController.js">
+    <entry file="file://$PROJECT_DIR$/webapp/publicDev/app/components/proveedorCarga/pedidos/proveedorCargaPedidosController.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="495" max-vertical-offset="1710">
           <caret line="102" column="22" selection-start-line="102" selection-start-column="22" selection-end-line="102" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/webapp/public/app/components/transportista/flota/transportistaFlotaController.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="915" max-vertical-offset="1650">
-          <caret line="91" column="18" selection-start-line="91" selection-start-column="18" selection-end-line="91" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/webapp/public/app/components/transportista/pedidos/transportistaPedidosController.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.4037855" vertical-offset="194" max-vertical-offset="1320">
-          <caret line="50" column="22" selection-start-line="50" selection-start-column="22" selection-end-line="50" selection-end-column="22" />
           <folding>
-            <element signature="e#890#1931#0" expanded="false" />
-            <element signature="e#3204#4994#0" expanded="false" />
-            <element signature="e#6087#6127#0" expanded="false" />
-            <element signature="e#6175#6372#0" expanded="false" />
-            <element signature="e#6422#6625#0" expanded="false" />
+            <element signature="e#801#1276#0" expanded="false" />
+            <element signature="e#1338#1867#0" expanded="false" />
+            <element signature="e#1950#2270#0" expanded="false" />
+            <element signature="e#3235#4276#0" expanded="false" />
+            <element signature="e#6917#8715#0" expanded="false" />
+            <element signature="e#8769#8809#0" expanded="false" />
+            <element signature="e#8947#8985#0" expanded="false" />
+            <element signature="e#9061#9099#0" expanded="false" />
+            <element signature="e#9177#9215#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/webapp/public/app/components/shared/pedidos/addPedido/addPedidoService.js">
+    <entry file="file://$PROJECT_DIR$/webapp/publicDev/app/components/shared/pedidos/addPedido/addPedidoService.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="1050" max-vertical-offset="1710">
           <caret line="187" column="0" selection-start-line="187" selection-start-column="0" selection-end-line="187" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#42#0" expanded="false" />
+            <element signature="e#556#1245#0" expanded="false" />
+            <element signature="e#1282#2069#0" expanded="false" />
+            <element signature="e#2116#2998#0" expanded="false" />
+            <element signature="e#3049#4439#0" expanded="false" />
+            <element signature="e#4498#4752#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/webapp/public/app/components/shared/pedidos/addPedido/addPedidoView.html">
+    <entry file="file://$PROJECT_DIR$/webapp/publicDev/app/components/shared/pedidos/addPedido/addPedidoView.html">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-13.125" vertical-offset="0" max-vertical-offset="2670">
           <caret line="21" column="60" selection-start-line="21" selection-start-column="41" selection-end-line="21" selection-end-column="60" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/webapp/public/app/components/shared/pedidos/addPedido/addPedidoController.js">
+    <entry file="file://$PROJECT_DIR$/webapp/publicDev/app/components/shared/pedidos/addPedido/addPedidoController.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="705" max-vertical-offset="1590">
           <caret line="194" column="69" selection-start-line="194" selection-start-column="69" selection-end-line="194" selection-end-column="69" />
@@ -805,19 +821,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/webapp/public/modules/data.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="3.0227273" vertical-offset="0" max-vertical-offset="2445">
-          <caret line="346" column="16" selection-start-line="346" selection-start-column="16" selection-end-line="346" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/webapp/public/assets/images/logo_new.png">
+    <entry file="file://$PROJECT_DIR$/webapp/publicDev/assets/images/logo_new.png">
       <provider selected="true" editor-type-id="images">
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/webapp/public/app/components/transportista/pedidos/transportistaPedidosView.html">
+    <entry file="file://$PROJECT_DIR$/webapp/publicDev/app/components/transportista/pedidos/transportistaPedidosView.html">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-1.875" vertical-offset="0" max-vertical-offset="135">
           <caret line="3" column="0" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
@@ -825,7 +834,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/webapp/public/app/directives/pedidos/ez-pedido-pendiente.html">
+    <entry file="file://$PROJECT_DIR$/webapp/publicDev/app/directives/pedidos/ez-pedido-pendiente.html">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-9.125" vertical-offset="21" max-vertical-offset="510">
           <caret line="16" column="68" selection-start-line="16" selection-start-column="68" selection-end-line="16" selection-end-column="68" />
@@ -833,7 +842,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/webapp/public/app/components/shared/master/header/header.html">
+    <entry file="file://$PROJECT_DIR$/webapp/publicDev/app/components/shared/master/header/header.html">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.13333334" vertical-offset="0" max-vertical-offset="450">
           <caret line="4" column="63" selection-start-line="4" selection-start-column="59" selection-end-line="4" selection-end-column="63" />
@@ -841,31 +850,15 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/webapp/public/app/app.data.js">
+    <entry file="file://$PROJECT_DIR$/webapp/publicDev/app/components/shared/master/sidenav/sidenavController.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="210">
-          <caret line="7" column="10" selection-start-line="7" selection-start-column="10" selection-end-line="7" selection-end-column="10" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/webapp/public/app/components/shared/master/sidenav/sidenavController.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="360" max-vertical-offset="1020">
+        <state vertical-scroll-proportion="0.75949365" vertical-offset="360" max-vertical-offset="1020">
           <caret line="48" column="38" selection-start-line="48" selection-start-column="38" selection-end-line="48" selection-end-column="38" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/webapp/public/app/components/shared/pedidos/setTransportista/setTransportistaController.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="426" max-vertical-offset="1080">
-          <caret line="48" column="24" selection-start-line="48" selection-start-column="24" selection-end-line="48" selection-end-column="24" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/webapp/public/app/components/shared/pedidos/setTransportista/setTransportistaView.html">
+    <entry file="file://$PROJECT_DIR$/webapp/publicDev/app/components/shared/pedidos/setTransportista/setTransportistaView.html">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="474">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -873,30 +866,235 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/webapp/public/app/directives/choferes/ez-choferes.html">
+    <entry file="file://$PROJECT_DIR$/webapp/publicDev/app/directives/choferes/ez-choferes.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-7.5" vertical-offset="285" max-vertical-offset="750">
+        <state vertical-scroll-proportion="0.4" vertical-offset="285" max-vertical-offset="750">
           <caret line="31" column="10" selection-start-line="31" selection-start-column="10" selection-end-line="31" selection-end-column="10" />
           <folding>
-            <element signature="n#style#0;n#h4#0;n#div#0;n#md-list#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#h4#2;n#div#0;n#md-list#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#md-button#0;n#div#0;n#md-list#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#h4#0;n#div#0;n#md-list#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#h4#2;n#div#0;n#md-list#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#md-button#0;n#div#0;n#md-list#0;n#!!top" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/webapp/public/index.html">
+    <entry file="file://$PROJECT_DIR$/webapp/publicDev/app/app.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="1.875" vertical-offset="1035" max-vertical-offset="1485">
-          <caret line="66" column="49" selection-start-line="66" selection-start-column="49" selection-end-line="66" selection-end-column="49" />
+        <state vertical-scroll-proportion="0.15822785" vertical-offset="0" max-vertical-offset="915">
+          <caret line="5" column="9" selection-start-line="5" selection-start-column="9" selection-end-line="5" selection-end-column="9" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/webapp/public/app/components/shared/home/homeView.html">
+    <entry file="file://$PROJECT_DIR$/webapp/publicDev/app/appRoutes.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.73333335" vertical-offset="420" max-vertical-offset="870">
-          <caret line="50" column="102" selection-start-line="50" selection-start-column="102" selection-end-line="50" selection-end-column="102" />
+        <state vertical-scroll-proportion="0.56962025" vertical-offset="315" max-vertical-offset="1740">
+          <caret line="39" column="8" selection-start-line="39" selection-start-column="8" selection-end-line="39" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webapp/npm-debug.log">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.7635135" vertical-offset="1146" max-vertical-offset="1590">
+          <caret line="99" column="27" selection-start-line="99" selection-start-column="27" selection-end-line="99" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="com.intellij.database.editor.CsvTableFileEditorProvider">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webapp/.parse.project">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="474">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webapp/.parse.local">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.18987341" vertical-offset="0" max-vertical-offset="474">
+          <caret line="6" column="64" selection-start-line="6" selection-start-column="64" selection-end-line="6" selection-end-column="64" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webapp/node_modules/grunt-ver/tasks/ver.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-2.6898735" vertical-offset="1275" max-vertical-offset="2055">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="n#!!doc" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webapp/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-9.375" vertical-offset="0" max-vertical-offset="390">
+          <caret line="15" column="0" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webapp/version.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="474">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webapp/Gruntfile.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="105" max-vertical-offset="1275">
+          <caret line="32" column="68" selection-start-line="32" selection-start-column="68" selection-end-line="32" selection-end-column="68" />
+          <folding>
+            <element signature="e#0#42#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webapp/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="285">
+          <caret line="7" column="44" selection-start-line="7" selection-start-column="44" selection-end-line="7" selection-end-column="44" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webapp/publicDev/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-10.625" vertical-offset="510" max-vertical-offset="1725">
+          <caret line="51" column="23" selection-start-line="51" selection-start-column="23" selection-end-line="51" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webapp/public/app/directives/includes/ciudadesOptions.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.46666667" vertical-offset="0" max-vertical-offset="450">
+          <caret line="14" column="46" selection-start-line="0" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webapp/publicDev/app/directives/includes/ciudadesOptions.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.6" vertical-offset="0" max-vertical-offset="450">
+          <caret line="18" column="0" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webapp/public/app/directives/includes/tiposCamion.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-5.0" vertical-offset="0" max-vertical-offset="210">
+          <caret line="8" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webapp/publicDev/app/directives/includes/tiposCamion.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.26666668" vertical-offset="0" max-vertical-offset="450">
+          <caret line="8" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webapp/publicDev/app/directives/includes/pesoOptions.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.8" vertical-offset="0" max-vertical-offset="450">
+          <caret line="24" column="0" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webapp/public/app/directives/includes/pesoOptions.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.76666665" vertical-offset="0" max-vertical-offset="450">
+          <caret line="23" column="42" selection-start-line="0" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webapp/publicDev/modules/data.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="315" max-vertical-offset="2115">
+          <caret line="346" column="16" selection-start-line="346" selection-start-column="16" selection-end-line="346" selection-end-column="16" />
+          <folding>
+            <element signature="e#371#1699#0" expanded="false" />
+            <element signature="e#1758#4283#0" expanded="false" />
+            <element signature="e#4340#5489#0" expanded="false" />
+            <element signature="e#5535#6342#0" expanded="false" />
+            <element signature="e#6452#6520#0" expanded="false" />
+            <element signature="e#6575#7476#0" expanded="false" />
+            <element signature="e#7514#7834#0" expanded="false" />
+            <element signature="e#7896#8877#0" expanded="false" />
+            <element signature="e#9244#10240#0" expanded="false" />
+            <element signature="e#10296#11288#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webapp/publicDev/app/components/transportista/flota/transportistaFlotaController.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="675" max-vertical-offset="1620">
+          <caret line="88" column="37" selection-start-line="88" selection-start-column="37" selection-end-line="88" selection-end-column="37" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webapp/publicDev/app/components/shared/pedidos/setTransportista/setTransportistaService.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1020">
+          <caret line="48" column="59" selection-start-line="48" selection-start-column="59" selection-end-line="48" selection-end-column="59" />
+          <folding>
+            <element signature="e#546#1920#0" expanded="false" />
+            <element signature="e#2985#3353#0" expanded="false" />
+            <element signature="e#3380#3956#0" expanded="false" />
+            <element signature="e#3990#4283#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webapp/publicDev/app/components/transportista/pedidos/transportistaPedidosController.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="603" max-vertical-offset="1320">
+          <caret line="106" column="11" selection-start-line="106" selection-start-column="11" selection-end-line="106" selection-end-column="11" />
+          <folding>
+            <element signature="e#890#1931#0" expanded="false" />
+            <element signature="e#3204#4994#0" expanded="false" />
+            <element signature="e#6087#6127#0" expanded="false" />
+            <element signature="e#6175#6372#0" expanded="false" />
+            <element signature="e#6422#6625#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webapp/publicDev/app/components/shared/pedidos/setTransportista/setTransportistaController.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="300" max-vertical-offset="1380">
+          <caret line="43" column="49" selection-start-line="43" selection-start-column="49" selection-end-line="43" selection-end-column="49" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webapp/publicDev/app/components/shared/home/homeView.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.72" vertical-offset="414" max-vertical-offset="870">
+          <caret line="30" column="103" selection-start-line="30" selection-start-column="103" selection-end-line="30" selection-end-column="103" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webapp/publicDev/app/appData.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.25316456" vertical-offset="0" max-vertical-offset="474">
+          <caret line="8" column="8" selection-start-line="8" selection-start-column="8" selection-end-line="8" selection-end-column="8" />
           <folding />
         </state>
       </provider>

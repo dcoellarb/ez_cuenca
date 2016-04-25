@@ -1,0 +1,22 @@
+<div id="pedidosActivos" class="panel panel-default col-nopadding" ng-controller="TransportistasProveedorController as ctlr">
+    <div class="panel-heading">
+        Transportistas
+        <span class="glyphicon glyphicon-plus-sign" style="float: right;cursor: pointer;" ng-click="ctlr.AgregarTransportista()"></span>
+    </div>
+    <div class="panel-body col-nopadding pedidos-lists-transportistas">
+        <div ng-repeat="transportista in ctlr.transportistas" class="col-sm-12 col-md-6" style="text-align:center;cursor: pointer" ng-click="ctlr.DetalleTransportista(transportista)">
+            <div ng-style="{'background-image':'url({{transportista.photo}})'}" style="background-size: contain;margin:auto;height: 40px;width: 40px;">
+                <div style="border-radius: 50%;background-color: rgba(0,0,0,0.7);margin:auto;height: 40px;width: 40px;">
+                    <div style="width: 20px;height: 20px;border-radius: 50%;margin: auto;position: relative;top: 10px;" ng-class="transportista.checkColor" ng-attr-title="{{transportista.estado}}">
+                        <span class="glyphicon" ng-class="transportista.checkGlyphicon" style="color: white;"/>
+                    </div>
+                </div>
+            </div>
+            <span class="list-item-md" style="margin:auto;display: block">
+                {{transportista.referencia}}
+                <span class="list-item-sm" style="margin:auto;" ng-show="transportista.esTercero">(Tercero)</span>
+            </span>
+        </div>
+    </div>
+    <div ng-include="'templates/confirm_dialog.html'"></div>
+</div>

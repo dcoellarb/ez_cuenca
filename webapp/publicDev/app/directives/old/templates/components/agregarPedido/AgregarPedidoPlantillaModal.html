@@ -1,0 +1,16 @@
+<script type="text/ng-template" id="PlantillaModal.html">
+    <div class="modal-header">
+        <h4 class="modal-title">Guardar plantilla</h4>
+    </div>
+    <div class="modal-body">
+        <label for="inputPlantilla" class="control-label">Nombre:</label>
+        <input type="text" class="form-control input-sm" id="inputPlantilla" name="inputPlantilla" ng-model="agrPedModalCtlr.plantilla" required>
+        <span class="invalid-label" ng-show="agrPedForm.inputPlantilla.$dirty && agrPedForm.inputPlantilla.$invalid">
+            <span ng-show="agrPedForm.inputPlantilla.$error.required">Nombre de plantilla es requerido.</span>
+        </span>
+    </div>
+    <div class="modal-footer">
+        <button class="btn btn-primary" type="button" ng-click="agrPedModalCtlr.guardar()">Guardar</button>
+        <button class="btn btn-default" type="button" ng-click="agrPedModalCtlr.cancelar()">Cancelar</button>
+    </div>
+</script>

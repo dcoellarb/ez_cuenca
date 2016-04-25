@@ -1,0 +1,303 @@
+0 info it worked if it ends with ok
+1 verbose cli [ '/usr/local/bin/node',
+1 verbose cli   '/usr/local/bin/npm',
+1 verbose cli   'install',
+1 verbose cli   'grunt-cache-bust',
+1 verbose cli   '--save-dev' ]
+2 info using npm@2.15.1
+3 info using node@v4.4.3
+4 verbose install initial load of /Users/dcoellar/webapps/easyruta/webapp/package.json
+5 warn package.json easyRuta@1.0.0 No description
+6 warn package.json easyRuta@1.0.0 No repository field.
+7 warn package.json easyRuta@1.0.0 No README data
+8 verbose installManyTop reading scoped package data from /Users/dcoellar/webapps/easyruta/webapp/node_modules/angular-local-storage/package.json
+9 verbose installManyTop reading scoped package data from /Users/dcoellar/webapps/easyruta/webapp/node_modules/express/package.json
+10 verbose installManyTop reading scoped package data from /Users/dcoellar/webapps/easyruta/webapp/node_modules/grunt/package.json
+11 verbose installManyTop reading scoped package data from /Users/dcoellar/webapps/easyruta/webapp/node_modules/grunt-assets-versioning/package.json
+12 verbose installManyTop reading scoped package data from /Users/dcoellar/webapps/easyruta/webapp/node_modules/grunt-contrib-concat/package.json
+13 verbose installManyTop reading scoped package data from /Users/dcoellar/webapps/easyruta/webapp/node_modules/grunt-contrib-copy/package.json
+14 verbose installManyTop reading scoped package data from /Users/dcoellar/webapps/easyruta/webapp/node_modules/grunt-contrib-uglify/package.json
+15 verbose installManyTop reading scoped package data from /Users/dcoellar/webapps/easyruta/webapp/node_modules/grunt-dev-prod-switch/package.json
+16 verbose installManyTop reading scoped package data from /Users/dcoellar/webapps/easyruta/webapp/node_modules/grunt-ng-annotate/package.json
+17 verbose installManyTop reading scoped package data from /Users/dcoellar/webapps/easyruta/webapp/node_modules/grunt-ver/package.json
+18 info package.json grunt-dev-prod-switch@0.1.8 No license field.
+19 info package.json grunt-ver@0.5.3 No license field.
+20 info package.json grunt-assets-versioning@1.0.6 No license field.
+21 verbose readDependencies loading dependencies from /Users/dcoellar/webapps/easyruta/webapp/package.json
+22 silly cache add args [ 'grunt-cache-bust', null ]
+23 verbose cache add spec grunt-cache-bust
+24 silly cache add parsed spec Result {
+24 silly cache add   raw: 'grunt-cache-bust',
+24 silly cache add   scope: null,
+24 silly cache add   name: 'grunt-cache-bust',
+24 silly cache add   rawSpec: '',
+24 silly cache add   spec: 'latest',
+24 silly cache add   type: 'tag' }
+25 silly addNamed grunt-cache-bust@latest
+26 verbose addNamed "latest" is being treated as a dist-tag for grunt-cache-bust
+27 info addNameTag [ 'grunt-cache-bust', 'latest' ]
+28 silly mapToRegistry name grunt-cache-bust
+29 silly mapToRegistry using default registry
+30 silly mapToRegistry registry https://registry.npmjs.org/
+31 silly mapToRegistry data Result {
+31 silly mapToRegistry   raw: 'grunt-cache-bust',
+31 silly mapToRegistry   scope: null,
+31 silly mapToRegistry   name: 'grunt-cache-bust',
+31 silly mapToRegistry   rawSpec: '',
+31 silly mapToRegistry   spec: 'latest',
+31 silly mapToRegistry   type: 'tag' }
+32 silly mapToRegistry uri https://registry.npmjs.org/grunt-cache-bust
+33 verbose addNameTag registry:https://registry.npmjs.org/grunt-cache-bust not in flight; fetching
+34 verbose request uri https://registry.npmjs.org/grunt-cache-bust
+35 verbose request no auth needed
+36 info attempt registry request try #1 at 1:58:12 PM
+37 verbose request id e146daf362a268d2
+38 http request GET https://registry.npmjs.org/grunt-cache-bust
+39 http 200 https://registry.npmjs.org/grunt-cache-bust
+40 verbose headers { server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+40 verbose headers   etag: '"54FXPDG5ROTE6N459D7C1SMPV"',
+40 verbose headers   'content-type': 'application/json',
+40 verbose headers   'content-encoding': 'gzip',
+40 verbose headers   'cache-control': 'max-age=300',
+40 verbose headers   'content-length': '9417',
+40 verbose headers   'accept-ranges': 'bytes',
+40 verbose headers   date: 'Mon, 25 Apr 2016 18:56:47 GMT',
+40 verbose headers   via: '1.1 varnish',
+40 verbose headers   age: '0',
+40 verbose headers   connection: 'keep-alive',
+40 verbose headers   'x-served-by': 'cache-atl6221-ATL',
+40 verbose headers   'x-cache': 'HIT',
+40 verbose headers   'x-cache-hits': '1',
+40 verbose headers   'x-timer': 'S1461610607.091183,VS0,VE80',
+40 verbose headers   vary: 'Accept-Encoding' }
+41 silly get cb [ 200,
+41 silly get   { server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+41 silly get     etag: '"54FXPDG5ROTE6N459D7C1SMPV"',
+41 silly get     'content-type': 'application/json',
+41 silly get     'content-encoding': 'gzip',
+41 silly get     'cache-control': 'max-age=300',
+41 silly get     'content-length': '9417',
+41 silly get     'accept-ranges': 'bytes',
+41 silly get     date: 'Mon, 25 Apr 2016 18:56:47 GMT',
+41 silly get     via: '1.1 varnish',
+41 silly get     age: '0',
+41 silly get     connection: 'keep-alive',
+41 silly get     'x-served-by': 'cache-atl6221-ATL',
+41 silly get     'x-cache': 'HIT',
+41 silly get     'x-cache-hits': '1',
+41 silly get     'x-timer': 'S1461610607.091183,VS0,VE80',
+41 silly get     vary: 'Accept-Encoding' } ]
+42 verbose get saving grunt-cache-bust to /Users/dcoellar/.npm/registry.npmjs.org/grunt-cache-bust/.cache.json
+43 verbose correctMkdir /Users/dcoellar/.npm correctMkdir not in flight; initializing
+44 silly addNameTag next cb for grunt-cache-bust with tag latest
+45 silly addNamed grunt-cache-bust@1.3.0
+46 verbose addNamed "1.3.0" is a plain semver version for grunt-cache-bust
+47 silly mapToRegistry name grunt-cache-bust
+48 silly mapToRegistry using default registry
+49 silly mapToRegistry registry https://registry.npmjs.org/
+50 silly mapToRegistry data Result {
+50 silly mapToRegistry   raw: 'grunt-cache-bust',
+50 silly mapToRegistry   scope: null,
+50 silly mapToRegistry   name: 'grunt-cache-bust',
+50 silly mapToRegistry   rawSpec: '',
+50 silly mapToRegistry   spec: 'latest',
+50 silly mapToRegistry   type: 'tag' }
+51 silly mapToRegistry uri https://registry.npmjs.org/grunt-cache-bust
+52 verbose addRemoteTarball https://registry.npmjs.org/grunt-cache-bust/-/grunt-cache-bust-1.3.0.tgz not in flight; adding
+53 verbose addRemoteTarball [ 'https://registry.npmjs.org/grunt-cache-bust/-/grunt-cache-bust-1.3.0.tgz',
+53 verbose addRemoteTarball   '62d9208e2315f1c20c16083a907ce4abc249bf54' ]
+54 info retry fetch attempt 1 at 1:58:12 PM
+55 info attempt registry request try #1 at 1:58:12 PM
+56 http fetch GET https://registry.npmjs.org/grunt-cache-bust/-/grunt-cache-bust-1.3.0.tgz
+57 http fetch 200 https://registry.npmjs.org/grunt-cache-bust/-/grunt-cache-bust-1.3.0.tgz
+58 silly fetchAndShaCheck shasum 62d9208e2315f1c20c16083a907ce4abc249bf54
+59 verbose addTmpTarball /var/folders/33/4v477qrs11g8ggcr8n_f7tv40000gn/T/npm-5139-4f54792a/registry.npmjs.org/grunt-cache-bust/-/grunt-cache-bust-1.3.0.tgz not in flight; adding
+60 verbose addTmpTarball already have metadata; skipping unpack for grunt-cache-bust@1.3.0
+61 verbose correctMkdir /Users/dcoellar/.npm correctMkdir not in flight; initializing
+62 silly cache afterAdd grunt-cache-bust@1.3.0
+63 verbose afterAdd /Users/dcoellar/.npm/grunt-cache-bust/1.3.0/package/package.json not in flight; writing
+64 verbose correctMkdir /Users/dcoellar/.npm correctMkdir not in flight; initializing
+65 verbose afterAdd /Users/dcoellar/.npm/grunt-cache-bust/1.3.0/package/package.json written
+66 silly install resolved [ { name: 'grunt-cache-bust',
+66 silly install resolved     description: 'Bust static assets from the cache using content hashing',
+66 silly install resolved     version: '1.3.0',
+66 silly install resolved     author: { name: 'Ben Holland', email: 'hi@benholland.me' },
+66 silly install resolved     repository:
+66 silly install resolved      { type: 'git',
+66 silly install resolved        url: 'git://github.com/hollandben/grunt-cache-bust.git' },
+66 silly install resolved     licenses: [ [Object] ],
+66 silly install resolved     engines: { node: '>=0.10.0' },
+66 silly install resolved     scripts: { test: 'grunt test' },
+66 silly install resolved     devDependencies:
+66 silly install resolved      { grunt: '^1.0.1',
+66 silly install resolved        'grunt-contrib-clean': '^1.0.0',
+66 silly install resolved        'grunt-contrib-copy': '^1.0.0',
+66 silly install resolved        'grunt-contrib-jshint': '^1.0.0',
+66 silly install resolved        'grunt-contrib-nodeunit': '^1.0.0',
+66 silly install resolved        'grunt-contrib-watch': '^1.0.0' },
+66 silly install resolved     peerDependencies: { grunt: '>=0.4.0' },
+66 silly install resolved     keywords: [ 'grunt', 'grunt plugin', 'cache', 'bust', 'bust assets' ],
+66 silly install resolved     gitHead: '119484400905eab87211f3630b0ff359f02bec4c',
+66 silly install resolved     bugs: { url: 'https://github.com/hollandben/grunt-cache-bust/issues' },
+66 silly install resolved     homepage: 'https://github.com/hollandben/grunt-cache-bust#readme',
+66 silly install resolved     _id: 'grunt-cache-bust@1.3.0',
+66 silly install resolved     _shasum: '62d9208e2315f1c20c16083a907ce4abc249bf54',
+66 silly install resolved     _from: 'grunt-cache-bust@latest',
+66 silly install resolved     _npmVersion: '3.6.0',
+66 silly install resolved     _nodeVersion: '5.7.1',
+66 silly install resolved     _npmUser: { name: 'hollandben', email: 'hi@benholland.me' },
+66 silly install resolved     dist:
+66 silly install resolved      { shasum: '62d9208e2315f1c20c16083a907ce4abc249bf54',
+66 silly install resolved        tarball: 'https://registry.npmjs.org/grunt-cache-bust/-/grunt-cache-bust-1.3.0.tgz' },
+66 silly install resolved     maintainers: [ [Object] ],
+66 silly install resolved     _npmOperationalInternal:
+66 silly install resolved      { host: 'packages-12-west.internal.npmjs.com',
+66 silly install resolved        tmp: 'tmp/grunt-cache-bust-1.3.0.tgz_1459952649090_0.86676230491139' },
+66 silly install resolved     directories: {},
+66 silly install resolved     _resolved: 'https://registry.npmjs.org/grunt-cache-bust/-/grunt-cache-bust-1.3.0.tgz' } ]
+67 info install grunt-cache-bust@1.3.0 into /Users/dcoellar/webapps/easyruta/webapp
+68 info installOne grunt-cache-bust@1.3.0
+69 verbose installOne of grunt-cache-bust to /Users/dcoellar/webapps/easyruta/webapp not in flight; installing
+70 verbose correctMkdir /Users/dcoellar/.npm/_locks correctMkdir not in flight; initializing
+71 verbose lock using /Users/dcoellar/.npm/_locks/grunt-cache-bust-282a2b0142e90efe.lock for /Users/dcoellar/webapps/easyruta/webapp/node_modules/grunt-cache-bust
+72 silly install write writing grunt-cache-bust 1.3.0 to /Users/dcoellar/webapps/easyruta/webapp/node_modules/grunt-cache-bust
+73 verbose unbuild node_modules/grunt-cache-bust
+74 silly gentlyRm /Users/dcoellar/webapps/easyruta/webapp/node_modules/grunt-cache-bust is being purged from base /Users/dcoellar/webapps/easyruta/webapp
+75 verbose gentlyRm don't care about contents; nuking /Users/dcoellar/webapps/easyruta/webapp/node_modules/grunt-cache-bust
+76 verbose tar unpack /Users/dcoellar/.npm/grunt-cache-bust/1.3.0/package.tgz
+77 verbose tar unpacking to /Users/dcoellar/webapps/easyruta/webapp/node_modules/grunt-cache-bust
+78 silly gentlyRm /Users/dcoellar/webapps/easyruta/webapp/node_modules/grunt-cache-bust is being purged
+79 verbose gentlyRm don't care about contents; nuking /Users/dcoellar/webapps/easyruta/webapp/node_modules/grunt-cache-bust
+80 silly gunzTarPerm modes [ '755', '644' ]
+81 silly gunzTarPerm extractEntry package.json
+82 silly gunzTarPerm extractEntry .npmignore
+83 silly gunzTarPerm extractEntry README.md
+84 silly gunzTarPerm extractEntry Gruntfile.js
+85 silly gunzTarPerm extractEntry changelog.md
+86 silly gunzTarPerm extractEntry .editorconfig
+87 silly gunzTarPerm extractEntry LICENSE-MIT
+88 silly gunzTarPerm extractEntry .jshintrc
+89 silly gunzTarPerm extractEntry config/complex.js
+90 silly gunzTarPerm extractEntry config/deleteOriginals.js
+91 silly gunzTarPerm extractEntry config/hash.js
+92 silly gunzTarPerm extractEntry config/ignorePattern.js
+93 silly gunzTarPerm extractEntry config/jsonOutput.js
+94 silly gunzTarPerm extractEntry config/createCopies.js
+95 silly gunzTarPerm extractEntry config/scripts.js
+96 silly gunzTarPerm extractEntry config/standard.js
+97 silly gunzTarPerm extractEntry config/stylesheets.js
+98 silly gunzTarPerm extractEntry config/templates.js
+99 silly gunzTarPerm extractEntry config/xml.js
+100 silly gunzTarPerm extractEntry config/queryString.js
+101 silly gunzTarPerm extractEntry license
+102 silly gunzTarPerm extractEntry tests/queryString/queryString_test.js
+103 silly gunzTarPerm extractEntry tests/queryString/css/test.css
+104 silly gunzTarPerm extractEntry tests/queryString/imgs/background.jpg
+105 silly gunzTarPerm extractEntry tests/queryString/queryString.html
+106 silly gunzTarPerm extractEntry tests/complex/complex_test.js
+107 silly gunzTarPerm extractEntry tests/complex/complex.html
+108 silly gunzTarPerm extractEntry tests/complex/css/complex.css
+109 silly gunzTarPerm extractEntry tests/complex/imgs/complex-background.jpg
+110 silly gunzTarPerm extractEntry tests/deleteOriginals/assets/delete.js
+111 silly gunzTarPerm extractEntry tests/deleteOriginals/assets/delete.css
+112 silly gunzTarPerm extractEntry tests/deleteOriginals/assets/delete.png
+113 silly gunzTarPerm extractEntry tests/deleteOriginals/deleteOriginalSameAssets.html
+114 silly gunzTarPerm extractEntry tests/deleteOriginals/deleteOriginals.html
+115 silly gunzTarPerm extractEntry tests/hash/hash_test.js
+116 silly gunzTarPerm extractEntry tests/hash/assets/hash.js
+117 silly gunzTarPerm extractEntry tests/hash/assets/hash.css
+118 silly gunzTarPerm extractEntry tests/hash/assets/hash.jpg
+119 silly gunzTarPerm extractEntry tests/hash/hash.html
+120 silly gunzTarPerm extractEntry tests/ignorePattern/ignorePattern_test.js
+121 silly gunzTarPerm extractEntry tests/ignorePattern/assets/toBeIgnoredJS.js
+122 silly gunzTarPerm extractEntry tests/ignorePattern/assets/toBeIgnoredCSS.css
+123 silly gunzTarPerm extractEntry tests/ignorePattern/assets/toBeIgnoredJPG.jpg
+124 silly gunzTarPerm extractEntry tests/ignorePattern/ignorePattern.html
+125 silly gunzTarPerm extractEntry tests/jsonOutput/jsonOutput_test.js
+126 silly gunzTarPerm extractEntry tests/jsonOutput/assets/jsonOutput.js
+127 silly gunzTarPerm extractEntry tests/jsonOutput/jsonOutput.html
+128 silly gunzTarPerm extractEntry tests/createCopies/assets/.htaccess
+129 silly gunzTarPerm extractEntry tests/createCopies/assets/dontCopy.png
+130 silly gunzTarPerm extractEntry tests/createCopies/createCopies.html
+131 silly gunzTarPerm extractEntry tests/scripts/scripts.js
+132 silly gunzTarPerm extractEntry tests/scripts/scripts_test.js
+133 silly gunzTarPerm extractEntry tests/scripts/assets/script.js
+134 silly gunzTarPerm extractEntry tests/standard/standard_test.js
+135 silly gunzTarPerm extractEntry tests/standard/assets/standard.js
+136 silly gunzTarPerm extractEntry tests/standard/assets/standard-apple-touch-icon.jpg
+137 silly gunzTarPerm extractEntry tests/standard/assets/standard.css
+138 silly gunzTarPerm extractEntry tests/standard/assets/standard.jpg
+139 silly gunzTarPerm extractEntry tests/standard/standard.html
+140 silly gunzTarPerm extractEntry tests/standard/subfolder/relative-standard.html
+141 silly gunzTarPerm extractEntry tests/stylesheets/stylesheet_test.js
+142 silly gunzTarPerm extractEntry tests/stylesheets/assets/relative-css-image-quotes.jpg
+143 silly gunzTarPerm extractEntry tests/stylesheets/assets/css-image-large.jpg
+144 silly gunzTarPerm extractEntry tests/stylesheets/assets/css-image.jpg
+145 silly gunzTarPerm extractEntry tests/stylesheets/assets/fonts/icons.eot
+146 silly gunzTarPerm extractEntry tests/stylesheets/assets/fonts/icons.ttf
+147 silly gunzTarPerm extractEntry tests/stylesheets/assets/fonts/icons.woff
+148 silly gunzTarPerm extractEntry tests/stylesheets/assets/fonts/icons.woff2
+149 silly gunzTarPerm extractEntry tests/stylesheets/assets/image1.jpg
+150 silly gunzTarPerm extractEntry tests/stylesheets/assets/image2.jpg
+151 silly gunzTarPerm extractEntry tests/stylesheets/assets/relative-css-image-large.jpg
+152 silly gunzTarPerm extractEntry tests/stylesheets/assets/css-image-quotes.jpg
+153 silly gunzTarPerm extractEntry tests/stylesheets/assets/relative-css-image.jpg
+154 silly gunzTarPerm extractEntry tests/stylesheets/assets/relative-image1.jpg
+155 silly gunzTarPerm extractEntry tests/stylesheets/assets/stylesheet1.css
+156 silly gunzTarPerm extractEntry tests/stylesheets/assets/stylesheet2.css
+157 silly gunzTarPerm extractEntry tests/stylesheets/assets/stylesheet3.css
+158 silly gunzTarPerm extractEntry tests/stylesheets/assets/stylesheet4.css
+159 silly gunzTarPerm extractEntry tests/stylesheets/css/replaceCssInSubdir.css
+160 silly gunzTarPerm extractEntry tests/stylesheets/stylesheet.css
+161 silly gunzTarPerm extractEntry tests/templates/templates_test.js
+162 silly gunzTarPerm extractEntry tests/templates/base.html
+163 silly gunzTarPerm extractEntry tests/templates/views/view-a.html
+164 silly gunzTarPerm extractEntry tests/templates/views/view-b.html
+165 silly gunzTarPerm extractEntry tests/xml/xml_test.js
+166 silly gunzTarPerm extractEntry tests/xml/assets/mstile-150x150.png
+167 silly gunzTarPerm extractEntry tests/xml/assets/mstile-310x150.png
+168 silly gunzTarPerm extractEntry tests/xml/assets/mstile-310x310.png
+169 silly gunzTarPerm extractEntry tests/xml/assets/mstile-70x70.png
+170 silly gunzTarPerm extractEntry tests/xml/xml.xml
+171 silly gunzTarPerm extractEntry .travis.yml
+172 silly gunzTarPerm extractEntry tasks/cachebust.js
+173 verbose write writing to /Users/dcoellar/webapps/easyruta/webapp/node_modules/grunt-cache-bust/package.json
+174 info preinstall grunt-cache-bust@1.3.0
+175 verbose readDependencies loading dependencies from /Users/dcoellar/webapps/easyruta/webapp/node_modules/grunt-cache-bust/package.json
+176 verbose readDependencies loading dependencies from /Users/dcoellar/webapps/easyruta/webapp/node_modules/grunt-cache-bust/package.json
+177 silly install resolved []
+178 verbose about to build /Users/dcoellar/webapps/easyruta/webapp/node_modules/grunt-cache-bust
+179 info build /Users/dcoellar/webapps/easyruta/webapp/node_modules/grunt-cache-bust
+180 info linkStuff grunt-cache-bust@1.3.0
+181 silly linkStuff grunt-cache-bust@1.3.0 has /Users/dcoellar/webapps/easyruta/webapp/node_modules as its parent node_modules
+182 verbose linkBins grunt-cache-bust@1.3.0
+183 verbose linkMans grunt-cache-bust@1.3.0
+184 verbose rebuildBundles grunt-cache-bust@1.3.0
+185 info install grunt-cache-bust@1.3.0
+186 info postinstall grunt-cache-bust@1.3.0
+187 verbose unlock done using /Users/dcoellar/.npm/_locks/grunt-cache-bust-282a2b0142e90efe.lock for /Users/dcoellar/webapps/easyruta/webapp/node_modules/grunt-cache-bust
+188 verbose validateInstall loading /Users/dcoellar/webapps/easyruta/webapp/package.json for validation
+189 verbose stack Error: The package grunt@1.0.1 does not satisfy its siblings' peerDependencies requirements!
+189 verbose stack     at /usr/local/lib/node_modules/npm/lib/install.js:125:32
+189 verbose stack     at /usr/local/lib/node_modules/npm/lib/install.js:268:7
+189 verbose stack     at /usr/local/lib/node_modules/npm/node_modules/read-installed/read-installed.js:142:5
+189 verbose stack     at /usr/local/lib/node_modules/npm/node_modules/read-installed/read-installed.js:263:14
+189 verbose stack     at cb (/usr/local/lib/node_modules/npm/node_modules/slide/lib/async-map.js:47:24)
+189 verbose stack     at /usr/local/lib/node_modules/npm/node_modules/read-installed/read-installed.js:263:14
+189 verbose stack     at cb (/usr/local/lib/node_modules/npm/node_modules/slide/lib/async-map.js:47:24)
+189 verbose stack     at /usr/local/lib/node_modules/npm/node_modules/read-installed/read-installed.js:263:14
+189 verbose stack     at cb (/usr/local/lib/node_modules/npm/node_modules/slide/lib/async-map.js:47:24)
+189 verbose stack     at /usr/local/lib/node_modules/npm/node_modules/read-installed/read-installed.js:263:14
+190 verbose cwd /Users/dcoellar/webapps/easyruta/webapp
+191 error Darwin 15.4.0
+192 error argv "/usr/local/bin/node" "/usr/local/bin/npm" "install" "grunt-cache-bust" "--save-dev"
+193 error node v4.4.3
+194 error npm  v2.15.1
+195 error code EPEERINVALID
+196 error peerinvalid The package grunt@1.0.1 does not satisfy its siblings' peerDependencies requirements!
+196 error peerinvalid Peer grunt-dev-prod-switch@0.1.8 wants grunt@~0.4.1
+196 error peerinvalid Peer grunt-cache-bust@1.3.0 wants grunt@>=0.4.0
+196 error peerinvalid Peer grunt-assets-versioning@1.0.6 wants grunt@>=0.4.0
+196 error peerinvalid Peer grunt-contrib-concat@1.0.1 wants grunt@>=0.4.0
+196 error peerinvalid Peer grunt-ng-annotate@2.0.2 wants grunt@>=0.4.5
+197 verbose exit [ 1, true ]

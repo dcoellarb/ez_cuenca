@@ -1,0 +1,28 @@
+<li ng-class="pedido.cssClass">
+    <div layout="column" layout-gt-md="row" class="body" layout-padding>
+        <div flex="40" layout="column" layout-align="space-between start">
+            <h1 class="text-large text-600">{{pedido.ciudadOrigen | capitalizeFirst}}: {{pedido.direccionOrigen}}</h1>
+            <h1 class="text-large text-600">{{pedido.ciudadDestino | capitalizeFirst}}: {{pedido.direccionDestino}}</h1>
+            <div ng-show="setTransportista"><span class="text-medium text-400">Proveedor:</span><span class="text-medium text-600">{{pedido.proveedorCarga.nombre}}</span></div>
+            <div><span class="text-medium text-400">Hora de Carga:</span><span class="text-medium text-600">{{pedido.horaCarga | date:'medium'}}</span></div>
+            <div ng-show="pedido.horaEntrega"><span class="text-medium text-400">Hora de Entrega:</span><span class="text-medium text-600">{{pedido.horaEntrega | date:'medium'}}</span></div>
+        </div>
+        <div flex="40" layout="column" layout-align="space-between start">
+            <div><span class="text-medium text-400">Producto:</span><span class="text-medium text-600">{{pedido.producto}}</span></div>
+            <div><span class="text-medium text-400">Tipo de Camion:</span><span class="text-medium text-600">{{pedido.tipoCamion | tipoCamionList}}</span></div>
+            <div><span class="text-medium text-400">Peso:</span><span class="text-medium text-600">{{pedido.peso | parsePeso}}</span></div>
+            <div><span class="text-medium text-400">Hora de Ingreso:</span><span class="text-medium text-600">{{pedido.createdAt | date:'medium'}}</span></div>
+        </div>
+        <div flex="20" layout="row" layout-align="center center">
+            <md-button class="md-button md-fab md-mini action-yellow" ng-show="setTransportista" ng-click="setTransportista(pedido.id)">
+                <md-tooltip md-direction="top">Tomar el pedido</md-tooltip>
+                <!--<div class="icon-transportista"></div>-->
+                <md-icon class="material-icons">local_shipping</md-icon>
+            </md-button>
+            <md-button class="md-button md-fab md-mini action-red" ng-show="cancelarPedido" ng-click="cancelarPedido(pedido.id, pedido.estado)">
+                <md-tooltip md-direction="top">Cancelar Pedido</md-tooltip>
+                <md-icon class="material-icons">remove</md-icon>
+            </md-button>
+        </div>
+    </div>
+</li>

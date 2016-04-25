@@ -39,19 +39,34 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/airbrake-js/0.5.8/client.min.js"></script>
 
     <!-- Custom css-->
-    <link rel="stylesheet" type="text/css" href="assets/css/app.css">
+    <!-- env:dev --#>
+    <link rel="stylesheet" type="text/css" href="assets/css/app.c565804991ae556b.css">
+    <!-- env:dev:end -->
+    <!-- env:prod -->
+    <link rel="stylesheet" type="text/css" href="app.c565804991ae556b.css">
+    <!-- env:prod:end -->
 
     <!-- ez modules -->
-    <script src="modules/data.js"></script>
-    <script src="modules/realTime.js"></script>
+    <!-- env:dev --#>
+    <script src="modules/data.20b64df823b7cb77.js"></script>
+    <script src="modules/realTime.458d3fbc6763fc66.js"></script>
+    <!-- env:dev:end -->
+    <!-- env:prod -->
+    <script src="data.20b64df823b7cb77.js"></script>
+    <script src="realTime.458d3fbc6763fc66.js"></script>
+    <!-- env:prod:end -->
 
     <!-- Custom js -->
+    <!-- env:prod -->
+    <script src="ez-app-min.1266898d6fae2679.js"></script>
+    <!-- env:prod:end -->
+    <!-- env:dev --#>
     <script src="app/app.js"></script>
-    <script src="app/app.data.js"></script>
-    <script src="app/app.routes.js"></script>
-    <script src="app/app.localStorage.js"></script>
-    <script src="app/app.material.js"></script>
-    <script src="app/app.realTime.js"></script>
+    <script src="app/appData.js"></script>
+    <script src="app/appRoutes.js"></script>
+    <script src="app/appLocalStorage.js"></script>
+    <script src="app/appMaterial.js"></script>
+    <script src="app/appRealTime.js"></script>
     <script src="app/filters/tipoCamionList.js"></script>
     <script src="app/filters/capitalizeFirst.js"></script>
     <script src="app/filters/parsePeso.js"></script>
@@ -87,6 +102,7 @@
     <script src="app/components/shared/pedidos/setTransportista/setTransportistaController.js"></script>
     <script src="app/components/transportista/flota/addChofer/addChoferService.js"></script>
     <script src="app/components/transportista/flota/addChofer/addChoferController.js"></script>
+    <!-- env:dev:end -->
 </head>
 <body>
 <div ui-view></div>

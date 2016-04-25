@@ -1,0 +1,44 @@
+<md-list flex>
+    <md-subheader ng-show="!hideFlotaListHeader">Seleccione un Transportista</md-subheader>
+    <md-list-item class="md-2-line" ng-repeat="chofer in choferes" ng-click="null">
+        <div class="md-avatar icon-transportista"></div>
+        <div class="md-list-item-text" layout="column">
+            <h3>{{ chofer.nombre }}</h3>
+            <h4>{{ chofer.descripcion }}</h4>
+        </div>
+        <md-button class="md-raised md-primary" ng-show="seleccionarChofer" ng-click="seleccionarChofer(chofer.id)">
+            Seleccionar
+        </md-button>
+        <md-button class="md-button md-fab md-mini action-light_blue" ng-show="editarChofer" ng-click="editarChofer(chofer.id)">
+            <md-tooltip md-direction="left">Editar Transportista</md-tooltip>
+            <md-icon class="material-icons">edit</md-icon>
+        </md-button>
+        <md-button class="md-button md-fab md-mini action-red" ng-show="eliminarChofer" ng-click="eliminarChofer(chofer.id)">
+            <md-tooltip md-direction="left">Eliminar Transportista</md-tooltip>
+            <md-icon class="material-icons">delete</md-icon>
+        </md-button>
+    </md-list-item>
+    <div ng-show="choferes.length == 0 && seleccionarChofer" flex layout="column" layout-align="center center">
+        <img src= "../../assets/images/logo_new.png" style="max-height: 50px; max-width: 50px; margin: 25px;">
+        <h1>Lista vacia</h1>
+        <h3>No hay transportistas disponibles para este pedido al momento</h3>
+        <h4 class="text-light_blue" style="margin-top: 20px;">Para seleccionar un transportista este debe estar disponible,</h4>
+        <h4 class="text-light_blue">y debe cumplir con lo requerimientos de tipo de camio y peso del pedido</h4>
+        <h4 style="margin: 20px;text-align: center">Si aun no has registrado transportistas en tu flota, puedes ir al menu <md-icon class="material-icons">menu</md-icon> o dar click aqui:</h4>
+        <md-button class="md-button md-fab action-blue" style="margin-bottom: 20px;" ng-click="verFlota()">
+            <md-tooltip md-direction="left">Ver Flota</md-tooltip>
+            <md-icon class="material-icons">local_shipping</md-icon>
+        </md-button>
+    </div>
+    <div ng-show="choferes.length == 0 && addChofer" flex layout="column" layout-align="center center">
+        <img src= "../../assets/images/logo_new.png" style="max-height: 100px; max-width: 100px; margin: 50px;">
+        <h1>Lista vacia</h1>
+        <h3>Aun no has regristrado transportistas en tu flota</h3>
+        <h4 class="text-light_blue">Para agregar un transportista haga click aqui:</h4>
+        <md-button class="md-button md-fab action-yellow" ng-click="addChofer()">
+            <md-tooltip md-direction="left">Agregar Transportista</md-tooltip>
+            <md-icon class="material-icons">add</md-icon>
+        </md-button>
+    </div>
+    <md-divider ></md-divider>
+</md-list>

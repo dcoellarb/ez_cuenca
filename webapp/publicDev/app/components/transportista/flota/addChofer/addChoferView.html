@@ -1,0 +1,104 @@
+<md-dialog ng-cloak>
+    <form id="add-chofer-form" name="choferForm" class="md-inline-form" novalidate>
+        <md-toolbar>
+            <div class="md-toolbar-tools">
+                <h2 flex>Agregar Transportista</h2>
+            </div>
+        </md-toolbar>
+        <md-dialog-content layout-padding>
+            <div layout="column" layout-gt-sm="row">
+                <md-input-container class="md-block" flex>
+                    <label>Nombre Completo</label>
+                    <input ng-model="chofer.nombre" name="nombre" required>
+                    <div ng-messages="choferForm.nombre.$error">
+                        <div ng-message="required">
+                            Ooops!!! debers ingresar el nombre del transportista.
+                        </div>
+                    </div>
+                </md-input-container>
+            </div>
+            <div layout="column" layout-gt-sm="row">
+                <md-input-container class="md-block" flex-gt-sm="50">
+                    <label>Descripcion o Codigo</label>
+                    <input ng-model="chofer.descripcion" name="descripcion">
+                    <div class="validation-hint">
+                        Opcional: Pudes agregar un codigo o descripcion a tu transportista para identificarlo facilmente.
+                    </div>
+                </md-input-container>
+                <md-input-container class="md-block" flex-gt-sm="25">
+                    <label>Cédula</label>
+                    <input ng-model="chofer.cedula" name="cedula" required>
+                    <div ng-messages="choferForm.cedula.$error">
+                        <div ng-message="required">
+                            Ooops!!! por seguridad debers ingresar la cédula del transportista.
+                        </div>
+                    </div>
+                </md-input-container>
+                <md-input-container class="md-block" flex-gt-sm="25">
+                    <label>Teléfono</label>
+                    <input ng-model="chofer.telefono" name="telefono" required>
+                    <div ng-messages="choferForm.telefono.$error">
+                        <div ng-message="required">
+                            Ooops!!! debers ingresar el teléfono del transportista.
+                        </div>
+                    </div>
+                </md-input-container>
+            </div>
+            <md-divider></md-divider>
+            <div layout="column" layout-gt-sm="row">
+                <md-input-container class="md-block" flex-gt-sm="33">
+                    <label>Tipo de Camion</label>
+                    <md-select ng-model="chofer.tipoCamion" name="tipoCamion" required>
+                        <ng-include src="'app/directives/includes/tiposCamion.html'"></ng-include>
+                    </md-select>
+                    <div ng-messages="choferForm.tipoCamion.$error">
+                        <div ng-message="required">
+                            ¿Que tipo de camion es?.
+                        </div>
+                    </div>
+                </md-input-container>
+                <md-input-container class="md-block" flex-gt-sm="33">
+                    <label>Marca</label>
+                    <input ng-model="chofer.marca" name="marca">
+                </md-input-container>
+                <md-input-container class="md-block" flex-gt-sm="33">
+                    <label>Modelo</label>
+                    <input ng-model="chofer.modelo" name="modelo">
+                </md-input-container>
+            </div>
+            <div layout="column" layout-gt-sm="row">
+                <md-input-container class="md-block" flex-gt-sm="33">
+                    <label>Año</label>
+                    <input ng-model="chofer.anio" name="anio" type="number">
+                </md-input-container>
+                <md-input-container class="md-block" flex-gt-sm="33">
+                    <label>Placa</label>
+                    <input ng-model="chofer.placa" name="placa" required>
+                    <div ng-messages="choferForm.placa.$error">
+                        <div ng-message="required">
+                            Ooops!!! por seguridad necesitamos la placa del camion.
+                        </div>
+                    </div>
+                </md-input-container>
+                <md-input-container class="md-block" flex-gt-sm="33">
+                    <label>Color</label>
+                    <input ng-model="chofer.color" name="color" required>
+                    <div ng-messages="choferForm.color.$error">
+                        <div ng-message="required">
+                            Ooops!!! por seguridad necesitamos el color del camion.
+                        </div>
+                    </div>
+                </md-input-container>
+            </div>
+        </md-dialog-content>
+        <md-dialog-actions layout="column" layout-gt-sm="row">
+            <div flex layout="row" layout-align="end center" flex-gt-sm="30">
+                <md-button ng-click="cerrar()" ng-disabled="processing">Cerrar</md-button>
+                <md-button class="md-primary" ng-disabled="choferForm.$invalid || processing" ng-click="guardarChofer()">
+                    <md-progress-circular md-diameter="10px" ng-show="processing"></md-progress-circular>
+                    <span ng-show="!processing">Guardar</span>
+                </md-button>
+            </div>
+        </md-dialog-actions>
+    </form>
+</md-dialog>

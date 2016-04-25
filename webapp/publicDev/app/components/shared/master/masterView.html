@@ -1,0 +1,12 @@
+<div class="main" layout="column" ng-cloak>
+    <section layout="row" flex>
+        <div ng-include="'app/components/shared/master/sidenav/sidenav.html'"></div>
+        <md-content class="main-content">
+            <!-- custom content header -->
+            <div ng-include="'app/components/shared/master/header/header.html'"></div>
+            <div class="inner_body">
+                <div ui-view></div>
+            </div>
+        </md-content>
+    </section>
+</div>

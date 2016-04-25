@@ -1,0 +1,21 @@
+<div class="center-content">
+    <div class="col-sm-3 col-nopadding">
+        <label class="control-label control-label">Usar Plantilla</label>
+    </div>
+    <div class="col-sm-9 col-nopadding">
+        <div class="dropdown">
+            <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                Plantilla
+                <span class="caret"></span>
+            </button>
+            <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                <li><span class="list-item-lg" ng-click="agrPedCtrl.Limpiar(agrPedForm)">(ninguna)</span></li>
+                <li role="separator" class="divider"></li>
+                <li ng-repeat="plantilla in agrPedCtrl.plantillas">
+                    <span class="list-item-lg" ng-click="agrPedCtrl.PlantillaSelected(plantilla.id)">{{plantilla.plantilla}}</span>
+                    <span class="glyphicon glyphicon-remove list-item-action" ng-click="agrPedCtrl.DeletePlantilla(plantilla.id)"/>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
