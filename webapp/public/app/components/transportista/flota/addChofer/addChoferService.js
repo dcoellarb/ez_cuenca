@@ -3,7 +3,7 @@
  */
 
 angular.module("easyRuta")
-    .service('addChoferService',['$rootScope','collectionsEnum','transportistaModel','choferModel','dataService',function($rootScope,collectionsEnum,transportistaModel,choferModel,dataService){
+    .service('addChoferService',['$rootScope','collectionsEnum','transportistaModel','choferModel','dataService','rolesEnum','choferEstadosEnum',function($rootScope,collectionsEnum,transportistaModel,choferModel,dataService,rolesEnum,choferEstadosEnum){
 
         //private methods
 
@@ -35,7 +35,7 @@ angular.module("easyRuta")
                 }
                 //TODO when chofer is user add this permission
                 //{isRole: false, role: undefined, id: chofer.user.id, allowRead: true, allowWrite: true}
-
+                chofer.estado = choferEstadosEnum.disponible;
                 return Rx.Observable.create(function (observer) {
                     var suscription = dataService.add(collectionsEnum.chofer, choferModel.fromJson(chofer), {acl: acl}).subscribe(
                         function (chofer) {

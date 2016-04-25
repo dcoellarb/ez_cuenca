@@ -97,13 +97,18 @@ angular.module("easyRuta")
                     loadMaps();
                 },
                 function (e) {
-                    console.dir(e);
-                    $mdToast.show(
-                        $mdToast.simple()
-                            .textContent('Ooops!!! parece que estamos experimentando problemas en nuestro servidores por favor contacte a soporte.')
-                            .position("top left")
-                            .hideDelay(5000)
-                    );
+                    if (err.code == 119){
+                        $location.path('/home');
+                        $location.replace();
+                    } else {
+                        console.dir(e);
+                        $mdToast.show(
+                            $mdToast.simple()
+                                .textContent('Ooops!!! parece que estamos experimentando problemas en nuestro servidores por favor contacte a soporte.')
+                                .position("top left")
+                                .hideDelay(5000)
+                        );
+                    }
                 },
                 function () { }
             );

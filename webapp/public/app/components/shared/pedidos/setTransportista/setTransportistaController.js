@@ -3,7 +3,7 @@
  */
 
 angular.module("easyRuta")
-    .controller('setTransportistaController',['$rootScope','$scope', 'setTransportistaService','rolesEnum','$mdDialog','$mdToast','pedido',function($rootScope, $scope, setTransportistaService,rolesEnum,$mdDialog,$mdToast,pedido){
+    .controller('setTransportistaController',['$rootScope','$scope', 'setTransportistaService','rolesEnum','$mdDialog','$mdToast','pedido','$location',function($rootScope, $scope, setTransportistaService,rolesEnum,$mdDialog,$mdToast,pedido,$location){
 
         //members
 
@@ -35,6 +35,10 @@ angular.module("easyRuta")
                 },
                 function () { }
             );
+        };
+        $scope.verFlota = function() {
+            $location.path('/main/transportista/flota');
+            $mdDialog.hide();
         };
         $scope.cerrar = function() {
             $mdDialog.hide();

@@ -2,7 +2,8 @@
  * Created by dcoellar on 9/14/15.
  */
 
-angular.module("easyRuta",['ngRoute','ngMaterial','ngMaterialDatePicker','ngMessages','ngMap','LocalStorageModule','ez-Data','ez-RealTime'])
+//ngRoute
+angular.module("easyRuta",['ui.router','ngMaterial','ngMaterialDatePicker','ngMessages','ngMap','LocalStorageModule','ez-Data','ez-RealTime'])
     .constant('collectionsEnum',{
         role:'_Role',
         user:'_User',

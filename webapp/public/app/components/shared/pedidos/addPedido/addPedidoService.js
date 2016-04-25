@@ -180,6 +180,22 @@ angular.module("easyRuta")
                         suscription.dispose();
                     }
                 });
+            },
+            eliminarPlantilla: function(pedido){
+                return Rx.Observable.create(function (observer) {
+                    var suscription = dataService.delete(collectionsEnum.pedido,pedido.object).subscribe(
+                        function (pedido) {
+                            observer.onNext(pedidoModel.toJson(pedido));
+                            observer.onCompleted();
+                        },
+                        function (e) { observer.onError(e) },
+                        function () { }
+                    );
+
+                    return function () {
+                        suscription.dispose();
+                    }
+                });
             }
         }
     }]);

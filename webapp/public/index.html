@@ -9,16 +9,17 @@
     <script   src="https://code.jquery.com/jquery-2.2.3.min.js"   integrity="sha256-a23g1Nt4dtEYOj7bR+vTu7+T8VP13humZFBJNIYoEJo="   crossorigin="anonymous"></script>
 
     <!-- Angular.js Libraries -->
-    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-i18n/1.5.5/angular-locale_es-ec.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular-route.min.js"></script>
-    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular-animate.min.js"></script>
-    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular-aria.min.js"></script>
-    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular-messages.min.js"></script>
+    <!--<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular-route.min.js"></script>-->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular-animate.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular-aria.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular-messages.min.js"></script>
     <script src="assets/js/vendor/angular-local-storage.min.js"></script>
+    <script src="assets/js/vendor/angular-ui-router.min.js"></script>
 
     <!-- Angular Material Library -->
-    <script src="http://ajax.googleapis.com/ajax/libs/angular_material/1.1.0-rc2/angular-material.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.0-rc2/angular-material.min.js"></script>
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" >
     <link rel="stylesheet" href="https://cdn.gitcdn.link/cdn/angular/bower-material/v1.1.0-rc2/angular-material.css">
     <script src="assets/js/vendor/ng-map.min.js"></script>
@@ -27,7 +28,7 @@
     <script src="assets/js/vendor/angular-material-datetimepicker.js"></script>
 
     <!-- Google Maps Library -->
-    <script src="http://maps.google.com/maps/api/js?libraries=drawing,places&key=AIzaSyA7ImiLb8lU9DyK0_D-NFFp3zp4ffXL9r0"></script>
+    <script src="https://maps.google.com/maps/api/js?libraries=drawing,places&key=AIzaSyA7ImiLb8lU9DyK0_D-NFFp3zp4ffXL9r0"></script>
 
     <!-- RxJS Library -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/rxjs/4.1.0/rx.lite.js"></script>
@@ -51,6 +52,7 @@
     <script src="app/app.localStorage.js"></script>
     <script src="app/app.material.js"></script>
     <script src="app/app.realTime.js"></script>
+    <script src="app/filters/tipoCamionList.js"></script>
     <script src="app/filters/capitalizeFirst.js"></script>
     <script src="app/filters/parsePeso.js"></script>
     <script src="app/factories/models/userModel.js"></script>
@@ -62,12 +64,14 @@
     <script src="app/factories/models/choferModel.js"></script>
     <script src="app/factories/models/pedidoModel.js"></script>
     <script src="app/factories/models/notificacionModel.js"></script>
+    <script src="app/directives/passwordVerify.js"></script>
     <script src="app/directives/pedidos/ez-pedido-activo.js"></script>
     <script src="app/directives/pedidos/ez-pedido-completado.js"></script>
     <script src="app/directives/pedidos/ez-pedido-en-curso.js"></script>
     <script src="app/directives/pedidos/ez-pedido-pendiente.js"></script>
     <script src="app/directives/pedidos/ez-pedidos.js"></script>
     <script src="app/directives/choferes/ez-choferes.js"></script>
+    <script src="app/components/shared/home/home.js"></script>
     <script src="app/components/shared/master/sidenav/sidenavController.js"></script>
     <script src="app/components/shared/master/header/headerController.js"></script>
     <script src="app/components/proveedorCarga/pedidos/proveedorCargaPedidosService.js"></script>
@@ -85,17 +89,6 @@
     <script src="app/components/transportista/flota/addChofer/addChoferController.js"></script>
 </head>
 <body>
-<div class="main" layout="column" ng-cloak>
-    <section layout="row" flex>
-        <div ng-include="'app/components/shared/master/sidenav/sidenav.html'"></div>
-        <md-content class="main-content">
-            <!-- custom content header -->
-            <div ng-include="'app/components/shared/master/header/header.html'"></div>
-            <div class="inner_body">
-                <div ng-view></div>
-            </div>
-        </md-content>
-    </section>
-</div>
+<div ui-view></div>
 </body>
 </html>

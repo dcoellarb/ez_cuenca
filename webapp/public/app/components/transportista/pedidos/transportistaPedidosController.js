@@ -3,7 +3,7 @@
  */
 
 angular.module("easyRuta")
-    .controller('transportistaPedidosController',['$rootScope', '$scope', 'uiEventsEnum', 'uiContextEnum', 'transportistaPedidosService','pedidoEstadosEnum','$mdDialog','pedidoEstadosEnum','realtimeChannels',function($rootScope,$scope, uiEventsEnum, uiContextEnum, transportistaPedidosService,pedidoEstadosEnum,$mdDialog,pedidoEstadosEnum,realtimeChannels){
+    .controller('transportistaPedidosController',['$rootScope', '$scope', 'uiEventsEnum', 'uiContextEnum', 'transportistaPedidosService','pedidoEstadosEnum','$mdDialog','pedidoEstadosEnum','realtimeChannels','$mdToast','$location',function($rootScope,$scope, uiEventsEnum, uiContextEnum, transportistaPedidosService,pedidoEstadosEnum,$mdDialog,pedidoEstadosEnum,realtimeChannels,$mdToast,$location){
 
         //members
 
@@ -15,7 +15,8 @@ angular.module("easyRuta")
 
         //private methods
         var loadPedidos = function() {
-            transportistaPedidosService.getPedidos().subscribe(function (x) {
+            transportistaPedidosService.getPedidos().subscribe(
+                function (pedidos) {
                     pedidos = pedidos.map(function(pedido){
                         if (pedido.donacion) {
                             pedido.cssClass = "pedido-donacion"
@@ -37,19 +38,24 @@ angular.module("easyRuta")
                         }
                         return pedido;
                     });
-                    $scope.pedidosPendientes = x.filter(function(pedido){return pedido.estado == pedidoEstadosEnum.pendiente});
-                    $scope.pedidosEnProceso = x.filter(function(pedido){return pedido.estado == pedidoEstadosEnum.activo || pedido.estado == pedidoEstadosEnum.enCurso});
-                    $scope.pedidosCompletados = x.filter(function(pedido){return pedido.estado == pedidoEstadosEnum.finalizado});
+                    $scope.pedidosPendientes = pedidos.filter(function(pedido){return pedido.estado == pedidoEstadosEnum.pendiente});
+                    $scope.pedidosEnProceso = pedidos.filter(function(pedido){return pedido.estado == pedidoEstadosEnum.activo || pedido.estado == pedidoEstadosEnum.enCurso});
+                    $scope.pedidosCompletados = pedidos.filter(function(pedido){return pedido.estado == pedidoEstadosEnum.finalizado});
                     $scope.$apply();
                 },
                 function (err) {
-                    console.dir(e);
-                    $mdToast.show(
-                        $mdToast.simple()
-                            .textContent('Ooops!!! parece que estamos experimentando problemas en nuestro servidores por favor contacte a soporte.')
-                            .position("top left")
-                            .hideDelay(5000)
-                    );
+                    console.dir(err);
+                    if (err.code == 119){
+                        $location.path('/home');
+                        $location.replace();
+                    } else{
+                        $mdToast.show(
+                            $mdToast.simple()
+                                .textContent('Ooops!!! parece que estamos experimentando problemas en nuestro servidores por favor contacte a soporte.')
+                                .position("top left")
+                                .hideDelay(5000)
+                        );
+                    }
                 },
                 function () { }
             );
@@ -103,7 +109,9 @@ angular.module("easyRuta")
                 clickOutsideToClose:true
             }).then(function(pedido){
                 if (pedido) {
-                    $scope.pedidosPendientes.splice($scope.pedidosPendientes.indexOf(pedido),1)
+                    var ped = $scope.pedidosPendientes.find(function(p) { return p.id == pedido.id; });
+                    var i = $scope.pedidosPendientes.indexOf(ped);
+                    $scope.pedidosPendientes.splice(i,1)
                     $scope.pedidosEnProceso.push(pedido);
                     $scope.pedidosEnProceso.sort(function(a, b){return a.createdAt < b.createdAt});
                 }

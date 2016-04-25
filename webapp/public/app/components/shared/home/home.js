@@ -1,26 +1,8 @@
 /**
- * Created by dcoellar on 9/14/15.
+ * Created by dcoellar on 4/24/16.
  */
 
-angular.module("login",['ngMaterial','LocalStorageModule','ez-Data'])
-    .config(['$mdThemingProvider',function($mdThemingProvider) {
-        $mdThemingProvider.theme('default')
-            .primaryPalette('blue-grey')
-            .accentPalette('amber');
-    }])
-    .config(['$mdThemingProvider',function($mdThemingProvider) {
-        $mdThemingProvider.theme('dark')
-            .dark();
-    }])
-    .config(['localStorageServiceProvider',function(localStorageServiceProvider) {
-        localStorageServiceProvider
-            .setPrefix('easyRuta')
-            .setStorageType('sessionStorage');
-    }])
-    .config(['dataServiceProvider',function(dataServiceProvider) {
-        //dataServiceProvider.initialize("VJTDwzZdvOVEjA6c2DnVHduEvOpY8p3Cx4KMwxUi", "zQ1tHay1kKYGRrr7psu8oddu2fnKuOF7EpAWbAdM");//PROD
-        dataServiceProvider.initialize("2hLYHTAUJ9QXMWxQTXsOIZ2jXJLGtMauw2QN34fE", "xSiGu1HbOBQvzcd7ItdgGGyMq2IcpvKmCAFjhY2T");//QA
-    }])
+angular.module("easyRuta")
     .service("loginService", ['$rootScope','localStorageService','dataService',function($rootScope,localStorageService, dataService){
         return {
             //public methods
@@ -41,7 +23,8 @@ angular.module("login",['ngMaterial','LocalStorageModule','ez-Data'])
                                         .flatMap(function(proveedoresCarga){
                                             $rootScope.proveedorCarga = {id:proveedoresCarga[0].id};
                                             localStorageService.set("proveedorCarga", JSON.stringify($rootScope.proveedorCarga));
-                                            return Rx.Observable.just('http://localhost:3000/#/proveedorCarga');
+                                            //return Rx.Observable.just('http://easyruta.parseapp.com/#/proveedorCarga');
+                                            return Rx.Observable.just('/main/proveedorCarga');
                                         });
                                     break;
                                 case "transportista":
@@ -49,7 +32,7 @@ angular.module("login",['ngMaterial','LocalStorageModule','ez-Data'])
                                         .flatMap(function(transportistas){
                                             $rootScope.transportista = {id:transportistas[0].id};
                                             localStorageService.set("transportista", JSON.stringify($rootScope.transportista));
-                                            return Rx.Observable.just('http://localhost:3000/#/transportista');
+                                            return Rx.Observable.just('/main/transportista');
                                         });
                                     break;
                             }
@@ -61,7 +44,7 @@ angular.module("login",['ngMaterial','LocalStorageModule','ez-Data'])
                             observer.onError(e)
                         },
                         function () {
-                            observer.onCopleted()
+                            observer.onCompleted()
                         }
                     );
                 });
@@ -105,6 +88,8 @@ angular.module("login",['ngMaterial','LocalStorageModule','ez-Data'])
                             return dataService.add('ProveedorCarga',p,{acl: acl});
                         }).subscribe(
                         function (p) {
+                            $rootScope.role = {id: role.id,name: role.getName()};
+                            localStorageService.set("role", JSON.stringify($rootScope.role));
                             $rootScope.proveedorCarga = {id:p.id};
                             localStorageService.set("proveedorCarga", JSON.stringify($rootScope.proveedorCarga));
                             observer.onNext(p)
@@ -113,7 +98,7 @@ angular.module("login",['ngMaterial','LocalStorageModule','ez-Data'])
                             observer.onError(e)
                         },
                         function () {
-                            observer.onCopleted()
+                            observer.onCompleted()
                         }
                     );
                 });
@@ -156,6 +141,8 @@ angular.module("login",['ngMaterial','LocalStorageModule','ez-Data'])
                             return dataService.add('Transportista',t,{acl: acl});
                         }).subscribe(
                         function (t) {
+                            $rootScope.role = {id: role.id,name: role.getName()};
+                            localStorageService.set("role", JSON.stringify($rootScope.role));
                             $rootScope.transportista = {id:t.id};
                             localStorageService.set("transportista", JSON.stringify($rootScope.transportista));
                             observer.onNext(t)
@@ -164,7 +151,7 @@ angular.module("login",['ngMaterial','LocalStorageModule','ez-Data'])
                             observer.onError(e)
                         },
                         function () {
-                            observer.onCopleted()
+                            observer.onCompleted()
                         }
                     );
                 });
@@ -214,14 +201,14 @@ angular.module("login",['ngMaterial','LocalStorageModule','ez-Data'])
                             observer.onError(e)
                         },
                         function () {
-                            observer.onCopleted()
+                            observer.onCompleted()
                         }
                     );
                 });
             }
         }
     }])
-    .controller('homeController',['$scope','$window','$mdDialog',function($scope,$window,$mdDialog){
+    .controller('homeController',['$scope','$location','$mdDialog',function($scope,$location,$mdDialog){
 
         //properties
         $scope.user = {username : "", password :""};
@@ -233,49 +220,50 @@ angular.module("login",['ngMaterial','LocalStorageModule','ez-Data'])
         $scope.login = function(ev){
             $mdDialog.show({
                 controller: 'LoginController',
-                templateUrl: 'login.html',
+                templateUrl: 'app/components/shared/home/login.html',
                 parent: angular.element(document.body),
                 targetEvent: ev,
                 clickOutsideToClose:true
             }).then(function(url) {
-                $window.location.href = url;
+                $location.path(url)
             });
         };
         $scope.registroProveedorCarga = function(ev){
             $mdDialog.show({
                 controller: 'registroProveedorCargaController',
-                templateUrl: 'registroProveedorCarga.html',
+                templateUrl: 'app/components/shared/home/registroProveedorCarga.html',
                 parent: angular.element(document.body),
                 targetEvent: ev,
                 clickOutsideToClose:true
             }).then(function(url) {
-                $window.location.href = url;
+                $location.path(url);
+                //$window.location.href = url;
             });
         };
         $scope.registroTransportista = function(ev){
             $mdDialog.show({
                 controller: 'registroTransportistaController',
-                templateUrl: 'registroTransportista.html',
+                templateUrl: 'app/components/shared/home/registroTransportista.html',
                 parent: angular.element(document.body),
                 targetEvent: ev,
                 clickOutsideToClose:true
             }).then(function(url) {
-                $window.location.href = url;
+                $location.path(url)
             });
         };
         $scope.registroChofer = function(ev){
             //TODO - show temporalmente deshabilita mientras se publica la app
             /*
-            $mdDialog.show({
-                controller: 'registroChoferController',
-                templateUrl: 'registroChofer.html',
-                parent: angular.element(document.body),
-                targetEvent: ev,
-                clickOutsideToClose:true
-            }).then(function() {
-                //TODO - show message ask them to download the app
-            });
-            */
+             $mdDialog.show({
+             controller: 'registroChoferController',
+             templateUrl: 'registroChofer.html',
+             parent: angular.element(document.body),
+             targetEvent: ev,
+             clickOutsideToClose:true
+             }).then(function() {
+             //TODO - show message ask them to download the app
+             });
+             */
         };
     }])
     .controller('registroProveedorCargaController',['$scope','registrarProveedorService','$mdDialog',function($scope,registrarProveedorService,$mdDialog) {
@@ -289,27 +277,31 @@ angular.module("login",['ngMaterial','LocalStorageModule','ez-Data'])
         $scope.registrar = function() {
             $scope.processing = true;
             registrarProveedorService.registrar($scope.proveedorCarga).subscribe(
-                    function (p) {
-                        $scope.processing = false;
-                        $mdDialog.hide('http://localhost:3000/#/proveedorCarga');
-                    },
-                    function (e) {
-                        $scope.processing = false;
-                        $scope.showError = true;
+                function (p) {
+                    $scope.processing = false;
+                    $mdDialog.hide('/main/proveedorCarga');
+                },
+                function (e) {
+                    $scope.processing = false;
+                    $scope.showError = true;
 
-                        //125 invalid email address
-                        //202 username dc@dc.com already taken
-                        if (e.code == 101){
-                            $scope.error = "Usuario y/o clave incorrectos."
-                            $scope.$apply()
-                        } else {
-                            $scope.error = "Servicio no disponible, contacte a soporte."
-                            $scope.$apply()
-                            throw e;
-                        }
-                    },
-                    function () {}
-                );
+                    if (e.code == 101) {
+                        $scope.error = "Usuario y/o clave incorrectos.";
+                        $scope.$apply()
+                    } else if (e.code == 125) {
+                        $scope.error = "Email es invalido.";
+                        $scope.$apply()
+                    } else if (e.code == 202) {
+                        $scope.error = "Ya existe un usuario con ese email.";
+                        $scope.$apply()
+                    } else {
+                        $scope.error = "Servicio no disponible, contacte a soporte.";
+                        $scope.$apply()
+                        throw e;
+                    }
+                },
+                function () {}
+            );
         }
     }])
     .controller('registroTransportistaController',['$scope','registrarTransportistaService','$mdDialog',function($scope,registrarTransportistaService,$mdDialog) {
@@ -325,19 +317,23 @@ angular.module("login",['ngMaterial','LocalStorageModule','ez-Data'])
             registrarTransportistaService.registrar($scope.transportista).subscribe(
                 function (p) {
                     $scope.processing = false;
-                    $mdDialog.hide('http://localhost:3000/#/transportista');
+                    $mdDialog.hide('/main/transportista');
                 },
                 function (e) {
                     $scope.processing = false;
                     $scope.showError = true;
 
-                    //125 invalid email address
-                    //202 username dc@dc.com already taken
-                    if (e.code == 101){
-                        $scope.error = "Usuario y/o clave incorrectos."
+                    if (e.code == 101) {
+                        $scope.error = "Usuario y/o clave incorrectos.";
+                        $scope.$apply()
+                    } else if (e.code == 125) {
+                        $scope.error = "Email es invalido.";
+                        $scope.$apply()
+                    } else if (e.code == 202) {
+                        $scope.error = "Ya existe un usuario con ese email.";
                         $scope.$apply()
                     } else {
-                        $scope.error = "Servicio no disponible, contacte a soporte."
+                        $scope.error = "Servicio no disponible, contacte a soporte.";
                         $scope.$apply()
                         throw e;
                     }

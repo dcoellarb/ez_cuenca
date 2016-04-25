@@ -3,6 +3,7 @@
         <div flex="50" layout="column" layout-align="space-between start">
             <h1 class="text-large text-600">{{pedido.ciudadOrigen | capitalizeFirst}}: {{pedido.direccionOrigen}}</h1>
             <h1 class="text-large text-600">{{pedido.ciudadDestino | capitalizeFirst}}: {{pedido.direccionDestino}}</h1>
+            <div ng-show="finalizarViaje"><span class="text-medium text-400">Proveedor:</span><span class="text-medium text-600">{{pedido.proveedorCarga.nombre}}</span></div>
             <div><span class="text-medium text-400">Hora de Carga:</span><span class="text-medium text-600">{{pedido.horaCarga | date:'medium'}}</span></div>
             <div><span class="text-medium text-400">Hora de Entrega:</span><span class="text-medium text-600">{{pedido.horaFinalizacion | date:'medium'}}</span></div>
         </div>
@@ -14,6 +15,8 @@
                 <div flex layout="column" layout-align="center start">
                     <h1 class="text-medium text-600">{{pedido.transportista.nombre}}: {{pedido.chofer.nombre}}</h1>
                     <span>{{pedido.chofer.descripcion}}</span>
+                    <span>{{pedido.chofer.tipoCamion}}</span>
+                    <!--
                     <div class="rate-container">
                         <md-icon class="material-icons rate">
                             <span>star_border</span>
@@ -23,10 +26,8 @@
                             <span>star_border</span>
                         </md-icon>
                     </div>
+                    -->
                 </div>
-            </div>
-            <div flex="none" layout="column" layout-align="start end">
-                <span class="text-red text-x-large">{{pedido.valor}}</span>
             </div>
         </div>
     </div>
@@ -36,8 +37,8 @@
                 <md-icon class="material-icons">more_vert</md-icon>
             </md-button>
             <md-menu-content width="4">
-                <md-menu-item>
-                    <md-button ng-click="detallePedido">
+                <md-menu-item ng-show="detallePedido">
+                    <md-button ng-click="detallePedido(pedido.id)">
                         Detalle del Pedido
                     </md-button>
                 </md-menu-item>

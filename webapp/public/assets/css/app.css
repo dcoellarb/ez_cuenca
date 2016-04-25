@@ -501,7 +501,7 @@ body {
   width: 450px;
   height: 280px;
   color: #ffffff;
-  background-image: linear-gradient(to bottom, #607d8b, rgba(96, 125, 139, 0.5)), url("../../assets/images/truck_dock.png");
+  background-image: linear-gradient(to bottom, #607d8b, rgba(96, 125, 139, 0.5)), url("../../assets/images/truck_driver.jpg");
   background-repeat: no-repeat, no-repeat;
   background-position: bottom right, left;
   background-size: cover;

@@ -22,8 +22,13 @@
         <img src= "../../assets/images/logo_new.png" style="max-height: 50px; max-width: 50px; margin: 25px;">
         <h1>Lista vacia</h1>
         <h3>No hay transportistas disponibles para este pedido al momento</h3>
-        <h4 class="text-light_blue">Para seleccionar un transportista este debe estar disponible,</h4>
+        <h4 class="text-light_blue" style="margin-top: 20px;">Para seleccionar un transportista este debe estar disponible,</h4>
         <h4 class="text-light_blue">y debe cumplir con lo requerimientos de tipo de camio y peso del pedido</h4>
+        <h4 style="margin: 20px;text-align: center">Si aun no has registrado transportistas en tu flota, puedes ir al menu <md-icon class="material-icons">menu</md-icon> o dar click aqui:</h4>
+        <md-button class="md-button md-fab action-blue" style="margin-bottom: 20px;" ng-click="verFlota()">
+            <md-tooltip md-direction="left">Ver Flota</md-tooltip>
+            <md-icon class="material-icons">local_shipping</md-icon>
+        </md-button>
     </div>
     <div ng-show="choferes.length == 0 && addChofer" flex layout="column" layout-align="center center">
         <img src= "../../assets/images/logo_new.png" style="max-height: 100px; max-width: 100px; margin: 50px;">
@@ -31,7 +36,7 @@
         <h3>Aun no has regristrado transportistas en tu flota</h3>
         <h4 class="text-light_blue">Para agregar un transportista haga click aqui:</h4>
         <md-button class="md-button md-fab action-yellow" ng-click="addChofer()">
-            <md-tooltip md-direction="left">Agregar Pedido</md-tooltip>
+            <md-tooltip md-direction="left">Agregar Transportista</md-tooltip>
             <md-icon class="material-icons">add</md-icon>
         </md-button>
     </div>

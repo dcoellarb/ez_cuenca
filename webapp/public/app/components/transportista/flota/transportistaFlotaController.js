@@ -69,7 +69,7 @@ angular.module("easyRuta")
                             $mdToast.simple()
                                 .textContent('Ooops!!! parece que estmos experimentando problemas en nuestro servidores por favor contacte a soporte.')
                                 .position("top left ")
-                                .hideDelay(3000)
+                                .hideDelay(5000)
                         );
                     },
                     function () { }
@@ -86,14 +86,19 @@ angular.module("easyRuta")
                 $scope.$apply();
             },
             function (e) {
-                console.dir(e);
-                $mdToast.show(
-                    $mdToast.simple()
-                        .textContent('Ooops!!! parece que estamos experimentando problemas en nuestro servidores por favor contacte a soporte.')
-                        .position("top left")
-                        .hideDelay(5000)
-                );
-                $mdDialog.hide();
+                if (err.code == 119){
+                    $location.path('/home');
+                    $location.replace();
+                } else {
+                    console.dir(e);
+                    $mdToast.show(
+                        $mdToast.simple()
+                            .textContent('Ooops!!! parece que estamos experimentando problemas en nuestro servidores por favor contacte a soporte.')
+                            .position("top left")
+                            .hideDelay(5000)
+                    );
+                    $mdDialog.hide();
+                }
             },
             function () { }
         );

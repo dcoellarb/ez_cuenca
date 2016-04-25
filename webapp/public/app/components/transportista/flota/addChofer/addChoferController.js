@@ -26,7 +26,7 @@ angular.module("easyRuta")
                             $mdToast.simple()
                                 .textContent('Ooops!!! parece que estmos experimentando problemas en nuestro servidores por favor contacte a soporte.')
                                 .position("top left ")
-                                .hideDelay(3000)
+                                .hideDelay(5000)
                         );
                     },
                     function () { }
@@ -43,7 +43,7 @@ angular.module("easyRuta")
                             $mdToast.simple()
                                 .textContent('Ooops!!! parece que estmos experimentando problemas en nuestro servidores por favor contacte a soporte.')
                                 .position("top left ")
-                                .hideDelay(3000)
+                                .hideDelay(5000)
                         );
                     },
                     function () { }
@@ -70,7 +70,7 @@ angular.module("easyRuta")
                     $mdToast.simple()
                         .textContent('Ooops!!! parece que estmos experimentando problemas en nuestro servidores por favor contacte a soporte.')
                         .position("top left ")
-                        .hideDelay(3000)
+                        .hideDelay(5000)
                 );
             },
             function () { }

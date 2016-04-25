@@ -19,11 +19,11 @@ angular.module("easyRuta")
         $scope.inicio = function(){
             switch ($rootScope.role.name){
                 case rolesEnum.proveedorCarga:
-                    $location.path('/proveedorCarga');
+                    $location.path('/main/proveedorCarga');
                     $mdSidenav('sidenav-left').close()
                     break;
                 case rolesEnum.transportista:
-                    $location.path('/transportista');
+                    $location.path('/main/transportista');
                     $mdSidenav('sidenav-left').close()
                     break;
             }
@@ -31,11 +31,11 @@ angular.module("easyRuta")
         $scope.pedidos = function() {
             switch ($rootScope.role.name){
                 case rolesEnum.proveedorCarga:
-                    $location.path('/proveedorCarga/pedidos');
+                    $location.path('/main/proveedorCarga/pedidos');
                     $mdSidenav('sidenav-left').close()
                     break;
                 case rolesEnum.transportista:
-                    $location.path('/transportista/pedidos');
+                    $location.path('/main/transportista/pedidos');
                     $mdSidenav('sidenav-left').close()
                     break;
             }
@@ -47,7 +47,7 @@ angular.module("easyRuta")
                 case rolesEnum.proveedorCarga:
                     break;
                 case rolesEnum.transportista:
-                    $location.path('/transportista/flota');
+                    $location.path('/main/transportista/flota');
                     $mdSidenav('sidenav-left').close()
                     break;
             }
@@ -56,7 +56,7 @@ angular.module("easyRuta")
         //subscriptions
 
         //init
-        if ($rootScope.role.name == rolesEnum.proveedorCarga){
+        if ($rootScope.role && $rootScope.role.name == rolesEnum.proveedorCarga){
             $scope.disabledFlota = true;
         }
     }]);

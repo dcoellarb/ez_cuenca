@@ -139,31 +139,82 @@ angular.module("easyRuta")
             $scope.pedido.transportista = transportistaModel.toJson(temp.object);
         };
         $scope.guardarPedido = function() {
-            $scope.processing = true;
-            addPedidoService.guardarPedido($scope.pedido,$scope.saveAsPlantilla,$scope.transportistas).subscribe(
-                function (pedido) {
-                    $scope.processing = false;
-                    if (pedido.plantilla){
-                        $scope.selectablePlantillas.push(pedido)
-                    } else {
-                        $mdDialog.hide(pedido);
-                    }
-                },
-                function (e) {
-                    console.dir(e);
+            var valid = true;
+            if ($scope.saveAsPlantilla) {
+                if ($scope.selectablePlantillas.find( function(p) { return p.plantilla == $scope.pedido.plantilla })){
+                    valid = false;
                     $mdToast.show(
                         $mdToast.simple()
-                            .textContent('Ooops!!! parece que estmos experimentando problemas en nuestro servidores por favor contacte a soporte.')
-                            .position("top left ")
-                            .hideDelay(3000)
+                            .textContent('Ya existe una plantilla con ese nombre por favor seecione uno diferente.')
+                            .position("top right ")
+                            .hideDelay(5000)
                     );
-                },
-                function () { }
-            );
+                }
+            }
+
+            if (valid) {
+                $scope.processing = true;
+                addPedidoService.guardarPedido($scope.pedido,$scope.saveAsPlantilla,$scope.transportistas).subscribe(
+                    function (pedido) {
+                        $scope.processing = false;
+                        if (pedido.plantilla){
+                            $scope.selectablePlantillas.push(pedido);
+                            $scope.pedido.plantilla = undefined
+                            $scope.saveAsPlantilla = false
+                            $scope.$apply();
+
+                            $mdToast.show(
+                                $mdToast.simple()
+                                    .textContent('La Plantilla fue guardada y esta lista para usarse.')
+                                    .position("bottom right ")
+                                    .hideDelay(5000)
+                            );
+                        } else {
+                            $mdDialog.hide(pedido);
+                        }
+                    },
+                    function (e) {
+                        console.dir(e);
+                        $mdToast.show(
+                            $mdToast.simple()
+                                .textContent('Ooops!!! parece que estmos experimentando problemas en nuestro servidores por favor contacte a soporte.')
+                                .position("top left ")
+                                .hideDelay(5000)
+                        );
+                    },
+                    function () { }
+                );
+            }
         };
         $scope.eliminarPlantilla = function() {
-            //TODO - implementar elimnar plantilla
-            alert("Esta funcionalidad esta proxima a desarrollarse!!!");
+            var pedido = $scope.selectablePlantillas.find(function(p){
+                return p.id == $scope.selectablePlantilla;
+            });
+            if (pedido && pedido.plantilla){
+                $scope.processingEliminarPlantilla = true
+                addPedidoService.eliminarPlantilla(pedido).subscribe(
+                    function (pedido) {
+                        $scope.processingEliminarPlantilla = false;
+                        $scope.selectablePlantilla = undefined;
+                        var temp = $scope.selectablePlantillas.find(function(plantilla){ return plantilla.id == pedido.id;});
+                        var i = $scope.selectablePlantillas.indexOf(temp);
+                        if (i >= 0){
+                            $scope.selectablePlantillas.splice(i,1);
+                        }
+                        $scope.$apply();
+                    },
+                    function (e) {
+                        console.dir(e);
+                        $mdToast.show(
+                            $mdToast.simple()
+                                .textContent('Ooops!!! parece que estmos experimentando problemas en nuestro servidores por favor contacte a soporte.')
+                                .position("top left ")
+                                .hideDelay(5000)
+                        );
+                    },
+                    function () { }
+                );
+            }
         };
         $scope.cerrar = function() {
             $mdDialog.hide();

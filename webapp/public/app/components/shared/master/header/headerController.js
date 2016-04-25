@@ -3,7 +3,7 @@
  */
 
 angular.module("easyRuta")
-    .controller("headerController",['$scope','$window','dataService','$mdSidenav',function($scope,$window,dataService,$mdSidenav){
+    .controller("headerController",['$scope','$location','dataService','$mdSidenav',function($scope,$location,dataService,$mdSidenav){
 
         //properties
 
@@ -11,7 +11,7 @@ angular.module("easyRuta")
         $scope.logout = function(){
             dataService.logout().subscribe(
                 function () {
-                    $window.location.href = "http://localhost:3000/modules/login/index.html";
+                    $location.path("/home");
                 },
                 function (e) { },
                 function () { }

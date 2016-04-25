@@ -4,6 +4,6 @@
 
 angular.module("easyRuta")
     .config(['dataServiceProvider',function(dataServiceProvider) {
-        //dataServiceProvider.initialize("VJTDwzZdvOVEjA6c2DnVHduEvOpY8p3Cx4KMwxUi", "zQ1tHay1kKYGRrr7psu8oddu2fnKuOF7EpAWbAdM");//PROD
-        dataServiceProvider.initialize("2hLYHTAUJ9QXMWxQTXsOIZ2jXJLGtMauw2QN34fE", "xSiGu1HbOBQvzcd7ItdgGGyMq2IcpvKmCAFjhY2T");//QA
+        dataServiceProvider.initialize("wJjWR5KTriUoPNnDH3baAQMkWvpAhuFhNU7PsKOP", "qpl5kH3ylsBswrTqljtlx8S6iOZgjH3o2rGDeLgG");//PROD
+        //dataServiceProvider.initialize("2hLYHTAUJ9QXMWxQTXsOIZ2jXJLGtMauw2QN34fE", "xSiGu1HbOBQvzcd7ItdgGGyMq2IcpvKmCAFjhY2T");//QA
     }]);
